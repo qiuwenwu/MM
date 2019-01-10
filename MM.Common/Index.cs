@@ -1,6 +1,6 @@
-﻿using MM.Engine.Engines;
+﻿using MM.Common.Engines;
 
-namespace MM.Engine
+namespace MM.Common
 {
     /// <summary>
     /// 索引类

@@ -1,11 +1,11 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace MM.Helper.Datas
+namespace MM.Helpers
 {
     /// <summary>
     /// json配置文件
     /// </summary>
-    public class JsonConfig
+    public class JsonConfigHelper
     {
         /// <summary>
         /// 配置构建器

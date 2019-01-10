@@ -1,12 +1,12 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
+using System.Web;
 
-namespace MM.Helper.Base
+namespace System
 {
     /// <summary>
-    /// 编码帮助类
+    /// 字符串拓展函数
     /// </summary>
-    public class Encode
+    public static class EncodeExpand
     {
         #region web类
         /// <summary>
@@ -14,9 +14,8 @@ namespace MM.Helper.Base
         /// </summary>
         /// <param name="str">被编码的字符串</param>
         /// <returns>返回编码后的字符串</returns>
-        public string UrlEncode(string str)
-        {
-            return str.UrlEncode();
+        public static string UrlEncode(this string str) {
+            return HttpUtility.UrlEncode(str);
         }
 
         /// <summary>
@@ -24,9 +23,9 @@ namespace MM.Helper.Base
         /// </summary>
         /// <param name="str">被解码的字符串</param>
         /// <returns>返回解码后的字符串</returns>
-        public string UrlDecode(string str)
+        public static string UrlDecode(this string str)
         {
-            return str.UrlDecode();
+            return HttpUtility.UrlDecode(str, Encoding.Default);
         }
 
         /// <summary>
@@ -34,9 +33,15 @@ namespace MM.Helper.Base
         /// </summary>
         /// <param name="str">被编码的字符串</param>
         /// <returns>返回编码后的字符串</returns>
-        public string HtmlEncode(string str)
+        public static string HtmlEncode(this string str)
         {
-            return str.HtmlEncode();
+            str = str.Replace(">", "&gt;");
+            str = str.Replace("<", "&lt;");
+            str = str.Replace(" ", "&nbsp;");
+            str = str.Replace("\"", "&quot;");
+            str = str.Replace("\'", "&apos;");
+            str = str.Replace("\n", "<br/>");
+            return str;
         }
 
         /// <summary>
@@ -44,9 +49,15 @@ namespace MM.Helper.Base
         /// </summary>
         /// <param name="str">被解码的字符串</param>
         /// <returns>返回解码后的字符串</returns>
-        public string HtmlDecode(string str)
+        public static string HtmlDecode(this string str)
         {
-            return str.HtmlDecode();
+            str = str.Replace("&gt;", ">");
+            str = str.Replace("&lt;", "<");
+            str = str.Replace("&nbsp;", " ");
+            str = str.Replace("&quot;", "\"");
+            str = str.Replace("&apos;", "\'");
+            str = str.Replace("<br/>", "\n");
+            return str;
         }
 
         /// <summary>
@@ -54,9 +65,9 @@ namespace MM.Helper.Base
         /// </summary>
         /// <param name="str">被编码的字符串</param>
         /// <returns>返回编码后的字符串</returns>
-        public string Utf8Encode(string str)
+        public static string Utf8Encode(this string str)
         {
-            return str.Utf8Encode();
+            return str.ToEncode(Encoding.UTF8, Encoding.Default);
         }
 
         /// <summary>
@@ -64,9 +75,9 @@ namespace MM.Helper.Base
         /// </summary>
         /// <param name="str">被解码的字符串</param>
         /// <returns>返回解码后的字符串</returns>
-        public string Utf8Decode(string str)
+        public static string Utf8Decode(this string str)
         {
-            return str.Utf8Decode();
+            return str.ToEncode(Encoding.Default, Encoding.UTF8);
         }
         #endregion
 
@@ -77,9 +88,9 @@ namespace MM.Helper.Base
         /// </summary>
         /// <param name="str">被编码的字符串</param>
         /// <returns>返回编码后的字符串</returns>
-        public string UnicodeEncode(string str)
+        public static string UnicodeEncode(this string str)
         {
-            return str.UnicodeEncode();
+            return str.ToEncode(Encoding.Unicode, Encoding.Default);
         }
 
         /// <summary>
@@ -87,9 +98,9 @@ namespace MM.Helper.Base
         /// </summary>
         /// <param name="str">被解码的字符串</param>
         /// <returns>返回解码后的字符串</returns>
-        public string UnicodeDecode(string str)
+        public static string UnicodeDecode(this string str)
         {
-            return str.UnicodeDecode();
+            return str.ToEncode(Encoding.Default, Encoding.Unicode);
         }
 
         /// <summary>
@@ -97,9 +108,9 @@ namespace MM.Helper.Base
         /// </summary>
         /// <param name="str">被编码的字符串</param>
         /// <returns>返回编码后的字符串</returns>
-        public string AsciiEncode(string str)
+        public static string AsciiEncode(this string str)
         {
-            return str.AsciiEncode();
+            return str.ToEncode(Encoding.ASCII, Encoding.Default);
         }
 
         /// <summary>
@@ -107,19 +118,20 @@ namespace MM.Helper.Base
         /// </summary>
         /// <param name="str">被解码的字符串</param>
         /// <returns>返回解码后的字符串</returns>
-        public string AsciiDecode(string str)
+        public static string AsciiDecode(this string str)
         {
-            return str.AsciiDecode();
+            return str.ToEncode(Encoding.Default, Encoding.ASCII);
         }
-
+       
         /// <summary>
         /// Base64编码
         /// </summary>
         /// <param name="str">被编码的字符串</param>
         /// <returns>返回编码后的字符串</returns>
-        public string Base64Encode(string str)
+        public static string Base64Encode(this string str)
         {
-            return str.Base64Encode();
+            byte[] bytes = Encoding.Default.GetBytes(str);
+            return Convert.ToBase64String(bytes);
         }
 
         /// <summary>
@@ -127,9 +139,10 @@ namespace MM.Helper.Base
         /// </summary>
         /// <param name="str">被解码的字符串</param>
         /// <returns>返回解码后的字符串</returns>
-        public string Base64Decode(string str)
+        public static string Base64Decode(this string str)
         {
-            return str.Base64Decode();
+            byte[] bytes = Convert.FromBase64String(str);
+            return Encoding.Default.GetString(bytes);
         }
         #endregion
 
@@ -140,9 +153,9 @@ namespace MM.Helper.Base
         /// <param name="to_encoding">转换后的编码方式</param>
         /// <param name="from_encoding">当前的编码方式</param>
         /// <returns>转码后的字符串</returns>
-        public string ToEncode(string str, string to_encoding = "gb2312", string from_encoding = "utf8")
+        public static string ToEncode(this string str, string to_encoding = "gb2312", string from_encoding = "utf8")
         {
-            return str.ToEncode(to_encoding, from_encoding);
+            return str.ToEncode(Encoding.GetEncoding(to_encoding), Encoding.GetEncoding(from_encoding));
         }
 
         /// <summary>
@@ -152,9 +165,11 @@ namespace MM.Helper.Base
         /// <param name="to_encoding">转换后的编码方式</param>
         /// <param name="from_encoding">当前的编码方式</param>
         /// <returns>转码后的字符串</returns>
-        public string ToEncode(string str, Encoding to_encoding, Encoding from_encoding)
+        public static string ToEncode(this string str, Encoding to_encoding, Encoding from_encoding)
         {
-            return str.ToEncode(to_encoding, from_encoding);
+            byte[] by = from_encoding.GetBytes(str);
+            by = Encoding.Convert(from_encoding, to_encoding, by);
+            return to_encoding.GetString(by);
         }
     }
 }

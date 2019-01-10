@@ -94,7 +94,7 @@ namespace MM.Helper.Interfaces
         /// 修改——通过函数进行修改
         /// </summary>
         /// <param name="key">键</param>
-        /// <param name="funStr">函数式</param>
+        /// <param name="fun">函数</param>
         /// <returns>成功返回true，失败返回false</returns>
         bool SetFun(string key, Func<object, object> fun);
         #endregion

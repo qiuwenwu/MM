@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MM.Engine.Engines
+namespace MM.Common.Engines
 {
     /// <summary>
     /// Vbs脚本引擎
     /// </summary>
-    public class VbEngine
+    public class VbEngine : ComEngine, IEngine
     {
     }
 }

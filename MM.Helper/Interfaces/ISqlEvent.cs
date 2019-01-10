@@ -156,14 +156,13 @@ namespace MM.Helper.Interfaces
         /// <param name="key">键名</param>
         /// <param name="value">值</param>
         /// <returns>有则返回true，没有则返false</returns>
-        bool KV_Has(string key, string value);
+        bool KV_Has(string key, object value);
 
         /// <summary>
         /// 修改
         /// </summary>
         /// <param name="key">键</param>
         /// <param name="value">值</param>
-        /// <param name="longTime">缓存时长</param>
         /// <returns>成功返回true，失败返回false</returns>
         bool KV_Set(string key, object value);
         #endregion
@@ -196,25 +195,18 @@ namespace MM.Helper.Interfaces
         /// <summary>
         /// 查询
         /// </summary>
-        /// <param name="key">键</param>
+        /// <param name="whereObj">键</param>
+        /// <param name="num">获取结果数</param>
         /// <returns>有则返回查询结果，没有则返回null</returns>
-        object Obj_Get(string key, int num = 0);
-
-        /// <summary>
-        /// 是否有该值
-        /// </summary>
-        /// <param name="key">键名</param>
-        /// <param name="value">值</param>
-        /// <returns>有则返回true，没有则返false</returns>
-        bool Obj_Has(object whereObj);
-
+        object Obj_Get(object whereObj, int num = 0);
+        
         /// <summary>
         /// 修改
         /// </summary>
-        /// <param name="key">键</param>
-        /// <param name="value">值</param>
+        /// <param name="whereObj">键</param>
+        /// <param name="setObj">值</param>
         /// <returns>成功返回true，失败返回false</returns>
-        bool Obj_Set(string key, object value);
+        bool Obj_Set(object whereObj, object setObj);
         #endregion
 
 

@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace MM.Engine.Engines
+namespace MM.Common.Engines
 {
     /// <summary>
     /// Csharp脚本引擎
     /// </summary>
-    public class CsEngine
+    public class CsEngine : ComEngine, IEngine
     {
+
     }
 }

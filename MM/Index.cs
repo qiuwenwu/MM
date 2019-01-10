@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System.Threading.Tasks;
 
 namespace MM
 {
@@ -9,7 +10,17 @@ namespace MM
     {
         internal static void Init()
         {
-            Console.WriteLine("123");
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        internal static Task Run(HttpContext context)
+        {
+            return context.Response.WriteAsync("Hello World!");
         }
     }
 }

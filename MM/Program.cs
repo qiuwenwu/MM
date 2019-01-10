@@ -14,7 +14,6 @@ namespace MM
         /// <param name="args">参数集合</param>
         public static void Main(string[] args)
         {
-            Index.Init();
             CreateWebHostBuilder(args).Build().Run();
         }
 

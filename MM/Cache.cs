@@ -1,9 +1,9 @@
-﻿namespace MM.Data
+﻿namespace MM
 {
     /// <summary>
     /// 缓存
     /// </summary>
-    public class Cache
+    public class Cache : Data.Cache
     {
 
     }

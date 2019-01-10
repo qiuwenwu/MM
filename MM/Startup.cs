@@ -32,7 +32,7 @@ namespace MM
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                await Index.Run(context);
             });
         }
     }
