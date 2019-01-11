@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace MM.Common.Engines
+﻿namespace MM.Common.Engines
 {
     /// <summary>
     /// Csharp脚本引擎

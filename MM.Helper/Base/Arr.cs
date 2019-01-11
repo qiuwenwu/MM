@@ -296,6 +296,17 @@ namespace MM.Helper.Base
         {
             return list.ToList();
         }
+
+        /// <summary>
+        /// 取成员数
+        /// </summary>
+        /// <param name="list">列表</param>
+        /// <returns>返回成员数</returns>
+        public int Count<T>(IEnumerable<T> list)
+        {
+            return list.Count();
+        }
+
         #endregion
     }
 }

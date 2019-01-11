@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace MM.Helper.Base
 {
@@ -70,19 +71,19 @@ namespace MM.Helper.Base
 
             for (int i = 1; i <= 13; i++)
             {
-                pokers.Add("黑桃" + ToPoker(i));
+                pokers.Add("黑桃" + ToPokerCode(i));
             }
             for (int i = 1; i <= 13; i++)
             {
-                pokers.Add("红桃" + ToPoker(i));
+                pokers.Add("红桃" + ToPokerCode(i));
             }
             for (int i = 1; i <= 13; i++)
             {
-                pokers.Add("梅花" + ToPoker(i));
+                pokers.Add("梅花" + ToPokerCode(i));
             }
             for (int i = 1; i <= 13; i++)
             {
-                pokers.Add("方块" + ToPoker(i));
+                pokers.Add("方块" + ToPokerCode(i));
             }
             if (havaBoss)
             {
@@ -100,5 +101,35 @@ namespace MM.Helper.Base
                 return string.Empty;
             }
         }
+
+        /// <summary>
+        /// 转扑克代号
+        /// </summary>
+        /// <param name="num">数字</param>
+        /// <returns>返回号码代号</returns>
+        public string ToPokerCode(int num)
+        {
+            string ret = null;
+            switch (num)
+            {
+                case 1:
+                    ret = "A";
+                    break;
+                case 11:
+                    ret = "J";
+                    break;
+                case 12:
+                    ret = "Q";
+                    break;
+                case 13:
+                    ret = "K";
+                    break;
+                default:
+                    ret = null;
+                    break;
+            }
+            return ret;
+        }
+
     }
 }

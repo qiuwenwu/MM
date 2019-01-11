@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MM.Common", "MM.Common\MM.C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MM", "MM\MM.csproj", "{A74607E5-B71F-4A1C-A59F-09F84AB5C284}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MM.Test", "MM.Test\MM.Test.csproj", "{D09D917B-B780-470E-A448-6E0CE34AD60B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MM.Test", "MM.Test\MM.Test.csproj", "{D09D917B-B780-470E-A448-6E0CE34AD60B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
