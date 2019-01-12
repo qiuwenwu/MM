@@ -17,6 +17,13 @@ namespace MM.Common.Engines
         /// <summary>
         /// 载入脚本
         /// </summary>
+        /// <param name="file">文件名</param>
+        /// <returns>载入成功返回true，失败返回false</returns>
+        bool Load(string file);
+
+        /// <summary>
+        /// 载入脚本
+        /// </summary>
         /// <param name="appName">应用名称</param>
         /// <param name="file">文件名</param>
         /// <returns>载入成功返回true，失败返回false</returns>
@@ -49,6 +56,18 @@ namespace MM.Common.Engines
         /// <param name="param4">参数4</param>
         /// <returns>返回执行结果</returns>
         object Run(string appName, object param1 = null, object param2 = null, object param3 = null, object param4 = null);
+
+
+        /// <summary>
+        /// 执行脚本
+        /// </summary>
+        /// <param name="appName">应用名</param>
+        /// <param name="param1">参数1</param>
+        /// <param name="param2">参数2</param>
+        /// <param name="param3">参数3</param>
+        /// <param name="param4">参数4</param>
+        /// <returns>返回执行结果</returns>
+        void RunAsync(string appName, object param1 = null, object param2 = null, object param3 = null, object param4 = null);
 
         /// <summary>
         /// 执行脚本文件
