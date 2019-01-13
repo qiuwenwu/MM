@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MM.Helper.Datas
+namespace MM.Helper.Data
 {
     /// <summary>
     /// Redis帮助类

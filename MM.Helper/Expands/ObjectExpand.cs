@@ -35,67 +35,60 @@ namespace System
             string str = "{}";
             if (obj != null)
             {
-                try
+                if (format)
                 {
-                    if (format)
+                    if (noNull)
                     {
-                        if (noNull)
-                        {
-                            str = JsonConvert.SerializeObject(obj, Formatting.Indented, jsonSetting_null);
-                        }
-                        else
-                        {
-                            str = JsonConvert.SerializeObject(obj, Formatting.Indented, jsonSetting);
-                        }
+                        str = JsonConvert.SerializeObject(obj, Formatting.Indented, jsonSetting_null);
                     }
                     else
                     {
-                        if (noNull)
-                        {
-                            str = JsonConvert.SerializeObject(obj, Formatting.None, jsonSetting_null);
-                        }
-                        else
-                        {
-                            str = JsonConvert.SerializeObject(obj, Formatting.None, jsonSetting);
-                        }
-                    }
-
-                    if (str.Contains("__dict__"))
-                    {
-                        var jObject = new JObject();
-                        if (str.Contains("data"))
-                        {
-                            jObject = JObject.FromObject(obj);
-                            var token = jObject["data"]["__dict__"];
-                            jObject["data"] = token;
-
-                        }
-                        else
-                        {
-                            jObject = JObject.FromObject(obj);
-                            var token = jObject["__dict__"];
-                            jObject = (JObject)token;
-                        }
-
-                        if (!format)
-                        {
-                            var jobj = new JObject();
-                            foreach (var o in jObject)
-                            {
-                                var value = o.Value;
-                                if (value != null)
-                                {
-                                    jobj.Add(o.Key, value);
-                                }
-                            }
-                            jObject = jobj;
-                        }
-                        str = jObject.ToString();
+                        str = JsonConvert.SerializeObject(obj, Formatting.Indented, jsonSetting);
                     }
                 }
-                catch (Exception ex)
+                else
                 {
-                    Ex = ex.ToString();
+                    if (noNull)
+                    {
+                        str = JsonConvert.SerializeObject(obj, Formatting.None, jsonSetting_null);
+                    }
+                    else
+                    {
+                        str = JsonConvert.SerializeObject(obj, Formatting.None, jsonSetting);
+                    }
+                }
+
+                if (str.Contains("__dict__"))
+                {
+                    var jObject = new JObject();
+                    if (str.Contains("data"))
+                    {
+                        jObject = JObject.FromObject(obj);
+                        var token = jObject["data"]["__dict__"];
+                        jObject["data"] = token;
+
+                    }
+                    else
+                    {
+                        jObject = JObject.FromObject(obj);
+                        var token = jObject["__dict__"];
+                        jObject = (JObject)token;
+                    }
+
+                    if (!format)
+                    {
+                        var jobj = new JObject();
+                        foreach (var o in jObject)
+                        {
+                            var value = o.Value;
+                            if (value != null)
+                            {
+                                jobj.Add(o.Key, value);
+                            }
+                        }
+                        jObject = jobj;
+                    }
+                    str = jObject.ToString();
                 }
             }
             return str;
@@ -169,24 +162,17 @@ namespace System
             Type type = obj.GetType();
             MemoryStream stream = new MemoryStream();
             XmlSerializer xml = new XmlSerializer(type);
-            try
-            {
-                //序列化对象
-                XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
-                ns.Add("", "");  //清除前缀和命名空间
-                xml.Serialize(stream, obj, ns);
-                stream.Position = 0;
-                StreamReader sr = new StreamReader(stream);
-                string str = sr.ReadToEnd();
-                sr.Dispose();
-                stream.Dispose();
-                return str;
-            }
-            catch (Exception ex)
-            {
-                Ex = ex.ToString();
-                return string.Empty;
-            }
+
+            //序列化对象
+            XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+            ns.Add("", "");  //清除前缀和命名空间
+            xml.Serialize(stream, obj, ns);
+            stream.Position = 0;
+            StreamReader sr = new StreamReader(stream);
+            string str = sr.ReadToEnd();
+            sr.Dispose();
+            stream.Dispose();
+            return str;
         }
 
         /// <summary>
@@ -328,40 +314,26 @@ namespace System
             else if (obj is IEnumerable<object> ls)
             {
                 var txt = "";
-                try
+                foreach (var o in ls)
                 {
-                    foreach (var o in ls)
-                    {
-                        var name = o.GetType().Name;
-                        var str = SerializerB(o);
-                        txt += "\r" + string.Format("<{0}>{1}</{2}>", name, str, name);
-                    }
-                    return txt + "\r";
+                    var name = o.GetType().Name;
+                    var str = SerializerB(o);
+                    txt += "\r" + string.Format("<{0}>{1}</{2}>", name, str, name);
                 }
-                catch
-                {
-                    return "";
-                }
+                return txt + "\r";
             }
             else if (obj is JArray jarr)
             {
                 var txt = "";
-                try
+                foreach (var o in jarr)
                 {
-                    foreach (var o in jarr)
-                    {
-                        var name = o.GetType().Name;
-                        var str = SerializerB(o);
-                        txt += "\r" + string.Format("<{0}>{1}</{2}>", name, str, name);
-                    }
-                    return txt + "\r";
+                    var name = o.GetType().Name;
+                    var str = SerializerB(o);
+                    txt += "\r" + string.Format("<{0}>{1}</{2}>", name, str, name);
                 }
-                catch
-                {
-                    return "";
-                }
+                return txt + "\r";
             }
-            try
+            else
             {
                 PropertyInfo[] ps = type.GetProperties();  //获取所有属性
                 foreach (PropertyInfo p in ps)
@@ -373,12 +345,42 @@ namespace System
                     }
                 }
             }
-            catch (Exception ex)
-            {
-                Ex = ex.Message;
-            }
             return ret;
         }
         #endregion
+
+        /// <summary>
+        /// 序列化对象
+        /// </summary>
+        /// <param name="obj">对象</param>
+        /// <returns>返回Json数组</returns>
+        public static JArray ToJArr(this object obj)
+        {
+            if (obj is string)
+            {
+                return JArray.Parse(obj.ToString());
+            }
+            else
+            {
+                return JArray.FromObject(obj);
+            }
+        }
+
+        /// <summary>
+        /// 序列化对象
+        /// </summary>
+        /// <param name="obj">对象</param>
+        /// <returns>返回Json数组</returns>
+        public static JObject ToJObj(this object obj)
+        {
+            if (obj is string)
+            {
+                return JObject.Parse(obj.ToString());
+            }
+            else
+            {
+                return JObject.FromObject(obj);
+            }
+        }
     }
 }

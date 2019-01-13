@@ -5,9 +5,10 @@ using System.Text;
 namespace MM.Helper.System
 {
     /// <summary>
-    /// 文件帮助类
+    /// 目录帮助类
     /// </summary>
-    public class File
+    public class Dir
     {
+        public Add
     }
 }

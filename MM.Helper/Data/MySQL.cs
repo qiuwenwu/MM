@@ -1,4 +1,4 @@
-﻿namespace MM.Helper.Data
+﻿namespace MM.Helper.Dat
 {
     /// <summary>
     /// Mysql数据库帮助类

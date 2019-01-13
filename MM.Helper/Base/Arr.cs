@@ -306,7 +306,6 @@ namespace MM.Helper.Base
         {
             return list.Count();
         }
-
         #endregion
     }
 }

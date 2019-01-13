@@ -1,4 +1,4 @@
-﻿namespace MM.Helper.Base
+﻿namespace MM.Helper.AI
 {
     /// <summary>
     /// 分词帮助类

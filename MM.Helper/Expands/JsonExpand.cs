@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 
 namespace Newtonsoft.Json.Linq
 {
@@ -22,7 +23,7 @@ namespace Newtonsoft.Json.Linq
         /// </summary>
         /// <param name="jtk">原Json数组</param>
         /// <returns>返回改变后的Json数组</returns>
-        public static JArray ToArr(this object jtk)
+        public static JArray ChangeJArr(this object jtk)
         {
             var jarr = (JArray)jtk;
             for (var i = 0; i < jarr.Count; i++)
