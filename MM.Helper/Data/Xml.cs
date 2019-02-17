@@ -18,6 +18,11 @@ namespace MM.Helper.Data
     /// </summary>
     public class Xml
     {
+        /// <summary>
+        /// 当前路径
+        /// </summary>
+        public string Dir { get; set; } = "";
+
         private readonly XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
 
         /// <summary>
@@ -37,7 +42,7 @@ namespace MM.Helper.Data
         /// <returns>返回xml对象</returns>
         public XElement Load(string file)
         {
-            return XElement.Load(file);
+            return XElement.Load(file.ToFullName(Dir));
         }
 
         /// <summary>
@@ -47,7 +52,18 @@ namespace MM.Helper.Data
         ///  <param name="xml">xml对象</param>
         public void Save(string file, XElement xml)
         {
-            xml.Save(file);
+            xml.Save(file.ToFullName(Dir));
+        }
+
+        /// <summary>
+        /// 保存xml文件
+        /// </summary>
+        /// <param name="file">文件名</param>
+        /// <param name="xmlStr">xml字符串</param>
+        public void Save(string file, string xmlStr)
+        {
+            var xml = ToXmlS(xmlStr);
+            xml.Save(file.ToFullName(Dir));
         }
 
         /// <summary>

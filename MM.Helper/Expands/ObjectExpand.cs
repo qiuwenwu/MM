@@ -35,6 +35,10 @@ namespace System
             string str = "{}";
             if (obj != null)
             {
+                if (obj is string)
+                {
+                    return str;
+                }
                 if (format)
                 {
                     if (noNull)
@@ -98,24 +102,81 @@ namespace System
         /// 转为强名称对象
         /// </summary>
         /// <typeparam name="T">泛型</typeparam>
-        /// <param name="obj">原对象</param>
+        /// <param name="str">字符串</param>
         /// <returns>返回强名称对象</returns>
-        public static T ToObj<T>(this object obj)
+        public static T ToObj<T>(this string str)
         {
-            var name = obj.GetType().Name.ToLower();
-            if (name == "jobject" || name == "jtoken" || name == "jarray")
-            {
-                var jsonStr = obj.ToString();
-                return JsonConvert.DeserializeObject<T>(jsonStr);
+            return JsonConvert.DeserializeObject<T>(str);
+        }
+
+        /// <summary>
+        /// 转为强名称对象
+        /// </summary>
+        /// <typeparam name="T">泛型</typeparam>
+        /// <param name="jToken">Json Token对象</param>
+        /// <returns>返回强名称对象</returns>
+        public static T ToObj<T>(this JToken jToken)
+        {
+            return JsonConvert.DeserializeObject<T>(jToken.ToString());
+        }
+
+        /// <summary>
+        /// 转为强名称对象
+        /// </summary>
+        /// <typeparam name="T">泛型</typeparam>
+        /// <param name="jarr">json数组</param>
+        /// <returns>返回强名称对象</returns>
+        public static T ToObj<T>(this JArray jarr)
+        {
+            return JsonConvert.DeserializeObject<T>(jarr.ToString());
+        }
+
+        /// <summary>
+        /// 转为强名称对象
+        /// </summary>
+        /// <typeparam name="T">泛型</typeparam>
+        /// <param name="jobj">json对象</param>
+        /// <returns>返回强名称对象</returns>
+        public static T ToObj<T>(this JObject jobj)
+        {
+            return JsonConvert.DeserializeObject<T>(jobj.ToString());
+        }
+
+        /// <summary>
+        /// 转为强名称对象
+        /// </summary>
+        /// <typeparam name="T">泛型</typeparam>
+        /// <param name="dict">字典</param>
+        /// <returns>返回强名称对象</returns>
+        public static T ToObj<T>(this Dictionary<string, object> dict) where T : new()
+        {
+            var obj = new T();
+            var tp = obj.GetType();
+            var ps = tp.GetProperties();
+            foreach (var o in ps) {
+                var key = o.Name;
+                if (dict.ContainsKey(key)) {
+                    o.SetValue(obj, dict[key]);
+                }
             }
-            else if (name == "string")
+            return obj;
+        }
+
+        /// <summary>
+        /// 转为字典
+        /// </summary>
+        /// <param name="obj">对象</param>
+        /// <returns>返回强名称对象</returns>
+        public static Dictionary<string, object> ToDict(this object obj)
+        {
+            Dictionary<string, object> dict = new Dictionary<string, object>();
+            var tp = obj.GetType();
+            var ps = tp.GetProperties();
+            foreach (var o in ps)
             {
-                return JsonConvert.DeserializeObject<T>(obj.ToString());
+                dict.Add(o.Name, o.GetValue(obj));
             }
-            else
-            {
-                return (T)obj;
-            }
+            return dict;
         }
 
         /// <summary>
@@ -380,6 +441,40 @@ namespace System
             else
             {
                 return JObject.FromObject(obj);
+            }
+        }
+
+        /// <summary>
+        /// 序列化对象
+        /// </summary>
+        /// <param name="obj">对象</param>
+        /// <returns>返回Json数组</returns>
+        public static List<T> ToArr<T>(this object obj)
+        {
+            if (obj is string)
+            {
+                return obj.ToString().ToObj<List<T>>();
+            }
+            else
+            {
+                return JArray.FromObject(obj).ToObj<List<T>>();
+            }
+        }
+
+        /// <summary>
+        /// 序列化对象
+        /// </summary>
+        /// <param name="obj">对象</param>
+        /// <returns>返回Json数组</returns>
+        public static List<object> ToArr(this object obj)
+        {
+            if (obj is string)
+            {
+                return obj.ToString().ToObj<List<object>>();
+            }
+            else
+            {
+                return JArray.FromObject(obj).ToObj<List<object>>();
             }
         }
     }

@@ -9,6 +9,15 @@ namespace MM.Helper.Base
     public class Time
     {
         /// <summary>
+        /// 获取当前时间
+        /// </summary>
+        /// <returns>返回当前时间</returns>
+        public DateTime Now()
+        {
+            return DateTime.Now;
+        }
+
+        /// <summary>
         /// 取当前时间的UNIX时间戳
         /// </summary>
         /// <returns>UNIX时间戳</returns>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MM.Helper.Interfaces
+namespace MM.Helper.Data
 {
     /// <summary>
     /// 配置类接口

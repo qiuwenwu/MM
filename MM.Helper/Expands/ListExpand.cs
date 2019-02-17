@@ -95,6 +95,7 @@ namespace System.Collections.Generic
         {
             object value = null;
             var ps = o.GetType().GetProperties();
+            key = key.ToLower();
             foreach (var p in ps)
             {
                 if (p.Name.ToLower() == key)
@@ -162,8 +163,7 @@ namespace System.Collections.Generic
         public static bool Set<T>(this List<T> list, string key, T m)
         {
             var bl = false;
-            var tp = m.GetType().GetProperty(key);
-            var value = tp.GetValue(m);
+            var value = GetValue(m, key);
             for (var i = 0; i < list.Count; i++)
             {
                 var o = list[i];
@@ -188,8 +188,7 @@ namespace System.Collections.Generic
         public static bool SetFirst<T>(this List<T> list, string key, T m)
         {
             var bl = false;
-            var tp = m.GetType().GetProperty(key);
-            var value = tp.GetValue(m);
+            var value = GetValue(m, key);
             for (var i = 0; i < list.Count; i++)
             {
                 var o = list[i];
@@ -288,6 +287,20 @@ namespace System.Collections.Generic
         }
 
         /// <summary>
+        /// 追加对象（通过列表方式）
+        /// </summary>
+        /// <typeparam name="T">泛型</typeparam>
+        /// <param name="list">当前列表</param>
+        /// <param name="list_new">追加列表</param>
+        public static void Add<T>(this List<T> list, IEnumerable<T> list_new)
+        {
+            foreach (var o in list_new)
+            {
+                list.Add(o);
+            }
+        }
+
+        /// <summary>
         /// 判断值是否已存在
         /// </summary>
         /// <typeparam name="T">泛型</typeparam>
@@ -303,7 +316,7 @@ namespace System.Collections.Generic
                 var obj = GetValue(o, key);
                 if (obj == value)
                 {
-                    bl = false;
+                    bl = true;
                     break;
                 }
             }

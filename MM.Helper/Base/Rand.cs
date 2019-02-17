@@ -11,7 +11,7 @@ namespace MM.Helper.Base
     {
         #region 
         //随机数对象
-        private Random _random = new Random(DateTime.Now.Millisecond);
+        private Random _Random = new Random(DateTime.Now.Millisecond);
 
         /// <summary>
         /// 错误提示
@@ -25,7 +25,7 @@ namespace MM.Helper.Base
         /// <param name="maxNum">最大值</param>
         public int Int(int minNum = 1, int maxNum = 999999)
         {
-            return _random.Next(minNum, maxNum);
+            return _Random.Next(minNum, maxNum);
         }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace MM.Helper.Base
         /// </summary>
         public double Double()
         {
-            return _random.NextDouble();
+            return _Random.NextDouble();
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace MM.Helper.Base
 
             for (var i = 0; i < length; i++)
             {
-                var idx = _random.Next(0, max);
+                var idx = _Random.Next(0, max);
                 ret += symbol + arr[idx];
             }
 
@@ -94,7 +94,7 @@ namespace MM.Helper.Base
         /// <returns>返回一个数字</returns>
         public int Num(int min, int max)
         {
-            return _random.Next(min, max + 1);
+            return _Random.Next(min, max + 1);
         }
 
         /// <summary>
@@ -105,11 +105,11 @@ namespace MM.Helper.Base
         public int Num(int length)
         {
             string str = "";
-            str += _random.Next(1, 9);
+            str += _Random.Next(1, 9);
             var len = length - 1;
             while (str.Length < len)
             {
-                str += _random.Next(0, 9);
+                str += _Random.Next(0, 9);
             }
             return int.Parse(str);
         }
@@ -130,11 +130,11 @@ namespace MM.Helper.Base
                     return -1;
                 }
                 string str = "";
-                str += _random.Next(1, 9);
+                str += _Random.Next(1, 9);
                 var len = length - 1;
                 while (str.Length < len)
                 {
-                    var o = _random.Next(0, 9).ToString();
+                    var o = _Random.Next(0, 9).ToString();
                     if (!str.Contains(o))
                     {
                         str += o;
@@ -165,7 +165,7 @@ namespace MM.Helper.Base
             var bl = true;
             while(bl)
             {
-                int num = _random.Next(0, max);
+                int num = _Random.Next(0, max);
                 if (!str.Contains(num.ToString()))
                 {
                     str += num;
@@ -224,7 +224,7 @@ namespace MM.Helper.Base
         /// <returns></returns>
         public string Coin()
         {
-            int o = _random.Next(1, 2);
+            int o = _Random.Next(1, 2);
             string ret = string.Empty;
             switch (o)
             {
@@ -244,7 +244,7 @@ namespace MM.Helper.Base
         /// <returns></returns>
         public string RPS()
         {
-            int o = _random.Next(0, 3);
+            int o = _Random.Next(0, 3);
             string ret = string.Empty;
             switch (o)
             {
@@ -268,7 +268,7 @@ namespace MM.Helper.Base
         /// <returns>返回一张扑克</returns>
         public string Poker(int max = 52)
         {
-            var text = new Number();
+            var text = new Num();
             return text.ToPoker(Num(max));
         }
 
@@ -297,7 +297,7 @@ namespace MM.Helper.Base
         /// </summary>
         /// <param name="min">最小数</param>
         /// <param name="max">最大数</param>
-        /// <returns></returns>
+        /// <returns>返回洗牌后的列表</returns>
         public List<int> Upset(int min, int max = 54)
         {
             var list = new List<int> ();
@@ -305,6 +305,15 @@ namespace MM.Helper.Base
                 list.Add(i);
             }
             return Arr(list);
+        }
+
+        /// <summary>
+        /// 随机标签
+        /// </summary>
+        /// <param name="head">请求头</param>
+        /// <returns>返回标签</returns>
+        public string Tag(string head) {
+            return head + DateTime.Now.ToStamp() + "_" + _Random.Next(0, 9999);
         }
     }
 }

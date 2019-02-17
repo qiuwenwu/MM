@@ -19,9 +19,9 @@
                 foreach (var o in dict2)
                 {
                     var key = o.Key;
-                    if (dict1.ContainsKey(key))
+                    if (!dict1.ContainsKey(key))
                     {
-                        dict1[key] = o.Value;
+                        dict1.Add(key, o.Value);
                     }
                 }
             }
@@ -47,9 +47,9 @@
         /// <summary>
         /// 右合并 —— 返回右边所有及左边独有的
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="dict1"></param>
-        /// <param name="dict2"></param>
+        /// <typeparam name="T">泛型</typeparam>
+        /// <param name="dict1">字典1</param>
+        /// <param name="dict2">字典2</param>
         /// <returns>返回新字典</returns>
         public static Dictionary<string, T> Right<T>(this Dictionary<string, T> dict1, Dictionary<string, T> dict2)
         {
@@ -100,6 +100,25 @@
             else
             {
                 dict1.Add(key, m);
+            }
+        }
+
+        /// <summary>
+        /// 获取值
+        /// </summary>
+        /// <typeparam name="T">泛型</typeparam>
+        /// <param name="dt">字典</param>
+        /// <param name="key">键</param>
+        /// <returns>返回值</returns>
+        public static T Get<T>(this Dictionary<string, T> dt, string key)
+        {
+            if (dt.ContainsKey(key))
+            {
+                return dt[key];
+            }
+            else
+            {
+                return default(T);
             }
         }
     }

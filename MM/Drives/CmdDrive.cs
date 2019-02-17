@@ -1,9 +1,9 @@
 ﻿namespace MM.Drives
 {
     /// <summary>
-    /// 事件驱动器
+    /// 指令驱动
     /// </summary>
-    public class CmdDrive
+    public class CmdDrive : Drive
     {
     }
 }

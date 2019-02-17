@@ -233,6 +233,20 @@ namespace MM.Helper.Base
         }
 
         /// <summary>
+        /// 追加对象（通过列表方式）
+        /// </summary>
+        /// <typeparam name="T">泛型</typeparam>
+        /// <param name="list">当前列表</param>
+        /// <param name="list_new">追加列表</param>
+        public void Add<T>(List<T> list, IEnumerable<T> list_new)
+        {
+            foreach (var o in list_new)
+            {
+                list.Add(o);
+            }
+        }
+
+        /// <summary>
         /// 判断值是否已存在
         /// </summary>
         /// <typeparam name="T">泛型</typeparam>
@@ -258,14 +272,14 @@ namespace MM.Helper.Base
         }
 
         /// <summary>
-        /// 获取前几个集合
+        /// 获取前几个成员
         /// </summary>
         /// <param name="list">列表1</param>
-        /// <param name="index">索引</param>
+        /// <param name="num">获取数</param>
         /// <returns>返回交集列表</returns>
-        public List<T> Take<T>(IEnumerable<T> list, int index)
+        public List<T> Take<T>(IEnumerable<T> list, int num)
         {
-            return list.Take(index).ToList();
+            return list.Take(num).ToList();
         }
 
         /// <summary>

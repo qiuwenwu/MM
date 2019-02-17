@@ -17,7 +17,7 @@ namespace MM.Helper.Data
         private static extern int GetPrivateProfileString(string section, string key, string def, byte[] retVal, int size, string filePath);
 
         /// <summary>
-        /// 定点路径
+        /// 当前路径
         /// </summary>
         public string Dir      { get; set; } = "";
 
