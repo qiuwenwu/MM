@@ -23,9 +23,9 @@ namespace MM.Configs
         /// </summary>
         public void Change()
         {
-            Info.Name = Info.Name.ToLower();
             Info.App = Info.App.ToLower();
             Info.Type = Info.Type.ToLower();
+            Info.Name = Info.Name.ToLower();
             if (Info.Dir == null && Script != null)
             {
                 Info.Dir = Script.File.ToDir();

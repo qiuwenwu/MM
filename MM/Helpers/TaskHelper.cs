@@ -8,7 +8,7 @@ namespace MM.Helpers
     /// <summary>
     /// 任务帮助类
     /// </summary>
-    public class TaskHelper
+    public class TaskHelper : Helper
     {
         private ConcurrentDictionary<string, Timer> _TimerDt = new ConcurrentDictionary<string, Timer>();
 

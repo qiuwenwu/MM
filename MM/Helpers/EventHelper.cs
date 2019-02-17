@@ -8,7 +8,7 @@ namespace MM.Helpers
     /// <summary>
     /// 事件帮助类
     /// </summary>
-    public class EventHelper
+    public class EventHelper : Helper
     {
         /// <summary>
         /// 构造函数

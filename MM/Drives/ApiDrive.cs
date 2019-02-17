@@ -6,23 +6,23 @@ namespace MM.Drives
     /// <summary>
     /// 接口驱动
     /// </summary>
-    public class ApiDrive : Drive
+    public class ApiDrive
     {
         #region 标配
         /// <summary>
         /// 完全匹配API配置字典
         /// </summary>
-        public Dictionary<string, ApiConfig> AllDt { get; set; } = new Dictionary<string, ApiConfig>();
+        public Dictionary<string, ApiConfig> AllDict   { get; set; } = new Dictionary<string, ApiConfig>();
 
         /// <summary>
         /// 前缀匹配API配置字典
         /// </summary>
-        public Dictionary<string, ApiConfig> StartDt { get; set; } = new Dictionary<string, ApiConfig>();
+        public Dictionary<string, ApiConfig> StartDict { get; set; } = new Dictionary<string, ApiConfig>();
 
         /// <summary>
         /// 正则匹配API配置字典
         /// </summary>
-        public Dictionary<string, ApiConfig> ConfigDt { get; set; } = new Dictionary<string, ApiConfig>();
+        public Dictionary<string, ApiConfig> RegexDict { get; set; } = new Dictionary<string, ApiConfig>();
 
         /// <summary>
         /// 设置接口
@@ -31,7 +31,7 @@ namespace MM.Drives
         public void Set(ApiConfig m)
         {
             m.Change();
-            ConfigDt.AddOrSet(m.Path, m);
+            RegexDict.AddOrSet(m.Path, m);
         }
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace MM.Drives
         /// <param name="key">接口键</param>
         public bool Del(string key)
         {
-            return ConfigDt.Remove(key);
+            return RegexDict.Remove(key);
         }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace MM.Drives
         /// <param name="key">接口键</param>
         public ApiConfig Get(string key)
         {
-            return ConfigDt.Get(key);
+            return RegexDict.Get(key);
         }
 
         /// <summary>
