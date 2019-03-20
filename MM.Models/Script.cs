@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace MM.Models
+namespace MM.Common
 {
     /// <summary>
     /// 脚本模型

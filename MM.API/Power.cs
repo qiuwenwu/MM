@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace MM.Common
+namespace MM.API
 {
     /// <summary>
     /// 权限模型

@@ -1,5 +1,4 @@
-﻿using MM.Models;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
 namespace MM.Common

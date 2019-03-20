@@ -14,7 +14,6 @@ namespace MM.Event
         /// </summary>
         public Helper()
         {
-
         }
 
         /// <summary>
