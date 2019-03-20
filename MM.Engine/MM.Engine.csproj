@@ -193,7 +193,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Libs\Common.cs" />
-    <Compile Include="EngineHelper.cs" />
+    <Compile Include="Index.cs" />
     <Compile Include="Engine\CS.cs" />
     <Compile Include="Libs\Dict.cs" />
     <Compile Include="Libs\MmTemplateManager.cs" />

@@ -15,6 +15,6 @@ namespace MM.Engine
         /// <summary>
         /// 脚本引擎
         /// </summary>
-        public EngineHelper Engine = new EngineHelper();
+        public Index Engine = new Index();
     }
 }

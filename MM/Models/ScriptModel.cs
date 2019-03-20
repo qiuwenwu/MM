@@ -25,7 +25,7 @@ namespace MM.Models
         /// <summary>
         /// 脚本引擎
         /// </summary>
-        private static EngineHelper Engine = new EngineHelper();
+        private static Index Engine = new Index();
 
         /// <summary>
         /// 运行API

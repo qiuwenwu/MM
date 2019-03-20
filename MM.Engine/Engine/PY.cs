@@ -221,7 +221,7 @@ namespace MM.Engine
             {
                 var scope = Eng.CreateScope();
                 scope.SetVariable("Cache", new Cache());
-                var Engine = new EngineHelper
+                var Engine = new Index
                 {
                     Dir = Path.GetDirectoryName(file) + "\\"
                 };
@@ -272,7 +272,7 @@ namespace MM.Engine
             {
                 var scope = Eng.CreateScope();
                 scope.SetVariable("Cache", new Cache());
-                var Engine = new EngineHelper
+                var Engine = new Index
                 {
                     Dir = _Dir
                 };
@@ -325,7 +325,7 @@ namespace MM.Engine
             {
                 var scope = Eng.CreateScope();
                 scope.SetVariable("Cache", new Cache());
-                var Engine = new EngineHelper
+                var Engine = new Index
                 {
                     Dir = Path.GetDirectoryName(file) + "\\"
                 };

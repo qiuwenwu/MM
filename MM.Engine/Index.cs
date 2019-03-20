@@ -3,7 +3,7 @@
     /// <summary>
     /// 脚本引擎帮助类
     /// </summary>
-    public class EngineHelper
+    public class Index
     {
         /// <summary>
         /// 当前目录

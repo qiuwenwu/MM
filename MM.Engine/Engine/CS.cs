@@ -248,7 +248,7 @@ namespace MM.Engine
                 if (scope != null)
                 {
                     scope.SetValue("Cache", new Cache());
-                    var Engine = new EngineHelper
+                    var Engine = new Index
                     {
                         Dir = _Dir
                     };
@@ -313,7 +313,7 @@ namespace MM.Engine
                 if (scope != null)
                 {
                     scope.SetValue("Cache", new Cache());
-                    var Engine = new EngineHelper
+                    var Engine = new Index
                     {
                         Dir = _Dir
                     };
@@ -381,7 +381,7 @@ namespace MM.Engine
                 if (scope != null)
                 {
                     scope.SetValue("Cache", new Cache());
-                    var Engine = new EngineHelper
+                    var Engine = new Index
                     {
                         Dir = _Dir
                     };

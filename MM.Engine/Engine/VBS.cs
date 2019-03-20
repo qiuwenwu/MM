@@ -237,7 +237,7 @@ namespace MM.Engine
                 };
                 Eng.AddHostType("Console", typeof(Console));
                 Eng.AddHostObject("Cache", new Cache());
-                var Engine = new EngineHelper
+                var Engine = new Index
                 {
                     Dir = Path.GetDirectoryName(file) + "\\"
                 };
@@ -292,7 +292,7 @@ namespace MM.Engine
                 };
                 Eng.AddHostType("Console", typeof(Console));
                 Eng.AddHostObject("Cache", new Cache());
-                var Engine = new EngineHelper
+                var Engine = new Index
                 {
                     Dir = _Dir
                 };
@@ -349,7 +349,7 @@ namespace MM.Engine
                 };
                 Eng.AddHostType("Console", typeof(Console));
                 Eng.AddHostObject("Cache", new Cache());
-                var Engine = new EngineHelper
+                var Engine = new Index
                 {
                     Dir = Path.GetDirectoryName(file) + "\\"
                 };
