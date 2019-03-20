@@ -1,20 +1,16 @@
-﻿using MM.Configs;
-using System;
-using System.Collections.Concurrent;
-using System.IO;
-using System.Threading.Tasks;
+﻿using System.Collections.Concurrent;
 
-namespace MM.Helpers
+namespace MM.Plugin
 {
     /// <summary>
     /// 插件帮助类
     /// </summary>
-    public class PluginHelper : Helper
+    public class Helper
     {
         /// <summary>
         /// 构造函数
         /// </summary>
-        public PluginHelper()
+        public Helper()
         {
 
         }
@@ -23,7 +19,7 @@ namespace MM.Helpers
         /// 构造函数
         /// </summary>
         /// <param name="cg">配置模型</param>
-        public PluginHelper(PluginConfig cg)
+        public Helper(Config cg)
         {
             Set(cg);
         }
@@ -32,16 +28,16 @@ namespace MM.Helpers
         /// <summary>
         /// 事件帮助字典，通过事件名称驱动字典
         /// </summary>
-        public ConcurrentDictionary<string, PluginConfig> ConfigDict { get; set; } = new ConcurrentDictionary<string, PluginConfig>();
+        public ConcurrentDictionary<string, Config> ConfigDict { get; set; } = new ConcurrentDictionary<string, Config>();
 
         /// <summary>
         /// 获取插件配置
         /// </summary>
         /// <param name="name">事件名称</param>
         /// <returns>返回请求参数</returns>
-        public PluginConfig Get(string name)
+        public Config Get(string name)
         {
-            ConfigDict.TryGetValue(name, out PluginConfig m);
+            ConfigDict.TryGetValue(name, out Config m);
             return m;
         }
 
@@ -50,7 +46,7 @@ namespace MM.Helpers
         /// </summary>
         /// <param name="m">请求参数</param>
         /// <returns>设置成功返回true，是失败返回false</returns>
-        public bool Set(PluginConfig m)
+        public bool Set(Config m)
         {
             m.Change();
             return ConfigDict.AddOrUpdate(m.Info.Name, m, (key, value) => m) != null;
@@ -63,7 +59,7 @@ namespace MM.Helpers
         /// <returns>删除成功返回true，失败返回false</returns>
         public bool Del(string name)
         {
-            return ConfigDict.TryRemove(name, out PluginConfig m);
+            return ConfigDict.TryRemove(name, out Config m);
         }
         #endregion
 
@@ -383,4 +379,3 @@ namespace MM.Helpers
         }
         #endregion
     }
-}

@@ -1,9 +1,8 @@
-﻿using MM.Configs;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace MM.Helpers
+namespace MM.Event
 {
     /// <summary>
     /// 行为帮助类
@@ -19,9 +18,9 @@ namespace MM.Helpers
         /// 新建事件模型
         /// </summary>
         /// <returns>返回事件模型</returns>
-        public EventConfig New()
+        public Config New()
         {
-            return new EventConfig();
+            return new Config();
         }
 
 
@@ -29,16 +28,16 @@ namespace MM.Helpers
         /// <summary>
         /// 执行前事件字典
         /// </summary>
-        public Dictionary<string, EventConfig> BeforeDict { get; set; }
+        public Dictionary<string, Config> BeforeDict { get; set; }
 
         /// <summary>
         /// 获取执行前事件
         /// </summary>
         /// <param name="name">事件名称</param>
         /// <returns>返回执行前事件</returns>
-        public EventConfig GetBefore(string name)
+        public Config GetBefore(string name)
         {
-            BeforeDict.TryGetValue(name, out EventConfig m);
+            BeforeDict.TryGetValue(name, out Config m);
             return m;
         }
 
@@ -47,7 +46,7 @@ namespace MM.Helpers
         /// </summary>
         /// <param name="m">事件模型</param>
         /// <returns>设置成功返回true，是失败返回false</returns>
-        public void SetBefore(EventConfig m)
+        public void SetBefore(Config m)
         {
             BeforeDict.AddOrSet(m.Info.Name, m);
         }
@@ -103,16 +102,16 @@ namespace MM.Helpers
         /// <summary>
         /// 主执行事件字典
         /// </summary>
-        public Dictionary<string, EventConfig> MainDict { get; set; }
+        public Dictionary<string, Config> MainDict { get; set; }
 
         /// <summary>
         /// 获取主执行事件
         /// </summary>
         /// <param name="name">事件名称</param>
         /// <returns>返回主执行事件</returns>
-        public EventConfig GetMain(string name)
+        public Config GetMain(string name)
         {
-            MainDict.TryGetValue(name, out EventConfig m);
+            MainDict.TryGetValue(name, out Config m);
             return m;
         }
 
@@ -121,7 +120,7 @@ namespace MM.Helpers
         /// </summary>
         /// <param name="m">事件模型</param>
         /// <returns>设置成功返回true，是失败返回false</returns>
-        public void SetMain(EventConfig m)
+        public void SetMain(Config m)
         {
             MainDict.AddOrSet(m.Info.Name, m);
         }
@@ -178,16 +177,16 @@ namespace MM.Helpers
         /// <summary>
         /// 执行后事件字典
         /// </summary>
-        public Dictionary<string, EventConfig> AfterDict { get; set; }
+        public Dictionary<string, Config> AfterDict { get; set; }
 
         /// <summary>
         /// 获取执行后事件
         /// </summary>
         /// <param name="name">事件名称</param>
         /// <returns>返回执行后事件</returns>
-        public EventConfig GetAfter(string name)
+        public Config GetAfter(string name)
         {
-            AfterDict.TryGetValue(name, out EventConfig m);
+            AfterDict.TryGetValue(name, out Config m);
             return m;
         }
 
@@ -196,7 +195,7 @@ namespace MM.Helpers
         /// </summary>
         /// <param name="m">事件模型</param>
         /// <returns>设置成功返回true，是失败返回false</returns>
-        public void SetAfter(EventConfig m)
+        public void SetAfter(Config m)
         {
             AfterDict.AddOrSet(m.Info.Name, m);
         }
@@ -287,7 +286,7 @@ namespace MM.Helpers
         /// <param name="target">目标</param>
         /// <param name="ret">上一次执行结果</param>
         /// <returns>返回执行结果</returns>
-        private static object RunEvent(Dictionary<string, EventConfig> dict, string tag, string target, object ret = null)
+        private static object RunEvent(Dictionary<string, Config> dict, string tag, string target, object ret = null)
         {
             if (ret != null)
             {
@@ -331,9 +330,9 @@ namespace MM.Helpers
         /// <param name="name">事件名称</param>
         /// <param name="tense">时态</param>
         /// <returns>返回执行前事件</returns>
-        public List<EventConfig> Get(string name, string tense = null)
+        public List<Config> Get(string name, string tense = null)
         {
-            List<EventConfig> list = new List<EventConfig>();
+            List<Config> list = new List<Config>();
             if (string.IsNullOrEmpty(tense))
             {
                 var m_before = GetBefore(name);
@@ -354,7 +353,7 @@ namespace MM.Helpers
             }
             else
             {
-                EventConfig m = null;
+                Config m = null;
                 switch (tense.ToLower()) {
                     case "before":
                         m = GetBefore(name);
@@ -379,7 +378,7 @@ namespace MM.Helpers
         /// </summary>
         /// <param name="m">事件模型</param>
         /// <returns>设置成功返回true，是失败返回false</returns>
-        public void Set(EventConfig m)
+        public void Set(Config m)
         {
             if (string.IsNullOrEmpty(m.Tense))
             {

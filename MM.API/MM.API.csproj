@@ -4,4 +4,13 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MM.Common\MM.Common.csproj" />
+    <ProjectReference Include="..\MM.Helper\MM.Helper.csproj" />
+  </ItemGroup>
+
 </Project>

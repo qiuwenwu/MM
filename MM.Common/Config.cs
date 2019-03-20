@@ -1,22 +1,25 @@
 ﻿using MM.Models;
-using System;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
-namespace MM.Configs
+namespace MM.Common
 {
     /// <summary>
     /// 公共配置
     /// </summary>
-    public class ComConfig
+    public class Config
     {
         /// <summary>
         /// 信息
         /// </summary>
-        public InfoModel Info = new InfoModel();
+        [JsonProperty("info")]
+        public Info Info = new Info();
 
         /// <summary>
         /// 脚本
         /// </summary>
-        public ScriptModel Script { get; set; }
+        [JsonProperty("script")]
+        public Script Script { get; set; }
 
         /// <summary>
         /// 改变配置
@@ -28,8 +31,9 @@ namespace MM.Configs
             Info.Name = Info.Name.ToLower();
             if (Info.Dir == null && Script != null)
             {
-                Info.Dir = Script.File.ToDir();
+                Info.Dir = Script.File.ToStr();
             }
         }
     }
 }
+

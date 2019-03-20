@@ -1,31 +1,29 @@
-﻿using MM.Configs;
-using MM.Helpers;
-using System;
+﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace MM.Drives
+namespace MM.Event
 {
     /// <summary>
     /// 事件驱动
     /// </summary>
-    public class EventDrive : Drive
+    public class Drive : Common.Drive
     {
         #region 事件帮助类
         /// <summary>
         /// 事件帮助字典，通过事件类型驱动字典
         /// </summary>
-        public ConcurrentDictionary<string, EventHelper> Dict { get; set; } = new ConcurrentDictionary<string, EventHelper>();
+        public ConcurrentDictionary<string, Helper> Dict { get; set; } = new ConcurrentDictionary<string, Helper>();
 
         /// <summary>
         /// 获取事件帮助类
         /// </summary>
         /// <param name="app">应用名称</param>
         /// <returns>返回事件帮助类</returns>
-        public EventHelper Get(string app)
+        public Helper Get(string app)
         {
-            Dict.TryGetValue(app, out EventHelper m);
+            Dict.TryGetValue(app, out Helper m);
             return m;
         }
 
@@ -35,7 +33,7 @@ namespace MM.Drives
         /// <param name="app">应用名称</param>
         /// <param name="m">事件帮助类</param>
         /// <returns>设置成功返回true，是失败返回false</returns>
-        public bool Set(string app, EventHelper m)
+        public bool Set(string app, Helper m)
         {
             return Dict.AddOrUpdate(app, m, (key, value) => m) != null;
         }
@@ -47,7 +45,7 @@ namespace MM.Drives
         /// <returns>删除成功返回true，失败返回false</returns>
         public bool Del(string app)
         {
-            return Dict.TryRemove(app, out EventHelper m);
+            return Dict.TryRemove(app, out Helper m);
         }
         #endregion
 
@@ -61,9 +59,9 @@ namespace MM.Drives
         /// <param name="tense">时态</param>
         /// <param name="stage">阶段</param>
         /// <returns>返回执行前事件</returns>
-        public List<EventConfig> Get(string app, string name, string tense = null, string stage = null)
+        public List<Config> Get(string app, string name, string tense = null, string stage = null)
         {
-            List<EventConfig> list = new List<EventConfig>();
+            List<Config> list = new List<Config>();
             var e = Get(app);
             if (e != null)
             {
@@ -76,7 +74,7 @@ namespace MM.Drives
         /// 设置
         /// </summary>
         /// <param name="cg">字典配置</param>
-        public void Set(EventConfig cg)
+        public void Set(Config cg)
         {
             if (string.IsNullOrEmpty(cg.Info.App))
             {
@@ -86,7 +84,7 @@ namespace MM.Drives
             var app = cg.Info.App;
             if (!Dict.ContainsKey(app))
             {
-                Dict.TryAdd(app, new EventHelper(cg));
+                Dict.TryAdd(app, new Helper(cg));
             }
             if (Dict.TryGetValue(app, out var m))
             {
@@ -122,7 +120,7 @@ namespace MM.Drives
         /// <param name="file">文件名</param>
         public void Load(string file)
         {
-            var cg = Load<EventConfig>(file);
+            var cg = Load<Config>(file);
             Set(cg);
         }
 
@@ -134,7 +132,7 @@ namespace MM.Drives
         {
             foreach (var o in list)
             {
-                var cg = Load<EventConfig>(o);
+                var cg = Load<Config>(o);
                 Set(cg);
             }
         }
@@ -146,7 +144,7 @@ namespace MM.Drives
         public void EachLoad(string dir)
         {
             Dir = dir;
-            var list = EachLoad<EventConfig>();
+            var list = EachLoad<Config>();
             foreach (var cg in list)
             {
                 Set(cg);

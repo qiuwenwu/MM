@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MM.Check
+namespace MM.Task
 {
     public class Index
     {

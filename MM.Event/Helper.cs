@@ -1,19 +1,18 @@
-﻿using MM.Configs;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace MM.Helpers
+namespace MM.Event
 {
     /// <summary>
     /// 事件帮助类
     /// </summary>
-    public class EventHelper : Helper
+    public class Helper
     {
         /// <summary>
         /// 构造函数
         /// </summary>
-        public EventHelper()
+        public Helper()
         {
 
         }
@@ -22,9 +21,10 @@ namespace MM.Helpers
         /// 构造函数
         /// </summary>
         /// <param name="cg">事件配置</param>
-        public EventHelper(EventConfig cg)
+        public Helper(Config cg)
         {
-            if (cg != null) {
+            if (cg != null)
+            {
                 Set(cg);
             }
         }
@@ -32,12 +32,12 @@ namespace MM.Helpers
         /// <summary>
         /// 验证阶段
         /// </summary>
-        public ActionHelper CheckEvent  { get; set; } = new ActionHelper();
+        public ActionHelper CheckEvent { get; set; } = new ActionHelper();
 
         /// <summary>
         /// 执行阶段
         /// </summary>
-        public ActionHelper RunEvent    { get; set; } = new ActionHelper();
+        public ActionHelper RunEvent { get; set; } = new ActionHelper();
 
         /// <summary>
         /// 渲染阶段
@@ -149,9 +149,9 @@ namespace MM.Helpers
         /// <param name="tense">时态</param>
         /// <param name="stage">阶段</param>
         /// <returns>返回执行前事件</returns>
-        public List<EventConfig> Get(string name, string tense = null, string stage = null)
+        public List<Config> Get(string name, string tense = null, string stage = null)
         {
-            List<EventConfig> list = new List<EventConfig>();
+            List<Config> list = new List<Config>();
             if (string.IsNullOrEmpty(stage))
             {
                 list.Add(CheckEvent.Get(name, tense));
@@ -181,7 +181,7 @@ namespace MM.Helpers
         /// </summary>
         /// <param name="cg">事件配置模型</param>
         /// <returns>设置成功返回true，是失败返回false</returns>
-        public void Set(EventConfig cg)
+        public void Set(Config cg)
         {
             if (string.IsNullOrEmpty(cg.Stage))
             {

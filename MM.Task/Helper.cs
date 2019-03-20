@@ -1,17 +1,15 @@
-﻿using MM.Configs;
-using MM.Models;
+﻿using System;
 using System.Collections.Concurrent;
-using System.Timers;
+using System.Collections.Generic;
+using System.Text;
 
-namespace MM.Helpers
+namespace MM.Task
 {
     /// <summary>
     /// 任务帮助类
     /// </summary>
-    public class TaskHelper : Helper
+    public class Helper
     {
-        private ConcurrentDictionary<string, Timer> _TimerDt = new ConcurrentDictionary<string, Timer>();
-
         /// <summary>
         /// 应用名
         /// </summary>
@@ -20,7 +18,7 @@ namespace MM.Helpers
         /// <summary>
         /// 构造函数
         /// </summary>
-        public TaskHelper(string app = "")
+        public Helper(string app = "")
         {
             App = app;
         }
@@ -29,7 +27,7 @@ namespace MM.Helpers
         /// 构造函数
         /// </summary>
         /// <param name="cg">任务配置</param>
-        public TaskHelper(TaskConfig cg)
+        public Helper(Config cg)
         {
             App = cg.Info.App;
             Set(cg);
@@ -39,13 +37,13 @@ namespace MM.Helpers
         /// <summary>
         /// 任务配置字典
         /// </summary>
-        public ConcurrentDictionary<string, TaskConfig> ConfigDt { get; set; } = new ConcurrentDictionary<string, TaskConfig>();
+        public ConcurrentDictionary<string, Config> ConfigDt { get; set; } = new ConcurrentDictionary<string, Config>();
 
         /// <summary>
         /// 设置任务
         /// </summary>
         /// <param name="m">任务模型</param>
-        public bool Set(TaskConfig m)
+        public bool Set(Config m)
         {
             m.Change();
             return ConfigDt.AddOrUpdate(m.Info.Name, m, (key, value) => m) != null;
@@ -64,7 +62,7 @@ namespace MM.Helpers
         /// 获取任务
         /// </summary>
         /// <param name="key">任务键</param>
-        public TaskConfig Get(string key)
+        public Config Get(string key)
         {
             ConfigDt.TryGetValue(key, out var m);
             return m;
@@ -74,9 +72,9 @@ namespace MM.Helpers
         /// 新建任务
         /// </summary>
         /// <returns>返回任务模型</returns>
-        public TaskConfig New()
+        public Config New()
         {
-            return new TaskConfig();
+            return new Config();
         }
         #endregion
 
@@ -154,7 +152,7 @@ namespace MM.Helpers
         /// <summary>
         /// 加载
         /// </summary>
-        public void Load(TaskConfig cg)
+        public void Load(Config cg)
         {
             var tr = new Timer(cg.Sleep);
             var t = new TaskRuner(cg.Script);
@@ -201,13 +199,13 @@ namespace MM.Helpers
         /// <summary>
         /// 脚本模型
         /// </summary>
-        private ScriptModel _Script;
+        private Script _Script;
 
         /// <summary>
         /// 构造函数
         /// </summary>
         /// <param name="script">脚本模型</param>
-        public TaskRuner(ScriptModel script)
+        public TaskRuner(Script script)
         {
             _Script = script;
         }

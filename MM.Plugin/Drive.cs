@@ -1,30 +1,28 @@
-﻿using MM.Configs;
-using MM.Helpers;
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace MM.Drives
+namespace MM.Plugin
 {
     /// <summary>
     /// 插件驱动
     /// </summary>
-    public class PluginDrive : Drive
+    public class Drive : Common.Drive
     {
         #region 插件帮助类
         /// <summary>
         /// 插件帮助字典，通过插件类型驱动字典
         /// </summary>
-        public ConcurrentDictionary<string, PluginHelper> Dict { get; set; } = new ConcurrentDictionary<string, PluginHelper>();
+        public ConcurrentDictionary<string, Helper> Dict { get; set; } = new ConcurrentDictionary<string, Helper>();
 
         /// <summary>
         /// 获取插件帮助类
         /// </summary>
         /// <param name="app">应用名称</param>
         /// <returns>返回插件帮助类</returns>
-        public PluginHelper Get(string app)
+        public Helper Get(string app)
         {
-            Dict.TryGetValue(app, out PluginHelper m);
+            Dict.TryGetValue(app, out Helper m);
             return m;
         }
 
@@ -34,7 +32,7 @@ namespace MM.Drives
         /// <param name="app">应用名称</param>
         /// <param name="m">插件帮助类</param>
         /// <returns>设置成功返回true，是失败返回false</returns>
-        public bool Set(string app, PluginHelper m)
+        public bool Set(string app, Helper m)
         {
             return Dict.AddOrUpdate(app, m, (key, value) => m) != null;
         }
@@ -46,7 +44,7 @@ namespace MM.Drives
         /// <returns>删除成功返回true，失败返回false</returns>
         public bool Del(string app)
         {
-            return Dict.TryRemove(app, out PluginHelper m);
+            return Dict.TryRemove(app, out Helper m);
         }
         #endregion
 
@@ -58,7 +56,7 @@ namespace MM.Drives
         /// <param name="app">应用名称</param>
         /// <param name="name">插件名称</param>
         /// <returns>返回执行前插件</returns>
-        public PluginConfig Get(string app, string name)
+        public Config Get(string app, string name)
         {
             var e = Get(app);
             if (e != null)
@@ -75,7 +73,7 @@ namespace MM.Drives
         /// 设置
         /// </summary>
         /// <param name="cg">字典配置</param>
-        public void Set(PluginConfig cg)
+        public void Set(Config cg)
         {
             if (string.IsNullOrEmpty(cg.Info.App))
             {
@@ -85,7 +83,7 @@ namespace MM.Drives
             var app = cg.Info.App;
             if (!Dict.ContainsKey(app))
             {
-                Dict.TryAdd(app, new PluginHelper(cg));
+                Dict.TryAdd(app, new Helper(cg));
             }
             if (Dict.TryGetValue(app, out var m))
             {
@@ -119,7 +117,7 @@ namespace MM.Drives
         /// <param name="file">文件名</param>
         public void Load(string file)
         {
-            var cg = Load<PluginConfig>(file);
+            var cg = Load<Config>(file);
             Set(cg);
         }
 
@@ -131,7 +129,7 @@ namespace MM.Drives
         {
             foreach (var o in list)
             {
-                var cg = Load<PluginConfig>(o);
+                var cg = Load<Config>(o);
                 Set(cg);
             }
         }
@@ -143,7 +141,7 @@ namespace MM.Drives
         public void EachLoad(string dir)
         {
             Dir = dir;
-            var list = EachLoad<PluginConfig>();
+            var list = EachLoad<Config>();
             foreach (var cg in list)
             {
                 Set(cg);
