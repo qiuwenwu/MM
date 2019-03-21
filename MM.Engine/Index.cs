@@ -1,7 +1,9 @@
-﻿namespace MM.Engine
+﻿using MM.Helper.Infos;
+
+namespace MM.Engine
 {
     /// <summary>
-    /// 脚本引擎帮助类
+    /// 脚本引擎索引目录
     /// </summary>
     public class Index
     {
@@ -61,7 +63,7 @@
         }
 
         /// <summary>
-        /// 新建lua脚本引擎帮助类
+        /// 新建Razor脚本引擎帮助类
         /// </summary>
         /// <returns>返回帮助类</returns>
         public TPL TPL()
@@ -183,6 +185,15 @@
             var dyn = eng.Get(appName);
             Ex = eng.GetEx();
             return dyn;
+        }
+
+        /// <summary>
+        /// 查看版本信息
+        /// </summary>
+        /// <returns>返回版本信息模型</returns>
+        public static DllInfo Info()
+        {
+            return new DllInfo() { Name = "超级美眉系列——脚本引擎帮助类库" };
         }
     }
 }

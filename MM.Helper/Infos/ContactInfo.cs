@@ -24,5 +24,10 @@
         /// 个人网站
         /// </summary>
         public string Web    { get; set; } = "http://qww.elins.cn";
+
+        /// <summary>
+        /// 源码网址
+        /// </summary>
+        public string GitHub { get; set; } = "https://github.com/573242395";
     }
 }

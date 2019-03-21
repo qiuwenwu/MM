@@ -1,11 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MM.Crawler
+﻿namespace MM.Crawler
 {
-    public class Drive : Common.Drive
+    /// <summary>
+    /// 抓包驱动
+    /// </summary>
+    public class Drive
     {
+        /// <summary>
+        /// 检索文件拓展名
+        /// </summary>
+        public string Extension { get; set; }
+
         /// <summary>
         /// 构造函数
         /// </summary>

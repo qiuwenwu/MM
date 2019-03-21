@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net462</TargetFramework>
+    <TargetFramework>net461</TargetFramework>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -16,8 +16,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MM.API\MM.API.csproj" />
+    <ProjectReference Include="..\MM.Crawler\MM.Crawler.csproj" />
     <ProjectReference Include="..\MM.Engine\MM.Engine.csproj" />
+    <ProjectReference Include="..\MM.Event\MM.Event.csproj" />
     <ProjectReference Include="..\MM.Helper\MM.Helper.csproj" />
+    <ProjectReference Include="..\MM.Plugin\MM.Plugin.csproj" />
+    <ProjectReference Include="..\MM.SQL\MM.SQL.csproj" />
+    <ProjectReference Include="..\MM.Task\MM.Task.csproj" />
   </ItemGroup>
 
 </Project>

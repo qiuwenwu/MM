@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 namespace MM.API
 {
+    /// <summary>
+    /// API接口配置
+    /// </summary>
     public class Config : Common.Config
     {
         #region 常用属性

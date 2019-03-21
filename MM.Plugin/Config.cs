@@ -1,5 +1,8 @@
 ﻿namespace MM.Plugin
 {
+    /// <summary>
+    /// 插件配置
+    /// </summary>
     public class Config : Common.Config
     {
         /// <summary>

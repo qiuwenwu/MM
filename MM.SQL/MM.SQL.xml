@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MM.SQL</name>
+    </assembly>
+    <members>
+        <member name="T:MM.SQL.Config">
+            <summary>
+            数据库操作配置
+            </summary>
+        </member>
+        <member name="T:MM.SQL.Info">
+            <summary>
+            信息模型
+            </summary>
+        </member>
+        <member name="P:MM.SQL.Info.App">
+            <summary>
+            应用名称
+            </summary>
+        </member>
+        <member name="P:MM.SQL.Info.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:MM.SQL.Info.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:MM.SQL.Info.Desc">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:MM.SQL.Info.Group">
+            <summary>
+            分组
+            </summary>
+        </member>
+        <member name="P:MM.SQL.Info.Help">
+            <summary>
+            使用说明
+            </summary>
+        </member>
+        <member name="P:MM.SQL.Info.Dir">
+            <summary>
+            目录
+            </summary>
+        </member>
+        <member name="T:MM.SQL.Index">
+            <summary>
+            数据库边界操作索引目录
+            </summary>
+        </member>
+        <member name="M:MM.SQL.Index.Info">
+            <summary>
+            查看版本信息
+            </summary>
+            <returns>返回版本信息模型</returns>
+        </member>
+    </members>
+</doc>

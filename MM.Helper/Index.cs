@@ -10,7 +10,7 @@ using System.Reflection;
 namespace MM.Helper
 {
     /// <summary>
-    /// 索引目录
+    /// 常用帮助类索引目录
     /// </summary>
     public class Index
     {
@@ -265,7 +265,7 @@ namespace MM.Helper
         /// 查看版本信息
         /// </summary>
         /// <returns>返回版本信息模型</returns>
-        public DllInfo Info()
+        public static DllInfo Info()
         {
             return new DllInfo();
         }

@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MM.Crawler</name>
+    </assembly>
+    <members>
+        <member name="T:MM.Crawler.Config">
+            <summary>
+            抓包配置
+            </summary>
+        </member>
+        <member name="F:MM.Crawler.Config.Info">
+            <summary>
+            信息
+            </summary>
+        </member>
+        <member name="T:MM.Crawler.Info">
+            <summary>
+            信息模型
+            </summary>
+        </member>
+        <member name="P:MM.Crawler.Info.App">
+            <summary>
+            应用名称
+            </summary>
+        </member>
+        <member name="P:MM.Crawler.Info.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:MM.Crawler.Info.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:MM.Crawler.Info.Desc">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:MM.Crawler.Info.Group">
+            <summary>
+            分组
+            </summary>
+        </member>
+        <member name="P:MM.Crawler.Info.Help">
+            <summary>
+            使用说明
+            </summary>
+        </member>
+        <member name="P:MM.Crawler.Info.Dir">
+            <summary>
+            目录
+            </summary>
+        </member>
+        <member name="T:MM.Crawler.Drive">
+            <summary>
+            抓包驱动
+            </summary>
+        </member>
+        <member name="P:MM.Crawler.Drive.Extension">
+            <summary>
+            检索文件拓展名
+            </summary>
+        </member>
+        <member name="M:MM.Crawler.Drive.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:MM.Crawler.Helper">
+            <summary>
+            抓包帮助类
+            </summary>
+        </member>
+        <member name="T:MM.Crawler.Index">
+            <summary>
+            抓包索引目录
+            </summary>
+        </member>
+        <member name="M:MM.Crawler.Index.Info">
+            <summary>
+            查看版本信息
+            </summary>
+            <returns>返回版本信息模型</returns>
+        </member>
+    </members>
+</doc>

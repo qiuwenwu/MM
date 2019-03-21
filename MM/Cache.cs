@@ -1,4 +1,4 @@
-﻿using MM.Drives;
+﻿using System;
 
 namespace MM
 {
@@ -11,39 +11,30 @@ namespace MM
         /// 配置参数
         /// </summary>
         internal static Config _Config = new Config();
+
         /// <summary>
         /// 配置参数
         /// </summary>
-        public Config Config { get { return _Config; } set { _Config = value; } }
+        public Config Config           { get { return _Config; } set { _Config = value; } }
 
         /// <summary>
         /// 接口驱动
         /// </summary>
-        public ApiDrive Api       { get; set; } = new ApiDrive();
-
-        /// <summary>
-        /// 指令驱动
-        /// </summary>
-        public CmdDrive Cmd       { get; set; } = new CmdDrive();
-
-        /// <summary>
-        /// RPC指令驱动
-        /// </summary>
-        public RpcDrive Rpc       { get; set; } = new RpcDrive();
+        public API.Drive Api           { get; set; } = new API.Drive();
 
         /// <summary>
         /// 事件驱动
         /// </summary>
-        public EventDrive Event       { get; set; } = new EventDrive();
+        public Event.Drive Event       { get; set; } = new Event.Drive();
 
         /// <summary>
-        /// 插件驱动字典
+        /// 事件驱动
         /// </summary>
-        public Dictionary<string, PluginDrive> PluginDt { get; set; } = new Dictionary<string, PluginDrive>();
+        public Plugin.Drive Plugin     { get; set; } = new Plugin.Drive();
 
         /// <summary>
-        /// 任务驱动字典
+        /// 事件驱动
         /// </summary>
-        public Dictionary<string, TaskDrive> TaskDt     { get; set; } = new Dictionary<string, TaskDrive>();
+        public Task.Drive Task         { get; set; } = new Task.Drive();
     }
 }
