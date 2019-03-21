@@ -1,12 +1,9 @@
-﻿using CSScriptLibrary;
-using MM.Helper;
-using NLua;
+﻿using NLua;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace MM.Engine
@@ -16,9 +13,6 @@ namespace MM.Engine
     /// </summary>
     public class LUA : IEngine
     {
-        private static readonly string funContent = "public object funName(params object[] param) {\n" +
-    "   return Eng.GetFunction(\"funName\").Call(param)[0];" +
-    "\n}\n";
         private readonly string _Dir;
 
         #region 属性
@@ -123,7 +117,7 @@ namespace MM.Engine
         {
             if (!string.IsNullOrEmpty(appName))
             {
-                return dict.TryRemove(appName.Replace(Cache.runPath, ""), out var value);
+                return dict.TryRemove(appName.Replace(Cache.runPath, ""), out _);
             }
             return false;
         }
@@ -240,7 +234,7 @@ namespace MM.Engine
                 Lua Eng = new Lua();
                 Eng.LoadCLRPackage();
                 Eng["Cache"] = new Cache();
-                var Engine = new Index
+                var Engine = new Indexer
                 {
                     Dir = Path.GetDirectoryName(file) + "\\"
                 };
@@ -292,7 +286,7 @@ namespace MM.Engine
                 Lua Eng = new Lua();
                 Eng.LoadCLRPackage();
                 Eng["Cache"] = new Cache();
-                var Engine = new Index
+                var Engine = new Indexer
                 {
                     Dir = _Dir
                 };
@@ -346,28 +340,14 @@ namespace MM.Engine
                 Lua Eng = new Lua();
                 Eng.LoadCLRPackage();
                 Eng["Cache"] = new Cache();
-                var Engine = new Index
+                var Engine = new Indexer
                 {
                     Dir = Path.GetDirectoryName(file) + "\\"
                 };
                 Eng["Engine"] = Engine;
                 var code = File.ReadAllText(file, Encoding.UTF8);
                 Eng.DoFile(file);
-                var funs = "";
-                var ms = new Regex(@"function ([a-zA-Z0-9]+)\(").Matches(code);
-
-                for (var i = 0; i < ms.Count; i++)
-                {
-                    var funName = ms[i].Groups[1].Value;
-                    funs += funContent.Replace("funName", funName);
-                }
-                var codeCS = "using System;\npublic class ScriptLua : MM.Engine.NluaCommon\n{\n" + funs + "\n}";
-                dynamic dyn = CSScript.Evaluator.CompileCode(codeCS).CreateObject("*");
-                if (dyn != null)
-                {
-                    dyn.Eng = Eng;
-                    return dyn;
-                }
+                return Eng.Pop();
             }
             catch (Exception ex)
             {

@@ -15,25 +15,17 @@ namespace MM.Engine
     /// </summary>
     public class TPL
     {
-        /// <summary>
-        /// 缓存驱动
-        /// </summary>
-        private static MmCachingProvider cache = new MmCachingProvider();
-        private static FileSystemWatcher watcher = new FileSystemWatcher();
-        private static MmTemplateManager mg;
-
-        private static readonly Regex layoutEx = new Regex("Layout\\s*=\\s*@?\"(\\S*)\";");//匹配视图中的layout
 
         /// <summary>
         /// 模板主题风格
         /// </summary>
-        public string Theme { get { return Cache._Theme; } set { if (!string.IsNullOrEmpty(value)) { Cache._Theme = value; } } }
+        public string Theme { get { return System.Cache._Theme; } set { if (!string.IsNullOrEmpty(value)) { System.Cache._Theme = value; } } }
 
 
         /// <summary>
         /// 模板路径
         /// </summary>
-        public string Dir { get; set; } = Cache._Path.Template;
+        public string Dir { get; set; } = System.Cache._Path.Template;
 
         /// <summary>
         /// 错误信息
@@ -49,14 +41,14 @@ namespace MM.Engine
         {
             SetManager();
             //添加文件修改监控，以便在cshtml文件修改时重新编译该文件
-            watcher.Path = Cache._Path.Web;
-            watcher.IncludeSubdirectories = true;
-            watcher.Filter = "*.*html";
-            watcher.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName;
-            watcher.Created += new FileSystemEventHandler(OnChanged);
-            watcher.Changed += new FileSystemEventHandler(OnChanged);
-            watcher.Deleted += new FileSystemEventHandler(OnChanged);
-            watcher.EnableRaisingEvents = true;
+            Watcher.Path = System.Cache._Path.Web;
+            Watcher.IncludeSubdirectories = true;
+            Watcher.Filter = "*.*html";
+            Watcher.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName;
+            Watcher.Created += new FileSystemEventHandler(OnChanged);
+            Watcher.Changed += new FileSystemEventHandler(OnChanged);
+            Watcher.Deleted += new FileSystemEventHandler(OnChanged);
+            Watcher.EnableRaisingEvents = true;
 
             var config = new TemplateServiceConfiguration()
             {
@@ -64,17 +56,17 @@ namespace MM.Engine
                 Language = Language.CSharp,
                 EncodedStringFactory = new HtmlEncodedStringFactory(),
                 DisableTempFileLocking = true,
-                TemplateManager = mg,
+                TemplateManager = Mg,
                 BaseTemplateType = typeof(MmTemplateBase<>),
-                CachingProvider = cache
+                CachingProvider = Cache
             };
-            cache.InvalidateAll();
+            Cache.InvalidateAll();
             razor = RazorEngineService.Create(config);
         }
 
         private static void SetManager()
         {
-            mg = new MmTemplateManager(InFunc);
+            Mg = new MmTemplateManager(InFunc);
         }
 
         private static string InFunc(string arg)
@@ -90,7 +82,7 @@ namespace MM.Engine
         private static void OnChanged(object sender, FileSystemEventArgs e)
         {
             string key = e.FullPath.ToLower();
-            cache.InvalidateCache(key);
+            Cache.InvalidateCache(key);
         }
 
 
@@ -100,7 +92,7 @@ namespace MM.Engine
         /// </summary>
         public void ClearCache()
         {
-            cache.InvalidateAll();
+            Cache.InvalidateAll();
         }
 
         #region 视图背包
@@ -156,6 +148,11 @@ namespace MM.Engine
         /// 视图背包
         /// </summary>
         public DynamicViewBag ViewBag { get; set; } = new DynamicViewBag();
+
+        public static Regex LayoutEx { get; } = new Regex("Layout\\s*=\\s*@?\"(\\S*)\";");
+        public static MmCachingProvider Cache { get; set; } = new MmCachingProvider();
+        public static FileSystemWatcher Watcher { get; set; } = new FileSystemWatcher();
+        public static MmTemplateManager Mg { get; set; }
 
         /// <summary>
         /// 新建视图背包
@@ -242,7 +239,7 @@ namespace MM.Engine
             var ret = "";
             try
             {
-                var keyString = key.Replace(Cache.runPath, "");
+                var keyString = key.Replace(System.Cache.runPath, "");
                 ITemplateKey km = razor.GetKey(keyString);
                 var bl = razor.IsTemplateCached(km, tp);
                 if (bl)
@@ -341,8 +338,8 @@ namespace MM.Engine
         /// </summary>
         public void Dispose()
         {
-            cache.Dispose();
-            mg.Dispose();
+            Cache.Dispose();
+            Mg.Dispose();
         }
     }
 }

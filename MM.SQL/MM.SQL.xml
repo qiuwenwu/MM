@@ -49,12 +49,12 @@
             目录
             </summary>
         </member>
-        <member name="T:MM.SQL.Index">
+        <member name="T:MM.SQL.Indexer">
             <summary>
             数据库边界操作索引目录
             </summary>
         </member>
-        <member name="M:MM.SQL.Index.Info">
+        <member name="M:MM.SQL.Indexer.Info">
             <summary>
             查看版本信息
             </summary>

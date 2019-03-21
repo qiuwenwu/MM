@@ -1,5 +1,5 @@
-﻿using Microsoft.ClearScript.V8;
-using MM.Helper;
+﻿using JavaScriptEngineSwitcher.ChakraCore;
+using JavaScriptEngineSwitcher.Core;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -52,6 +52,21 @@ namespace MM.Engine
             {
                 _Dir = dir;
             }
+        }
+
+        public dynamic NewDyn(string code, string dir) {
+            var engineSwitcher = JsEngineSwitcher.Current;
+            engineSwitcher.EngineFactories.Add(new ChakraCoreJsEngineFactory());
+            engineSwitcher.DefaultEngineName = ChakraCoreJsEngine.EngineName;
+            var Eng = JsEngineSwitcher.Current.CreateDefaultEngine();
+            Eng.EmbedHostType("Console", typeof(Console));
+            Eng.EmbedHostObject("Cache", new Cache());
+            var Engine = new Indexer
+            {
+                Dir = dir
+            };
+            Eng.EmbedHostObject("Engine", Engine);
+            return Eng.Evaluate("return this");
         }
 
         /// <summary>
@@ -117,7 +132,7 @@ namespace MM.Engine
         {
             if (!string.IsNullOrEmpty(appName))
             {
-                return dict.TryRemove(appName.Replace(Cache.runPath, ""), out var value);
+                return dict.TryRemove(appName.Replace(Cache.runPath, ""), out _);
             }
             return false;
         }
@@ -231,19 +246,7 @@ namespace MM.Engine
             }
             try
             {
-                var Eng = new V8ScriptEngine
-                {
-                    EnableAutoHostVariables = true
-                };
-                Eng.AddHostType("Console", typeof(Console));
-                Eng.AddHostObject("Cache", new Cache());
-                var Engine = new Index
-                {
-                    Dir = Path.GetDirectoryName(file) + "\\"
-                };
-                Eng.AddHostObject("Engine", Engine);
-                Eng.Execute(File.ReadAllText(file, Encoding.UTF8));
-                var dyn = Eng.Script;
+                dynamic dyn = NewDyn(File.ReadAllText(file, Encoding.UTF8), Path.GetDirectoryName(file) + "\\");
                 if (param1 == null)
                 {
                     return dyn.Main(fun);
@@ -286,19 +289,7 @@ namespace MM.Engine
             }
             try
             {
-                var Eng = new V8ScriptEngine
-                {
-                    EnableAutoHostVariables = true
-                };
-                Eng.AddHostType("Console", typeof(Console));
-                Eng.AddHostObject("Cache", new Cache());
-                var Engine = new Index
-                {
-                    Dir = _Dir
-                };
-                Eng.AddHostObject("Engine", Engine);
-                Eng.Execute(code);
-                var dyn = Eng.Script;
+                dynamic dyn = NewDyn(code, _Dir);
                 if (param1 == null)
                 {
                     return dyn.Main(fun);
@@ -343,19 +334,7 @@ namespace MM.Engine
             }
             try
             {
-                var Eng = new V8ScriptEngine
-                {
-                    EnableAutoHostVariables = true
-                };
-                Eng.AddHostType("Console", typeof(Console));
-                Eng.AddHostObject("Cache", new Cache());
-                var Engine = new Index
-                {
-                    Dir = Path.GetDirectoryName(file) + "\\"
-                };
-                Eng.AddHostObject("Engine", Engine);
-                Eng.Execute(File.ReadAllText(file, Encoding.UTF8));
-                return Eng.Script;
+                return NewDyn(File.ReadAllText(file, Encoding.UTF8), Path.GetDirectoryName(file) + "\\");
             }
             catch (Exception ex)
             {
@@ -374,5 +353,9 @@ namespace MM.Engine
             dict.TryGetValue(appName, out dynamic dyn);
             return dyn;
         }
+    }
+
+    public class Export {
+        public object Main { get; set; }
     }
 }

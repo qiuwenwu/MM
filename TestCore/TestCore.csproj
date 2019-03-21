@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MM.Crawler\MM.Crawler.csproj" />
+    <ProjectReference Include="..\MM.Engine\MM.Engine.csproj" />
+    <ProjectReference Include="..\MM.Helper\MM.Helper.csproj" />
+    <ProjectReference Include="..\MM.SQL\MM.SQL.csproj" />
+  </ItemGroup>
+
+</Project>

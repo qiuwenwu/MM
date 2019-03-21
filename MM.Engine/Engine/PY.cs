@@ -1,6 +1,5 @@
 ﻿using IronPython.Hosting;
 using Microsoft.Scripting.Hosting;
-using MM.Helper;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -14,9 +13,9 @@ namespace MM.Engine
     /// <summary>
     /// 脚本引擎接口
     /// </summary>
-    public class PY
+    public class PY : IEngine
     {
-        private static ScriptEngine Eng = NewEngine();
+        private static readonly ScriptEngine Eng = NewEngine();
         private readonly string _Dir;
 
         #region 属性
@@ -120,9 +119,24 @@ namespace MM.Engine
         {
             if (!string.IsNullOrEmpty(appName))
             {
-                return dict.TryRemove(appName.Replace(Cache.runPath, ""), out var value);
+                return dict.TryRemove(appName.Replace(Cache.runPath, ""), out _);
             }
             return false;
+        }
+
+        /// <summary>
+        /// 卸载脚本
+        /// </summary>
+        /// <param name="appName">应用名称</param>
+        /// <param name="waitTime">等待时长，单位：毫秒</param>
+        /// <returns>卸载成功返回true，失败返回false</returns>
+        public void Unload(string appName, int waitTime)
+        {
+            var t = Task.Run(async delegate
+            {
+                await Task.Delay(waitTime);
+                Unload(appName);
+            });
         }
 
         /// <summary>
@@ -221,7 +235,7 @@ namespace MM.Engine
             {
                 var scope = Eng.CreateScope();
                 scope.SetVariable("Cache", new Cache());
-                var Engine = new Index
+                var Engine = new Indexer
                 {
                     Dir = Path.GetDirectoryName(file) + "\\"
                 };
@@ -272,7 +286,7 @@ namespace MM.Engine
             {
                 var scope = Eng.CreateScope();
                 scope.SetVariable("Cache", new Cache());
-                var Engine = new Index
+                var Engine = new Indexer
                 {
                     Dir = _Dir
                 };
@@ -325,7 +339,7 @@ namespace MM.Engine
             {
                 var scope = Eng.CreateScope();
                 scope.SetVariable("Cache", new Cache());
-                var Engine = new Index
+                var Engine = new Indexer
                 {
                     Dir = Path.GetDirectoryName(file) + "\\"
                 };

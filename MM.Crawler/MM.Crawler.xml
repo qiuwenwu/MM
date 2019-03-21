@@ -74,12 +74,18 @@
             抓包帮助类
             </summary>
         </member>
-        <member name="T:MM.Crawler.Index">
+        <member name="M:MM.Crawler.Helper.Run">
+            <summary>
+            执行
+            </summary>
+            <returns>返回空</returns>
+        </member>
+        <member name="T:MM.Crawler.Indexer">
             <summary>
             抓包索引目录
             </summary>
         </member>
-        <member name="M:MM.Crawler.Index.Info">
+        <member name="M:MM.Crawler.Indexer.Info">
             <summary>
             查看版本信息
             </summary>
