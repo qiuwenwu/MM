@@ -30,9 +30,9 @@ namespace MM.Engine
         /// 新建Csharp脚本引擎帮助类
         /// </summary>
         /// <returns>返回帮助类</returns>
-        public JS JS()
+        public CS CS()
         {
-            return new JS(Dir);
+            return new CS(Dir);
         }
 
         /// <summary>
@@ -64,9 +64,9 @@ namespace MM.Engine
         /// <returns>返回执行结果</returns>
         public object Run(string appName, object fun, object param1 = null, object param2 = null, object param3 = null) {
             IEngine eng;
-            if (appName.EndsWith(".js"))
+            if (appName.EndsWith(".cs"))
             {
-                eng = new JS();
+                eng = new CS();
             }
             else if (appName.EndsWith(".py"))
             {
@@ -99,9 +99,9 @@ namespace MM.Engine
         public object RunFile(string appName, object fun, object param1 = null, object param2 = null, object param3 = null)
         {
             IEngine eng;
-            if (appName.EndsWith(".js"))
+            if (appName.EndsWith(".cs"))
             {
-                eng = new JS();
+                eng = new CS();
             }
             else if (appName.EndsWith(".py"))
             {
@@ -130,9 +130,9 @@ namespace MM.Engine
         public void Unload(string appName, int waitTime = 2000)
         {
             IEngine eng;
-            if (appName.EndsWith(".js"))
+            if (appName.EndsWith(".cs"))
             {
-                eng = new JS();
+                eng = new CS();
             }
             else if (appName.EndsWith(".py"))
             {
@@ -158,9 +158,9 @@ namespace MM.Engine
         /// <returns>返回引擎</returns>
         public dynamic Get(string appName) {
             IEngine eng;
-            if (appName.EndsWith(".js"))
+            if (appName.EndsWith(".cs"))
             {
-                eng = new JS();
+                eng = new CS();
             }
             else if (appName.EndsWith(".py"))
             {

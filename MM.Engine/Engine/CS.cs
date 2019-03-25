@@ -1,10 +1,11 @@
-﻿using JavaScriptEngineSwitcher.ChakraCore;
-using JavaScriptEngineSwitcher.Core;
+﻿using CSScriptLib;
+using CSScriptLib.Extensions;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace MM.Engine
@@ -12,7 +13,7 @@ namespace MM.Engine
     /// <summary>
     /// 脚本引擎接口
     /// </summary>
-    public class JS : IEngine
+    public class CS : IEngine
     {
         private readonly string _Dir;
 
@@ -35,6 +36,10 @@ namespace MM.Engine
             get { return dict; }
             set { dict = value; }
         }
+
+        public string ScriptCode { get; } = @"
+public class Script : MM.Engine.Common {
+";
         #endregion
 
 
@@ -42,7 +47,7 @@ namespace MM.Engine
         /// 构造函数
         /// </summary>
         /// <param name="dir">脚本目录</param>
-        public JS(string dir = null)
+        public CS(string dir = null)
         {
             if (string.IsNullOrEmpty(dir))
             {
@@ -54,26 +59,12 @@ namespace MM.Engine
             }
         }
 
-        public dynamic NewDyn(string code, string dir) {
-            var engineSwitcher = JsEngineSwitcher.Current;
-            engineSwitcher.EngineFactories.Add(new ChakraCoreJsEngineFactory());
-            engineSwitcher.DefaultEngineName = ChakraCoreJsEngine.EngineName;
-            var Eng = JsEngineSwitcher.Current.CreateDefaultEngine();
-            Eng.EmbedHostType("Console", typeof(Console));
-            Eng.EmbedHostObject("Cache", new Cache());
-            var Engine = new Indexer
-            {
-                Dir = dir
-            };
-            Eng.EmbedHostObject("Engine", Engine);
-            return Eng.Evaluate("return this");
-        }
-
         /// <summary>
         /// 获取错误信息
         /// </summary>
         /// <returns>返回错误信息</returns>
-        public string GetEx() {
+        public string GetEx()
+        {
             return Ex;
         }
 
@@ -246,22 +237,45 @@ namespace MM.Engine
             }
             try
             {
-                dynamic dyn = NewDyn(File.ReadAllText(file, Encoding.UTF8), Path.GetDirectoryName(file) + "\\");
-                if (param1 == null)
+                var code = File.ReadAllText(file, Encoding.UTF8);
+                var dll = "";
+                if (code.Contains("using "))
                 {
-                    return dyn.Main(fun);
+                    var ms = new Regex("using [.A-Z0-9a-z]+;").Matches(code);
+                    for (var i = 0; i < ms.Count; i++)
+                    {
+                        var o = ms[i];
+                        var value = o.Value;
+                        dll += value + "\n";
+                        code = code.Replace(value, "");
+                    }
                 }
-                else if (param2 == null)
+                dynamic scope = CSScript.Evaluator.LoadCode(dll + ScriptCode + code + "\n}");
+                if (scope != null)
                 {
-                    return dyn.Main(fun, param1);
-                }
-                else if (param3 == null)
-                {
-                    return dyn.Main(fun, param1, param2);
-                }
-                else
-                {
-                    return dyn.Main(fun, param1, param2, param3);
+                    scope.Cache = new Cache();
+                    var Engine = new Indexer
+                    {
+                        Dir = _Dir
+                    };
+                    scope.Engine = Engine;
+                    dynamic dyn = scope;
+                    if (param1 == null)
+                    {
+                        return dyn.Main(fun);
+                    }
+                    else if (param2 == null)
+                    {
+                        return dyn.Main(fun, param1);
+                    }
+                    else if (param3 == null)
+                    {
+                        return dyn.Main(fun, param1, param2);
+                    }
+                    else
+                    {
+                        return dyn.Main(fun, param1, param2, param3);
+                    }
                 }
             }
             catch (Exception ex)
@@ -289,22 +303,46 @@ namespace MM.Engine
             }
             try
             {
-                dynamic dyn = NewDyn(code, _Dir);
-                if (param1 == null)
+                var dll = "";
+                if (code.Contains("using "))
                 {
-                    return dyn.Main(fun);
+                    var ms = new Regex("using [.A-Z0-9a-z]+;").Matches(code);
+                    for (var i = 0; i < ms.Count; i++)
+                    {
+                        var o = ms[i];
+                        var value = o.Value;
+                        dll += value + "\n";
+                        code = code.Replace(value, "");
+                    }
                 }
-                else if (param2 == null)
+                var eng = CSScript.GlobalSettings;
+
+                dynamic scope = CSScript.Evaluator.LoadCode(dll + "public class Script : MM.Engine.Common\n{\n" + code + "\n}");
+                if (scope != null)
                 {
-                    return dyn.Main(fun, param1);
-                }
-                else if (param3 == null)
-                {
-                    return dyn.Main(fun, param1, param2);
-                }
-                else
-                {
-                    return dyn.Main(fun, param1, param2, param3);
+                    scope.Cache = new Cache();
+                    var Engine = new Indexer
+                    {
+                        Dir = _Dir
+                    };
+                    scope.Engine = Engine;
+                    dynamic dyn = scope;
+                    if (param1 == null)
+                    {
+                        return dyn.Main(fun);
+                    }
+                    else if (param2 == null)
+                    {
+                        return dyn.Main(fun, param1);
+                    }
+                    else if (param3 == null)
+                    {
+                        return dyn.Main(fun, param1, param2);
+                    }
+                    else
+                    {
+                        return dyn.Main(fun, param1, param2, param3);
+                    }
                 }
             }
             catch (Exception ex)
@@ -334,7 +372,30 @@ namespace MM.Engine
             }
             try
             {
-                return NewDyn(File.ReadAllText(file, Encoding.UTF8), Path.GetDirectoryName(file) + "\\");
+                var code = File.ReadAllText(file, Encoding.UTF8);
+                var dll = "";
+                if (code.Contains("using "))
+                {
+                    var ms = new Regex("using [.A-Z0-9a-z]+;").Matches(code);
+                    for (var i = 0; i < ms.Count; i++)
+                    {
+                        var o = ms[i];
+                        var value = o.Value;
+                        dll += value + "\n";
+                        code = code.Replace(value, "");
+                    }
+                }
+                dynamic scope = CSScript.Evaluator.CompileCode(dll + ScriptCode + code + "\n}").CreateObject("*");
+                if (scope != null)
+                {
+                    scope.Cache = new Cache();
+                    var Engine = new Indexer
+                    {
+                        Dir = _Dir
+                    };
+                    scope.Engine = Engine;
+                    return scope;
+                }
             }
             catch (Exception ex)
             {
@@ -353,9 +414,5 @@ namespace MM.Engine
             dict.TryGetValue(appName, out dynamic dyn);
             return dyn;
         }
-    }
-
-    public class Export {
-        public object Main { get; set; }
     }
 }

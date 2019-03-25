@@ -7,7 +7,7 @@ namespace TestCore
     {
         static void Main(string[] args)
         {
-            var f = "js";
+            var f = "cs";
             Console.WriteLine("开始");
             var Indexer = new Indexer();
             var ret = Indexer.RunFile(Cache.runPath + "script\\test." + f, "fun", "a", "b", "c");

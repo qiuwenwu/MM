@@ -10,11 +10,11 @@ namespace MM.Engine
         /// <summary>
         /// 缓存
         /// </summary>
-        public Cache Cache         = new Cache();
+        public Cache Cache = new Cache();
 
         /// <summary>
         /// 脚本引擎
         /// </summary>
-        public Index Engine = new Index();
+        public Indexer Engine = new Indexer();
     }
 }

@@ -49,6 +49,16 @@
             目录
             </summary>
         </member>
+        <member name="T:MM.SQL.Drive">
+            <summary>
+            SQL驱动器
+            </summary>
+        </member>
+        <member name="T:MM.SQL.Helper">
+            <summary>
+            SQL帮助类
+            </summary>
+        </member>
         <member name="T:MM.SQL.Indexer">
             <summary>
             数据库边界操作索引目录
