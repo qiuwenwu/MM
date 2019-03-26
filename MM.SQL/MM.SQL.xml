@@ -59,6 +59,51 @@
             SQL帮助类
             </summary>
         </member>
+        <member name="P:MM.SQL.Helper.Ex">
+            <summary>
+            错误提示
+            </summary>
+        </member>
+        <member name="M:MM.SQL.Helper.HasParam(System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            是否含有某些参数
+            </summary>
+            <param name="paramDt">参数集合</param>
+            <param name="where">字典</param>
+            <returns>含有返回true，不含有返回false</returns>
+        </member>
+        <member name="M:MM.SQL.Helper.NotParam(System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,MM.Helper.Models.ParamModel})">
+            <summary>
+            判断是否含有其他参数
+            </summary>
+            <param name="paramDt">参数集合</param>
+            <param name="sqlDt">字典</param>
+            <returns>含有返回true，不含有返回false</returns>
+        </member>
+        <member name="M:MM.SQL.Helper.FilterQuery(System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            过滤参数
+            </summary>
+            <param name="paramDt">附加Sql语句</param>
+            <param name="sqlDt">过滤器参数字典</param>
+            <returns>返回sql拼接语</returns>
+        </member>
+        <member name="M:MM.SQL.Helper.Filter(System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,MM.Helper.Models.ParamModel})">
+            <summary>
+            过滤参数
+            </summary>
+            <param name="paramDt">附加Sql语句</param>
+            <param name="sqlDt">过滤器参数字典</param>
+            <returns>返回sql拼接语</returns>
+        </member>
+        <member name="M:MM.SQL.Helper.Filter(System.Collections.Generic.Dictionary{System.String,System.Object},MM.Helper.Models.SqlModel)">
+            <summary>
+            过滤参数
+            </summary>
+            <param name="paramDt">参数字典</param>
+            <param name="sql">sql对象</param>
+            <returns>返回参数Json</returns>
+        </member>
         <member name="T:MM.SQL.Indexer">
             <summary>
             数据库边界操作索引目录
@@ -69,6 +114,421 @@
             查看版本信息
             </summary>
             <returns>返回版本信息模型</returns>
+        </member>
+        <member name="T:MM.Helper.Models.DateTimeModel">
+            <summary>
+            时间验证模型
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.DateTimeModel.Min">
+            <summary>
+            最小时间，例如：1970-01-01 00:00:00
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.DateTimeModel.Max">
+            <summary>
+            最大时间，例如：2019-12-31 00:00:00
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.DateTimeModel.Message">
+            <summary>
+            错误提示
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.DateTimeModel.Message_min">
+            <summary>
+            错误提示
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.DateTimeModel.Message_max">
+            <summary>
+            错误提示
+            </summary>
+        </member>
+        <member name="T:MM.Helper.Models.StrLenModel">
+            <summary>
+            字符串长度验证模型
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.StrLenModel.Min">
+            <summary>
+            最小值
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.StrLenModel.Max">
+            <summary>
+            最大值
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.StrLenModel.Message">
+            <summary>
+            错误提示
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.StrLenModel.Message_min">
+            <summary>
+            错误提示——最小
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.StrLenModel.Message_max">
+            <summary>
+            错误提示——最大
+            </summary>
+        </member>
+        <member name="T:MM.Helper.Models.RangeModel">
+            <summary>
+            数值范围验证模型
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.RangeModel.Min">
+            <summary>
+            最小值
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.RangeModel.Max">
+            <summary>
+            最大值
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.RangeModel.Message">
+            <summary>
+            错误提示
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.RangeModel.Message_min">
+            <summary>
+            错误提示——最小
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.RangeModel.Message_max">
+            <summary>
+            错误提示——最大
+            </summary>
+        </member>
+        <member name="T:MM.Helper.Models.RemoteModel">
+            <summary>
+            站外验证模型
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.RemoteModel.Url">
+            <summary>
+            外网验证地址
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.RemoteModel.Message">
+            <summary>
+            错误提示
+            </summary>
+        </member>
+        <member name="T:MM.Helper.Models.NotEmptyModel">
+            <summary>
+            非空验证模型
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.NotEmptyModel.Message">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="T:MM.Helper.Models.RegexModel">
+            <summary>
+            规则验证模型（用于后缀名、特定格式、或正则验证）
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.RegexModel.Format">
+            <summary>
+            格式
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.RegexModel.Message">
+            <summary>
+            错误提示
+            </summary>
+        </member>
+        <member name="T:MM.Helper.Models.IdenticalModel">
+            <summary>
+            验证两个参数是否相同
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.IdenticalModel.Field">
+            <summary>
+            比较字段
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.IdenticalModel.Message">
+            <summary>
+            错误提示
+            </summary>
+        </member>
+        <member name="T:MM.Helper.Models.DifferentModel">
+            <summary>
+            验证两个参数是否不同
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.DifferentModel.Field">
+            <summary>
+            比较字段
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.DifferentModel.Message">
+            <summary>
+            错误提示
+            </summary>
+        </member>
+        <member name="T:MM.Helper.Models.ExtensionModel">
+            <summary>
+            验证参数后缀名
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.ExtensionModel.Format">
+            <summary>
+            格式
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.ExtensionModel.Message">
+            <summary>
+            错误提示
+            </summary>
+        </member>
+        <member name="T:MM.Helper.Models.DataTypeModel">
+            <summary>
+            验证参数类型 
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.DataTypeModel.Format">
+            <summary>
+            格式，array、object、string、bool、dateTime、date、time、float、decimal、double、long、int
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.DataTypeModel.Message">
+            <summary>
+            错误提示
+            </summary>
+        </member>
+        <member name="T:MM.Helper.Models.RuleModel">
+            <summary>
+            规则验证模型（用于后缀名、特定格式、或正则验证）
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.RuleModel.Format">
+            <summary>
+            格式
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.RuleModel.Message">
+            <summary>
+            错误提示
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.RuleModel.Url">
+            <summary>
+            外网验证地址
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.RuleModel.Min">
+            <summary>
+            最小值
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.RuleModel.Max">
+            <summary>
+            最大值
+            </summary>
+        </member>
+        <member name="T:MM.Helper.Models.EqualModel">
+            <summary>
+            比较验证模型（用于校验两个参数相同或不同）
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.EqualModel.Field">
+            <summary>
+            比较的字段
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.EqualModel.Message">
+            <summary>
+            错误提示
+            </summary>
+        </member>
+        <member name="T:MM.Helper.Models.MapModel">
+            <summary>
+            数据表地图模型
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.MapModel.Type">
+            <summary>
+            转换类型。db数据表类型，array数组型
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.MapModel.Table">
+            <summary>
+            数据表名称。 当转换类型是db类型时需要
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.MapModel.Name">
+            <summary>
+            显示的字段名称
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.MapModel.ID">
+            <summary>
+            转换的主键字段
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.MapModel.Field">
+            <summary>
+            转换的名称字段
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.MapModel.Value">
+            <summary>
+            转换值。当转换方式为数组型时需要
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.MapModel.Select">
+            <summary>
+            查询条件
+            </summary>
+        </member>
+        <member name="T:MM.Helper.Models.SqlModel">
+            <summary>
+            SQL模型
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.SqlModel.Method">
+            <summary>
+            增删改查判断的参数
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.SqlModel.Table">
+            <summary>
+            数据表操作判断的参数
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.SqlModel.Page">
+            <summary>
+            查询当前页判断
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.SqlModel.PageSize">
+            <summary>
+            查询页数大小判断
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.SqlModel.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.SqlModel.SortDefault">
+            <summary>
+            默认排序
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.SqlModel.Field">
+            <summary>
+            查询的字段
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.SqlModel.FieldDefault">
+            <summary>
+            默认字段
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.SqlModel.Count">
+            <summary>
+            是否统计查询字段
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.SqlModel.GroupBy">
+            <summary>
+            分组
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.SqlModel.Separator">
+            <summary>
+            多条件查询时参数分隔符
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.SqlModel.Where">
+            <summary>
+            预设添加、修改条件
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.SqlModel.Item">
+            <summary>
+            查询项目
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.SqlModel.Query">
+            <summary>
+            预设删除和查新方式
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.SqlModel.QueryDefault">
+            <summary>
+            预设默认查询
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.SqlModel.Update">
+            <summary>
+            更新方式
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.SqlModel.Filter">
+            <summary>
+            过滤参数
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.SqlModel.Can">
+            <summary>
+            能否更改数据
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.SqlModel.Convert">
+            <summary>
+            是否转换
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.SqlModel.Map">
+            <summary>
+            预设默认查询
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.SqlModel.NoRepeat">
+            <summary>
+            不可重复字段
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.SqlModel.DelRepeat">
+            <summary>
+            清除重复项
+            </summary>
+        </member>
+        <member name="T:MM.Helper.Models.DelRepeatModel">
+            <summary>
+            删除重复项模型
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.DelRepeatModel.GroupBy">
+            <summary>
+            去重的字段
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.DelRepeatModel.OrderBy">
+            <summary>
+            排序（决定保留项）
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.DelRepeatModel.Sql">
+            <summary>
+            其他去重方法
+            </summary>
+        </member>
+        <member name="P:MM.Helper.Models.DelRepeatModel.ID">
+            <summary>
+            去重键名
+            </summary>
         </member>
     </members>
 </doc>

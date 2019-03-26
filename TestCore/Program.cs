@@ -7,7 +7,7 @@ namespace TestCore
     {
         static void Main(string[] args)
         {
-            var f = "cs";
+            var f = "lua";
             Console.WriteLine("开始");
             var Indexer = new Indexer();
             var ret = Indexer.RunFile(Cache.runPath + "script\\test." + f, "fun", "a", "b", "c");

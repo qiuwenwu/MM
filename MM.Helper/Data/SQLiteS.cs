@@ -183,7 +183,8 @@ namespace MM.Helper.Data
                     defaultVal = " default false";
                     break;
             }
-            var col = "";
+
+            string col;
             if (len > 0)
             {
                 col = string.Format("`{0}` {1}({2}){3}", name, type, len, defaultVal);
