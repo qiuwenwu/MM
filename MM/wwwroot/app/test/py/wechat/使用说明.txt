@@ -1,0 +1,3 @@
+plugin.json和plugin.py	是给系统插件命令调用的接口，用来安装和卸载该微信插件等。
+cmd.json和cmd.py	是该微信插件添加命令，通过命令形式创建和添加用在该微信上的插件。
+event.json和event.py	是用来创建该微信api的接口以及对使用次数、频率统计等。

@@ -1,0 +1,41 @@
+{
+  "bid": {
+    "title": "办理业务",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": true,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 99
+    },
+    "Filter": false
+  },
+  "name": {
+    "title": "业务名称",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": true,
+      "minLength": 0,
+      "maxLength": 64,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "display": {
+    "title": "排序",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 59
+    },
+    "Filter": false
+  }
+}

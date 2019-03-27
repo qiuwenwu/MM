@@ -1,5 +1,4 @@
-﻿using MM.Helper;
-using System.IO;
+﻿using System.IO;
 
 namespace System
 {
@@ -27,11 +26,11 @@ namespace System
             }
             else if (file.StartsWith(@"\"))
             {
-                file = Cache._Path.Web + file.Substring(1);
+                file = Cache.path.Web + file.Substring(1);
             }
             else if (file.StartsWith(@"~\"))
             {
-                file = Cache._Path.Template + Cache._Theme + "\\" + file.Substring(2);
+                file = Cache.path.Template + Cache._Theme + "\\" + file.Substring(2);
             }
             return file.ToLower();
         }

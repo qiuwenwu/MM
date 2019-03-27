@@ -1,0 +1,20 @@
+[
+{
+	"name": "api",
+	"target": "/api/prc",
+	"plugin": {
+		"identifier": "mm_api_rpc",
+		"file": "./rpc.js",
+		"fun": "api"
+	}
+},
+{
+	"name": "api",
+	"target": "/api/cmd",
+	"plugin": {
+		"identifier": "mm_api_cmd",
+		"file": "./cmd.js",
+		"fun": "api"
+	}
+}
+]

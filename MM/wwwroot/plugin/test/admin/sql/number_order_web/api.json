@@ -1,0 +1,12 @@
+{
+"name": "number_order_web",
+"type": "api",
+"path": "/apis/number/order/web",
+"cache": 0,
+"sqlPath": "./sql",
+"paramPath": "./param",
+"otherParam": true,
+"checkToken": true,
+"checkParam": true,
+"Scope": false
+}

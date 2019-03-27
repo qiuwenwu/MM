@@ -1,0 +1,82 @@
+{
+  "fid": {
+    "title": "友情链接ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": true,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 79
+    },
+    "Filter": false
+  },
+  "name": {
+    "title": "名称",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 255,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "icon": {
+    "title": "图标",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 255,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "url": {
+    "title": "链接地址",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 255,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "display": {
+    "title": "显示顺序",
+    "description": "越小越优先显示",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 49
+    },
+    "Filter": false
+  },
+  "available": {
+    "title": "是否可用",
+    "description": "1为可用，0为不可用",
+    "validate": {
+      "type": "bool",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  }
+}

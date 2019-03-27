@@ -1,0 +1,106 @@
+{
+  "sid": {
+    "title": "SEO优化项ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": true,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 99
+    },
+    "Filter": false
+  },
+  "name": {
+    "title": "SEO名称",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": true,
+      "minLength": 0,
+      "maxLength": 45,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "group": {
+    "title": "分组",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 45,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "title": {
+    "title": "标题",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 64,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "description": {
+    "title": "描述",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 255,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "keywords": {
+    "title": "关键词",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 255,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "path": {
+    "title": "路径",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 255,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "content": {
+    "title": "虚拟内容",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  }
+}

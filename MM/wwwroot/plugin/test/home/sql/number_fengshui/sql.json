@@ -1,0 +1,29 @@
+{
+  "method": "method",
+  "table": "osl_number_fengshui",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`display` ASC",
+  "field": "{0}",
+  "fieldDefault": "`fid`,`name`,`desc`,`rules`,`display`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "fid": "`fid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "name": "`name` like '%{0}%'",
+    "desc": "`desc` like '%{0}%'",
+    "rules": "`rules` like '%{0}%'"
+  },
+  "update": {
+    "name": "`name` = '{0}'",
+    "desc": "`desc` = '{0}'",
+    "rules": "`rules` = '{0}'"
+  },
+  "can": "get",
+  "convert": "convert"
+}

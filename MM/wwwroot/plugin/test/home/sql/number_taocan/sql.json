@@ -1,0 +1,28 @@
+{
+  "method": "method",
+  "table": "osl_number_taocan",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`display` ASC",
+  "field": "{0}",
+  "fieldDefault": "`tid`,`name`,`desc`,`display`,`sid`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "tid": "`tid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "name": "`name` like '%{0}%'",
+    "desc": "`desc` like '%{0}%'",
+	"standard": "`sid` in (select x.sid From osl_number_standard as x WHERE x.name like '%{0}%')"
+  },
+  "update": {
+    "name": "`name` = '{0}'",
+    "desc": "`desc` = '{0}'"
+  },
+  "can": "get",
+  "convert": "convert"
+}

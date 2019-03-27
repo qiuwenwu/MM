@@ -1,0 +1,19 @@
+[{
+	"name": "api",
+	"target": "^/mailman.*",
+	"plugin": {
+		"identifier": "mm_web_mailman",
+		"file": "./event.js",
+		"fun": "web"
+	}
+},
+{
+	"name": "api",
+	"target": "/api/mailman.*",
+	"plugin": {
+		"identifier": "mm_api_mailman",
+		"file": "./event.js",
+		"fun": "api"
+	}
+}
+]

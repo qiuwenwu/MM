@@ -1,0 +1,96 @@
+{
+  "rid": {
+    "title": "地区ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": true,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 79
+    },
+    "Filter": false
+  },
+  "name": {
+    "title": "名称",
+    "validate": {
+      "type": "string",
+      "notEmpty": true,
+      "only": true,
+      "minLength": 0,
+      "maxLength": 45,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "fid": {
+    "title": "上级ID",
+    "description": "如果为零则为城市，非0则为省份",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 89
+    },
+    "Filter": false
+  },
+  "display": {
+    "title": "排序",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 79
+    },
+    "Filter": false
+  },
+  "group": {
+    "title": "分组",
+    "description": "用于分类省份、城市、县区",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 64,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "pinyin": {
+    "title": "拼音",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 64,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "isHot": {
+    "title": "是否热门城市",
+    "description": "0为非热门城市，1为热门城市",
+    "validate": {
+      "type": "bool",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  }
+}

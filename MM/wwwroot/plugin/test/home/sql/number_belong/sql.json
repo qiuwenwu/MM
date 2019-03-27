@@ -1,0 +1,31 @@
+{
+  "method": "method",
+  "table": "osl_number_belong",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "field": "{0}",
+  "fieldDefault": "`bid`,`segment`,`prefix`,`province`,`city`,`postal`,`area`,`standard`,`administrative`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "bid": "`bid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "province": "`province` like '%{0}%'",
+    "city": "`city` like '%{0}%'",
+    "standard": "`standard` like '%{0}%'"
+  },
+  "update": {
+    "province": "`province` = '{0}'",
+    "city": "`city` = '{0}'",
+    "standard": "`standard` = '{0}'"
+  },
+  
+  "can": "get",
+  "convert": "convert",
+  "queryDefault": {},
+  "map": {}
+}

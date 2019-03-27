@@ -1,0 +1,43 @@
+{
+  "method": "method",
+  "table": "mm_web_config",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`cid` ASC",
+  "field": "{0}",
+  "fieldDefault": "`cid`,`var`,`name`,`value`,`type`,`group`,`display`,`desc`,`model`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "cid": "`cid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "var": "`var` like '%{0}%'",
+    "name": "`name` like '%{0}%'",
+    "value": "`value` like '%{0}%'",
+    "type": "`type` like '%{0}%'",
+    "group": "`group` like '%{0}%'",
+    "desc": "`desc` like '%{0}%'",
+    "model": "`model` like '%{0}%'"
+  },
+  "queryDefault": {},
+  "update": {
+    "var": "`var` = '{0}'",
+    "name": "`name` = '{0}'",
+    "value": "`value` = '{0}'",
+    "type": "`type` = '{0}'",
+    "group": "`group` = '{0}'",
+    "desc": "`desc` = '{0}'",
+    "model": "`model` = '{0}'"
+  },
+  "can": "add del set get export import",
+  "convert": "convert",
+  "map": {},
+  "delRepeat": {
+    "groupBy": "number",
+    "orderBy": "`nid` ASC"
+  }
+}

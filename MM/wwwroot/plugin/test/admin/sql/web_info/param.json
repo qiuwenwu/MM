@@ -1,0 +1,133 @@
+{
+  "tid": {
+    "title": "分类信息ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": true,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 109
+    },
+    "Filter": false
+  },
+  "name": {
+    "title": "分类信息名称",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": true,
+      "minLength": 0,
+      "maxLength": 32,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "desc": {
+    "title": "分类信息描述",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 255,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "options": {
+    "title": "分类信息项",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "tpl_content": {
+    "title": "内容模板",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "tpl_list": {
+    "title": "列表模板",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "tpl_publish": {
+    "title": "发帖模板",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "tpl_module": {
+    "title": "模块模板",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "icon": {
+    "title": "分类信息图标",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 255,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "expiration": {
+    "title": "分类有效",
+    "description": "期。单位：分钟，0为不限时",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 59
+    },
+    "Filter": false
+  }
+}

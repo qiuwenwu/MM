@@ -1,0 +1,60 @@
+{
+  "method": "method",
+  "table": "mm_web_article",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`display` ASC, `updateTime` DESC",
+  "field": "{0}",
+  "fieldDefault": "`aid`,`title`,`display`,`img`,`url`,`desc`,`available`,`keywords`,`content`,`author`,`uid`,`source`,`createTime`,`updateTime`,`hot`,`praise`,`cid`,`tag`,`rid`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "aid": "`aid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "title": "`title` like '%{0}%'",
+    "img": "`img` like '%{0}%'",
+    "url": "`url` like '%{0}%'",
+    "desc": "`desc` like '%{0}%'",
+    "keywords": "`keywords` like '%{0}%'",
+    "content": "`content` like '%{0}%'",
+    "author": "`author` like '%{0}%'",
+    "source": "`source` like '%{0}%'",
+    "createTime_min": "`createTime` >= '{0}'",
+    "createTime_max": "`createTime` <= '{0}'",
+    "updateTime_min": "`updateTime` >= '{0}'",
+    "updateTime_max": "`updateTime` <= '{0}'",
+    "tag": "`tag` like '%{0}%'",
+    "aid_no": "`aid` != {0}",
+	"channel": "`cid` in (select x.cid FROM mm_web_channel as x WHERE x.name like '%{0}%')",
+	"user": "`uid` in (select y.uid FROM mm_user as y WHERE y.name like '%{0}%')"
+  },
+  "update": {
+    "title": "`title` = '{0}'",
+    "img": "`img` = '{0}'",
+    "url": "`url` = '{0}'",
+    "desc": "`desc` = '{0}'",
+    "keywords": "`keywords` = '{0}'",
+    "content": "`content` = '{0}'",
+    "author": "`author` = '{0}'",
+    "source": "`source` = '{0}'",
+    "createTime": "`createTime` = '{0}'",
+    "updateTime": "`updateTime` = '{0}'",
+    "tag": "`tag` = '{0}'"
+  },
+  "can": "add del set get export import",
+  "convert": "convert",
+  "delrepeat": { "sql": "DELETE FROM `mm_web_article` WHERE `aid` NOT IN (SELECT myid FROM (SELECT `aid` AS myid, MAX(`aid`) FROM `mm_web_article` GROUP BY `title`) b);"},
+  "map" : {
+	"cid": {
+		"type": "table",
+		"table": "mm_web_channel",
+		"id": "cid",
+		"field": "name",
+		"name": "频道"
+	}
+  }
+}

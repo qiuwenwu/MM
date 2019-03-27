@@ -1,0 +1,19 @@
+[{
+	"name": "api",
+	"target": "^/mobile.*",
+	"plugin": {
+		"identifier": "mm_web_mobile",
+		"file": "./event.js",
+		"fun": "web"
+	}
+},
+{
+	"name": "api",
+	"target": "/api/mobile.*",
+	"plugin": {
+		"identifier": "mm_api_mobile",
+		"file": "./event.js",
+		"fun": "api"
+	}
+}
+]

@@ -23,8 +23,6 @@ namespace MM.Helper.Data
         /// </summary>
         public string Dir { get; set; } = "";
 
-        private readonly XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
-
         /// <summary>
         /// 写入设置
         /// </summary>
@@ -141,13 +139,10 @@ namespace MM.Helper.Data
         public XElement ToXml<T>(T m) where T : new() {
             XElement element = new XElement(typeof(T).Name);
             PropertyInfo[] properties = typeof(T).GetProperties();
-            XElement innerElement = null;
-            object propertyValue = null;
-
             foreach (PropertyInfo property in properties)
             {
-                propertyValue = property.GetValue(m, null);
-                innerElement = new XElement(property.Name, propertyValue);
+                object propertyValue = property.GetValue(m, null);
+                XElement innerElement = new XElement(property.Name, propertyValue);
                 element.Add(innerElement);
             }
             return element;

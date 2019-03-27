@@ -1,0 +1,437 @@
+{
+  "oid": {
+    "title": "订单ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": true,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 99
+    },
+    "Filter": false
+  },
+  "number": {
+    "title": "号码",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": true,
+      "minLength": 0,
+      "maxLength": 11,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "state": {
+    "title": "订单状态",
+    "description": "记录订单进度和时间。1待处理，2受理中、3配送中、4已完成、5已删除",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 109
+    },
+    "Filter": false
+  },
+  "mid": {
+    "title": "配送员ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 79
+    },
+    "Filter": false
+  },
+  "bid": {
+    "title": "支付方式",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 79
+    },
+    "Filter": false
+  },
+  "did": {
+    "title": "代销商ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 79
+    },
+    "Filter": false
+  },
+  "gid": {
+    "title": "供货商ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 79
+    },
+    "Filter": false
+  },
+  "tid": {
+    "title": "套餐ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 79
+    },
+    "Filter": false
+  },
+  "pid": {
+    "title": "平台",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 59
+    },
+    "Filter": false
+  },
+  "sid": {
+    "title": "制式ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 59
+    },
+    "Filter": false
+  },
+  "uid": {
+    "title": "客服ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 79
+    },
+    "Filter": false
+  },
+  "aid": {
+    "title": "推广员ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 79
+    },
+    "Filter": false
+  },
+  "cityID": {
+    "title": "城市ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 79
+    },
+    "Filter": false
+  },
+  "maiJia": {
+    "title": "卖价（销售价）",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 109
+    },
+    "Filter": false
+  },
+  "maiJia_actual": {
+    "title": "卖价",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 109
+    },
+    "Filter": false
+  },
+  "daiLiJia": {
+    "title": "代理价（给销售方的价格）",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 109
+    },
+    "Filter": false
+  },
+  "daiLiJia_actual": {
+    "title": "实际代理价",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 109
+    },
+    "Filter": false
+  },
+  "diJia": {
+    "title": "底价（供货方给我们的价格）",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 109
+    },
+    "Filter": false
+  },
+  "diJia_actual": {
+    "title": "实际底价",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 109
+    },
+    "Filter": false
+  },
+  "huaFei": {
+    "title": "含话费",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 109
+    },
+    "Filter": false
+  },
+  "courier": {
+    "title": "快递名称",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 45,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "courier_num": {
+    "title": "快递单号",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 255,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "userInfo": {
+    "title": "用户信息",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "note": {
+    "title": "备注",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "createTime": {
+    "title": "创建时间",
+    "description": "也是预约下单时间",
+    "validate": {
+      "type": "time",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "handingTime": {
+    "title": "处理时间",
+    "description": "也是受理下单的时间",
+    "validate": {
+      "type": "time",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "sendTime": {
+    "title": "发货时间",
+    "description": "快递员接下订单的事件",
+    "validate": {
+      "type": "time",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "endTime": {
+    "title": "完成订单的时间",
+    "validate": {
+      "type": "time",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "updateTime": {
+    "title": "更新时间",
+    "validate": {
+      "type": "time",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "receivable": {
+    "title": "收款",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 109
+    },
+    "Filter": false
+  },
+  "keyword": {
+    "title": "访问的关键词",
+    "description": "是通过什么关键词下的订单",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 64,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "source": {
+    "title": "访问来源",
+    "description": "是来自百度、360、搜狗、还是新浪、微信",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 64,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "platform": {
+    "title": "访问来源的平台",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 32,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  }
+}

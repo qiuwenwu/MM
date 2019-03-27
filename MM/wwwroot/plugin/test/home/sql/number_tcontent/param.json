@@ -1,0 +1,211 @@
+{
+  "cid": {
+    "title": "套餐ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": true,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 109
+    },
+    "Filter": false
+  },
+  "name": {
+    "title": "套餐名称",
+    "validate": {
+      "type": "string",
+      "notEmpty": true,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 45,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "sid": {
+    "title": "制式ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 2549
+    },
+    "Filter": false
+  },
+  "desc": {
+    "title": "描述",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 255,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "content": {
+    "title": "套餐详细说明",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "tid": {
+    "title": "隶属套餐ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 79
+    },
+    "Filter": false
+  },
+  "display": {
+    "title": "排序",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 89
+    },
+    "Filter": false
+  },
+  "cityID": {
+    "title": "所属地区（城市）",
+    "description": "该地区的资费套餐详情",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 79
+    },
+    "Filter": false
+  },
+  "price_min": {
+    "title": "最低价",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 59
+    },
+    "Filter": false
+  },
+  "price_max": {
+    "title": "最高价",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 59
+    },
+    "Filter": false
+  },
+  "activity": {
+    "title": "活动",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "hot": {
+    "title": "热度",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 109
+    },
+    "Filter": false
+  },
+  "praise": {
+    "title": "点赞数",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 109
+    },
+    "Filter": false
+  },
+  "share": {
+    "title": "分享数",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 109
+    },
+    "Filter": false
+  },
+  "updateTime": {
+    "title": "更新时间",
+    "validate": {
+      "type": "time",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "createTime": {
+    "title": "创建时间",
+    "validate": {
+      "type": "time",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  }
+}

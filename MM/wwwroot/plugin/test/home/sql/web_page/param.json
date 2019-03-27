@@ -1,0 +1,193 @@
+{
+  "pid": {
+    "title": "页面ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": true,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 89
+    },
+    "Filter": false
+  },
+  "login": {
+    "title": "是否需要登录",
+    "description": "如果需要，则用户只有登录后才能访问该页面",
+    "validate": {
+      "type": "bool",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "vip": {
+    "title": "会员级别",
+    "description": "用于判断可以访问该页面的会员级别",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 9
+    },
+    "Filter": false
+  },
+  "gm": {
+    "title": "管理员级别",
+    "description": "用于判断可以访问该页面的管理级别",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 9
+    },
+    "Filter": false
+  },
+  "mc": {
+    "title": "商家级别",
+    "description": "用于判断可以访问该页面的商家级别",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 9
+    },
+    "Filter": false
+  },
+  "contentType": {
+    "title": "数据类型",
+    "validate": {
+      "type": "string",
+      "notEmpty": true,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 64,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "content": {
+    "title": "正文",
+    "description": "页面的内容，包括<html>标签",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "uid": {
+    "title": "创建人ID",
+    "description": "创建该页面的用户ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 79
+    },
+    "Filter": false
+  },
+  "path": {
+    "title": "访问路径",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 255,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "group": {
+    "title": "分组",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 45,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "cacheTime": {
+    "title": "缓存时长",
+    "description": "单位毫秒",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 29
+    },
+    "Filter": false
+  },
+  "name": {
+    "title": "页面名称",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 45,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "checkToken": {
+    "title": "是否验证身份牌",
+    "description": "在需要验证身份牌的情况下，唯有授权的应用可以访问该页面",
+    "validate": {
+      "type": "bool",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "desc": {
+    "title": "描述",
+    "description": "描述该页面的作用",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 255,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  }
+}

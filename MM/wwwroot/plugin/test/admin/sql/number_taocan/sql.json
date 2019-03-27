@@ -1,0 +1,29 @@
+{
+  "method": "method",
+  "table": "osl_number_taocan",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`display` ASC",
+  "field": "{0}",
+  "fieldDefault": "`tid`,`name`,`desc`,`display`,`sid`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "tid": "`tid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "name": "`name` like '%{0}%'",
+    "desc": "`desc` like '%{0}%'",
+	"standard": "`sid` in (select x.sid From osl_number_standard as x WHERE x.name like '%{0}%')"
+  },
+  "update": {
+    "name": "`name` = '{0}'",
+    "desc": "`desc` = '{0}'"
+  },
+  "can": "add del set get export import",
+  "convert": "convert",
+  "delRepeat": { "sql": "DELETE FROM `osl_number_taocan` WHERE `tid` NOT IN (SELECT myid FROM (SELECT `tid` AS myid, MAX(`tid`) FROM `osl_number_taocan` GROUP BY `name`) b);"}
+}

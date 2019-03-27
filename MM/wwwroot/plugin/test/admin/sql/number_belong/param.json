@@ -1,0 +1,120 @@
+{
+  "bid": {
+    "title": "归属ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": true,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 99
+    },
+    "Filter": false
+  },
+  "segment": {
+    "title": "号段",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 29
+    },
+    "Filter": false
+  },
+  "prefix": {
+    "title": "号码开头",
+    "description": "号码的前7位",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 69
+    },
+    "Filter": false
+  },
+  "province": {
+    "title": "省份",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 8,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "city": {
+    "title": "城市",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 4,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "postal": {
+    "title": "邮政编码",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 59
+    },
+    "Filter": false
+  },
+  "area": {
+    "title": "区号",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 29
+    },
+    "Filter": false
+  },
+  "standard": {
+    "title": "制式",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 8,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "administrative": {
+    "title": "行政区号",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 59
+    },
+    "Filter": false
+  }
+}

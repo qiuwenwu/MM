@@ -1,0 +1,12 @@
+{
+"name": "member_signup_count",
+"type": "api",
+"path": "/api/member/signup/count",
+"cache": 15,
+"sqlPath": "./sql",
+"paramPath": "./param",
+"otherParam": true,
+"checkToken": false,
+"checkParam": false,
+"Scope": false
+}

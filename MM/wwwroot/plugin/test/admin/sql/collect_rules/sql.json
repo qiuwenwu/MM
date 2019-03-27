@@ -1,0 +1,38 @@
+{
+  "method": "method",
+  "table": "mm_collect_rules",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "field": "{0}",
+  "fieldDefault": "`rid`,`name`,`desc`,`url`,`num`,`keywords`,`channels`,`replace`,`synonym`,`outline`,`listRegex`,`articleRegex`,`filterWords`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "rid": "`rid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "name": "`name` like '%{0}%'",
+    "desc": "`desc` like '%{0}%'",
+    "url": "`url` like '%{0}%'",
+    "keywords": "`keywords` like '%{0}%'",
+    "channels": "`channels` like '%{0}%'",
+    "listRegex": "`listRegex` like '%{0}%'",
+    "articleRegex": "`articleRegex` like '%{0}%'",
+    "filterWords": "`filterWords` like '%{0}%'"
+  },
+  "update": {
+    "name": "`name` = '{0}'",
+    "desc": "`desc` = '{0}'",
+    "url": "`url` = '{0}'",
+    "keywords": "`keywords` = '{0}'",
+    "channels": "`channels` = '{0}'",
+    "listRegex": "`listRegex` = '{0}'",
+    "articleRegex": "`articleRegex` = '{0}'",
+    "filterWords": "`filterWords` = '{0}'"
+  },
+  "can": "add del set get export import",
+  "convert": "convert"
+}

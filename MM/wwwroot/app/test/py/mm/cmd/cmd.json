@@ -1,0 +1,43 @@
+﻿[{
+    "name": "task",
+    "identity": {
+        "username": "",
+        "uid": 0,
+        "gm": 0,
+        "vip": 0,
+        "mc": 0,
+        "group": "普通会员",
+        "power": "*"
+    },
+    "file": "./task.py",
+    "fun": "cmd"
+},
+{
+    "name": "update",
+    "identity": {
+        "username": "",
+        "uid": 0,
+        "gm": 0,
+        "vip": 0,
+        "mc": 0,
+        "group": "普通会员",
+        "power": "*"
+    },
+    "file": "./update.py",
+    "fun": "cmd"
+},
+{
+    "name": "plugin",
+    "identity": {
+        "username": "",
+        "uid": 0,
+        "gm": 0,
+        "vip": 0,
+        "mc": 0,
+        "group": "普通会员",
+        "power": "*"
+    },
+    "file": "./plugin.py",
+    "fun": "cmd"
+}
+]

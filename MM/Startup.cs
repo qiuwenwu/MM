@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.DependencyInjection;
+using System.Linq;
 
 namespace MM
 {
@@ -16,7 +18,25 @@ namespace MM
         /// <param name="services">服务集合</param>
         public void ConfigureServices(IServiceCollection services)
         {
+            // 压缩
+            services.AddResponseCompression(options =>
+            {
+                options.Providers.Add<BrotliCompressionProvider>();
+                options.Providers.Add<GzipCompressionProvider>();
+                options.EnableForHttps = true;
+                options.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(new[] { "image/svg+xml" });
+            });
 
+            // 缓存
+            services.AddResponseCaching();
+            if (Config.httpsPort > 0)
+            {
+                services.AddHttpsRedirection(options =>
+                {
+                    options.RedirectStatusCode = StatusCodes.Status307TemporaryRedirect;
+                    options.HttpsPort = Config.httpsPort;
+                });
+            }
         }
 
         /// <summary>

@@ -1,0 +1,52 @@
+<html>
+<body>
+<div id="test"></div>
+<script>
+function compile(template){
+  const evalExpr = /<%=(.+?)%>/g;
+  const expr = /<%([\s\S]+?)%>/g;
+
+  template = template
+    .replace(evalExpr, '`); \n  echo( $1 ); \n  echo(`')
+    .replace(expr, '`); \n $1 \n  echo(`');
+
+  template = 'echo(`' + template + '`);';
+
+  let script =
+  `(function parse(data){
+    let output = "";
+	
+    function echo(html){
+      output += html;
+    }
+	
+    ${ template }
+	
+    return output;
+  })`;
+  return script;
+}
+
+function view(tpl, vm){
+	var parse = eval(compile(tpl));
+	return parse(vm);
+}
+	
+	var name = "ÏÈÉú";
+	var a = eval("`<h5>${name}</h5>`");
+	<!-- var tpl = eval("`<div>${a}ÄãºÃ£¡</div>`"); -->
+	<!-- var html = tpl; -->
+	
+	var list = [1,2];
+	var tpl = `<ul>
+  <% for(let i = 0; i < list.length; i++) { %>
+    <li><%= list[i] %></li>
+  <% } %>
+</ul>`;
+
+	var tag = document.getElementById("test");
+	tag.innerHTML = view(tpl, list);
+	//console.log(html);
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "method": "method",
+  "table": "osl_number_hot_url",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`hot` DESC",
+  "field": "{0}",
+  "fieldDefault": "`hid`,`url`,`hot`,`updateTime`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "hid": "`hid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "url": "`url` like '%{0}%'",
+    "updateTime_min": "`updateTime` >= '{0}'",
+    "updateTime_max": "`updateTime` <= '{0}'"
+  },
+  "update": {
+    "url": "`url` = '{0}'",
+    "updateTime": "`updateTime` = '{0}'"
+  },
+  "can": "add set get",
+  "convert": "convert"
+}

@@ -1,0 +1,27 @@
+{
+  "method": "method",
+  "table": "osl_number_hot_format",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`hot` DESC",
+  "field": "{0}",
+  "fieldDefault": "`fid`,`name`,`url`,`hot`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "fid": "`fid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "name": "`name` like '%{0}%'",
+    "url": "`url` like '%{0}%'"
+  },
+  "update": {
+    "name": "`name` = '{0}'",
+    "url": "`url` = '{0}'"
+  },
+  "can": "add del set get export import",
+  "convert": "convert"
+}

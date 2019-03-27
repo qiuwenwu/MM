@@ -1,0 +1,427 @@
+{
+  "nid": {
+    "title": "号码ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": true,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 109
+    },
+    "Filter": false
+  },
+  "number": {
+    "title": "号码",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": true,
+      "minLength": 0,
+      "maxLength": 11,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "yid": {
+    "title": "寓意",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 79
+    },
+    "Filter": false
+  },
+  "tid": {
+    "title": "套餐ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 79
+    },
+    "Filter": false
+  },
+  "cityID": {
+    "title": "城市ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 79
+    },
+    "Filter": false
+  },
+  "gid": {
+    "title": "供应商ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 79
+    },
+    "Filter": false
+  },
+  "sid": {
+    "title": "制式",
+    "description": "联通、移动、电信s",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 79
+    },
+    "Filter": false
+  },
+  "uid": {
+    "title": "处理者用户ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 79
+    },
+    "Filter": false
+  },
+  "huaFei": {
+    "title": "话费",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 99
+    },
+    "Filter": false
+  },
+  "maiJia": {
+    "title": "卖价",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 99
+    },
+    "Filter": false
+  },
+  "daiLiJia": {
+    "title": "代理价",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 99
+    },
+    "Filter": false
+  },
+  "diJia": {
+    "title": "底价",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 99
+    },
+    "Filter": false
+  },
+  "format": {
+    "title": "格式",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 255,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "order": {
+    "title": "订单状态",
+    "description": "1为待售中, 2为已预约, 3为已售出，4为已下架, 5为已删除",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 9
+    },
+    "Filter": false
+  },
+  "heYue": {
+    "title": "合约",
+    "validate": {
+      "type": "bool",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "desc": {
+    "title": "描述",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 255,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "activity": {
+    "title": "活动",
+    "description": "有推荐、特价、包邮等",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 255,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "hot": {
+    "title": "热度",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 99
+    },
+    "Filter": false
+  },
+  "collection": {
+    "title": "收藏",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 99
+    },
+    "Filter": false
+  },
+  "private": {
+    "title": "私有",
+    "description": "私有号码为公司专有号码",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "display": {
+    "title": "排序",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 109
+    },
+    "Filter": false
+  },
+  "createTime": {
+    "title": "创建时间",
+    "validate": {
+      "type": "time",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "topTime": {
+    "title": "置顶时间",
+    "description": "只保留年、月、日、小时",
+    "validate": {
+      "type": "time",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "updateTime": {
+    "title": "更新时间",
+    "validate": {
+      "type": "time",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "group": {
+    "title": "分组",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 255,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "diXiao": {
+    "title": "最低消费",
+    "description": "0为无最低消费",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 64,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "birthday": {
+    "title": "是否生日号",
+    "description": "由后八位符合年月日组成",
+    "validate": {
+      "type": "bool",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "fengShui": {
+    "title": "是否风水号",
+    "description": "号码后8位仅由1、3、4、9组成",
+    "validate": {
+      "type": "bool",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "rid": {
+    "title": "每日推荐ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 89
+    },
+    "Filter": false
+  },
+  "kid": {
+    "title": "号码种类",
+    "description": "手机号码、固话、400号码、QQ号码、车牌号码",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 59
+    },
+    "Filter": false
+  },
+  "note": {
+    "title": "备注",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "hide": {
+    "title": "是否隐藏",
+    "validate": {
+      "type": "bool",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  }
+}

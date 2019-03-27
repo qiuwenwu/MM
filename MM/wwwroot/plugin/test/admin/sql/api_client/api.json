@@ -1,0 +1,12 @@
+{
+"name": "api_client",
+"type": "api",
+"path": "/apis/api/client",
+"cache": 0,
+"sqlPath": "./sql",
+"paramPath": "./param",
+"otherParam": true,
+"checkToken": true,
+"checkParam": true,
+"Scope": false
+}

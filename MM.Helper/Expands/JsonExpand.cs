@@ -1,5 +1,5 @@
-﻿using System;
-using System.Globalization;
+﻿using System.Globalization;
+using System.Web;
 
 namespace Newtonsoft.Json.Linq
 {
@@ -61,6 +61,40 @@ namespace Newtonsoft.Json.Linq
         public static long ToLong(this JToken jtk)
         {
             return long.Parse(jtk.ToString());
+        }
+
+        /// <summary>
+        /// URL参数转Json对象
+        /// </summary>
+        /// <param name="urlQuery">URL参数字符串</param>
+        /// <param name="toLower">是否转为小写</param>
+        /// <returns>返回json对象</returns>
+        public static JObject UrlToJson(this string urlQuery, bool toLower = true) {
+            var json = new JObject();
+            var arr = urlQuery.Split('&');
+            if (toLower)
+            {
+                foreach (var o in arr)
+                {
+                    var ar = o.Split('=');
+                    if (ar.Length > 1)
+                    {
+                        json.Add(ar[0].ToLower(), HttpUtility.UrlDecode(ar[1]));
+                    }
+                }
+            }
+            else
+            {
+                foreach (var o in arr)
+                {
+                    var ar = o.Split('=');
+                    if (ar.Length > 1)
+                    {
+                        json.Add(ar[0], HttpUtility.UrlDecode(ar[1]));
+                    }
+                }
+            }
+            return json;
         }
     }
 }

@@ -1,0 +1,26 @@
+{
+  "method": "method",
+  "table": "osl_member_signup_count",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "field": "{0}",
+  "fieldDefault": "`cid`,`url`,`type`,`times`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "cid": "`cid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "url": "`url` like '%{0}%'",
+    "type": "`type` like '%{0}%'"
+  },
+  "update": {
+    "url": "`url` = '{0}'",
+    "type": "`type` = '{0}'"
+  },
+  "can": "add del set get export import",
+  "convert": "convert"
+}

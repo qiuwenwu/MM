@@ -1,0 +1,428 @@
+.addchat_searchicon {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-90px -432px;background-size:487px 462px;height:30px;width:30px;}
+.ChatListBanner_Close {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-400px -304px;background-size:487px 462px;height:11px;width:11px;}
+.dialogs_close_btn {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-376px -357px;background-size:487px 462px;display:inline-block;height:25px;vertical-align:middle;width:25px;}
+.menuicon_chat {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-238px -398px;background-size:487px 462px;}
+.menuicon_copylink {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-272px -398px;background-size:487px 462px;}
+.menuicon_feedback {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-306px -398px;background-size:487px 462px;}
+.menuicon_newtab {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:0 -398px;background-size:487px 462px;}
+.menuicon_push_off {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-34px -398px;background-size:487px 462px;}
+.menuicon_push_on {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-68px -398px;background-size:487px 462px;}
+.menuicon_quit {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-102px -398px;background-size:487px 462px;}
+.menuicon_volume_mute {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-136px -398px;background-size:487px 462px;}
+.menuicon_volume_on {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-170px -398px;background-size:487px 462px;}
+.titlebar_menuicon {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-204px -398px;background-size:487px 462px;}
+.web_wechat_add {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-434px -398px;background-size:487px 462px;}
+.web_wechat_addfriend {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:0 -432px;background-size:487px 462px;}
+.web_wechat_add_friends {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-422px -55px;background-size:487px 462px;display:inline-block;height:55px;vertical-align:middle;width:55px;}
+.web_wechat_choose_green {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-467px -330px;background-size:487px 462px;}
+.web_wechat_choose_grey {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-467px -350px;background-size:487px 462px;}
+.web_wechat_choose_wireframe {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-331px -432px;background-size:487px 462px;display:inline-block;height:20px;vertical-align:middle;width:20px;}
+.web_wechat_close-tips {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-150px -432px;background-size:487px 462px;display:inline-block;height:25px;vertical-align:middle;width:25px;}
+.web_wechat_close-window {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-422px -165px;background-size:487px 462px;display:inline-block;height:55px;vertical-align:middle;width:55px;}
+.web_wechat_delete {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-150px -131px;background-size:487px 462px;display:inline-block;height:19px;vertical-align:middle;width:19px;}
+.web_wechat_delete_friends {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-422px -275px;background-size:487px 462px;display:inline-block;height:55px;vertical-align:middle;width:55px;}
+.web_wechat_download {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-136px -322px;background-size:487px 462px;display:inline-block;height:60px;vertical-align:middle;width:60px;}
+.web_wechat_down_icon {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-477px -65px;background-size:487px 462px;height:10px;width:10px;}
+.web_wechat_face {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-404px -398px;background-size:487px 462px;height:30px;width:30px;}
+.web_wechat_file {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-346px -76px;background-size:487px 462px;}
+.web_wechat_folder {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-346px 0;background-size:487px 462px;}
+.web_wechat_left {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-256px -322px;background-size:487px 462px;}
+.web_wechat_left_disable {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-196px -322px;background-size:487px 462px;}
+.web_wechat_login_logo {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-196px -210px;background-size:487px 462px;display:inline-block;height:28px;vertical-align:middle;width:36px;}
+.web_wechat_login_phone_icon {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-372px -398px;background-size:487px 462px;}
+.web_wechat_login_phone_icon,.web_wechat_login_scan_icon {display:inline-block;height:32px;vertical-align:middle;width:32px;}
+.web_wechat_login_scan_icon {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-340px -398px;background-size:487px 462px;}
+.web_wechat_logo {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-422px 0;background-size:487px 462px;height:55px;width:65px;}
+.web_wechat_men {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-384px -304px;background-size:487px 462px;height:16px;width:16px;}
+.web_wechat_message_fail {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-289px -432px;background-size:487px 462px;display:inline-block;height:22px;vertical-align:middle;width:22px;}
+.web_wechat_no-remind {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-401px -357px;background-size:487px 462px;}
+.web_wechat_no-remind_hl {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-311px -432px;background-size:487px 462px;}
+.web_wechat_nomes_icon {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-96px -150px;background-size:487px 462px;height:90px;width:100px;}
+.web_wechat_noread {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-411px -304px;background-size:487px 462px;height:11px;width:11px;}
+.web_wechat_no_contect {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:0 0;background-size:487px 462px;height:150px;width:150px;}
+.web_wechat_paly {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-422px -220px;background-size:487px 462px;height:55px;width:55px;}
+.web_wechat_pic {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-120px -432px;background-size:487px 462px;height:30px;width:30px;}
+.web_wechat_profile_loc {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-270px -228px;background-size:487px 462px;height:18px;width:18px;}
+.web_wechat_redbag {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-422px -330px;background-size:487px 462px;height:50px;width:45px;}
+.web_wechat_reddot {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-473px -380px;background-size:487px 462px;height:12px;width:12px;}
+.web_wechat_reddot_bbig {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-422px -380px;background-size:487px 462px;display:inline-block;height:16px;vertical-align:middle;width:29px;}
+.web_wechat_reddot_big,.web_wechat_reddot_middle {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-451px -380px;background-size:487px 462px;}
+.web_wechat_right {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-196px -150px;background-size:487px 462px;}
+.web_wechat_right_disable {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-76px -322px;background-size:487px 462px;}
+.web_wechat_screencut {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-30px -432px;background-size:487px 462px;}
+.web_wechat_search {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-60px -432px;background-size:487px 462px;}
+.web_wechat_send {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-232px -210px;background-size:487px 462px;}
+.web_wechat_send,.web_wechat_send_w {display:inline-block;height:25px;vertical-align:middle;width:25px;}
+.web_wechat_send_w {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-175px -432px;background-size:487px 462px;}
+.web_wechat_tab_add {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-267px -432px;background-size:487px 462px;display:inline-block;height:22px;vertical-align:middle;width:22px;}
+.web_wechat_tab_chat {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-150px -96px;background-size:487px 462px;}
+.web_wechat_tab_chat_hl {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-185px -96px;background-size:487px 462px;}
+.web_wechat_tab_close {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-245px -432px;background-size:487px 462px;display:inline-block;height:22px;vertical-align:middle;width:22px;}
+.web_wechat_tab_friends {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-220px -96px;background-size:487px 462px;}
+.web_wechat_tab_friends_hl {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-304px -246px;background-size:487px 462px;}
+.web_wechat_tab_launch-chat {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-223px -432px;background-size:487px 462px;display:inline-block;height:22px;vertical-align:middle;width:22px;}
+.web_wechat_tab_public {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-376px -322px;background-size:487px 462px;}
+.web_wechat_tab_public_hl {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-304px -281px;background-size:487px 462px;}
+.web_wechat_turn {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-316px -322px;background-size:487px 462px;height:60px;width:60px;}
+.web_wechat_up_icon {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-477px -55px;background-size:487px 462px;height:10px;width:10px;}
+.web_wechat_vdeio {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-422px -110px;background-size:487px 462px;display:inline-block;height:55px;vertical-align:middle;width:55px;}
+.web_wechat_voice_gray {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-200px -432px;background-size:487px 462px;}
+.web_wechat_voice_gray,.web_wechat_voice_green {display:inline-block;height:23px;vertical-align:middle;width:23px;}
+.web_wechat_voice_green {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-464px -398px;background-size:487px 462px;}
+.web_wechat_women {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-368px -304px;background-size:487px 462px;display:inline-block;height:16px;vertical-align:middle;width:16px;}
+.icon-txt {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:0 -322px;background-size:487px 462px;}
+.icon-pdf {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-228px -246px;background-size:487px 462px;}
+.icon-xls,.icon-xlsx {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-152px -246px;background-size:487px 462px;}
+.icon-doc,.icon-docx {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-76px -246px;background-size:487px 462px;}
+.icon-ppt,.icon-pptx {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:0 -246px;background-size:487px 462px;}
+.icon-zip {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-270px -152px;background-size:487px 462px;}
+.icon-numbers {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-270px -76px;background-size:487px 462px;}
+.icon-pages {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-270px 0;background-size:487px 462px;}
+.icon-key {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-346px -228px;background-size:487px 462px;}
+.icon-unknown {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-346px -152px;background-size:487px 462px;}
+.icon-refresh {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:0 -150px;background-size:487px 462px;width:96px;}
+.icon-broken-logo,.icon-refresh {display:inline-block;height:96px;vertical-align:middle;}
+.icon-broken-logo {-webkit-background-size:487px 462px;background:url(../img/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;background-position:-150px 0;background-size:487px 462px;width:120px;}
+.web_wechat_voice_playing {background:url(../img/3Oeq2i3.gif);}
+.web_wechat_voice_gray_playing,.web_wechat_voice_playing {display:inline-block;height:23px;vertical-align:middle;width:23px;}
+.web_wechat_voice_gray_playing {background:url('../img/1Rw0 -Kq.gif');}
+.ngdialog.default.ngdialog-content.ngdialog-close {background:url(../img/1OvE4o2.png) 0 -41px;display:inline-block;height:25px;right:14px;top:14px;vertical-align:middle;width:25px;}
+.btn_smart {-moz-border-radius:20px;-webkit-border-radius:20px;border-radius:20px;}
+.btn_send {background-color:#fff;color:#222;padding-left:30px;padding-right:30px;}
+.btn_send:hover {background-color:#f8f8f8;}
+.vm_item {display:table-cell;vertical-align:middle;word-break:break-all;word-wrap:break-word;}
+.vm_item_default {white-space:nowrap;}
+.vm_item_primary {width:2000px;}
+.bubble {-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;display:inline-block;font-size:14px;margin:0 10px;max-width:500px;min-height:1em;position:relative;text-align:left;vertical-align:top;}
+.bubble:after,.bubble:before {border:6px solid transparent;content:"";position:absolute;top:14px;}
+.bubble.left:after,.bubble.left:before {right:100%;}
+.bubble.left:after {border-right-color:#fff;border-right-width:4px;}
+.bubble.right:after,.bubble.right:before {left:100%;}
+.bubble.right:after {border-left-color:#fff;}
+.bubble.bubble_primary {background-color:#b2e281;}
+.bubble.bubble_primary.left:after {border-right-color:#b2e281;border-right-width:4px;}
+.bubble.bubble_primary.right.arrow_primary:before,.bubble.bubble_primary.right:after {border-left-color:#b2e281;border-left-width:4px;}
+.bubble.bubble_primary.right.arrow_primary:after {border-left-color:#fff;border-left-width:4px;margin-left:-2px;}
+.bubble.fill {padding:0;}
+.bubble.fillimg {cursor:pointer;display:block;}
+.bubble_hd {border-bottom:1px solid #cfcfcf;margin-bottom:5px;padding-bottom:7px;}
+.bubble_primary.bubble_hd {border-bottom:1px solid #75bf50;}
+.bubble_cont {min-height:25px;word-break:break-all;word-wrap:break-word;}
+.bubble_contli {color:#888;overflow:hidden;}
+.bubble_cont.plain {padding:9px 13px;}
+.bubble_cont.plain.ico_loading {margin-right:13px;margin-top:-7px;position:absolute;right:100%;top:50%;}
+.bubble_cont.plain.ico_fail {cursor:pointer;margin-right:9px;margin-top:-11px;position:absolute;right:100%;top:50%;}
+.bubble_cont.voice {cursor:pointer;max-width:300px;padding:7px 13px;position:relative;width:150px;}
+.bubble_cont.voice:after {clear:both;content:'';display:block;}
+.bubble_cont.voice.duration {color:#888;cursor:default;position:absolute;right:-77px;width:55px;}
+.bubble_cont.voice.durationi {margin-left:5px;}
+.bubble_cont.voice.flag {position:absolute;right:-53px;}
+.bubble_cont.app {background-color:#fff;display:block;margin:2px;max-width:300px;min-width:250px;overflow:hidden;padding:7px 13px;text-decoration:none;}
+.bubble_cont.app.title {color:#333;font-weight:400;margin-bottom:10px;}
+.bubble_cont.app.cover {-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;float:left;height:80px;margin-right:10px;width:80px;}
+.bubble_cont.app.desc {color:#888;max-height:5em;overflow:hidden;word-break:break-all;}
+.bubble_cont.card {background-color:#fff;cursor:pointer;margin:2px;padding:7px 13px;position:relative;width:250px;}
+.bubble_cont.card.card_hd {border-bottom:1px dotted#dedede;margin-bottom:10px;padding:0 7px;}
+.bubble_cont.card.card_avatar.img {-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;height:42px;width:42px;}
+.bubble_cont.card.info.display_name {font-size:14px;font-weight:400;}
+.bubble_cont.card:after {border:7px solid transparent;border-left-color:#fff;content:'';display:block;position:absolute;top:8px;z-index:99;}
+.bubble_cont.picture {-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;overflow:hidden;position:relative;}
+.bubble_cont.pictureimg {cursor:pointer;display:block;max-height:240px;max-width:350px;}
+.bubble_cont.luckmoney {-moz-border-radius:4px;-webkit-border-radius:4px;background-color:#fa9d3b;border-radius:4px;position:relative;}
+.bubble_cont.luckmoney:after {border:7px solid transparent;border-right-color:#fa9d3b;content:'';left:-14px;position:absolute;top:10px;z-index:99;}
+.bubble_cont.luckmoney.cover.img {height:60px;width:40px;}
+.bubble_cont.luckmoney.cont.title {color:#fff;font-weight:400;}
+.bubble_cont.luckmoney_bd {overflow:hidden;padding:10px;}
+.bubble_cont.luckmoney_ft {-moz-border-radius-bottomleft:4px;-moz-border-radius-bottomright:4px;-webkit-border-bottom-left-radius:4px;-webkit-border-bottom-right-radius:4px;background-color:#fff;border-bottom-left-radius:4px;border-bottom-right-radius:4px;overflow:hidden;padding:5px 0;}
+.bubble_cont.luckmoney_ftp {color:#888;padding-left:10px;}
+.bubble_cont.video {cursor:pointer;position:relative;}
+.bubble_cont.videoimg {max-height:150px;max-width:200px;}
+.bubble_cont.attach {-moz-border-radius:4px;-webkit-border-radius:4px;background-color:#fff;border-radius:4px;margin:2px;max-width:300px;min-height:75px;min-width:250px;padding:10px;position:relative;}
+.bubble_cont.attach:after {border:7px solid transparent;border-left-color:#fff;content:'';display:none;position:absolute;right:-13px;top:8px;z-index:99;}
+.bubble_cont.attach_bd.cover {display:table-cell;padding-right:10px;}
+.bubble_cont.attach_bd.cont {display:table-cell;vertical-align:top;}
+.bubble_cont.attach_bd.cont.title {max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:100%;word-wrap:normal;}
+.bubble_cont.attach_bd.cont.opr {margin-top:25px;}
+.bubble_cont.attach_bd.cont.opra {color:#35ac2f;text-decoration:none;}
+.bubble_cont.reader {padding:10px;}
+.bubble_cont.reader.link {color:#000;display:block;text-decoration:none;width:302px;}
+.bubble_cont.reader.title {font-weight:400;}
+.bubble_cont.reader.date {color:#999;}
+.bubble_cont.reader.cover {border:1px solid #e8e8e8;height:160px;margin:5px 0;width:300px;}
+.bubble_cont.reader.more {border-top:1px solid #ddd;line-height:30px;margin-top:10px;}
+.bubble_cont.location {-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;overflow:hidden;position:relative;}
+.bubble_cont.location.img {display:block;height:250px;width:250px;}
+.bubble_cont.location.desc {background-color:rgba(0,0,0,.6);bottom:0;color:#fff;overflow:hidden;padding:5px 10px;position:absolute;text-overflow:ellipsis;white-space:nowrap;width:230px;word-wrap:normal;}
+.me.bubble_cont.voice.duration {left:-80px;text-align:right;}
+.me.bubble_cont.card:after {right:-13px;}
+.me.bubble_cont.luckmoney:before {border:7px solid transparent;border-left-color:#fa9d3b;content:'';position:absolute;right:-14px;top:10px;z-index:99;}
+.emoticon {padding:0 15px;}
+.message {float:left;margin-bottom:16px;width:100%;}
+.message.avatar {-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;cursor:pointer;float:left;height:40px;width:40px;}
+.message.nickname {color:#4f4f4f;font-size:12px;font-weight:400;height:22px;line-height:24px;overflow:hidden;padding-left:10px;text-overflow:ellipsis;white-space:nowrap;width:350px;word-wrap:normal;}
+.message.custom_emoji {width:60px;}
+.message.me {clear:right;float:right;text-align:right;}
+.message.first {margin-top:10px;}
+.message_empty {color:#ccc;font-size:13px;margin-top:130px;text-align:center;}
+.message_system {margin:10px auto;max-width:50%;text-align:center;}
+.message_system.content {-moz-border-radius:2px;-webkit-border-radius:2px;background-color:#dcdcdc;border-radius:2px;color:#fff;display:inline-block;font-size:12px;padding:1px 18px;}
+.box {background-color:#eee;height:100%;overflow:hidden;position:relative;}
+.box_hd {left:0;line-height:30px;position:absolute;right:0;text-align:center;top:0;}
+.box_hd.title_wrap {background-color:#eee;border-bottom:1px solid #d6d6d6;margin:0 19px;padding:10px 0;position:relative;z-index:1024;}
+.box_hd.title {display:inline-block;font-size:14px;font-weight:400;height:25px;}
+.box_hd.title.title_name {color:#000;display:inline-block;font-weight:400;max-width:300px;overflow:hidden;text-decoration:none;text-overflow:ellipsis;vertical-align:middle;white-space:nowrap;word-wrap:normal;}
+.box_hd.title.title_name.emoji {margin-top:5px;}
+.box_hd.title.poi {cursor:pointer;}
+.box_hd.ext {line-height:50px;padding:0 20px;position:absolute;right:0;top:0;z-index:2048;}
+.box_hd.exta {color:#333;text-decoration:none;}
+.box_bd {bottom:0;left:0;position:absolute;right:0;top:51px;}
+.box_bd.empty {color:#888;font-size:14px;margin:50px;text-align:center;}
+.box_ft {bottom:0;left:0;position:absolute;right:0;}
+.vm_box {display:inline-block;height:100%;vertical-align:middle;}
+.frm_input_box {-moz-border-radius:20px;-webkit-border-radius:20px;border:1px solid #c2c2c2;border-radius:20px;display:inline-block;padding:6px 15px;}
+.frm_input {background-color:transparent;border:none;height:32px;outline:none;padding-left:10px;padding-right:10px;}
+.frm_textarea_box {background-color:#fff;border:1px solid #dedede;display:inline-block;font-size:14px;padding:4px 0 4px 10px;width:350px;}
+.frm_textarea {border:none;outline:none;width:100%;}
+.frm_textarea.flex {max-height:5em;overflow-y:auto;}
+.progress_bar {background:#ddd;height:6px;}
+.progress_bar,.progress_bar.progress {-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;}
+.progress_bar.progress {background:#35a328;display:block;height:100%;}
+.dropdown.contextMenu {position:absolute;}
+.dropdown {position:relative;z-index:1000;}
+.dropdown-toggle:focus {outline:0;}
+.dropdown-menu {background-clip:padding-box;background-color:#fff;border:1px solid rgba(0,0,0,.15);border-radius:4px;box-shadow:0 6px 12px rgba(0,0,0,.175);display:none;font-size:14px;list-style:none;min-width:125px;padding:5px 0;text-align:left;}
+.dropdown-menu.pull-right {left:auto;right:0;}
+.dropdown-menu.divider {background-color:#e5e5e5;height:1px;margin:9px 0;overflow:hidden;}
+.dropdown-menu>li>a {clear:both;color:#333;display:block;font-weight:400;line-height:1.42857143;padding:3px 20px;text-decoration:none;white-space:nowrap;}
+.dropdown-menu>li>a.zeroclipboard-is-hover,.dropdown-menu>li>a:focus,.dropdown-menu>li>a:hover {background-color:#f5f5f5;color:#262626;text-decoration:none;}
+.dropdown-menu>.active>a,.dropdown-menu>.active>a:focus,.dropdown-menu>.active>a:hover {background-color:#428bca;color:#fff;outline:0;text-decoration:none;}
+.dropdown-menu>.disabled>a:focus,.dropdown-menu>.disabled>a:hover {background-color:transparent;background-image:none;cursor:not-allowed;filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);text-decoration:none;}
+.at_wrp:before,.expression:before {border:7px solid transparent;border-top-color:#cfcfcf;}
+.at_wrp:after,.expression:after {border:7px solid transparent;border-top-color:#fff;margin-top:-1px;}
+.at.item.on,.at.item:hover,.at:hover.item:hover {background-color:#eee;}
+.at:hover.item.on,::-webkit-scrollbar-track {background-color:transparent;}
+.at.avatar,.bubble_cont.card.card_avatar {display:table-cell;padding-right:10px;vertical-align:middle;white-space:nowrap;word-break:break-all;word-wrap:break-word;}
+.at.info,.header.info,.bubble_cont.card.info {display:table-cell;vertical-align:middle;width:2000px;word-break:break-all;word-wrap:break-word;}
+.addchat_searchicon,.ChatListBanner_Close,.web_wechat_down_icon,.web_wechat_face,.web_wechat_logo,.web_wechat_men,.web_wechat_nomes_icon,.web_wechat_noread,.web_wechat_no_contect,.web_wechat_paly,.web_wechat_pic,.web_wechat_profile_loc,.web_wechat_redbag,.web_wechat_reddot,.web_wechat_turn,.web_wechat_up_icon {display:inline-block;vertical-align:middle;}
+.menuicon_chat,.menuicon_copylink,.menuicon_feedback,.menuicon_newtab,.menuicon_push_off,.menuicon_push_on,.menuicon_quit,.menuicon_volume_mute,.menuicon_volume_on,.titlebar_menuicon {display:inline-block;height:34px;vertical-align:middle;width:34px;}
+.web_wechat_add,.web_wechat_addfriend,.web_wechat_screencut,.web_wechat_search {display:inline-block;height:30px;vertical-align:middle;width:30px;}
+.web_wechat_choose_green,.web_wechat_choose_grey,.web_wechat_no-remind,.web_wechat_no-remind_hl {display:inline-block;height:20px;vertical-align:middle;width:20px;}
+.web_wechat_file,.web_wechat_folder,.icon-pdf,.icon-txt,.icon-doc,.icon-docx,.icon-xls,.icon-xlsx,.icon-ppt,.icon-pptx,.icon-zip,.icon-numbers,.icon-pages,.icon-key,.icon-unknown {display:inline-block;height:76px;vertical-align:middle;width:76px;}
+.web_wechat_left,.web_wechat_left_disable,.web_wechat_right,.web_wechat_right_disable {display:inline-block;height:60px;vertical-align:middle;width:60px;}
+.web_wechat_tab_chat,.web_wechat_tab_chat_hl,.web_wechat_tab_friends,.web_wechat_tab_friends_hl,.web_wechat_tab_public,.web_wechat_tab_public_hl {display:inline-block;height:35px;vertical-align:middle;width:35px;}
+.slide-down,.scale-fade {-webkit-transition:all0cubic-bezier(.25,.46,.45,.94);-webkit-transition-timing-function:cubic-bezier(.25,.46,.45,.94);transition:all0cubic-bezier(.25,.46,.45,.94);transition-timing-function:cubic-bezier(.25,.46,.45,.94);}
+.profile.nickname.emoji,.chat.box_ft.contentimg,.bubble_contimg {vertical-align:middle;}
+.profile.signature,.bubble_cont.card.info.signature {color:#888;font-size:14px;}
+.profile.meta_item,.profile_mini_bd.meta_item,body.ngdialog-open,.login_box.qrcode.extension.cont,.chat_item.info,.chooser.info,.bubble_cont.luckmoney.cont,.message.content,.message.me.content {overflow:hidden;}
+.profile.meta_item.label,.profile_mini_bd.meta_item.label {color:#888;float:left;font-size:12px;margin-right:10px;}
+.profile_mini_bd.opt,.me.bubble_cont.voicei,.message.me.avatar {float:right;}
+.profile_mini_bd.meta_item.value*,.scroll-element,.search_bar.focus.web_wechat_search,.login_box.qrcode.hide,.login_box.broken_network,.no-choose.upload-file-area,.chatroom_topic.dialog_bd.chatroom_namebr,.zoom_tips,.unlogin.main,.loaded.login,.ngdialog.default.ngdialog-content.ngdialog-close:before,.bubble.no_arrow:after,.bubble.no_arrow:before,.bubble_cont.microvideo.loaded+.web_wechat_paly,.me.bubble_cont.luckmoney:after {display:none;}
+.scroll-wrapper>.scroll-content::-webkit-scrollbar,.scroll-textarea>.scroll-content>textarea::-webkit-scrollbar {height:0;width:0;}
+.scrollbar-dynamic>.scroll-elementdiv,.scrollbar-chrome>.scroll-elementdiv {display:block;height:100%;left:0;top:0;width:100%;}
+.scrollbar-chrome>.scroll-element,.bubble.bubble_default {background-color:#fff;}
+.scrollbar-chrome>.scroll-element.scroll-x.scroll-scrolly_visible.scroll-element_size,.scrollbar-chrome>.scroll-element.scroll-x.scroll-scrolly_visible.scroll-element_track {left:-19px;}
+.scrollbar-chrome>.scroll-element.scroll-y.scroll-scrollx_visible.scroll-element_size,.scrollbar-chrome>.scroll-element.scroll-y.scroll-scrollx_visible.scroll-element_track {top:-19px;}
+.ngdialog.ngdialog-closing.ngdialog-overlay,.ngdialog.ngdialog-closing.ngdialog-content {-webkit-animation:a.1s;-webkit-backface-visibility:hidden;animation:a.1s;}
+.ngdialog.default.ngdialog-close:active:before,.ngdialog.default.ngdialog-close:hover:before,.dropdown-menu>.disabled>a,.dropdown-menu>.disabled>a:focus,.dropdown-menu>.disabled>a:hover {color:#777;}
+.header.info.nickname.display_name.emoji,.member.nickname.emoji,.recommendation.info.nickname.emoji,.recommendation.info.nickname.qqface {vertical-align:-4px;}
+.img_preview_container.img_opr_item,.exp_hd_item,.user_edit_nav.prev {float:left;}
+.login_box.qrcode.sub_desc,.login_box.broken_network.sub_desc {color:#888;font-size:18px;text-align:center;}
+.login_box.avatar.show,.login_box.association.show,.login_box.broken_network.show,.drop-enter.upload-file-area,.webuploader-dnd-over.upload-file-area,.no-choose.catch-drop-area,.exp_cont.active,.selector.contactor:hover.opt,.zoom_tips.show_zoom,.unlogin.login,.loaded.main,.open>.dropdown-menu {display:block;}
+.chat_list,.contact_list,.read_list,body,html {height:100%;}
+.chat_list.ico_loadingimg,.read_list.ico_loadingimg {margin-right:5px;vertical-align:-3px;}
+.chat_item.active.ext,.chat_item.active.info.msg,.read_item.active.date,.bubble_cont.luckmoney.cont.desc {color:#fff;}
+.chat_item.avatar.img,.chooser.avatar.img,.transpond-dialog.dialog-confirm.avatar.img {-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;display:block;height:40px;width:40px;}
+.contact_list.avatar,.chooser.avatar,.chooser.opt,.read_item_hd.avatar,.recommendation.avatar,.bubble_cont.luckmoney.cover {float:left;margin-right:10px;}
+.contact_list.info,.recommendation.info {line-height:30px;overflow:hidden;}
+.chat.box_ft.edit_area.caret_pos_helper,.webuploader-container {position:relative;}
+.chatroom_topic.dialog_ft,.add_chatroom.dialog_ft,.create_chatroom_dlg.dialog_ft,.transpond-dialog.dialog_ft,.transpond-dialog.dialog_ft {padding-top:20px;}
+.selector:after,.clearfix:after {clear:both;content:"";display:block;height:0;visibility:hidden;}
+.bubble_cont.picture.loading,.bubble_cont.video.loading {-khtml-opacity:.5;-moz-opacity:.5;background:#000;filter:alpha(opacity=50);height:100%;left:0;opacity:.5;position:absolute;top:0;width:100%;}
+.bubble_cont.picture.loadingimg,.bubble_cont.video.loadingimg {left:50%;margin-left:-8px;margin-top:-8px;position:absolute;top:50%;}
+.bubble_cont.video.web_wechat_paly,.bubble_cont.microvideo.web_wechat_paly {left:50%;margin-left:-27px;margin-top:-27px;position:absolute;top:50%;}
+@media-webkit-min-device-pixel-ratio2 {.addchat_searchicon {background:url(../img/VhujF7l.png) 00;background-size:150px 2489px;height:30px;width:30px;}
+.ChatListBanner_Close {background:url(../img/VhujF7l.png) 0 -30px;background-size:150px 2489px;height:11px;width:11px;}
+.dialogs_close_btn {background:url(../img/VhujF7l.png) 0 -41px;background-size:150px 2489px;height:25px;width:25px;}
+.menuicon_chat {background:url(../img/VhujF7l.png) 0 -66px;background-size:150px 2489px;height:34px;width:34px;}
+.menuicon_copylink {background:url(../img/VhujF7l.png) 0 -100px;background-size:150px 2489px;}
+.menuicon_feedback {background:url(../img/VhujF7l.png) 0 -134px;background-size:150px 2489px;}
+.menuicon_newtab {background:url(../img/VhujF7l.png) 0 -168px;background-size:150px 2489px;}
+.menuicon_push_off {background:url(../img/VhujF7l.png) 0 -202px;background-size:150px 2489px;}
+.menuicon_push_on {background:url(../img/VhujF7l.png) 0 -236px;background-size:150px 2489px;}
+.menuicon_quit {background:url(../img/VhujF7l.png) 0 -270px;background-size:150px 2489px;}
+.menuicon_volume_mute {background:url(../img/VhujF7l.png) 0 -304px;background-size:150px 2489px;}
+.menuicon_volume_on {background:url(../img/VhujF7l.png) 0 -338px;background-size:150px 2489px;}
+.titlebar_menuicon {background:url(../img/VhujF7l.png) 0 -372px;background-size:150px 2489px;height:34px;width:34px;}
+.web_wechat_add {background:url(../img/VhujF7l.png) 0 -406px;background-size:150px 2489px;height:30px;width:30px;}
+.web_wechat_addfriend {background:url(../img/VhujF7l.png) 0 -436px;background-size:150px 2489px;display:inline-block;height:30px;vertical-align:middle;width:30px;}
+.web_wechat_add_friends {background:url(../img/VhujF7l.png) 0 -466px;background-size:150px 2489px;display:inline-block;height:55px;vertical-align:middle;width:55px;}
+.web_wechat_choose_green {background:url(../img/VhujF7l.png) 0 -521px;background-size:150px 2489px;}
+.web_wechat_choose_grey {background:url(../img/VhujF7l.png) 0 -541px;background-size:150px 2489px;}
+.web_wechat_choose_wireframe {background:url(../img/VhujF7l.png) 0 -561px;background-size:150px 2489px;display:inline-block;height:20px;vertical-align:middle;width:20px;}
+.web_wechat_close-tips {background:url(../img/VhujF7l.png) 0 -581px;background-size:150px 2489px;display:inline-block;height:25px;vertical-align:middle;width:25px;}
+.web_wechat_close-window {background:url(../img/VhujF7l.png) 0 -606px;background-size:150px 2489px;display:inline-block;height:55px;vertical-align:middle;width:55px;}
+.web_wechat_delete {background:url(../img/VhujF7l.png) 0 -661px;background-size:150px 2489px;display:inline-block;height:19px;vertical-align:middle;width:19px;}
+.web_wechat_delete_friends {background:url(../img/VhujF7l.png) 0 -680px;background-size:150px 2489px;display:inline-block;height:55px;vertical-align:middle;width:55px;}
+.web_wechat_download {background:url(../img/VhujF7l.png) 0 -735px;background-size:150px 2489px;display:inline-block;height:60px;vertical-align:middle;width:60px;}
+.web_wechat_down_icon {background:url(../img/VhujF7l.png) 0 -795px;background-size:150px 2489px;height:10px;width:10px;}
+.web_wechat_face {background:url(../img/VhujF7l.png) 0 -805px;background-size:150px 2489px;height:30px;width:30px;}
+.web_wechat_file {background:url(../img/VhujF7l.png) 0 -835px;background-size:150px 2489px;}
+.web_wechat_file,.web_wechat_folder {display:inline-block;height:76px;vertical-align:middle;width:76px;}
+.web_wechat_folder {background:url(../img/VhujF7l.png) 0 -911px;background-size:150px 2489px;}
+.web_wechat_left {background:url(../img/VhujF7l.png) 0 -987px;background-size:150px 2489px;}
+.web_wechat_left_disable {background:url(../img/VhujF7l.png) 0 -1047px;background-size:150px 2489px;}
+.web_wechat_login_logo {background:url(../img/VhujF7l.png) 0 -1107px;background-size:150px 2489px;display:inline-block;height:28px;vertical-align:middle;width:36px;}
+.web_wechat_login_phone_icon {background:url(../img/VhujF7l.png) 0 -1135px;background-size:150px 2489px;}
+.web_wechat_login_phone_icon,.web_wechat_login_scan_icon {display:inline-block;height:32px;vertical-align:middle;width:32px;}
+.web_wechat_login_scan_icon {background:url(../img/VhujF7l.png) 0 -1167px;background-size:150px 2489px;}
+.web_wechat_logo {background:url(../img/VhujF7l.png) 0 -1199px;background-size:150px 2489px;height:55px;width:65px;}
+.web_wechat_men {background:url(../img/VhujF7l.png) 0 -1254px;background-size:150px 2489px;height:16px;width:16px;}
+.web_wechat_message_fail {background:url(../img/VhujF7l.png) 0 -1270px;background-size:150px 2489px;display:inline-block;height:22px;vertical-align:middle;width:22px;}
+.web_wechat_no-remind {background:url(../img/VhujF7l.png) 0 -1292px;background-size:150px 2489px;}
+.web_wechat_no-remind_hl {background:url(../img/VhujF7l.png) 0 -1312px;background-size:150px 2489px;}
+.web_wechat_nomes_icon {background:url(../img/VhujF7l.png) 0 -1332px;background-size:150px 2489px;height:90px;width:100px;}
+.web_wechat_noread {background:url(../img/VhujF7l.png) 0 -1422px;background-size:150px 2489px;height:11px;width:11px;}
+.web_wechat_no_contect {background:url(../img/VhujF7l.png) 0 -1433px;background-size:150px 2489px;height:150px;width:150px;}
+.web_wechat_paly {background:url(../img/VhujF7l.png) 0 -1583px;background-size:150px 2489px;height:55px;width:55px;}
+.web_wechat_pic {background:url(../img/VhujF7l.png) 0 -1638px;background-size:150px 2489px;height:30px;width:30px;}
+.web_wechat_profile_loc {background:url(../img/VhujF7l.png) 0 -1668px;background-size:150px 2489px;height:18px;width:18px;}
+.web_wechat_redbag {background:url(../img/VhujF7l.png) 0 -1686px;background-size:150px 2489px;height:50px;width:45px;}
+.web_wechat_reddot {background:url(../img/VhujF7l.png) 0 -1736px;background-size:150px 2489px;height:12px;width:12px;}
+.web_wechat_reddot_bbig {background:url(../img/VhujF7l.png) 0 -1748px;background-size:150px 2489px;width:29px;}
+.web_wechat_reddot_bbig,.web_wechat_reddot_big {display:inline-block;height:16px;vertical-align:middle;}
+.web_wechat_reddot_big {background:url(../img/VhujF7l.png) 0 -1764px;background-size:150px 2489px;width:22px;}
+.web_wechat_reddot_middle {background:url(../img/VhujF7l.png) 0 -1780px;background-size:150px 2489px;display:inline-block;height:16px;vertical-align:middle;width:22px;}
+.web_wechat_right {background:url(../img/VhujF7l.png) 0 -1796px;background-size:150px 2489px;}
+.web_wechat_right_disable {background:url(../img/VhujF7l.png) 0 -1856px;background-size:150px 2489px;}
+.web_wechat_screencut {background:url(../img/VhujF7l.png) 0 -1916px;background-size:150px 2489px;}
+.web_wechat_screencut,.web_wechat_search {display:inline-block;height:30px;vertical-align:middle;width:30px;}
+.web_wechat_search {background:url(../img/VhujF7l.png) 0 -1946px;background-size:150px 2489px;}
+.web_wechat_send {background:url(../img/VhujF7l.png) 0 -1976px;background-size:150px 2489px;}
+.web_wechat_send,.web_wechat_send_w {display:inline-block;height:25px;vertical-align:middle;width:25px;}
+.web_wechat_send_w {background:url(../img/VhujF7l.png) 0 -2001px;background-size:150px 2489px;}
+.web_wechat_tab_add {background:url(../img/VhujF7l.png) 0 -2026px;background-size:150px 2489px;height:22px;width:22px;}
+.web_wechat_tab_chat {background:url(../img/VhujF7l.png) 0 -2048px;background-size:150px 2489px;height:35px;width:35px;}
+.web_wechat_tab_chat_hl {background:url(../img/VhujF7l.png) 0 -2083px;background-size:150px 2489px;display:inline-block;height:35px;vertical-align:middle;width:35px;}
+.web_wechat_tab_close {background:url(../img/VhujF7l.png) 0 -2118px;background-size:150px 2489px;display:inline-block;height:22px;vertical-align:middle;width:22px;}
+.web_wechat_tab_friends {background:url(../img/VhujF7l.png) 0 -2140px;background-size:150px 2489px;}
+.web_wechat_tab_friends_hl {background:url(../img/VhujF7l.png) 0 -2175px;background-size:150px 2489px;}
+.web_wechat_tab_launch-chat {background:url(../img/VhujF7l.png) 0 -2210px;background-size:150px 2489px;display:inline-block;height:22px;vertical-align:middle;width:22px;}
+.web_wechat_tab_public {background:url(../img/VhujF7l.png) 0 -2232px;background-size:150px 2489px;}
+.web_wechat_tab_public_hl {background:url(../img/VhujF7l.png) 0 -2267px;background-size:150px 2489px;}
+.web_wechat_turn {background:url(../img/VhujF7l.png) 0 -2302px;background-size:150px 2489px;height:60px;width:60px;}
+.web_wechat_up_icon {background:url(../img/VhujF7l.png) 0 -2362px;background-size:150px 2489px;height:10px;width:10px;}
+.web_wechat_vdeio {background:url(../img/VhujF7l.png) 0 -2372px;background-size:150px 2489px;height:55px;width:55px;}
+.web_wechat_voice_gray {background:url(../img/VhujF7l.png) 0 -2427px;background-size:150px 2489px;height:23px;width:23px;}
+.web_wechat_voice_green {background:url(../img/VhujF7l.png) 0 -2450px;background-size:150px 2489px;height:23px;width:23px;}
+.web_wechat_women {background:url(../img/VhujF7l.png) 0 -2473px;background-size:150px 2489px;height:16px;width:16px;}
+.web_wechat_voice_playing {background:url(../img/nM4IIeV.gif);background-size:23px 23px;}
+.web_wechat_voice_gray_playing,.web_wechat_voice_playing {display:inline-block;height:23px;vertical-align:middle;width:23px;}
+.web_wechat_voice_gray_playing {background:url(../img/3-3rC6S.gif);background-size:23px 23px;}
+.web_wechat_left_disable,.web_wechat_right_disable {cursor:default;}
+.ngdialog.default.ngdialog-content.ngdialog-close {background:url(../img/VhujF7l.png) 0 -41px;background-size:150px 2489px;display:inline-block;height:25px;right:14px;top:14px;vertical-align:middle;width:25px;}
+.ngdialog.default.ngdialog-content.ngdialog-close:before {display:none;}
+.transpond-dialog.more {background:url(../img/2TuBgdx.png2eUvDjo.png) 0 0 no-repeat;background-size:40px 40px;}
+.addchat_searchicon,.ChatListBanner_Close,.dialogs_close_btn,.menuicon_chat,.titlebar_menuicon,.web_wechat_add,.web_wechat_down_icon,.web_wechat_face,.web_wechat_logo,.web_wechat_men,.web_wechat_nomes_icon,.web_wechat_noread,.web_wechat_no_contect,.web_wechat_paly,.web_wechat_pic,.web_wechat_profile_loc,.web_wechat_redbag,.web_wechat_reddot,.web_wechat_tab_add,.web_wechat_tab_chat,.web_wechat_turn,.web_wechat_up_icon,.web_wechat_vdeio,.web_wechat_voice_gray,.web_wechat_voice_green,.web_wechat_women {display:inline-block;vertical-align:middle;}
+.menuicon_copylink,.menuicon_feedback,.menuicon_newtab,.menuicon_push_off,.menuicon_push_on,.menuicon_quit,.menuicon_volume_mute,.menuicon_volume_on {display:inline-block;height:34px;vertical-align:middle;width:34px;}
+.web_wechat_choose_green,.web_wechat_choose_grey,.web_wechat_no-remind,.web_wechat_no-remind_hl {display:inline-block;height:20px;vertical-align:middle;width:20px;}
+.web_wechat_left,.web_wechat_left_disable,.web_wechat_right,.web_wechat_right_disable {display:inline-block;height:60px;vertical-align:middle;width:60px;}
+.web_wechat_tab_friends,.web_wechat_tab_friends_hl,.web_wechat_tab_public,.web_wechat_tab_public_hl {display:inline-block;height:35px;vertical-align:middle;width:35px;}
+}
+@mediamax-width568px {.ngdialog.default.ngdialog-button:focus {-webkit-animation:none;animation:none;}
+}
+@mediamax-height800px,max-width1000px {.main {height:100%;padding-top:0;}
+.main.copyright {display:none;}
+}
+@media-webkit-device-pixel-ratio2 {.addchat_searchicon {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-90px -432px;background-size:487px 462px;height:30px;width:30px;}
+.ChatListBanner_Close {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-400px -304px;background-size:487px 462px;height:11px;width:11px;}
+.dialogs_close_btn {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-376px -357px;background-size:487px 462px;display:inline-block;height:25px;vertical-align:middle;width:25px;}
+.menuicon_chat {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-238px -398px;background-size:487px 462px;}
+.menuicon_copylink {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-272px -398px;background-size:487px 462px;}
+.menuicon_feedback {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-306px -398px;background-size:487px 462px;}
+.menuicon_newtab {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:0 -398px;background-size:487px 462px;}
+.menuicon_push_off {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-34px -398px;background-size:487px 462px;}
+.menuicon_push_on {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-68px -398px;background-size:487px 462px;}
+.menuicon_quit {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-102px -398px;background-size:487px 462px;}
+.menuicon_volume_mute {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-136px -398px;background-size:487px 462px;}
+.menuicon_volume_on {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-170px -398px;background-size:487px 462px;}
+.titlebar_menuicon {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-204px -398px;background-size:487px 462px;}
+.web_wechat_add {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-434px -398px;background-size:487px 462px;}
+.web_wechat_addfriend {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:0 -432px;background-size:487px 462px;}
+.web_wechat_add_friends {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-422px -55px;background-size:487px 462px;display:inline-block;height:55px;vertical-align:middle;width:55px;}
+.web_wechat_choose_green {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-467px -330px;background-size:487px 462px;}
+.web_wechat_choose_grey {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-467px -350px;background-size:487px 462px;}
+.web_wechat_choose_wireframe {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-331px -432px;background-size:487px 462px;display:inline-block;height:20px;vertical-align:middle;width:20px;}
+.web_wechat_close-tips {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-150px -432px;background-size:487px 462px;display:inline-block;height:25px;vertical-align:middle;width:25px;}
+.web_wechat_close-window {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-422px -165px;background-size:487px 462px;display:inline-block;height:55px;vertical-align:middle;width:55px;}
+.web_wechat_delete {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-150px -131px;background-size:487px 462px;display:inline-block;height:19px;vertical-align:middle;width:19px;}
+.web_wechat_delete_friends {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-422px -275px;background-size:487px 462px;display:inline-block;height:55px;vertical-align:middle;width:55px;}
+.web_wechat_download {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-136px -322px;background-size:487px 462px;display:inline-block;height:60px;vertical-align:middle;width:60px;}
+.web_wechat_down_icon {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-477px -65px;background-size:487px 462px;height:10px;width:10px;}
+.web_wechat_face {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-404px -398px;background-size:487px 462px;height:30px;width:30px;}
+.web_wechat_file {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-346px -76px;background-size:487px 462px;}
+.web_wechat_folder {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-346px 0;background-size:487px 462px;}
+.web_wechat_left {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-256px -322px;background-size:487px 462px;}
+.web_wechat_left_disable {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-196px -322px;background-size:487px 462px;}
+.web_wechat_login_logo {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-196px -210px;background-size:487px 462px;display:inline-block;height:28px;vertical-align:middle;width:36px;}
+.web_wechat_login_phone_icon {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-372px -398px;background-size:487px 462px;}
+.web_wechat_login_phone_icon,.web_wechat_login_scan_icon {display:inline-block;height:32px;vertical-align:middle;width:32px;}
+.web_wechat_login_scan_icon {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-340px -398px;background-size:487px 462px;}
+.web_wechat_logo {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-422px 0;background-size:487px 462px;height:55px;width:65px;}
+.web_wechat_men {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-384px -304px;background-size:487px 462px;height:16px;width:16px;}
+.web_wechat_message_fail {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-289px -432px;background-size:487px 462px;display:inline-block;height:22px;vertical-align:middle;width:22px;}
+.web_wechat_no-remind {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-401px -357px;background-size:487px 462px;}
+.web_wechat_no-remind_hl {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-311px -432px;background-size:487px 462px;}
+.web_wechat_nomes_icon {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-96px -150px;background-size:487px 462px;height:90px;width:100px;}
+.web_wechat_noread {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-411px -304px;background-size:487px 462px;height:11px;width:11px;}
+.web_wechat_no_contect {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:0 0;background-size:487px 462px;height:150px;width:150px;}
+.web_wechat_paly {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-422px -220px;background-size:487px 462px;height:55px;width:55px;}
+.web_wechat_pic {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-120px -432px;background-size:487px 462px;height:30px;width:30px;}
+.web_wechat_profile_loc {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-270px -228px;background-size:487px 462px;height:18px;width:18px;}
+.web_wechat_redbag {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-422px -330px;background-size:487px 462px;height:50px;width:45px;}
+.web_wechat_reddot {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-473px -380px;background-size:487px 462px;height:12px;width:12px;}
+.web_wechat_reddot_bbig {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-422px -380px;background-size:487px 462px;display:inline-block;height:16px;vertical-align:middle;width:29px;}
+.web_wechat_reddot_big,.web_wechat_reddot_middle {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-451px -380px;background-size:487px 462px;}
+.web_wechat_right {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-196px -150px;background-size:487px 462px;}
+.web_wechat_right_disable {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-76px -322px;background-size:487px 462px;}
+.web_wechat_screencut {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-30px -432px;background-size:487px 462px;}
+.web_wechat_search {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-60px -432px;background-size:487px 462px;}
+.web_wechat_send {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-232px -210px;background-size:487px 462px;}
+.web_wechat_send,.web_wechat_send_w {display:inline-block;height:25px;vertical-align:middle;width:25px;}
+.web_wechat_send_w {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-175px -432px;background-size:487px 462px;}
+.web_wechat_tab_add {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-267px -432px;background-size:487px 462px;display:inline-block;height:22px;vertical-align:middle;width:22px;}
+.web_wechat_tab_chat {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-150px -96px;background-size:487px 462px;}
+.web_wechat_tab_chat_hl {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-185px -96px;background-size:487px 462px;}
+.web_wechat_tab_close {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-245px -432px;background-size:487px 462px;display:inline-block;height:22px;vertical-align:middle;width:22px;}
+.web_wechat_tab_friends {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-220px -96px;background-size:487px 462px;}
+.web_wechat_tab_friends_hl {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-304px -246px;background-size:487px 462px;}
+.web_wechat_tab_launch-chat {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-223px -432px;background-size:487px 462px;display:inline-block;height:22px;vertical-align:middle;width:22px;}
+.web_wechat_tab_public {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-376px -322px;background-size:487px 462px;}
+.web_wechat_tab_public_hl {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-304px -281px;background-size:487px 462px;}
+.web_wechat_turn {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-316px -322px;background-size:487px 462px;height:60px;width:60px;}
+.web_wechat_up_icon {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-477px -55px;background-size:487px 462px;height:10px;width:10px;}
+.web_wechat_vdeio {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-422px -110px;background-size:487px 462px;display:inline-block;height:55px;vertical-align:middle;width:55px;}
+.web_wechat_voice_gray {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-200px -432px;background-size:487px 462px;}
+.web_wechat_voice_gray,.web_wechat_voice_green {display:inline-block;height:23px;vertical-align:middle;width:23px;}
+.web_wechat_voice_green {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-464px -398px;background-size:487px 462px;}
+.web_wechat_women {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-368px -304px;background-size:487px 462px;display:inline-block;height:16px;vertical-align:middle;width:16px;}
+.icon-txt {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:0 -322px;background-size:487px 462px;}
+.icon-pdf {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-228px -246px;background-size:487px 462px;}
+.icon-xls,.icon-xlsx {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-152px -246px;background-size:487px 462px;}
+.icon-doc,.icon-docx {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-76px -246px;background-size:487px 462px;}
+.icon-ppt,.icon-pptx {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:0 -246px;background-size:487px 462px;}
+.icon-zip {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-270px -152px;background-size:487px 462px;}
+.icon-numbers {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-270px -76px;background-size:487px 462px;}
+.icon-pages {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-270px 0;background-size:487px 462px;}
+.icon-key {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-346px -228px;background-size:487px 462px;}
+.icon-unknown {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-346px -152px;background-size:487px 462px;}
+.icon-refresh {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:0 -150px;background-size:487px 462px;width:96px;}
+.icon-broken-logo,.icon-refresh {display:inline-block;height:96px;vertical-align:middle;}
+.icon-broken-logo {-webkit-background-size:487px 462px;background:url(../img/3d77c66cd37282eb9aae25295f7b0302@2x.png) no-repeat;background-position:-150px 0;background-size:487px 462px;width:120px;}
+.addchat_searchicon,.ChatListBanner_Close,.web_wechat_down_icon,.web_wechat_face,.web_wechat_logo,.web_wechat_men,.web_wechat_nomes_icon,.web_wechat_noread,.web_wechat_no_contect,.web_wechat_paly,.web_wechat_pic,.web_wechat_profile_loc,.web_wechat_redbag,.web_wechat_reddot,.web_wechat_turn,.web_wechat_up_icon {display:inline-block;vertical-align:middle;}
+.menuicon_chat,.menuicon_copylink,.menuicon_feedback,.menuicon_newtab,.menuicon_push_off,.menuicon_push_on,.menuicon_quit,.menuicon_volume_mute,.menuicon_volume_on,.titlebar_menuicon {display:inline-block;height:34px;vertical-align:middle;width:34px;}
+.web_wechat_add,.web_wechat_addfriend,.web_wechat_screencut,.web_wechat_search {display:inline-block;height:30px;vertical-align:middle;width:30px;}
+.web_wechat_choose_green,.web_wechat_choose_grey,.web_wechat_no-remind,.web_wechat_no-remind_hl {display:inline-block;height:20px;vertical-align:middle;width:20px;}
+.web_wechat_file,.web_wechat_folder,.icon-pdf,.icon-txt,.icon-doc,.icon-docx,.icon-xls,.icon-xlsx,.icon-ppt,.icon-pptx,.icon-zip,.icon-numbers,.icon-pages,.icon-key,.icon-unknown {display:inline-block;height:76px;vertical-align:middle;width:76px;}
+.web_wechat_left,.web_wechat_left_disable,.web_wechat_right,.web_wechat_right_disable {display:inline-block;height:60px;vertical-align:middle;width:60px;}
+.web_wechat_tab_chat,.web_wechat_tab_chat_hl,.web_wechat_tab_friends,.web_wechat_tab_friends_hl,.web_wechat_tab_public,.web_wechat_tab_public_hl {display:inline-block;height:35px;vertical-align:middle;width:35px;}
+}

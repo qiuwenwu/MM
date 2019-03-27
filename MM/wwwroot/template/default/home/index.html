@@ -1,0 +1,76 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-Hans">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="邱文武,邱润彬">
+    <!--if lt IE 9]><script src="../../static/js/html5.min.js"></script><![endif]-->
+    
+	<!-- mm CSS -->
+    <link rel="stylesheet" href="../../static/css/swiper.min.css">
+    <link rel="stylesheet" href="../../static/css/mm-component.css">
+    <link rel="stylesheet" href="../../static/css/mm-layout.css">
+    <link rel="stylesheet" href="../../static/css/mm-theme.css">
+	
+	<!-- mm JS -->
+    <script src="../../static/js/html5.min.js"></script>
+    <script src="../../static/js/jquery-3.3.1.min.js"></script>
+    <script src="../../static/js/zepto.min.js"></script>
+    <script src="../../static/js/mm-sdk.js"></script>
+    <script src="../../static/js/mm-ui.js"></script>
+    <title>超级美眉</title></head>
+	<style>
+		aside { width: 2rem;  }
+	</style>
+  <body>
+    <div id="app" class="layout">
+		@View("~/home/common/header.html")
+        <!-- 侧栏（开始） -->
+        <aside>
+          <div class="row">
+            <h4>侧栏</h4>
+            <nav>
+              <a href="#">
+                <div class="item">
+                  <span>测试链接mailto:Support@contoso.com</span></div>
+              </a>
+            </nav>
+          </div>
+        </aside>
+        <!-- 侧栏（结束） -->
+		
+        <!-- 文章（开始） -->
+        <article>
+		<div class="row">
+			  <div class="col-2">
+				<h4>大标题3333</h4>
+				<ul>
+				  <li>
+					<div class="item">
+					  <h5>标题</h5>
+					  <p>
+						<span>正文</span>
+						
+						</p>
+					</div>
+				  </li>
+				</ul>
+			  </div>
+			  <div class="col-10 tab">
+				<ul class="tab-title">
+					<li class="active">ABAB</li>
+					<li class="">ABCABC</li>
+					<li class="">ABCDABCD</li>
+					<li class="">ABCDEABCDE</li>
+				</ul>
+			  </div>
+		  </div>
+        </article>
+        <!-- 文章（结束） -->
+		
+		@View("~/home/common/footer.html")
+	  </div>
+  </body>
+
+</html>

@@ -1,0 +1,19 @@
+﻿[{
+  "Name": "update",
+  "Group": "*",
+  "Times": -1,
+  "Interval": 1000,
+  "identifier": "test_update_task",
+  "file": "./task.py",
+  "fun": "task"
+},
+{
+  "Name": "update",
+  "Group": "*",
+  "Times": 5,
+  "Interval": 2000,
+  "identifier": "test_update_task2",
+  "file": "./task2.py",
+  "fun": "task"
+}
+]

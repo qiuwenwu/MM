@@ -1,0 +1,32 @@
+{
+  "method": "method",
+  "table": "mm_web_plugin",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "field": "{0}",
+  "fieldDefault": "`pid`,`identifier`,`name`,`desc`,`directory`,`copyright`,`available`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "pid": "`pid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "identifier": "`identifier` like '%{0}%'",
+    "name": "`name` like '%{0}%'",
+    "desc": "`desc` like '%{0}%'",
+    "directory": "`directory` like '%{0}%'",
+    "copyright": "`copyright` like '%{0}%'"
+  },
+  "update": {
+    "identifier": "`identifier` = '{0}'",
+    "name": "`name` = '{0}'",
+    "desc": "`desc` = '{0}'",
+    "directory": "`directory` = '{0}'",
+    "copyright": "`copyright` = '{0}'"
+  },
+  "can": "add del set get export import",
+  "convert": "convert"
+}

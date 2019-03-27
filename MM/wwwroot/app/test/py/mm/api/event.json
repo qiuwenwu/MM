@@ -1,0 +1,62 @@
+[
+    {
+        "name": "api",
+        "target": "/api/gm/update",
+        "plugin": {
+            "identifier": "mm_update",
+            "file": "./update.py",
+            "fun": "api"
+        }
+    },
+    {
+        "name": "api",
+        "target": "/api/gm/cmd",
+        "plugin": {
+            "identifier": "mm_cmd",
+            "file": "./cmd.py",
+            "fun": "api"
+        }
+    },
+    {
+        "name": "api",
+        "target": "/file.*",
+        "plugin": {
+            "identifier": "mm_web_file",
+            "file": "./file.py",
+            "fun": "api"
+        }
+    },
+    {
+        "name": "api",
+        "target": "/manager",
+        "plugin": {
+            "identifier": "mm_manager",
+            "file": "./manager.py",
+            "fun": "api"
+        }
+    },
+    {
+        "name": "api",
+        "target": "/api.*",
+        "type": "check",
+        "tense": "before",
+        "sort": 99,
+        "end": false,
+        "plugin": {
+            "identifier": "mm_api",
+            "file": "./api.py",
+            "fun": "checkBefore"
+        }
+    },
+    {
+        "name": "api",
+        "target": "/api.*",
+        "sort": 101,
+        "end": false,
+        "plugin": {
+            "identifier": "mm_api",
+            "file": "./api.py",
+            "fun": "main"
+        }
+    }
+]

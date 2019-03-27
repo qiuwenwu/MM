@@ -1,0 +1,117 @@
+{
+  "method": "method",
+  "table": "osl_number",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`nid` DESC",
+  "field": "{0}",
+  "fieldDefault": "`nid`,`number`,`tid`,`cityID`,`gid`,`sid`,`huaFei`,`maiJia`,`daiLiJia`,`diJia`,`order`,`activity`,`createTime`,`updateTime`,`rid`,`note`,`display`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "nid": "`nid` = {0}",
+	"numbers": "`number` = '{0}'",
+	"gids": "`gid` = {0}",
+    "order_no": "`order` != {0}",
+    "updateTime_max": "`updateTime` <= '{0}'"
+  },
+  "item": {},
+  "query": {
+    "number": "`number` like '%{0}%'",
+    "format": "`format` like '%{0}%'",
+    "desc": "`desc` like '%{0}%'",
+    "activity": "`activity` like '%{0}%'",
+    "private": "`private` like '%{0}%'",
+    "createTime_min": "`createTime` >= '{0}'",
+    "createTime_max": "`createTime` <= '{0} 23:59:59'",
+    "topTime_min": "`topTime` >= '{0}'",
+    "topTime_max": "`topTime` <= '{0} 23:59:59'",
+    "updateTime_min": "`updateTime` >= '{0}'",
+    "updateTime_max": "`updateTime` <= '{0} 23:59:59'",
+    "group": "`group` like '%{0}%'",
+	"diXiao": "`diXiao` like '%{0}%'",
+    "note": "`note` like '%{0}%'",
+    "zhongFormat": "`format` like '%/*{0}*/%'",
+    "weiFormat": "`format` like '%/*{0}/%'",
+	"specialFormat": "`format` like '%/{0}/%'",
+	"cycleFormat": "`format` like '%/**{0}/%'",
+    "segment": "`number` like '{0}%'",
+    "max": "`maiJia` <= {0}",
+    "min": "`maiJia` >= {0}",
+	"diJia_max": "`diJia` <= {0}",
+    "diJia_min": "`diJia` >= {0}",
+    "weiShu": "`number` like '%{0}'",
+    "repeatNum": "length(`number`) - length(REPLACE(`number`,{0},'')) > 4",
+    "birthday": "`number` like '%{0}%' and `format` like '%生日%'",
+    "baoHan": "`number` like '%{0}%'",
+    "buBaoHan": "`number` REGEXP '^[^{0}]+$'",
+    "weiZhi": "`number` like '%{0}%'",
+    "order_no": "`order` != {0}",
+    "onlyNum": "substring(`number`, 3) REGEXP '^[{0}]+$'",
+    "gongHuoShang": "`gid` in (select x.uid FROM mm_user as x WHERE x.nickName = '{0}')",
+    "dateDiff": "DATEDIFF(`updateTime`, NOW()) = {0}",
+    "recommend": "`rid` in (select x.rid FROM mm_number_recommend as x WHERE x.title = '{0}')",
+	"no_rid": "`rid` != {0}",
+	"order": "`order` = {0}"
+  },
+  "update": {
+    "number": "`number` = '{0}'",
+    "format": "`format` = '{0}'",
+    "desc": "`desc` = '{0}'",
+    "activity": "`activity` = '{0}'",
+    "private": "`private` = '{0}'",
+    "createTime": "`createTime` = '{0}'",
+    "topTime": "`topTime` = '{0}'",
+    "updateTime": "`updateTime` = '{0}'",
+    "group": "`group` = '{0}'",
+    "log": "`log` = '{0}'",
+    "note": "`note` = '{0}'"
+  },
+  "can": "add del set get export import",
+  "convert": "convert",
+  "map": {
+		"cityID": {
+			"type": "table",
+			"table": "mm_web_region",
+			"id": "rid",
+			"field": "name",
+			"name": "城市",
+			"select": "`group`='市'"
+		},
+		"order": {
+			"id": "id",
+			"field": "name",
+			"name": "订单状态",
+			"value": "待售中,已预约,已售出,已下架,已删除"
+		},
+		"tid": {
+			"type": "table",
+			"table": "osl_number_taocan",
+			"id": "tid",
+			"field": "name",
+			"name": "套餐"
+		},
+		"gid": {
+			"type": "table",
+			"id": "uid",
+			"field": "nickName",
+			"table": "mm_user",
+			"name": "供应商",
+			"select": "`gid` in (select x.gid FROM mm_user_group as x WHERE x.name like '%供应商%')"
+		},
+		"hide": {
+			"type": "array",
+			"id": "id",
+			"field": "name",
+			"name": "是否隐藏",
+			"value": "否,是"
+		}
+	},
+	"delRepeat": {
+		"groupBy": "number",
+		"orderBy": "`diJia` ASC",
+		"id": "nid"
+	}
+}

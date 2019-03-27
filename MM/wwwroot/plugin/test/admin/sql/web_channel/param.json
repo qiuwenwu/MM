@@ -1,0 +1,151 @@
+{
+  "cid": {
+    "title": "",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": true,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 59
+    },
+    "Filter": false
+  },
+  "name": {
+    "title": "频道名称",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": true,
+      "minLength": 0,
+      "maxLength": 45,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "fid": {
+    "title": "上级ID",
+    "description": "在频道列表操作时，当上级频道展开时，才显示该频道",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 79
+    },
+    "Filter": false
+  },
+  "display": {
+    "title": "排序",
+    "description": "决定频道显示的先后顺序",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 89
+    },
+    "Filter": false
+  },
+  "icon": {
+    "title": "频道图标",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 255,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "url": {
+    "title": "外链地址",
+    "description": "如果该频道是跳转到其他网站的情况下，就在该URL上设置",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 255,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "desc": {
+    "title": "描述",
+    "description": "描述该频道的作用",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 255,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "tplType": {
+    "title": "模板类型",
+    "description": "QA问答、info资讯、news新闻、article文章、activity活动",
+    "validate": {
+      "type": "string",
+      "notEmpty": true,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 32,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "available": {
+    "title": "是否启用",
+    "description": "启用后才可以看到该频道",
+    "validate": {
+      "type": "bool",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "hide": {
+    "title": "是否隐藏",
+    "validate": {
+      "type": "bool",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "canPost": {
+    "title": "是否可回帖",
+    "validate": {
+      "type": "bool",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  }
+}

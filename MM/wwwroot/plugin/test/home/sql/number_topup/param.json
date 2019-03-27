@@ -1,0 +1,174 @@
+{
+  "tid": {
+    "title": "充值ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": true,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 89
+    },
+    "Filter": false
+  },
+  "createTime": {
+    "title": "下单时间",
+    "validate": {
+      "type": "time",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "number": {
+    "title": "充值的号码",
+    "validate": {
+      "type": "string",
+      "notEmpty": true,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 11,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "credit": {
+    "title": "充值面额",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 59
+    },
+    "Filter": false
+  },
+  "name": {
+    "title": "客户姓名",
+    "validate": {
+      "type": "string",
+      "notEmpty": true,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 16,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "rebate1": {
+    "title": "一级返利",
+    "description": "代理商",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 59
+    },
+    "Filter": false
+  },
+  "rebate2": {
+    "title": "二级返利",
+    "description": "店面",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 59
+    },
+    "Filter": false
+  },
+  "rebate3": {
+    "title": "三级返利",
+    "description": "微客",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 59
+    },
+    "Filter": false
+  },
+  "price": {
+    "title": "实收金额",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 59
+    },
+    "Filter": false
+  },
+  "payState": {
+    "title": "支付状态",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 9
+    },
+    "Filter": false
+  },
+  "state": {
+    "title": "订单状态",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 9
+    },
+    "Filter": false
+  },
+  "uid": {
+    "title": "客服ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 79
+    },
+    "Filter": false
+  },
+  "note": {
+    "title": "备注",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  }
+}

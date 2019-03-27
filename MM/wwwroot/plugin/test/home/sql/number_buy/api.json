@@ -1,0 +1,12 @@
+{
+"name": "number_buy",
+"type": "api",
+"path": "/api/number/buy",
+"cache": 15,
+"sqlPath": "./sql",
+"paramPath": "./param",
+"otherParam": true,
+"checkToken": false,
+"checkParam": false,
+"Scope": false
+}

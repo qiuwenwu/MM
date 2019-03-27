@@ -1,0 +1,12 @@
+[
+    {
+        "name": "api",
+        "target": "/api/test/qrb",
+        "sort": 10,
+        "plugin": {
+            "identifier": "mm_test_qrb",
+            "file": "./test.js",
+            "fun": "main"
+        }
+    }
+]

@@ -1,0 +1,47 @@
+{
+  "method": "method",
+  "table": "osl_number_recycling",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`rid` DESC",
+  "field": "{0}",
+  "fieldDefault": "`rid`,`number`,`phone`,`name`,`price`,`note`,`createTime`,`updateTime`,`state`,`belong`,`minExpend`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "rid": "`rid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "number": "`number` like '%{0}%'",
+    "phone": "`phone` like '%{0}%'",
+    "name": "`name` like '%{0}%'",
+    "price": "`price` like '%{0}%'",
+    "note": "`note` like '%{0}%'",
+    "createTime_min": "`createTime` >= '{0}'",
+    "createTime_max": "`createTime` <= '{0}'",
+    "updateTime_min": "`updateTime` >= '{0}'",
+    "updateTime_max": "`updateTime` <= '{0}'",
+    "belong": "`belong` like '%{0}%'"
+  },
+  "queryDefault": {},
+  "update": {
+    "number": "`number` = '{0}'",
+    "phone": "`phone` = '{0}'",
+    "name": "`name` = '{0}'",
+    "price": "`price` = '{0}'",
+    "note": "`note` = '{0}'",
+    "createTime": "`createTime` = '{0}'",
+    "updateTime": "`updateTime` = '{0}'",
+    "belong": "`belong` = '{0}'"
+  },
+  "can": "add get",
+  "convert": "convert",
+  "map": {},
+  "delRepeat": {
+    "groupBy": "number",
+    "orderBy": "`nid` ASC"
+  }
+}

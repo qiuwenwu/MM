@@ -1,0 +1,38 @@
+{
+  "method": "method",
+  "table": "mm_web_info",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "field": "{0}",
+  "fieldDefault": "`tid`,`name`,`desc`,`options`,`tpl_content`,`tpl_list`,`tpl_publish`,`tpl_module`,`icon`,`expiration`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "tid": "`tid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "name": "`name` like '%{0}%'",
+    "desc": "`desc` like '%{0}%'",
+    "options": "`options` like '%{0}%'",
+    "tpl_content": "`tpl_content` like '%{0}%'",
+    "tpl_list": "`tpl_list` like '%{0}%'",
+    "tpl_publish": "`tpl_publish` like '%{0}%'",
+    "tpl_module": "`tpl_module` like '%{0}%'",
+    "icon": "`icon` like '%{0}%'"
+  },
+  "update": {
+    "name": "`name` = '{0}'",
+    "desc": "`desc` = '{0}'",
+    "options": "`options` = '{0}'",
+    "tpl_content": "`tpl_content` = '{0}'",
+    "tpl_list": "`tpl_list` = '{0}'",
+    "tpl_publish": "`tpl_publish` = '{0}'",
+    "tpl_module": "`tpl_module` = '{0}'",
+    "icon": "`icon` = '{0}'"
+  },
+  "can": "add del set get export import",
+  "convert": "convert"
+}

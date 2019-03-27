@@ -1,0 +1,31 @@
+{
+  "method": "method",
+  "table": "osl_member_operation",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "field": "{0}",
+  "fieldDefault": "`uid`,`grids`,`updateTime`,`times`,`times_today`,`log_update`,`log_recommend`,`log_delete`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "uid": "`uid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "updateTime_min": "`updateTime` >= '{0}'",
+    "updateTime_max": "`updateTime` <= '{0}'",
+    "log_update": "`log_update` like '%{0}%'",
+    "log_recommend": "`log_recommend` like '%{0}%'",
+    "log_delete": "`log_delete` like '%{0}%'"
+  },
+  "update": {
+    "updateTime": "`updateTime` = '{0}'",
+    "log_update": "`log_update` = '{0}'",
+    "log_recommend": "`log_recommend` = '{0}'",
+    "log_delete": "`log_delete` = '{0}'"
+  },
+  "can": "get",
+  "convert": "convert"
+}

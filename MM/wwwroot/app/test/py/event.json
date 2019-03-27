@@ -1,0 +1,45 @@
+[{
+    "name": "api",
+    "target": "/api/test/py",
+	"sort": 11,
+    "plugin": {
+		"sort": 98,
+        "identifier": "api_doing_test",
+        "file": "./test.py",
+        "fun": "main"
+    }
+},
+{
+    "name": "api",
+    "target": "/api/test",
+	"sort": 11,
+    "plugin": {
+		"sort": 98,
+        "identifier": "api_doing_main_test",
+        "file": "/app/test/py/test.py",
+        "fun": "main"
+    }
+},
+{
+    "name": "api",
+    "target": "/api/test",
+	"sort": 11,
+    "plugin": {
+		"sort": 99,
+        "identifier": "api_doing_main_test2",
+        "file": "/app/test/py/test2.py",
+        "fun": "main"
+    }
+},
+{
+    "name": "api",
+    "target": "/js/test.js",
+	"sort": 10,
+    "plugin": {
+		"sort": 99,
+        "identifier": "mm_testFile",
+        "file": "./testFile.py",
+        "fun": "main"
+    }
+}
+]

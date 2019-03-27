@@ -1,0 +1,38 @@
+{
+  "method": "method",
+  "table": "osl_number_tcontent",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "field": "{0}",
+  "fieldDefault": "`cid`,`name`,`sid`,`desc`,`tid`,`cityID`,`price_min`,`price_max`,`hot`,`praise`,`share`,`createTime`,`display`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "cid": "`cid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "name": "`name` like '%{0}%'",
+    "desc": "`desc` like '%{0}%'",
+    "content": "`content` like '%{0}%'",
+    "activity": "`activity` like '%{0}%'",
+    "updateTime_min": "`updateTime` >= '{0}'",
+    "updateTime_max": "`updateTime` <= '{0}'",
+    "taocan": "`tid` in (select x.tid FROM osl_number_taocan as x WHERE x.name like '%{0}%')",
+    "kid": "`sid` in (select y.sid FROM osl_number_standard as y WHERE y.kid = {0})"
+  },
+  "update": {
+    "name": "`name` = '{0}'",
+    "desc": "`desc` = '{0}'",
+    "content": "`content` = '{0}'",
+    "activity": "`activity` = '{0}'",
+    "updateTime": "`updateTime` = '{0}'"
+  },
+  
+  "can": "add del set get export import",
+  "convert": "convert",
+  "queryDefault": {},
+  "map": {}
+}

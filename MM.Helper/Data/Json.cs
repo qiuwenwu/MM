@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
-using System.Web;
 
 namespace MM.Helper.Data
 {
@@ -40,32 +39,9 @@ namespace MM.Helper.Data
         /// <returns>返回Json对象</returns>
         public JObject FromUrl(string urlQuery, bool toLower = false)
         {
-            var json = new JObject();
-            var arr = urlQuery.Split('&');
-            if (toLower)
-            {
-                foreach (var o in arr)
-                {
-                    var ar = o.Split('=');
-                    if (ar.Length > 1)
-                    {
-                        Add(json, ar[0].ToLower(), HttpUtility.UrlDecode(ar[1]));
-                    }
-                }
-            }
-            else
-            {
-                foreach (var o in arr)
-                {
-                    var ar = o.Split('=');
-                    if (ar.Length > 1)
-                    {
-                        Add(json, ar[0], HttpUtility.UrlDecode(ar[1]));
-                    }
-                }
-            }
-            return json;
+            return urlQuery.UrlToJson(toLower);
         }
+
 
         #region 操作json对象
         /// <summary>
@@ -158,6 +134,7 @@ namespace MM.Helper.Data
             jarr[index] = value.ToString();
         }
         #endregion
+
 
         /// <summary>
         /// 序列化

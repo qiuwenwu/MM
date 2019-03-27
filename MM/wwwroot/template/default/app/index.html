@@ -1,0 +1,37 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-Hans">
+  
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	@Html.Description(Model.Description)
+	@Html.Keywords(Model.Keywords)
+	<meta name="author" content="邱文武,邱润彬">
+    <!--if lt IE 9]><script src="../../static/js/html5.min.js"></script><![endif]-->
+    <script type="text/javascript" src="/static/js/require.min.js" data-main="@Model.Main" charset="utf-8" async></script>
+	
+	<!-- mm CSS -->
+    <link rel="stylesheet" href="../../static/css/swiper.min.css">
+    <link rel="stylesheet" href="../../static/css/mm-layout.css">
+	<link rel="stylesheet" href="../../static/css/mm-component.css">
+    <link rel="stylesheet" href="../../static/css/mm-theme.css">
+ 
+	<!-- mm JS -->
+    <title>@Model.Title</title>
+	
+	</head>
+	<style>
+		aside { width: 2rem;  }
+	</style>
+  <body>
+    <div id="app">
+		<app></app>
+	</div>
+  </body>
+</html>

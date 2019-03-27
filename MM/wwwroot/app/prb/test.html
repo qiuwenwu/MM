@@ -1,0 +1,23 @@
+@{
+    Model.num = Model.num + 4;
+    Model.a = 144;
+}
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-Hans">
+
+<head>
+</head>
+
+<body>
+    <div id="app" class="layout">
+        @View("~/home/common/header.html");
+        <ul>
+            @for (int i = 0; i < @Model.num; i++) { 
+                int b=i + 1;
+                <li>@b 个小矮人</li>
+                }
+        </ul>
+    </div>
+</body>
+
+</html>

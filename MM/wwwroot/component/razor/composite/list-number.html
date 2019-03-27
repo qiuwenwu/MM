@@ -1,0 +1,12 @@
+@{
+	var list = @Model;
+}
+<ul class="list-number grid-4">
+	@for (var i = 0; i < list.length; i++)
+    {
+		<li>
+			@View("~/component/razor/base/item_number.html", list[i])
+			@View("~/component/razor/base/box_number.html", list[i])
+		</li>
+	}
+</ul>

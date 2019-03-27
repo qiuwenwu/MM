@@ -1,0 +1,22 @@
+{
+  "method": "method",
+  "table": "mm_user_count",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "field": "{0}",
+  "fieldDefault": "`uid`,`extcredits1`,`extcredits2`,`extcredits3`,`extcredits4`,`extcredits5`,`extcredits6`,`extcredits7`,`extcredits8`,`exp`,`level`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "uid": "`uid` = {0}"
+  },
+  "item": {},
+  "query": {
+	"user": "`uid` in (select x.uid From mm_user as x WHERE x.username like '%{0}%' || x.name like '%{0}%' || x.nickName like '%{0}%')"
+  },
+  "update": {},
+  "can": "get",
+  "convert": "convert"
+}

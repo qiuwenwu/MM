@@ -1,0 +1,8 @@
+<div class="box-number">
+	<h5>@Model.number</h5>
+	<p>
+		@Raw("<a href=\"/home/order?number=" + @Model.number + "\">预约" + ViewBag.title + "</a>")
+		<button style="display: none;">取消收藏</button>
+		<button class="btn-default">收藏</button>
+	</p>
+</div>

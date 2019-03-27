@@ -1,0 +1,17 @@
+[
+	{
+		"name": "api",
+		"target": "/api/wechat.*",
+		"type": "main",
+		"tense": "doing",
+		"end": true,
+		"sort": 9,
+		"plugin": {
+			"sort": 100,
+			"end": true,
+			"identifier": "api_wechat",
+			"file": "./event.py",
+			"fun": "main"
+		}
+	}
+]

@@ -1,0 +1,16 @@
+[{
+    "name": "api",
+    "target": "/api/test/cs",
+    "type": "main",
+    "tense": "doing",
+	"end": true,
+	"sort": 10,
+    "plugin": {
+		"sort": 100,
+		"end": true,
+        "identifier": "mm_test_cs",
+        "file": "./test.cs",
+        "fun": "main"
+    }
+}
+]

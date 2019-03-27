@@ -1,0 +1,11 @@
+{
+	"name": "api",
+	"target": "/api/developer",
+	"sort": 98,
+	"end": true,
+	"plugin": {
+		"identifier": "mm_developer",
+		"file": "./developer.py",
+		"fun": "main"
+	}
+}

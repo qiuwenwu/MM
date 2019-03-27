@@ -1,0 +1,38 @@
+{
+  "method": "method",
+  "table": "mm_api_token",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "field": "{0}",
+  "fieldDefault": "`tid`,`openID`,`updateTime`,`createTime`,`refreshToken`,`aid`,`uid`,`scope`,`unionID`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "tid": "`tid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "openID": "`openID` like '%{0}%'",
+    "updateTime_min": "`updateTime` >= '{0}'",
+    "updateTime_max": "`updateTime` <= '{0}'",
+    "createTime_min": "`createTime` >= '{0}'",
+    "createTime_max": "`createTime` <= '{0}'",
+    "refreshToken": "`refreshToken` like '%{0}%'",
+    "aid": "`aid` like '%{0}%'",
+    "scope": "`scope` like '%{0}%'",
+    "unionID": "`unionID` like '%{0}%'"
+  },
+  "update": {
+    "openID": "`openID` = '{0}'",
+    "updateTime": "`updateTime` = '{0}'",
+    "createTime": "`createTime` = '{0}'",
+    "refreshToken": "`refreshToken` = '{0}'",
+    "aid": "`aid` = '{0}'",
+    "scope": "`scope` = '{0}'",
+    "unionID": "`unionID` = '{0}'"
+  },
+  "can": "add del set get export import",
+  "convert": "convert"
+}

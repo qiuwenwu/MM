@@ -1,0 +1,12 @@
+{
+"name": "member_operation",
+"type": "api",
+"path": "/api/member/operation",
+"cache": 15,
+"sqlPath": "./sql",
+"paramPath": "./param",
+"otherParam": true,
+"checkToken": false,
+"checkParam": false,
+"Scope": false
+}

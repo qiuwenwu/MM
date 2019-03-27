@@ -1,0 +1,31 @@
+{
+  "method": "method",
+  "table": "gzh_user_apply",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`aid` DESC",
+  "field": "{0}",
+  "fieldDefault": "`aid`,`uid`,`commission_now`,`commission_apply`,`way`,`account`,`state`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "aid": "`aid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "account": "`account` like '%{0}%'"
+  },
+  "queryDefault": {},
+  "update": {
+    "account": "`account` = '{0}'"
+  },
+  "can": "add del set get export import",
+  "convert": "convert",
+  "map": {},
+  "delRepeat": {
+    "groupBy": "number",
+    "orderBy": "`nid` ASC"
+  }
+}

@@ -1,0 +1,12 @@
+{
+"name": "web_info",
+"type": "api",
+"path": "/api/web/info",
+"cache": 15,
+"sqlPath": "./sql",
+"paramPath": "./param",
+"otherParam": true,
+"checkToken": false,
+"checkParam": false,
+"Scope": false
+}

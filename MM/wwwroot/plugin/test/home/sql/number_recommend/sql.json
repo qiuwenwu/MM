@@ -1,0 +1,25 @@
+{
+  "method": "method",
+  "table": "osl_number_recommend",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`display` ASC",
+  "field": "{0}",
+  "fieldDefault": "`rid`,`title`,`display`,`available`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "rid": "`rid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "title": "`title` like '%{0}%'"
+  },
+  "update": {
+    "title": "`title` = '{0}'"
+  },
+  "can": "get",
+  "convert": "convert"
+}

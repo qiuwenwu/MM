@@ -1,0 +1,29 @@
+{
+  "method": "method",
+  "table": "osl_number_format",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`display` ASC",
+  "field": "{0}",
+  "fieldDefault": "`fid`,`name`,`regex`,`group`,`display`,`remove`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "fid": "`fid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "name": "`name` like '%{0}%'",
+    "regex": "`regex` like '%{0}%'",
+    "group": "`group` like '%{0}%'"
+  },
+  "update": {
+    "name": "`name` = '{0}'",
+    "regex": "`regex` = '{0}'",
+    "group": "`group` = '{0}'"
+  },
+  "can": "add del set get export import",
+  "convert": "convert"
+}

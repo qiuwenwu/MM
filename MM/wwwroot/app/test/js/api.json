@@ -1,0 +1,12 @@
+{
+    "title": "测试js脚本接口",
+    "description ": "这是测试JS的接口",
+    "type": "api",
+    "path": "/api/testjs",
+    "cache": 0,
+    "plugin": {
+        "language": "js",
+        "file": "test",
+        "fun": "Index"
+    }
+}

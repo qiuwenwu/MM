@@ -1,0 +1,12 @@
+{
+"name": "member_signup",
+"type": "api",
+"path": "/api/member/signup",
+"cache": 15,
+"sqlPath": "./sql",
+"paramPath": "./param",
+"otherParam": true,
+"checkToken": false,
+"checkParam": false,
+"Scope": false
+}

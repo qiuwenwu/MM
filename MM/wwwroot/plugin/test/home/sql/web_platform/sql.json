@@ -1,0 +1,27 @@
+{
+  "method": "method",
+  "table": "mm_web_platform",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`display` ASC",
+  "field": "{0}",
+  "fieldDefault": "`pid`,`name`,`identifier`,`display`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "pid": "`pid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "name": "`name` like '%{0}%'",
+    "identifier": "`identifier` like '%{0}%'"
+  },
+  "update": {
+    "name": "`name` = '{0}'",
+    "identifier": "`identifier` = '{0}'"
+  },
+  "can": "get",
+  "convert": "convert"
+}

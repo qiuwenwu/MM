@@ -1,0 +1,312 @@
+{
+  "uid": {
+    "title": "用户ID",
+    "description": "用户获取其他与用户相关的数据",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": true,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 79
+    },
+    "Filter": false
+  },
+  "username": {
+    "title": "用户名",
+    "description": "用户登录时所用的账户名称",
+    "validate": {
+      "type": "string",
+      "notEmpty": true,
+      "only": true,
+      "minLength": 0,
+      "maxLength": 24,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "password": {
+    "title": "密码",
+    "description": "用户登录所需的密码，由6-16位数字或英文组成",
+    "validate": {
+      "type": "string",
+      "notEmpty": true,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 32,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "referee": {
+    "title": "推荐人uid",
+    "description": "用于推荐注册时积分奖级",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 79
+    },
+    "Filter": false
+  },
+  "vip": {
+    "title": "会员级别",
+    "description": "用于确定用户访问权限",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 9
+    },
+    "Filter": false
+  },
+  "gm": {
+    "title": "管理员级别",
+    "description": "用于确定用户管理权限",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 9
+    },
+    "Filter": false
+  },
+  "mc": {
+    "title": "商家级别",
+    "description": "用于确定商家用户的管理权限",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 9
+    },
+    "Filter": false
+  },
+  "qq": {
+    "title": "QQ号",
+    "description": "用户的QQ",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 12,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "wechat": {
+    "title": "微信",
+    "description": "用户的微信",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 32,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "phone": {
+    "title": "手机号码",
+    "description": "用户的手机号码，用于找回密码时或登录时",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 15,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "email": {
+    "title": "邮箱",
+    "description": "用户的邮箱，用于找回密码时或登录时",
+    "validate": {
+      "type": "string",
+      "notEmpty": true,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 66,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "loginip": {
+    "title": "上次登录时的IP地址",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 255,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "logintime": {
+    "title": "上次登录时间",
+    "validate": {
+      "type": "time",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "salt": {
+    "title": "短验证",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 6,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "createTime": {
+    "title": "创建时间",
+    "validate": {
+      "type": "time",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "alias": {
+    "title": "微信别名",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 16,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "gid": {
+    "title": "用户组ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 89
+    },
+    "Filter": false
+  },
+  "name": {
+    "title": "姓名",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 45,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "signature": {
+    "title": "个性签名",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 255,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "nickName": {
+    "title": "昵称",
+    "validate": {
+      "type": "string",
+      "notEmpty": true,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 16,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "headImg": {
+    "title": "头像地址",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 255,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "cityID": {
+    "title": "所在城市ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 109
+    },
+    "Filter": false
+  },
+    "address": {
+    "title": "居住地址",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 255,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  }
+}

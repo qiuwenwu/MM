@@ -1,0 +1,143 @@
+{
+  "method": "method",
+  "table": "osl_number_order",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`oid` DESC",
+  "field": "{0}",
+  "fieldDefault": "`oid`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "oid": "`oid` = {0}"
+  },
+  "query": {
+    "number": "`number` like '%{0}%'",
+    "courier": "`courier` like '%{0}%'",
+    "courier_num": "`courier_num` like '%{0}%'",
+    "userInfo": "`userInfo` like '%{0}%'",
+    "note": "`note` like '%{0}%'",
+    "createTime_min": "`createTime` >= '{0}'",
+    "createTime_max": "`createTime` <= '{0} 23:59:59'",
+    "handingTime_min": "`handingTime` >= '{0}'",
+    "handingTime_max": "`handingTime` <= '{0} 23:59:59'",
+    "sendTime_min": "`sendTime` >= '{0}'",
+    "sendTime_max": "`sendTime` <= '{0} 23:59:59'",
+    "endTime_min": "`endTime` >= '{0}'",
+    "endTime_max": "`endTime` <= '{0} 23:59:59'",
+    "updateTime_min": "`updateTime` >= '{0}'",
+    "updateTime_max": "`updateTime` <= '{0} 23:59:59'",
+    "source": "`source` like '%{0}%'",
+	"gongHuoShang": "`gid` in (select x.uid FROM mm_user as x WHERE x.name like '%{0}%')",
+	"daiLiShang": "`did` in (select y.uid FROM mm_user as y WHERE y.name like '%{0}%')",
+	"keFu": "`uid` in (select u.uid FROM mm_user as u WHERE u.name like '%{0}%')",
+	"peiSongYuan": "`mid` in (select z.uid FROM mm_user as z WHERE z.name like '%{0}%')",
+	"count_endTime": "count_endTime >= {0}",
+	"keyword": "(`gid` in (select x.uid FROM mm_user as x WHERE x.nickname like '%{0}%') || `did` in (select y.uid FROM mm_user as y WHERE y.nickname like '%{0}%') || `userInfo` like '%{0}%' || `number` like '%{0}%')"
+  },
+  "queryDefault": {
+	"pid": "`pid` > 1",
+	"state": "`state` = 1"
+  },
+  "update": {
+    "number": "`number` = '{0}'",
+    "courier": "`courier` = '{0}'",
+    "courier_num": "`courier_num` = '{0}'",
+    "userInfo": "`userInfo` = '{0}'",
+    "note": "`note` = '{0}'",
+    "createTime": "`createTime` = '{0}'",
+    "handingTime": "`handingTime` = '{0}'",
+    "sendTime": "`sendTime` = '{0}'",
+    "endTime": "`endTime` = '{0}'",
+    "updateTime": "`updateTime` = '{0}'",
+    "keyword": "`keyword` = '{0}'",
+    "source": "`source` = '{0}'"
+  },
+  "item": {
+    "count_profits": "SUM(`daiLiJia_actual` - `diJia_actual`) as count_profits",
+	"count_endDay": "date_format(`endTime`, '%Y-%m-%d') as count_endDay",
+	"count_num": "count(`oid`) as count_num",
+	"count_endMonth": "date_format(`endTime`, '%Y-%m') as count_endMonth"
+  },
+  "can": "add del set get export import",
+  "convert": "convert",
+   "map": {
+		"cityID": {
+			"type": "table",
+			"table": "mm_web_region",
+			"id": "rid",
+			"field": "name",
+			"name": "城市",
+			"select": "`group`='市'"
+		},
+		"state": {
+			"id": "id",
+			"field": "name",
+			"name": "订单状态",
+			"value": "未知,待处理,受理中,待配送,配送中,指派中,已指派,已完成,已删除"
+		},
+		"tid": {
+			"type": "table",
+			"table": "osl_number_taocan",
+			"id": "tid",
+			"field": "name",
+			"name": "套餐"
+		},
+		"pid": {
+			"type": "table",
+			"table": "mm_web_platform",
+			"id": "pid",
+			"field": "name",
+			"name": "平台"
+		},
+		"gid": {
+			"type": "table",
+			"id": "uid",
+			"field": "nickName",
+			"table": "mm_user",
+			"name": "供应商",
+			"select": "`gid` in (select x.gid FROM mm_user_group as x WHERE x.name like '%供应%')"
+		},
+		"uid": {
+			"type": "table",
+			"id": "uid",
+			"field": "nickName",
+			"table": "mm_user",
+			"name": "客服",
+			"select": "`gid` in (select x.gid FROM mm_user_group as x WHERE x.name like '%客服%')"
+		},
+		"mid": {
+			"type": "table",
+			"id": "uid",
+			"field": "nickName",
+			"table": "mm_user",
+			"name": "配送员",
+			"select": "`gid` in (select x.gid FROM mm_user_group as x WHERE x.name like '%配送%')"
+		},
+		"aid": {
+			"type": "table",
+			"id": "uid",
+			"field": "nickName",
+			"table": "mm_user",
+			"name": "推广员",
+			"select": "`gid` in (select x.gid FROM mm_user_group as x WHERE x.name like '%推广%')"
+		},
+		"did": {
+			"type": "table",
+			"id": "uid",
+			"field": "nickName",
+			"table": "mm_user",
+			"name": "代销",
+			"select": "`gid` in (select x.gid FROM mm_user_group as x WHERE x.name like '%代销%')"
+		},
+		"hide": {
+			"type": "array",
+			"id": "id",
+			"field": "name",
+			"name": "是否隐藏",
+			"value": "否,是"
+		}
+	}
+}

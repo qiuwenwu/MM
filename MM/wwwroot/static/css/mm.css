@@ -1,0 +1,562 @@
+/* ==*==   《框架》   ==*== */
+/*===   初始化   ===*/
+a {text-decoration:none;}
+*,::after,::before {-webkit-box-sizing:border-box;box-sizing:border-box;}
+a:focus,input,textarea {outline-style:none;}
+article>footer {padding-top:8px;padding-top:.5rem;margin-top:8px;margin-top:.5rem;border-top:1px solid #dbdbdb;}
+article>header {text-align:center;padding:8px 0;padding:.5rem 0;margin-bottom:8px;margin-bottom:.5rem;border-bottom:1px solid #dbdbdb;}
+aside ~ article {margin-left:16px;margin-left:1rem;}
+aside,article {overflow:hidden;}
+body {font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:1.4;}
+body,h1,h2,h3,h4,h5,h6,p,img {padding:0;margin:0;}
+button:focus {outline:none;}
+figcaption,article>p,article>div {word-wrap:break-word;}
+figure em {position:absolute;top:-1.6px;top:-0.1rem;right:-4px;right:-0.25rem;font-size:12px;font-size:0.75rem;border-radius:.5rem;background:#F43530;color:#fff;font-style:normal;padding:1.92px 3.68px 0.8px 4px;padding:.12rem .23rem .05rem .25rem;min-height:8px;min-height:.5rem;}
+figure,img {line-height:1;border:none;min-height:24px;min-height:1.5rem;}
+header,footer,nav,aside,article,main,menu,hgroup,figure,figcaption,details {display:block;}
+header,footer {clear:both;float:none;}
+html,body {overflow-x:hidden;}
+input {font-size:16px;font-size:1rem;}
+input[type="text"],input[type="password"],textarea {outline-style:none;-webkit-appearance:none;}
+main {padding-top:16px;padding-top:1rem;padding-bottom:16px;padding-bottom:1rem;overflow:hidden;}
+main > aside,main > article {margin-top:16px;margin-top:1rem;min-height:400px;min-height:25rem;position:relative;}
+main>section {margin-top:16px;margin-top:1rem;padding-bottom:2px;overflow:hidden;}
+nav {min-height:32px;min-height:2rem;line-height:32px;line-height:2rem;}
+nav a {display:inline-block;padding:0 16px;padding:0 1rem;}
+section ~ section {margin-top:16px;margin-top:1rem;}
+textarea {resize:none}
+
+/* 基础列表 */
+dl, ol, ul, li { margin: 0; }
+dl {padding:0;}
+ol {padding:0 16px 0 16px;padding:0 1rem 0 1rem;}
+ul {padding:0 16px 0 16px;padding:0 1rem 0 1rem;}
+
+/* ===  基础文章  === */
+/* 字体大小、图片尺寸 */
+.h1,h1 {font-size:40px;font-size:2.5rem}
+.h2,h2 {font-size:32px;font-size:2rem}
+.h3,h3 {font-size:24px;font-size:1.5rem}
+.h4,h4 {font-size:20px;font-size:1.25rem}
+.h5,h5 {font-size:16px;font-size:1rem;}
+.h6,h6 {font-size:13.6px;font-size:0.85rem}
+article > figure {width:calc(100% - 2rem); margin:16px auto; margin:1rem auto; max-width:480px; max-width:30rem;}
+figcaption { margin-top: 4px; margin-top: .25rem; }
+figure { text-align:center; margin:auto; max-width: 448px; max-width: 28rem; position:relative; overflow:hidden; }
+figure img { width:100%; margin:auto; max-height:360px; max-height:22.5rem; display:block; }
+i { line-height: 1; }
+p {font-size:13.6px;font-size:.85rem;}
+p ~ figure { margin-top: 8px; margin-top: .5rem; }
+
+
+/* ====   公共  ==== */
+/* 特殊容器 */
+.warp {width:100%;max-width:1200px;max-width:75rem;margin:0 auto;}
+.mask {position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100%;z-index:7;}
+.modal {position:fixed;display:block;border-radius:0.2rem;width:calc(100% - 2rem);max-width:320px;max-width:20rem;margin:auto;border-radius:.25rem; z-index:8;}
+.floatBox {position:fixed;min-width: 32px;min-width: 2rem; min-height:32px; min-height:2rem; overflow:hidden; clear:both;}
+.modal header,.modal section { min-height:32px; min-height:2rem; padding: 12px; padding: .75rem; border-bottom: 1px solid #f5f5f5; }
+.modal-alert button {border:none;background:none;min-height:32px;min-height:2rem;padding:12px 0;padding:.75rem 0;-ms-flex-preferred-size:0;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;}
+.modal-alert footer {border-top:1px solid #dbdbdb;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;}
+
+
+/* 布局 */
+.ft {position:fixed;bottom:0;left:0;right:0;z-index:4;}
+.ft ~ main {padding-bottom:60.8px;padding-bottom:3.8rem;}
+.hd {position:fixed;top:0;left:0;right:0;z-index:4;}
+.hd ~ .bar-l { padding-top: 40px; padding-top: 2.5rem; }
+.hd ~ .nv {top:40px;top:2.5rem;}
+.hd ~ .nv ~ main {padding-top:72px;padding-top:4.5rem;}
+.hd ~ main {padding-top:40px;padding-top:2.5rem;}
+.hd>.warp {text-align:center;}
+.hd a {padding-left:16px;padding-left:1rem; padding-right: 16px; padding-right: 1rem;display:inline-block;}
+.lt,.rt {position:fixed;top:0;height:100%;min-width:48px;min-width:3rem;max-width:200px;max-width:12.5rem;z-index:6; overflow-x: hidden; overflow-y: auto;}
+.lt { left:0; }
+.nv {position:fixed;top:0;left:0;right:0;z-index:3;}
+.nv ~ main {padding-top:32px;padding-top:2rem;}
+.nv span ~ i { margin-left: 8px; margin-left: .5rem; }
+.rt {right:0;}
+
+/* 布局容器 */
+.layout > header {min-height:32px;min-height:2rem;line-height:32px;line-height:2rem;}
+.layout > .hd {min-height:40px;min-height:2.5rem;line-height:40px;line-height:2.5rem;}
+.layout > footer {min-height:44px;min-height:2.75rem;}
+.layout aside:first-child {float:left;}
+.layout-r aside {width:calc(20% - 0.5rem);float:left;}
+.layout-r article {width:calc(80% - 0.5rem);float:right;}
+.layout-l aside {width:calc(20% - 0.5rem);float:right;}
+.layout-l article {width:calc(80% - 0.5rem);float:left;}
+.layout-tb article.pa {width:calc(100% - 2rem);}
+.layout>.bar-t, .layout>.bar-b, .layout>.bar-l, .layout>.bar-r { position:fixed; z-index:3; }
+
+/* 栏目 */
+.bar { position: relative; }
+.bar header { min-height: 32px; min-height: 2rem; padding: 4px 16px; padding: .25rem 1rem; }
+.bar section { min-height: 32px; min-height: 2rem; padding: 12px 16px; padding: .75rem 1rem; }
+.bar h5 { font-size: 13.6px; font-size: .85rem; line-height:32px; line-height:2rem; }
+
+.bar-b {position:absolute;bottom:0;right:0;left:0;width:100%; min-height:32px; min-height:2rem; }
+.bar-l .item, .bar-r .item{ padding: 8px; padding: .5rem; }
+.bar-l .title { padding:0; }
+.bar-l .lr figure i,.bar-r .lr figure i { top: 5.28px; top: .33rem; }
+.bar-l {position:absolute;top:0;bottom:0;left:0;height:100%; min-width:44px; min-width:2.75rem; }
+.bar-l ~ .nv { padding-left: 44px; padding-left: 2.75rem; }
+.bar-l ~ main { padding-left: 60px; padding-left: 3.75rem; padding-right: 16px; padding-right: 1rem; }
+.bar-l > ul,.bar-r > ul { padding:0; }
+.bar-r {position:absolute;top:0;right:0;bottom:0;height:100%; min-width:44px; min-width:2.75rem; }
+.bar-t {position:absolute;top:0;right:0;left:0;width:100%; min-height:32px; min-height:2rem; }
+.bar-small { width: 44px; width: 2.75rem; text-align:center; }
+.bar-small li,.bar-small h5  { display:none; }
+.bar-small .title { display: block; }
+.bar-big { width: 125.6px; width: 7.85rem; }
+.bar-big ~ main { padding-left: 140px; padding-left: 8.75rem; padding-right: 16px; padding-right: 1rem; }
+
+/* 自动栅格 */
+.grid {display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;}
+.grid>* {-ms-flex-preferred-size:0;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;}
+[class*=grid-] > * {float:left;}
+.grid-1>* {width:100%;float:none;}
+.grid-2>* {width:50%;}
+.grid-3>* {width:33.333333%;}
+.grid-4>* {width:25%;}
+.grid-5>* {width:20%;}
+.grid-8>* {width:12.5%;}
+.grid-10>* {width:10%;}
+.grid>h5,[class*=grid-] >h5 {width:100%;}
+
+
+/* 列表 */
+.list {display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;}
+.list,[class*=list-],[class*=list-] ul {list-style:none;padding:0;}
+[class*=list-] {overflow:hidden;}
+[class*=list-] li {float:left;overflow:hidden;position:relative;}
+.list li {-ms-flex-preferred-size:0;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;}
+.list-1 li {width:100%;float:none;}
+.list-2 li {width:50%;}
+.list-3 li {width:33.333333%;}
+.list-4 li {width:25%;}
+.list-5 li {width:20%;}
+.list-6 li {width:60%;}
+.list-66 li {width:66.666666%;}
+.list-8 li {width:12.5%;}
+.list-10 li {width:10%;}
+.list .title,[class*=list-] .title {padding:0 16px;padding:0 1rem;min-height:24px;min-height:1.5rem;line-height:24px;line-height:1.5rem;font-size:12px;font-size:.75rem;font-weight:normal;width:100%;}
+.list.tb .item {padding:8px;padding:.5rem;}
+
+
+/* 栅格 */
+.row,main>section,aside>section,article>section {display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;}
+.row> h5 {width:100%;}
+.row-m {margin-top:12px;margin-top:.75rem;}
+.row-m > [class*=col-] {padding:8px;padding:.5rem;}
+.w {width:100%;}
+
+
+/* 列宽 */
+.col,[class*=col-],section>.bar {-ms-flex-preferred-size:0;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;}
+.col-10 {max-width:10%;-ms-flex:0 0 10%;-webkit-box-flex:0;flex:0 0 10%;}
+.col-20 {max-width:20%;-ms-flex:0 0 20%;-webkit-box-flex:0;flex:0 0 20%;}
+.col-25 {max-width:25%;-ms-flex:0 0 25%;-webkit-box-flex:0;flex:0 0 25%;}
+.col-33 {max-width:33.333333%;-ms-flex:0 0 33.333333%;-webkit-box-flex:0;flex:0 0 33.333333%;}
+.col-40 {max-width:40%;-ms-flex:0 0 40%;-webkit-box-flex:0;flex:0 0 40%;}
+.col-50 {max-width:50%;-ms-flex:0 0 50%;-webkit-box-flex:0;flex:0 0 50%;}
+.col-60 {max-width:60%;-ms-flex:0 0 60%;-webkit-box-flex:0;flex:0 0 60%;}
+.col-66 {max-width:66.666666%;-ms-flex:0 0 66.666666%;-webkit-box-flex:0;flex:0 0 66.666666%;}
+.col-75 {max-width:75%;-ms-flex:0 0 75%;-webkit-box-flex:0;flex:0 0 75%;}
+.col-80 {max-width:80%;-ms-flex:0 0 80%;-webkit-box-flex:0;flex:0 0 80%;}
+.col-90 {max-width:90%;-ms-flex:0 0 90%;-webkit-box-flex:0;flex:0 0 90%;}
+.col-100 {max-width:100%;-ms-flex:0 0 100%;-webkit-box-flex:0;flex:0 0 100%;}
+
+
+/* ====   位置   ==== */
+/* 浮动 */
+.fc{ margin-left: auto !important; margin-right: auto !important; display:block;}
+.fl {float:left !important;}
+.fn {float:none !important;}
+.fr {float:right !important;}
+
+/* 清除浮动 */
+.f-b {clear: both !important;}
+.f-l  {clear:left !important;}
+.f-n {clear:none !important;}
+.f-r {clear:right !important;}
+
+/* 居中 */
+.cr .inner,.cr h5,.cr p,.cr figure {display:table-cell;vertical-align:middle;}
+.c-x .inner {position:absolute;top:0;left:50%;-webkit-transform:translate(-50%,0);transform:translate(-50%,0);}
+.c-xy .inner,.modal {position:fixed;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);}
+.c-y .inner {position:absolute;top:50%;left:0;-webkit-transform:translate(0,-50%);transform:translate(0,-50%);}
+
+/* 对齐 */
+.center {text-align:center !important;}
+.left {text-align:left !important;}
+.right {text-align:right !important;}
+
+/* 子圆角 */
+.r-btn button {border-radius:0.3rem;}
+.r-btn-c button {border-radius:100%;}
+.r-btn-n button { border-radius:0; }
+.r-div .item {border-radius:0.3rem;}
+.r-div-c .item {border-radius:100%;}
+.r-div-n .item { border-radius:0; }
+.r-img img {border-radius:0.3rem;}
+.r-img-c img {border-radius:100%;}
+.r-img-n img { border-radius:0; }
+.r-input input {border-radius:0.3rem;}
+.r-input-n input { border-radius:0; }
+
+/* 填充 */
+.pa {padding:8px 16px !important;padding:.5rem 1rem !important;}
+.pb {padding-bottom:16px !important;padding-bottom:1rem !important;}
+.pl {padding-left:16px !important;padding-left:1rem !important;}
+.plr {padding-left:16px;padding-left:1rem; padding-right:16px !important; padding-right:1rem !important;}
+.pn {padding:0 !important;}
+.pr {padding-right:16px !important;padding-right:1rem !important;}
+.pt {padding-top:16px !important;padding-top:1rem !important;}
+.ptb {padding-top:16px;padding-top:1rem; padding-bottom:16px !important; padding-bottom:1rem !important;}
+
+/* 间距 */
+.ma {margin:16px !important;margin:1rem !important;}
+.mb {margin-bottom:16px !important;margin-bottom:1rem !important;}
+.mc {margin-left:auto !important; margin-right:auto !important;}
+.ml {margin-left:16px !important;margin-left:1rem !important;}
+.mlr {margin-left:16px;margin-left:1rem; margin-right:16px !important; margin-right:1rem !important;}
+.mn {margin:0 !important;}
+.mr {margin-right:16px !important;margin-right:1rem !important;}
+.mt {margin-top:16px !important;margin-top:1rem !important;}
+.mtb {margin-top:16px;margin-top:1rem; margin-bottom:16px !important; margin-bottom:1rem !important;}
+
+/* 边框 */
+.ba {border:1px solid #dbdbdb !important;}
+.bb {border-bottom:1px solid #dbdbdb !important;}
+.bl {border-left:1px solid #dbdbdb !important;}
+.blr {border-left:1px solid #dbdbdb !important;border-right:1px solid #dbdbdb !important;}
+.bn {border:none !important;}
+.br {border-right:1px solid #dbdbdb !important;}
+.bt {border-top:1px solid #dbdbdb !important;}
+.btb {border-top:1px solid #dbdbdb !important;border-bottom:1px solid #dbdbdb !important;}
+
+/*圆角*/
+.b-a {border-radius:0.3rem !important;}
+.b-b {border-bottom-right-radius:4.8px !important;border-bottom-right-radius:0.3rem !important;border-bottom-left-radius:4.8px !important;border-bottom-left-radius:0.3rem !important;}
+.b-c {border-radius:50% !important;}
+.b-l {border-bottom-left-radius:4.8px !important;border-bottom-left-radius:0.3rem !important;border-top-left-radius:4.8px !important;border-top-left-radius:0.3rem !important;}
+.b-lb {border-bottom-left-radius:4.8px !important;border-bottom-left-radius:0.3rem !important;}
+.b-lt {border-top-left-radius:4.8px !important;border-top-left-radius:0.3rem !important;}
+.b-n {border-radius:0 !important;}
+.b-r {border-bottom-right-radius:4.8px !important;border-bottom-right-radius:0.3rem !important;border-top-right-radius:4.8px !important;border-top-right-radius:0.3rem !important;}
+.b-rb {border-bottom-right-radius:4.8px !important;border-bottom-right-radius:0.3rem !important;}
+.b-rt {border-top-right-radius:4.8px !important;border-top-right-radius:0.3rem !important;}
+.b-t {border-top-left-radius:4.8px !important;border-top-left-radius:0.3rem !important;border-top-right-radius:4.8px !important;border-top-right-radius:0.3rem !important;}
+
+
+/* ====   项目排版   ==== */
+/*项目排版(tb lr tlr ltb lrb)*/
+.cr .item, .lr .item { line-height: 32px; line-height: 2rem; min-height:32px; min-height:2rem; padding: 0 16px; padding: 0 1rem; }
+.cr h5, .cr figure { padding-right: 8px; padding-right: .5rem; }
+.cr h5,.list-1.lr h5 { min-width: 72px; min-width: 4.5rem; }
+.cr p, .list-1.lr p { text-align: right; }
+
+.item {display:block; overflow:hidden;position:relative;margin:auto; }
+.item button ~ button { margin-left: 8px; margin-left: .5rem; }
+.item h5 { font-weight: normal; }
+.item p {overflow:hidden;word-wrap:break-word;}
+
+.lr figure i { top: 6px; top: .375rem; }
+.lr figure:first-child { margin-right: 8px; margin-right: .5rem; margin-top:4px; margin-top:.25rem; }
+.lr figure,.lr h5{float:left;}
+
+.lrb figure:first-child {float:left;}
+.lrb figure:last-child { float:none; width:100%; }
+.lrb h5:first-child {float:left;}
+.lrb h5:last-child { float:none; width:100%; }
+.lrb p:first-child {float:left;}
+.lrb p:last-child { float:none; width:100%; }
+
+.ltb h5:first-child {float:left;}
+.ltb p:first-child {float:left;}
+.ltb figure:first-child {float:left; margin-right:8px; margin-right:.5rem;}
+.ltb .item { padding:4px 16px; padding:.25rem 1rem; }
+.ltb h5{ line-height: 1.3 }
+
+.tb .item { text-align:center; }
+.tb .item > img {margin:0 auto;display:block;}
+.tlr .item > *:first-child {display:block;}
+.tlr .item > *:nth-child(2) {float:left;}
+
+/* 图片排版、标题排版、段落排版 */
+.big figure,.img-3 figure {width:64px;width:4rem;}
+.big h5,.h-3 h5 {font-size:24px;font-size:1.5rem;}
+.big p,.p-3 p {font-size:20px;font-size:1.25rem;}
+.huge figure,.img-1 figure {width:100px;width:6.25rem;}
+.huge h5,.h-1 h5 {font-size:32px;font-size:2rem;}
+.huge p,.p-1 p {font-size:24px;font-size:1.5rem;}
+.img-100 figure {width:100%;}
+.img-33 figure {width:33.333%;}
+.img-5.lr figure { min-height:24px; min-height:1.5rem;}
+.img-50 figure {width:50%;}
+.larger figure,.img-2 figure {width:80px;width:5rem;}
+.larger h5,.h-2 h5 {font-size:28px;font-size:1.75rem;}
+.larger p,.p-2 p {font-size:24px;font-size:1.5rem;}
+.mini figure,.img-6 figure {width:24px;width:1.5rem;}
+.mini h5,.h-6 h5 {font-size:12px;font-size:0.75rem;}
+.mini p,.p-6 p {font-size:9px;font-size:0.5625rem;}
+.normal figure,.img-4 figure {width:48px;width:3rem;}
+.normal h5,.h-4 h5 {font-size:20px;font-size:1.25rem;}
+.normal p,.p-4 p {font-size:16px;font-size:1rem;}
+.small figure,.img-5 figure {width:36px;width:2.25rem;}
+.small h5,.h-5 h5 {font-size:13.6px;font-size:0.85rem;}
+.small p,.p-5 p {font-size:12px;font-size:0.75rem;}
+
+/* 字体超出隐藏...显示*/
+.line-1, .line-1-p p, .line-1-h h5{ overflow: hidden; text-overflow:ellipsis; white-space: nowrap; }
+.line-2, .line-2-p p, .line-2-h h5{ display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.line-3, .line-3-p p, .line-3-h h5{ display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* 角标 */
+.angle {position:absolute;top:0;left:calc(50% + 1rem);}
+.angle-bl {position:absolute;bottom:0;left:0;}
+.angle-br {position:absolute;right:0;bottom:0;}
+.angle-tl {position:absolute;left:0;top:0;}
+.angle-tr {position:absolute;top:0;right:0;}
+
+
+/*===   基础组件   ===*/
+/* 基础表单 */
+input { border:1px solid #dbdbdb; }
+select { border:1px solid #dbdbdb; border-radius: .25rem; }
+textarea { padding: 4px; padding: .25rem; }
+
+/*标签*/
+.tag {display:inline-block;font-weight:400;white-space:nowrap;overflow:hidden;vertical-align:middle;padding:5.6px 16px;padding:.35rem 1rem;font-size:12px;font-size:.75rem;background:#f5f5f5;border:1px solid #dbdbdb;border-radius:0.25rem;position:relative;outline:none;}
+.tag i {position:absolute;top:5.6px;top:0.35rem;right:6.4px;right:0.4rem;width:13.6px;width:.85rem;height:13.6px;height:.85rem;}
+.tag i:after {display:inline-block;content:"×"; font-weight: 600; margin-left: 0.8px; margin-left: .05rem;}
+.tag i:hover,.tag i:active {border-radius:100%; background-color:#ebebeb; color:white; }
+.tag i ~ span {padding-left: 0;padding-right:8px;padding-right:.5rem;}
+
+/* a链接、按钮 徽章 */
+span ~ .badge { margin-left: 8px; margin-left: .5rem; }
+.badge {display:inline-block;border-radius:1rem;padding:3.2px 4.8px 2.24px 5.2px;padding:.2rem .3rem .14rem .325rem;font-size:10px;font-size:.625rem;background:#ebebeb;margin-left:1.6px;margin-left:.1rem;color:white; line-height:1; font-weight: 600;}
+.btn {padding:5.6px 16px;padding:0.35rem 1rem;border-radius:.25rem;border:1px solid #dbdbdb;font-size:12px;font-size:0.75rem;cursor:pointer;outline:none;position:relative}
+.btn > .badge { margin-left: 8px; margin-left: .5rem;}
+.btn-link { border:none; }
+.btn-down{padding-right:36.8px;padding-right:2.3rem;position:relative;}
+.btn-down:after{border-left:1px solid #a0e6ff;content:'\e252';font-family:'glyphicons Halflings';padding-left:4.8px;padding-left:.3rem;position:absolute;right:4.8px;right:.3rem;top:5.6px;top:.35rem;}
+.disabled {pointer-events:none;filter:alpha(opacity=80);-moz-opacity:0.8;-khtml-opacity:0.8;opacity:0.8;}
+
+/* 组合框 */
+[class*=group-] { display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:nowrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between;-webkit-box-align: start;-ms-flex-align: start;align-items: flex-start; -ms-flex-line-pack: start; align-content: flex-start; }
+[class*=group-] >*{ white-space:nowrap;margin-left: -1px; }
+[class*=group-] span { line-height:32px; line-height:2rem; height:32px; height:2rem; padding:0 16px; padding:0 1rem; font-size:13.6px; font-size:.85rem; border:1px solid #dbdbdb; }
+[class*=group-] select { line-height:32px; line-height:2rem; height:32px; height:2rem; padding:6px 8px; padding:.375rem 0.5rem;min-width: 72px;min-width: 4.5rem; }
+[class*=group-] >button { text-align: center; white-space: nowrap; z-index: 2; }
+[class*=group-] >input { padding-left: 4px; padding-left: .25rem; padding-right: 4px; padding-right: .25rem; }
+[class*=group-] >input, [class*=group-] >button { -ms-flex-preferred-size:0;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1; height:28px; height: 1.75rem; }
+[class*=group-] label { border:1px solid #dbdbdb; line-height:28px; line-height:1.75rem; min-width:48px; min-width:3rem; text-align:center; padding-top: 1.6px; padding-top: .1rem; }
+[class*=group-] label input[type="radio"],[class*=group-] label input[type="Radio"],[class*=group-] label input[type="rAdio"],[class*=group-] label input[type="RAdio"],[class*=group-] label input[type="raDio"],[class*=group-] label input[type="RaDio"],[class*=group-] label input[type="rADio"],[class*=group-] label input[type="RADio"],[class*=group-] label input[type="radIo"],[class*=group-] label input[type="RadIo"],[class*=group-] label input[type="rAdIo"],[class*=group-] label input[type="RAdIo"],[class*=group-] label input[type="raDIo"],[class*=group-] label input[type="RaDIo"],[class*=group-] label input[type="rADIo"],[class*=group-] label input[type="RADIo"],[class*=group-] label input[type="radiO"],[class*=group-] label input[type="RadiO"],[class*=group-] label input[type="rAdiO"],[class*=group-] label input[type="RAdiO"],[class*=group-] label input[type="raDiO"],[class*=group-] label input[type="RaDiO"],[class*=group-] label input[type="rADiO"],[class*=group-] label input[type="RADiO"],[class*=group-] label input[type="radIO"],[class*=group-] label input[type="RadIO"],[class*=group-] label input[type="rAdIO"],[class*=group-] label input[type="RAdIO"],[class*=group-] label input[type="raDIO"],[class*=group-] label input[type="RaDIO"],[class*=group-] label input[type="rADIO"],[class*=group-] label input[type="RADIO"],[class*=group-] label input[type="checkbox"],[class*=group-] label input[type="Checkbox"],[class*=group-] label input[type="cHeckbox"],[class*=group-] label input[type="CHeckbox"],[class*=group-] label input[type="chEckbox"],[class*=group-] label input[type="ChEckbox"],[class*=group-] label input[type="cHEckbox"],[class*=group-] label input[type="CHEckbox"],[class*=group-] label input[type="cheCkbox"],[class*=group-] label input[type="CheCkbox"],[class*=group-] label input[type="cHeCkbox"],[class*=group-] label input[type="CHeCkbox"],[class*=group-] label input[type="chECkbox"],[class*=group-] label input[type="ChECkbox"],[class*=group-] label input[type="cHECkbox"],[class*=group-] label input[type="CHECkbox"],[class*=group-] label input[type="checKbox"],[class*=group-] label input[type="ChecKbox"],[class*=group-] label input[type="cHecKbox"],[class*=group-] label input[type="CHecKbox"],[class*=group-] label input[type="chEcKbox"],[class*=group-] label input[type="ChEcKbox"],[class*=group-] label input[type="cHEcKbox"],[class*=group-] label input[type="CHEcKbox"],[class*=group-] label input[type="cheCKbox"],[class*=group-] label input[type="CheCKbox"],[class*=group-] label input[type="cHeCKbox"],[class*=group-] label input[type="CHeCKbox"],[class*=group-] label input[type="chECKbox"],[class*=group-] label input[type="ChECKbox"],[class*=group-] label input[type="cHECKbox"],[class*=group-] label input[type="CHECKbox"],[class*=group-] label input[type="checkBox"],[class*=group-] label input[type="CheckBox"],[class*=group-] label input[type="cHeckBox"],[class*=group-] label input[type="CHeckBox"],[class*=group-] label input[type="chEckBox"],[class*=group-] label input[type="ChEckBox"],[class*=group-] label input[type="cHEckBox"],[class*=group-] label input[type="CHEckBox"],[class*=group-] label input[type="cheCkBox"],[class*=group-] label input[type="CheCkBox"],[class*=group-] label input[type="cHeCkBox"],[class*=group-] label input[type="CHeCkBox"],[class*=group-] label input[type="chECkBox"],[class*=group-] label input[type="ChECkBox"],[class*=group-] label input[type="cHECkBox"],[class*=group-] label input[type="CHECkBox"],[class*=group-] label input[type="checKBox"],[class*=group-] label input[type="ChecKBox"],[class*=group-] label input[type="cHecKBox"],[class*=group-] label input[type="CHecKBox"],[class*=group-] label input[type="chEcKBox"],[class*=group-] label input[type="ChEcKBox"],[class*=group-] label input[type="cHEcKBox"],[class*=group-] label input[type="CHEcKBox"],[class*=group-] label input[type="cheCKBox"],[class*=group-] label input[type="CheCKBox"],[class*=group-] label input[type="cHeCKBox"],[class*=group-] label input[type="CHeCKBox"],[class*=group-] label input[type="chECKBox"],[class*=group-] label input[type="ChECKBox"],[class*=group-] label input[type="cHECKBox"],[class*=group-] label input[type="CHECKBox"],[class*=group-] label input[type="checkbOx"],[class*=group-] label input[type="CheckbOx"],[class*=group-] label input[type="cHeckbOx"],[class*=group-] label input[type="CHeckbOx"],[class*=group-] label input[type="chEckbOx"],[class*=group-] label input[type="ChEckbOx"],[class*=group-] label input[type="cHEckbOx"],[class*=group-] label input[type="CHEckbOx"],[class*=group-] label input[type="cheCkbOx"],[class*=group-] label input[type="CheCkbOx"],[class*=group-] label input[type="cHeCkbOx"],[class*=group-] label input[type="CHeCkbOx"],[class*=group-] label input[type="chECkbOx"],[class*=group-] label input[type="ChECkbOx"],[class*=group-] label input[type="cHECkbOx"],[class*=group-] label input[type="CHECkbOx"],[class*=group-] label input[type="checKbOx"],[class*=group-] label input[type="ChecKbOx"],[class*=group-] label input[type="cHecKbOx"],[class*=group-] label input[type="CHecKbOx"],[class*=group-] label input[type="chEcKbOx"],[class*=group-] label input[type="ChEcKbOx"],[class*=group-] label input[type="cHEcKbOx"],[class*=group-] label input[type="CHEcKbOx"],[class*=group-] label input[type="cheCKbOx"],[class*=group-] label input[type="CheCKbOx"],[class*=group-] label input[type="cHeCKbOx"],[class*=group-] label input[type="CHeCKbOx"],[class*=group-] label input[type="chECKbOx"],[class*=group-] label input[type="ChECKbOx"],[class*=group-] label input[type="cHECKbOx"],[class*=group-] label input[type="CHECKbOx"],[class*=group-] label input[type="checkBOx"],[class*=group-] label input[type="CheckBOx"],[class*=group-] label input[type="cHeckBOx"],[class*=group-] label input[type="CHeckBOx"],[class*=group-] label input[type="chEckBOx"],[class*=group-] label input[type="ChEckBOx"],[class*=group-] label input[type="cHEckBOx"],[class*=group-] label input[type="CHEckBOx"],[class*=group-] label input[type="cheCkBOx"],[class*=group-] label input[type="CheCkBOx"],[class*=group-] label input[type="cHeCkBOx"],[class*=group-] label input[type="CHeCkBOx"],[class*=group-] label input[type="chECkBOx"],[class*=group-] label input[type="ChECkBOx"],[class*=group-] label input[type="cHECkBOx"],[class*=group-] label input[type="CHECkBOx"],[class*=group-] label input[type="checKBOx"],[class*=group-] label input[type="ChecKBOx"],[class*=group-] label input[type="cHecKBOx"],[class*=group-] label input[type="CHecKBOx"],[class*=group-] label input[type="chEcKBOx"],[class*=group-] label input[type="ChEcKBOx"],[class*=group-] label input[type="cHEcKBOx"],[class*=group-] label input[type="CHEcKBOx"],[class*=group-] label input[type="cheCKBOx"],[class*=group-] label input[type="CheCKBOx"],[class*=group-] label input[type="cHeCKBOx"],[class*=group-] label input[type="CHeCKBOx"],[class*=group-] label input[type="chECKBOx"],[class*=group-] label input[type="ChECKBOx"],[class*=group-] label input[type="cHECKBOx"],[class*=group-] label input[type="CHECKBOx"],[class*=group-] label input[type="checkboX"],[class*=group-] label input[type="CheckboX"],[class*=group-] label input[type="cHeckboX"],[class*=group-] label input[type="CHeckboX"],[class*=group-] label input[type="chEckboX"],[class*=group-] label input[type="ChEckboX"],[class*=group-] label input[type="cHEckboX"],[class*=group-] label input[type="CHEckboX"],[class*=group-] label input[type="cheCkboX"],[class*=group-] label input[type="CheCkboX"],[class*=group-] label input[type="cHeCkboX"],[class*=group-] label input[type="CHeCkboX"],[class*=group-] label input[type="chECkboX"],[class*=group-] label input[type="ChECkboX"],[class*=group-] label input[type="cHECkboX"],[class*=group-] label input[type="CHECkboX"],[class*=group-] label input[type="checKboX"],[class*=group-] label input[type="ChecKboX"],[class*=group-] label input[type="cHecKboX"],[class*=group-] label input[type="CHecKboX"],[class*=group-] label input[type="chEcKboX"],[class*=group-] label input[type="ChEcKboX"],[class*=group-] label input[type="cHEcKboX"],[class*=group-] label input[type="CHEcKboX"],[class*=group-] label input[type="cheCKboX"],[class*=group-] label input[type="CheCKboX"],[class*=group-] label input[type="cHeCKboX"],[class*=group-] label input[type="CHeCKboX"],[class*=group-] label input[type="chECKboX"],[class*=group-] label input[type="ChECKboX"],[class*=group-] label input[type="cHECKboX"],[class*=group-] label input[type="CHECKboX"],[class*=group-] label input[type="checkBoX"],[class*=group-] label input[type="CheckBoX"],[class*=group-] label input[type="cHeckBoX"],[class*=group-] label input[type="CHeckBoX"],[class*=group-] label input[type="chEckBoX"],[class*=group-] label input[type="ChEckBoX"],[class*=group-] label input[type="cHEckBoX"],[class*=group-] label input[type="CHEckBoX"],[class*=group-] label input[type="cheCkBoX"],[class*=group-] label input[type="CheCkBoX"],[class*=group-] label input[type="cHeCkBoX"],[class*=group-] label input[type="CHeCkBoX"],[class*=group-] label input[type="chECkBoX"],[class*=group-] label input[type="ChECkBoX"],[class*=group-] label input[type="cHECkBoX"],[class*=group-] label input[type="CHECkBoX"],[class*=group-] label input[type="checKBoX"],[class*=group-] label input[type="ChecKBoX"],[class*=group-] label input[type="cHecKBoX"],[class*=group-] label input[type="CHecKBoX"],[class*=group-] label input[type="chEcKBoX"],[class*=group-] label input[type="ChEcKBoX"],[class*=group-] label input[type="cHEcKBoX"],[class*=group-] label input[type="CHEcKBoX"],[class*=group-] label input[type="cheCKBoX"],[class*=group-] label input[type="CheCKBoX"],[class*=group-] label input[type="cHeCKBoX"],[class*=group-] label input[type="CHeCKBoX"],[class*=group-] label input[type="chECKBoX"],[class*=group-] label input[type="ChECKBoX"],[class*=group-] label input[type="cHECKBoX"],[class*=group-] label input[type="CHECKBoX"],[class*=group-] label input[type="checkbOX"],[class*=group-] label input[type="CheckbOX"],[class*=group-] label input[type="cHeckbOX"],[class*=group-] label input[type="CHeckbOX"],[class*=group-] label input[type="chEckbOX"],[class*=group-] label input[type="ChEckbOX"],[class*=group-] label input[type="cHEckbOX"],[class*=group-] label input[type="CHEckbOX"],[class*=group-] label input[type="cheCkbOX"],[class*=group-] label input[type="CheCkbOX"],[class*=group-] label input[type="cHeCkbOX"],[class*=group-] label input[type="CHeCkbOX"],[class*=group-] label input[type="chECkbOX"],[class*=group-] label input[type="ChECkbOX"],[class*=group-] label input[type="cHECkbOX"],[class*=group-] label input[type="CHECkbOX"],[class*=group-] label input[type="checKbOX"],[class*=group-] label input[type="ChecKbOX"],[class*=group-] label input[type="cHecKbOX"],[class*=group-] label input[type="CHecKbOX"],[class*=group-] label input[type="chEcKbOX"],[class*=group-] label input[type="ChEcKbOX"],[class*=group-] label input[type="cHEcKbOX"],[class*=group-] label input[type="CHEcKbOX"],[class*=group-] label input[type="cheCKbOX"],[class*=group-] label input[type="CheCKbOX"],[class*=group-] label input[type="cHeCKbOX"],[class*=group-] label input[type="CHeCKbOX"],[class*=group-] label input[type="chECKbOX"],[class*=group-] label input[type="ChECKbOX"],[class*=group-] label input[type="cHECKbOX"],[class*=group-] label input[type="CHECKbOX"],[class*=group-] label input[type="checkBOX"],[class*=group-] label input[type="CheckBOX"],[class*=group-] label input[type="cHeckBOX"],[class*=group-] label input[type="CHeckBOX"],[class*=group-] label input[type="chEckBOX"],[class*=group-] label input[type="ChEckBOX"],[class*=group-] label input[type="cHEckBOX"],[class*=group-] label input[type="CHEckBOX"],[class*=group-] label input[type="cheCkBOX"],[class*=group-] label input[type="CheCkBOX"],[class*=group-] label input[type="cHeCkBOX"],[class*=group-] label input[type="CHeCkBOX"],[class*=group-] label input[type="chECkBOX"],[class*=group-] label input[type="ChECkBOX"],[class*=group-] label input[type="cHECkBOX"],[class*=group-] label input[type="CHECkBOX"],[class*=group-] label input[type="checKBOX"],[class*=group-] label input[type="ChecKBOX"],[class*=group-] label input[type="cHecKBOX"],[class*=group-] label input[type="CHecKBOX"],[class*=group-] label input[type="chEcKBOX"],[class*=group-] label input[type="ChEcKBOX"],[class*=group-] label input[type="cHEcKBOX"],[class*=group-] label input[type="CHEcKBOX"],[class*=group-] label input[type="cheCKBOX"],[class*=group-] label input[type="CheCKBOX"],[class*=group-] label input[type="cHeCKBOX"],[class*=group-] label input[type="CHeCKBOX"],[class*=group-] label input[type="chECKBOX"],[class*=group-] label input[type="ChECKBOX"],[class*=group-] label input[type="cHECKBOX"],[class*=group-] label input[type="CHECKBOX"]{ margin:4px; margin:.25rem; }
+[class*=group-] input ~ button { -webkit-box-flex: 0; -ms-flex-positive: 0; flex-grow: 0;-ms-flex-preferred-size:auto;flex-basis:auto; }
+.group-r>button{ border-radius: 0; }
+.group-r>*:first-child {border-bottom-left-radius: 4px;border-bottom-left-radius: .25rem; border-top-left-radius: 4px; border-top-left-radius: .25rem;}
+.group-r>*:last-child {border-bottom-right-radius: 4px;border-bottom-right-radius: .25rem; border-top-right-radius: 4px; border-top-right-radius: .25rem;}
+.group-1>button{ border-radius: 0; }
+.group-2{ padding-left: 4px; padding-left: .25rem; padding-right: 4px; padding-right: .25rem; }
+.group-2 button{ margin-left:4px; margin-left:.25rem; margin-right:4px; margin-right:.25rem;}
+.group-5 { padding-left: 8px; padding-left: .5rem; padding-right: 8px; padding-right: .5rem; }
+.group-5 button{ margin-left:8px; margin-left:.5rem; margin-right:8px; margin-right:.5rem;}
+.group-10 { padding-left: 16px; padding-left: 1rem; padding-right: 16px; padding-right: 1rem; }
+.group-10 button{ margin-left:16px; margin-left:1rem; margin-right:16px; margin-right:1rem;}
+
+/* 九宫 */
+.imgs { list-style:none; padding:0; overflow:hidden; float:none; clear:both; }
+.imgs div, .imgs a{display:inline-block;position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;}
+.imgs img {width:100%;}
+.imgs li {overflow:hidden;list-style:none;width:calc(33.333% - 0.5rem);padding-bottom:calc(33.333% - 0.5rem);margin:4px;margin:0.25rem;float:left;position:relative;}
+
+/* 图集 */
+.group-img { padding: 6.4px 0 4px 0; padding: .4rem 0 0.25rem 0; text-align:left !important; line-height:1; }
+.group-img img{ width: calc(25% - 0.25rem); margin:auto; }
+
+/* ==*==   《组件》   ==*== */
+/* 分页器 */
+.pager a, [class*=pager-] a {position:relative;z-index:1;min-width:24px;min-width:1.5rem;white-space:nowrap;display:inline-block;height:32px;height:2rem;line-height:32px;line-height:2rem;padding:0 12px;padding:0 .75rem;color:#007bff;border:1px solid #dbdbdb;}
+.pager.group> a, [class*=pager-].group> a { margin-left:-1px; }
+.pager a:hover,.pager a:active {z-index:2;}
+.pager-small a {height:24px;height:1.5rem;line-height:24px;line-height:1.5rem;min-width:16px;min-width:1rem;font-size:13.6px;font-size:.85rem;}
+.pager-mini a {height:24px;height:1.5rem;line-height:24px;line-height:1.5rem;min-width:13.6px;min-width:.85rem;font-size:10px;font-size:.625rem;padding:0 10.4px;padding:0 .65rem;}
+.goto input {font-size:12px;font-size:.75rem;position:relative;top:-0.8px;top:-0.05rem;width:48px;width:3rem;text-align:center;}
+.goto {padding:4px 0;padding:.25rem 0;}
+
+/* 卡片 */
+.card {width:calc(100% - 2rem);max-width:480px;max-width:30rem;margin:auto;border:1px solid #dbdbdb;border-radius:.25rem;margin-bottom:16px;margin-bottom:1rem;}
+.card header {min-height:24px;min-height:1.5rem;border-bottom:1px solid #dbdbdb;padding:8px  16px;padding:.5rem  1rem;}
+.card footer {min-height:32px;min-height:2rem;border-top:1px solid #dbdbdb;}
+.card .btn {padding:8.8px 0;padding:.55rem 0}
+.card section {padding:8px 16px;padding:.5rem 1rem;}
+.card img ~ p {padding-bottom:8px;padding-bottom:.5rem;}
+.card header figure {float:left;margin-right:8px;margin-right:.5rem;}
+.card header h5 {font-weight:400;}
+.card-head figure {width:40px;width:2.5rem;}
+.card-head-2 {line-height:24px;line-height:1.5rem;}
+.card-head-2 h5 {float:left;}
+.card-head-2 p {text-align:right;}
+.card-head-2 figure {width:24px;width:1.5rem;}
+.card section p {text-indent:32px;text-indent:2rem;}
+.card .time {float:right;}
+
+/* 工具栏 */
+.tool {text-align:center;}
+.tool .item { padding:2.4px 0; padding:.15rem 0; }
+.tool i {font-size:20px;font-size:1.25rem;}
+.tool img {width:20px;width:1.25rem;}
+.tool h5 {font-size:12px;font-size:.75rem;}
+
+/* 问答列表 */
+.answer .item {padding:8px 16px;padding:.5rem 1rem;margin:8px 0;margin:.5rem 0;}
+.answer h5 {text-overflow:ellipsis;white-space:nowrap;}
+.answer h5,.answer p {overflow:hidden;position:relative;padding:4px 0 4px 24px;padding:.25rem 0 .25rem 1.5rem;line-height:20px;line-height:1.25rem;}
+.answer h5:before {top:3.2px;top:.2rem;left:0;}
+.answer h5:before,.answer p:before {position:absolute;display:inline-block;width:20px;width:1.25rem;height:20px;height:1.25rem;border-radius:.25rem;text-align:center;font-size:12px;font-size:.75rem;display:inline-block;}
+.answer p {display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.answer p:before {top:3.2px;top:.2rem;left:0;}
+
+/* 浏览列表 */
+.browse .item {margin:8px;margin:.5rem;padding:4px;padding:.25rem;border:1px solid #dbdbdb;border-radius:.35rem;}
+.browse h5 {font-size:24px;font-size:1.5rem;margin-top:12px;margin-top:.75rem;margin-bottom:12px;margin-bottom:.75rem;}
+.browse h5,.browse p {margin-bottom:8px;margin-bottom:.5rem;}
+.browse img {height:100%;}
+
+/* 联系人 */
+.contact .time {position:absolute;right:16px;right:1rem;top:8px;top:.5rem;}
+.contact figure {overflow:visible;}
+.contact i {float:right;top:0;font-size:18.4px;font-size:1.15rem;}
+.contact p {overflow-x:hidden;text-overflow:ellipsis;font-weight:normal;white-space:nowrap;-webkit-line-clamp: 1; }
+.contact.lr figure {min-height:24px;min-height:1.5rem;width:24px;width:1.5rem;}
+.contact.ltb figure {width:40px;width:2.5rem;}
+
+/* 媒体 */
+.media .price {position:absolute;top:4px;top:.25rem;right:32px;right:2rem;font-size:16px;font-size:1rem;}
+.media figure {width:56px;width:3.5rem;}
+.media p span {display:block;}
+.media p span:first-child {font-size: 12px;font-size: .75rem; margin-bottom:0.8px; margin-bottom:.05rem;}
+
+/* 名片列表 */
+.nameCard .item {padding:16px;padding:1rem; border: 1px solid #dbdbdb; margin: 8px; margin: .5rem; border-radius: .25rem; }
+.nameCard figcaption {margin-top:8px;margin-top:.5rem;}
+.nameCard h5 {margin-bottom:3.2px;margin-bottom:.2rem;}
+.nameCard span {line-height:1.6;display:block;}
+.nameCard.ltb figure {margin-right:16px;margin-right:1rem;width:80px;width:5rem;}
+.nameCard.ltb img {border-radius:100%;}
+.nameCard.tb figcaption {position:absolute;left:0;right:0;bottom:0;padding:8px 0 12px 0;padding:.5rem 0 .75rem 0;background:#fff;}
+.nameCard.tb figure {width:160px;width:10rem;border-radius:100%;border:1px solid #dbdbdb;margin-bottom:8px;margin-bottom:.5rem;}
+
+/* 产品 */
+.product .item {text-align:left;}
+.product .price {margin-right:8px;margin-right:.5rem;font-weight:600;font-size:16px;font-size:1rem;}
+.product .free {float:left;}
+.product .hot {float:right;}
+.product.ltb figure {width:25%;}
+.product .address {display:block;text-align:center;}
+.product.tb .item {border-right:1px solid #dbdbdb;border-bottom:1px solid #dbdbdb;}
+.product.tb figure {width:100%;}
+
+/* 相片列表 */
+.photo .item,.photo-2 .item {padding:8px;padding:.5rem;border:1px solid #dbdbdb;margin:8px;margin:.5rem;}
+.photo-2 figcaption {background:rgba(0, 0, 0, .75);color:#fff; position:absolute;left:0;right:0;bottom:0;height:28px;height:1.75rem;line-height:28px;line-height:1.75rem;}
+
+/* 板块列表 */
+.plate .item {margin:8px;margin:.5rem;padding:8px;padding:.5rem;border:1px solid #dbdbdb;}
+.plate figure {max-height:160px;max-height:10rem;}
+.plate h5 {margin-top:4px;margin-top:.25rem;}
+
+/* 面板 */
+.panel .item h5:first-child {float:none;}
+.panel.lr figure {width:24px;width:1.5rem;}
+.panel.ltb figure {width:56px;width:3.5rem;}
+.more span ~ span{ margin-left:8px; margin-left:.5rem; }
+.more h5 {  font-size: 13.6px;  font-size: .85rem; line-height:32px; line-height:2rem; }
+.more { padding:0 16px !important; padding:0 1rem !important; height: 32px; height: 2rem; line-height: 32px; line-height: 2rem; }
+.panel p{ display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* 广告 */
+.ad {height:124px;height:7.75rem;overflow:hidden;}
+.ad img {width:100%;}
+.ads {overflow:hidden;}
+.ads>* {margin:auto;width:calc(33.333% - 0.6875rem); display:block;}
+.ads>*:first-child {float:left;}
+.ads>*:nth-child(2) {float:right;}
+
+/* 菜单 */
+.menu.lr figure { height: 24px; height: 1.5rem; width: 24px; width: 1.5rem; }
+.menu.lr p{ float:none; }
+.menu.tb .item { padding:8px 0; padding:.5rem 0; }
+.menu.tb i {width:48px;width:3rem;height:48px;height:3rem;font-size:24px;font-size:1.5rem;line-height:48px;line-height:3rem;}
+.menu.tb figure {border-radius:.5rem;width:calc(100% - 1rem);max-width:48px;max-width:3rem;margin-bottom:4px;margin-bottom:.25rem;}
+.menu.lr button { float:right; padding: 3.2px 8px; padding: .2rem .5rem;margin-top: 4.4px;margin-top: .275rem; }
+
+/* 搜索栏 */
+.search {position:fixed;left:0;right:0;padding:8px 16px;padding:0.5rem 1rem;}
+.search input {padding:3.84px 12px;padding:0.24rem .75rem;}
+.hd ~ .search {top:41.2px;top:2.575rem;}
+.hd ~ .search ~ main {padding-top:88px;padding-top:5.5rem;}
+
+/* 索引目录 */
+.directory {position:absolute;right:8px;right:.5rem;top:96px;top:6rem;width:16px;width:1rem;font-size:12px;font-size:.75rem;text-align:center; z-index:1;}
+.directory a {width:16px;width:1rem;height:16px;height:1rem;line-height:16px;line-height:1rem;padding-top:0.8px;padding-top:.05rem; margin:0.8px 0; margin:.05rem 0;display:inline-block;border-radius:100%;}
+
+/* 城市列表 */
+.city-hot { text-align: center; }
+.city-hot .item { padding:4px 0; padding:.25rem 0; margin:8px auto; margin:.5rem auto; max-width: calc(100% - 3rem);  border-radius: .3rem; }
+.city-hot .title { text-align: left;  }
+ 
+/* 操作器 */
+.action {padding:0 16px;padding:0 1rem;text-align:left;}
+.action button ~ button {margin-left:8px;margin-left:.5rem;}
+
+/* logo */
+.logo {display:block;min-height:32px;min-height:2rem; overflow:hidden;}
+.logo figure {width:20px;width:1.25rem;}
+.logo img{ display:block;width:100%;max-height:64px;max-height:4rem;}
+.logo ~ h5 {height:44px;height:2.75rem;line-height:44px;line-height:2.75rem;margin-top:16px;margin-top:1rem;padding:0 16px;padding:0 1rem;}
+
+/* 页眉 */
+header .logo { float:left;padding:4px 12px;padding:0.25rem .75rem; }
+header .logo img {margin-top:4.8px;margin-top:.3rem;}
+header .fr i {margin:0 4px;margin:0 .25rem;}
+header .fr .badge {position:relative;top:-1px;margin-right:4px;margin-right:.25rem;}
+
+/* 号码 */
+.number h5 { font-weight: 600 }
+.number .btn-tel { float:right; }
+.number.lr p span { margin-left: 16px; margin-left: 1rem; }
+.number p{ font-size: 12px; font-size: .75rem; }
+.number.default .item{ padding: 8px 16px; padding: .5rem 1rem; }
+.number.default .info,.number.tb .info{ display:block; margin-bottom:3.2px; margin-bottom:.2rem; }
+
+
+/*  文章列表  */
+.article figure { max-width:128px; max-width:8rem; width:33.333%; max-height:80px; max-height:5rem;}
+.article .desc{ display: block; }
+.article h5 { margin:8px 0; margin:.5rem 0; }
+.article p{ display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.article .time { position: absolute; top: 12px; top: .75rem; right:16px; right:1rem; }
+
+/* 路径导航（面包屑） */
+.nav-path a { line-height:32px; line-height:2rem; background: none !important; padding: 0; }
+.nav-path a ~ a:before { content: "\\"; padding:0 8px 0 4.8px; padding:0 .5rem 0 .3rem; }
+
+/* 新闻 */
+.news li ~ li .item { border-top: 1px solid #dbdbdb; }
+.news .item { padding: 4px 0; padding: .25rem 0; }
+.news h5 { margin-bottom: 4px; margin-bottom: .25rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.news p { padding: 4px 0; padding: .25rem 0; }
+.news .tag { font-size: 12px; font-size: .75rem; }
+.news figure { padding: 0 1.6px; padding: 0 .1rem;}
+.news .ltb figure { width: calc(33.333% - 0.1rem); }
+.news .ltb h5{ margin:0; }
+
+/* 杂项 */
+.more {font-size:13.6px;font-size:.85rem;color:#586C94;}
+.source {margin-right:12px;margin-right:.75rem;}
+.swiper {max-height:520px;max-height:32.5rem;margin-top:16px;margin-top:1rem;}
+.dropdown {font-size:12px;font-size:.75rem;padding:5.6px 36.8px 5.6px 16px;padding:0.35rem 2.3rem 0.35rem 1rem;background:#fff;color:#18b4ed;border:1px solid #18b4ed;border-radius:.25rem;position:relative;}
+.dropdown:after {border-left:1px solid #a0e6ff;content:'\e252';font-family:'glyphicons Halflings';padding-left:4.8px;padding-left:.3rem;position:absolute;right:4.8px;right:.3rem;top:5.6px;top:.35rem;}

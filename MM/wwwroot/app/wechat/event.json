@@ -1,0 +1,19 @@
+[{
+	"name": "api",
+	"target": "^/wechat.*",
+	"plugin": {
+		"identifier": "mm_web_wechat",
+		"file": "./event.js",
+		"fun": "web"
+	}
+},
+{
+	"name": "api",
+	"target": "/api/wechat.*",
+	"plugin": {
+		"identifier": "mm_api_wechat",
+		"file": "./event.js",
+		"fun": "api"
+	}
+}
+]

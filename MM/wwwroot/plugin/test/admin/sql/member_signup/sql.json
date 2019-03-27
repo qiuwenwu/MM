@@ -1,0 +1,35 @@
+{
+  "method": "method",
+  "table": "osl_member_signup",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "field": "{0}",
+  "fieldDefault": "`sid`,`updateTime`,`ip`,`url`,`type`,`userCode`,`uid`,`platform`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "sid": "`sid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "updateTime_min": "`updateTime` >= '{0}'",
+    "updateTime_max": "`updateTime` <= '{0}'",
+    "ip": "`ip` like '%{0}%'",
+    "url": "`url` like '%{0}%'",
+    "type": "`type` like '%{0}%'",
+    "userCode": "`userCode` like '%{0}%'",
+    "platform": "`platform` like '%{0}%'"
+  },
+  "update": {
+    "updateTime": "`updateTime` = '{0}'",
+    "ip": "`ip` = '{0}'",
+    "url": "`url` = '{0}'",
+    "type": "`type` = '{0}'",
+    "userCode": "`userCode` = '{0}'",
+    "platform": "`platform` = '{0}'"
+  },
+  "can": "add del set get export import",
+  "convert": "convert"
+}

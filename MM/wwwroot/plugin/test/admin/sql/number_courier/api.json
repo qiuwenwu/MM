@@ -1,0 +1,12 @@
+{
+"name": "number_courier",
+"type": "api",
+"path": "/apis/number/courier",
+"cache": 0,
+"sqlPath": "./sql",
+"paramPath": "./param",
+"otherParam": true,
+"checkToken": true,
+"checkParam": true,
+"Scope": false
+}

@@ -1,0 +1,29 @@
+{
+  "method": "method",
+  "table": "osl_number_{0}",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "`display` ASC",
+  "field": "{0}",
+  "count": "{0}",
+  "separator": "|",
+  "where": {
+        "cid": "`cid`={0}",
+        "fid": "`fid`={0}",
+        "gid": "`gid`={0}",
+        "pid": "`pid`={0}",
+        "rid": "`rid`={0}",
+        "sid": "`sid`={0}",
+        "tid": "`tid`={0}"
+  },
+  "query": {
+    "name": "`name` like '%{0}%'",
+    "desc": "`desc` like '%{0}%'",
+	"city": "`city` like '%{0}%'"
+  },
+  "update": {
+    "name": "`name` = '{0}'",
+    "desc": "`desc` = '{0}'"
+  },
+  "can": "get"
+}

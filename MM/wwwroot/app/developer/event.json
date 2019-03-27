@@ -1,0 +1,19 @@
+[{
+	"name": "api",
+	"target": "^/developer.*",
+	"plugin": {
+		"identifier": "mm_web_developer",
+		"file": "./event.js",
+		"fun": "web"
+	}
+},
+{
+	"name": "api",
+	"target": "/api/developer.*",
+	"plugin": {
+		"identifier": "mm_api_developer",
+		"file": "./event.js",
+		"fun": "api"
+	}
+}
+]

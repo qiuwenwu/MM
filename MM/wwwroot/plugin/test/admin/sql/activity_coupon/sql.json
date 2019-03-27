@@ -1,0 +1,44 @@
+{
+  "method": "method",
+  "table": "gzh_activity_coupon",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`cid` DESC",
+  "field": "{0}",
+  "fieldDefault": "`cid`,`idNumber`,`name`,`title`,`credit`,`createTime`,`startTime`,`endTime`,`way`,`premise`,`uid`,`used`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "cid": "`cid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "idNumber": "`idNumber` like '%{0}%'",
+    "name": "`name` like '%{0}%'",
+    "title": "`title` like '%{0}%'",
+    "createTime_min": "`createTime` >= '{0}'",
+    "createTime_max": "`createTime` <= '{0}'",
+    "startTime_min": "`startTime` >= '{0}'",
+    "startTime_max": "`startTime` <= '{0}'",
+    "endTime_min": "`endTime` >= '{0}'",
+    "endTime_max": "`endTime` <= '{0}'"
+  },
+  "queryDefault": {},
+  "update": {
+    "idNumber": "`idNumber` = '{0}'",
+    "name": "`name` = '{0}'",
+    "title": "`title` = '{0}'",
+    "createTime": "`createTime` = '{0}'",
+    "startTime": "`startTime` = '{0}'",
+    "endTime": "`endTime` = '{0}'"
+  },
+  "can": "add del set get export import",
+  "convert": "convert",
+  "map": {},
+  "delRepeat": {
+    "groupBy": "number",
+    "orderBy": "`nid` ASC"
+  }
+}

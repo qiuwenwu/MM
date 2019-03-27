@@ -1,0 +1,13 @@
+/* ==*==   《组件》   ==*== */
+
+/* === 后台 === */
+.admin .bar header { position:relative; font-size: .85rem; border-bottom:1px solid #ebebeb; }
+.admin .bar>h5,.admin .row>div>p{ padding: .5rem 1rem; }
+.admin .bar{ min-height: 2rem; border-radius: .3rem; overflow:hidden; }
+.valve {display:block;text-align:center;padding:.25rem 0;}
+
+/* 东走 */
+.action { padding: 0 1rem; text-align:left; }
+.action button ~ button { margin-left: .5rem; }
+
+/* 门户 */

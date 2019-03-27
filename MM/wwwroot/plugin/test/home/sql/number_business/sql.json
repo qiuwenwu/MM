@@ -1,0 +1,27 @@
+{
+  "method": "method",
+  "table": "osl_number_business",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`display` ASC",
+  "field": "{0}",
+  "fieldDefault": "`bid`,`name`,`display`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "bid": "`bid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "name": "`name` like '%{0}%'"
+  },
+  "update": {
+    "name": "`name` = '{0}'"
+  },
+  "can": "get",
+  "convert": "convert",
+  "queryDefault": {},
+  "map": {}
+}

@@ -1,0 +1,12 @@
+{
+"name": "number_belong",
+"type": "api",
+"path": "/api/number/belong",
+"cache": 15,
+"sqlPath": "./sql",
+"paramPath": "./param",
+"otherParam": true,
+"checkToken": false,
+"checkParam": false,
+"Scope": false
+}

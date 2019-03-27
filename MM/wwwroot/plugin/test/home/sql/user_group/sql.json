@@ -1,0 +1,37 @@
+{
+  "method": "method",
+  "table": "mm_user_group",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`gid` DESC",
+  "field": "{0}",
+  "fieldDefault": "`gid`,`name`,`lv`,`exp`,`discount`,`bonus`,`type`,`sid`,`icon`,`desc`,`showSearch`,`gm`,`mc`,`vip`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "gid": "`gid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "name": "`name` like '%{0}%'",
+    "type": "`type` like '%{0}%'",
+    "icon": "`icon` like '%{0}%'",
+    "desc": "`desc` like '%{0}%'"
+  },
+  "queryDefault": {},
+  "update": {
+    "name": "`name` = '{0}'",
+    "type": "`type` = '{0}'",
+    "icon": "`icon` = '{0}'",
+    "desc": "`desc` = '{0}'"
+  },
+  "can": "get",
+  "convert": "convert",
+  "map": {},
+  "delRepeat": {
+    "groupBy": "number",
+    "orderBy": "`nid` ASC"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "method": "method",
+  "table": "osl_number_standard",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`display` ASC",
+  "field": "{0}",
+  "fieldDefault": "`sid`,`name`,`segment`,`display`,`kid`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "sid": "`sid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "name": "`name` like '%{0}%'",
+    "segment": "`segment` like '%{0}%'",
+	"kind": "`kid` in (select x.kid From osl_number_kind as x WHERE x.name like '%{0}%')"
+  },
+  "update": {
+    "name": "`name` = '{0}'",
+    "segment": "`segment` = '{0}'"
+  },
+  "can": "get",
+  "convert": "convert"
+}

@@ -1,0 +1,11 @@
+[{
+    "name": "api",
+    "target": "/api/test/js",
+	"sort": 10,
+    "plugin": {
+        "identifier": "mm_test_js",
+        "file": "./test.js",
+        "fun": "main"
+    }
+}
+]

@@ -1,0 +1,80 @@
+{
+  "lid": {
+    "title": "城市ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": true,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 99
+    },
+    "Filter": false
+  },
+  "city": {
+    "title": "深圳",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 16,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "region": {
+    "title": "城市",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 16,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "street": {
+    "title": "地区",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 16,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "community": {
+    "title": "小区",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 16,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "location": {
+    "title": "具体位置",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 64,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  }
+}

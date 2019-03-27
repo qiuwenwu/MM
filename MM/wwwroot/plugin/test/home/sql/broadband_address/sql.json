@@ -1,0 +1,39 @@
+{
+  "method": "method",
+  "table": "gzh_broadband_address",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`city` ASC,`region` ASC,`street` ASC,`community` ASC,`location` ASC",
+  "field": "{0}",
+  "fieldDefault": "`lid`,`city`,`region`,`street`,`community`,`location`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "lid": "`lid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "city": "`city` like '%{0}%'",
+    "region": "`region` like '%{0}%'",
+    "street": "`street` like '%{0}%'",
+    "community": "`community` like '%{0}%'",
+    "location": "`location` like '%{0}%'"
+  },
+  "queryDefault": {},
+  "update": {
+    "city": "`city` = '{0}'",
+    "region": "`region` = '{0}'",
+    "street": "`street` = '{0}'",
+    "community": "`community` = '{0}'",
+    "location": "`location` = '{0}'"
+  },
+  "can": "get",
+  "convert": "convert",
+  "map": {},
+  "delRepeat": {
+    "groupBy": "number",
+    "orderBy": "`nid` ASC"
+  }
+}

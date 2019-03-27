@@ -1,0 +1,27 @@
+{
+  "method": "method",
+  "table": "gzh_user_integral",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`uid` DESC",
+  "field": "{0}",
+  "fieldDefault": "`uid`,`score_count`,`score_use`,`commission_count`,`commission_use`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "uid": "`uid` = {0}"
+  },
+  "item": {},
+  "query": {},
+  "queryDefault": {},
+  "update": {},
+  "can": "add del set get export import",
+  "convert": "convert",
+  "map": {},
+  "delRepeat": {
+    "groupBy": "number",
+    "orderBy": "`nid` ASC"
+  }
+}

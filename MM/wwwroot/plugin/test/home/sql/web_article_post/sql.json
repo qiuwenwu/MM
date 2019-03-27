@@ -1,0 +1,30 @@
+{
+  "method": "method",
+  "table": "mm_web_article_post",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`display` ASC",
+  "field": "{0}",
+  "fieldDefault": "`pid`,`aid`,`display`,`available`,`content`,`uid`,`tag`,`name`,`score`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "pid": "`pid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "content": "`content` like '%{0}%'",
+    "tag": "`tag` like '%{0}%'",
+    "name": "`name` like '%{0}%'",
+	"article": "`aid` in (select x.aid From mm_web_article as x WHERE x.title like '%{0}%')"
+  },
+  "update": {
+    "content": "`content` = '{0}'",
+    "tag": "`tag` = '{0}'",
+    "name": "`name` = '{0}'"
+  },
+  "can": "add get",
+  "convert": "convert"
+}

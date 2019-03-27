@@ -34,22 +34,22 @@ namespace MM.Helper.Sys
         /// <returns>初始化成功返回true，失败返回false</returns>
         public bool Init()
         {
-            var bl = new Dir().EachAdd(Cache._Path.Cache);
+            var bl = new Dir().EachAdd(Cache.path.Cache);
             if (bl)
             {
-                var NodeJsFile = Cache._Path.Cache + "node.js";
+                var NodeJsFile = Cache.path.Cache + "node.js";
                 if (!File.Exists(NodeJsFile))
                 {
                     File.WriteAllText(NodeJsFile, GetNodeJs(), Encoding.UTF8);
                 }
 
-                var pythonFile = Cache._Path.Cache + "python.py";
+                var pythonFile = Cache.path.Cache + "python.py";
                 if (!File.Exists(pythonFile))
                 {
                     File.WriteAllText(pythonFile, GetPython(), Encoding.UTF8);
                 }
 
-                var luaFile = Cache._Path.Cache + "lua.lua";
+                var luaFile = Cache.path.Cache + "lua.lua";
                 if (!File.Exists(luaFile))
                 {
                     File.WriteAllText(luaFile, GetLua(), Encoding.UTF8);
@@ -242,7 +242,7 @@ print(ret)";
                 Ex = "函数名不能为空！";
                 return "";
             }
-            var cmd = string.Format("\"{0}\" \"{1}\" ", Cache._Path.Cache + "node.js", file);
+            var cmd = string.Format("\"{0}\" \"{1}\" ", Cache.path.Cache + "node.js", file);
             if (!string.IsNullOrEmpty(paramB))
             {
                 cmd += string.Format("\"{0}\" \"{1}\" \"{2}\"", fun, param.Replace("\"", "\\\""), paramB.Replace("\"", "\\\""));
@@ -280,7 +280,7 @@ print(ret)";
                 Ex = "函数名不能为空！";
                 return "";
             }
-            var cmd = string.Format("\"{0}\" \"{1}\" ", Cache._Path.Cache + "python.py", file);
+            var cmd = string.Format("\"{0}\" \"{1}\" ", Cache.path.Cache + "python.py", file);
             if (!string.IsNullOrEmpty(paramB))
             {
                 cmd += string.Format("\"{0}\" \"{1}\" \"{2}\"", fun, param.Replace("\"", "\\\""), paramB.Replace("\"", "\\\""));
@@ -317,7 +317,7 @@ print(ret)";
             {
                 return "";
             }
-            var cmd = string.Format("\"{0}\" \"{1}\" ", Cache._Path.Cache + "lua.lua", file);
+            var cmd = string.Format("\"{0}\" \"{1}\" ", Cache.path.Cache + "lua.lua", file);
             if (!string.IsNullOrEmpty(paramB))
             {
                 cmd += string.Format("\"{0}\" \"{1}\" \"{2}\"", fun, param.Replace("\"", "\\\""), paramB.Replace("\"", "\\\""));

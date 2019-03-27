@@ -1,0 +1,37 @@
+{
+  "method": "method",
+  "table": "osl_number_custom",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "field": "{0}",
+  "fieldDefault": "`cid`,`phone`,`note`,`name`,`state`,`number`,`price_min`,`price_max`,`belong`,`qq`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "cid": "`cid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "phone": "`phone` like '%{0}%'",
+    "note": "`note` like '%{0}%'",
+    "name": "`name` like '%{0}%'",
+    "number": "`number` like '%{0}%'",
+    "belong": "`belong` like '%{0}%'",
+    "qq": "`qq` like '%{0}%'"
+  },
+  "update": {
+    "phone": "`phone` = '{0}'",
+    "note": "`note` = '{0}'",
+    "name": "`name` = '{0}'",
+    "number": "`number` = '{0}'",
+    "belong": "`belong` = '{0}'",
+    "qq": "`qq` = '{0}'"
+  },
+  
+  "can": "add del set get export import",
+  "convert": "convert",
+  "queryDefault": {},
+  "map": {}
+}

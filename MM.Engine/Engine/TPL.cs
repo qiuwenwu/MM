@@ -25,7 +25,7 @@ namespace MM.Engine
         /// <summary>
         /// 模板路径
         /// </summary>
-        public string Dir { get; set; } = System.Cache._Path.Template;
+        public string Dir { get; set; } = System.Cache.path.Template;
 
         /// <summary>
         /// 错误信息
@@ -41,7 +41,7 @@ namespace MM.Engine
         {
             SetManager();
             //添加文件修改监控，以便在cshtml文件修改时重新编译该文件
-            Watcher.Path = System.Cache._Path.Web;
+            Watcher.Path = System.Cache.path.Web;
             Watcher.IncludeSubdirectories = true;
             Watcher.Filter = "*.*html";
             Watcher.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName;

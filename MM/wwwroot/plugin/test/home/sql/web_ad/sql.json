@@ -1,0 +1,48 @@
+{
+  "method": "method",
+  "table": "mm_web_ad",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`display` ASC",
+  "field": "{0}",
+  "fieldDefault": "`aid`,`title`,`display`,`type`,`pid`,`img`,`url`,`desc`,`available`,`tag`,`createTime`,`updateTime`,`path`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "aid": "`aid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "title": "`title` like '%{0}%'",
+    "type": "`type` like '%{0}%'",
+    "img": "`img` like '%{0}%'",
+    "url": "`url` like '%{0}%'",
+    "desc": "`desc` like '%{0}%'",
+    "tag": "`tag` like '%{0}%'",
+    "createTime_min": "`createTime` >= '{0}'",
+    "createTime_max": "`createTime` <= '{0}'",
+    "updateTime_min": "`updateTime` >= '{0}'",
+    "updateTime_max": "`updateTime` <= '{0}'",
+    "path": "`path` like '%{0}%'"
+  },
+  "update": {
+    "title": "`title` = '{0}'",
+    "type": "`type` = '{0}'",
+    "img": "`img` = '{0}'",
+    "url": "`url` = '{0}'",
+    "desc": "`desc` = '{0}'",
+    "tag": "`tag` = '{0}'",
+    "createTime": "`createTime` = '{0}'",
+    "updateTime": "`updateTime` = '{0}'",
+    "path": "`path` = '{0}'"
+  },
+  
+  "can": "get",
+  "convert": "convert",
+  "queryDefault": {
+	"available": "`available` = 1"
+  },
+  "map": {}
+}

@@ -1,0 +1,36 @@
+{
+  "method": "method",
+  "table": "mm_web_channel",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`display` ASC",
+  "field": "{0}",
+  "fieldDefault": "`cid`,`name`,`fid`,`display`,`icon`,`url`,`desc`,`tplType`,`available`,`hide`,`canPost`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "cid": "`cid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "name": "`name` like '%{0}%'",
+    "icon": "`icon` like '%{0}%'",
+    "url": "`url` like '%{0}%'",
+    "desc": "`desc` like '%{0}%'",
+    "tplType": "`tplType` like '%{0}%'"
+  },
+  "update": {
+    "name": "`name` = '{0}'",
+    "icon": "`icon` = '{0}'",
+    "url": "`url` = '{0}'",
+    "desc": "`desc` = '{0}'",
+    "tplType": "`tplType` = '{0}'"
+  },
+  "queryDefault": {
+	"available": "`available` = 1"
+  },
+  "can": "get",
+  "convert": "convert"
+}

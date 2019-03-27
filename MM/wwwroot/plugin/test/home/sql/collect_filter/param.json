@@ -1,0 +1,43 @@
+{
+  "fid": {
+    "title": "过滤ID",
+    "validate": {
+      "type": "int",
+      "notEmpty": false,
+      "only": true,
+      "minLength": 0,
+      "maxLength": 0,
+      "min": 0,
+      "max": 79
+    },
+    "Filter": false
+  },
+  "word": {
+    "title": "被过滤的单词",
+    "description": "过滤后文章将不再有该词存在",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 32,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  },
+  "newWord": {
+    "title": "新单词",
+    "description": "如果新单词为空，则相当于直接把过滤词删除",
+    "validate": {
+      "type": "string",
+      "notEmpty": false,
+      "only": false,
+      "minLength": 0,
+      "maxLength": 32,
+      "min": 0,
+      "max": 0
+    },
+    "Filter": false
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "method": "method",
+  "table": "gzh_number_freecard",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`fid` DESC",
+  "field": "{0}",
+  "fieldDefault": "`fid`,`createTime`,`number`,`taocan`,`name`,`address`,`phone`,`rebate1`,`rebate2`,`rebate3`,`payState`,`state`,`uid`,`note`,`courier`,`courier_num`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "fid": "`fid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "createTime_min": "`createTime` >= '{0}'",
+    "createTime_max": "`createTime` <= '{0}'",
+    "number": "`number` like '%{0}%'",
+    "taocan": "`taocan` like '%{0}%'",
+    "name": "`name` like '%{0}%'",
+    "address": "`address` like '%{0}%'",
+    "phone": "`phone` like '%{0}%'",
+    "note": "`note` like '%{0}%'",
+    "courier": "`courier` like '%{0}%'",
+    "courier_num": "`courier_num` like '%{0}%'",
+	"keyword": "(`name` like '%{0}%' || `phone` like '%{0}%' || `number` like '%{0}%')",
+	"states": "`state` in ({0})"
+  },
+  "queryDefault": {},
+  "update": {
+    "createTime": "`createTime` = '{0}'",
+    "number": "`number` = '{0}'",
+    "taocan": "`taocan` = '{0}'",
+    "name": "`name` = '{0}'",
+    "address": "`address` = '{0}'",
+    "phone": "`phone` = '{0}'",
+    "note": "`note` = '{0}'",
+    "courier": "`courier` = '{0}'",
+    "courier_num": "`courier_num` = '{0}'"
+  },
+  "can": "add del set get export import",
+  "convert": "convert",
+  "map": {},
+  "delRepeat": {
+    "groupBy": "number",
+    "orderBy": "`nid` ASC"
+  }
+}

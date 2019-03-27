@@ -1,0 +1,12 @@
+{
+"name": "number_yuyi",
+"type": "api",
+"path": "/api/number/yuyi",
+"cache": 15,
+"sqlPath": "./sql",
+"paramPath": "./param",
+"otherParam": true,
+"checkToken": false,
+"checkParam": false,
+"Scope": false
+}

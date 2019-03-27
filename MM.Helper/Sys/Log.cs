@@ -12,7 +12,7 @@ namespace MM.Helper.Sys
         /// <summary>
         /// 存储路径
         /// </summary>
-        public string Dir { get; set; } = Cache._Path.Cache;
+        public string Dir { get; set; } = Cache.path.Cache;
         /// <summary>
         /// 错误消息
         /// </summary>

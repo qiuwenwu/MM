@@ -1,0 +1,12 @@
+{
+"name": "number_hot_format",
+"type": "api",
+"path": "/apis/number/hot/format",
+"cache": 0,
+"sqlPath": "./sql",
+"paramPath": "./param",
+"otherParam": true,
+"checkToken": true,
+"checkParam": true,
+"Scope": false
+}

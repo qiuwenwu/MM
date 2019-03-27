@@ -20,9 +20,11 @@ namespace MM.Helper.Models
             }
             Root = runPath;
             Cache = Root + "cache\\";
+            Config = Root + "config\\";
             Web = Root + "wwwroot\\";
             Script = Web + "script\\";
             Static = Web + "static\\";
+            Upload = Web + "upload\\";
             Template = Web + "template\\";
         }
 
@@ -51,6 +53,12 @@ namespace MM.Helper.Models
         public string Static   { get; set; }
 
         /// <summary>
+        /// 上传目录
+        /// </summary>
+        [JsonProperty("upload")]
+        public string Upload { get; set; }
+
+        /// <summary>
         /// 模板文件目录
         /// </summary>
         [JsonProperty("template")]
@@ -61,5 +69,11 @@ namespace MM.Helper.Models
         /// </summary>
         [JsonProperty("cache")]
         public string Cache    { get; set; }
+
+        /// <summary>
+        /// 配置文件目录
+        /// </summary>
+        [JsonProperty("config")]
+        public string Config { get; set; }
     }
 }

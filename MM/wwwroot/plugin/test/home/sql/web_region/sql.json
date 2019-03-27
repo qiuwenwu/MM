@@ -1,0 +1,31 @@
+{
+  "method": "method",
+  "table": "mm_web_region",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`display` ASC",
+  "field": "{0}",
+  "fieldDefault": "`rid`,`name`,`fid`,`display`,`group`,`pinyin`,`isHot`,`url`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "rid": "`rid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "name": "`name` like '%{0}%'",
+    "group": "`group` like '%{0}%'",
+    "pinyin": "`pinyin` like '%{0}%'",
+	"city": "`fid` in (select x.rid From mm_web_region as x WHERE x.name like '%{0}%')",
+	"province": "`fid` in (select y.rid From mm_web_region as y WHERE y.name like '%{0}%')"
+  },
+  "update": {
+    "name": "`name` = '{0}'",
+    "group": "`group` = '{0}'",
+    "pinyin": "`pinyin` = '{0}'"
+  },
+  "can": "get",
+  "convert": "convert"
+}

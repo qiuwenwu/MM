@@ -1,0 +1,14 @@
+﻿{
+  "info": {
+	"name": "微信公众号",
+    "version": "1.0"
+  },
+  "plugin": {
+    "dir": "./",
+    "file": "./plugin.py",
+    "identifier": "wechat",
+    "sort": 100,
+    "end": true
+  },
+  "scope": "system"
+}

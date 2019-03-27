@@ -1,0 +1,74 @@
+[
+	{
+		"name": "api",
+		"target": "/api/msg/synccheck",
+		"plugin": {
+			"identifier": "mm_msg_synccheck",
+			"file": "./synccheck.py",
+			"fun": "main"
+		}
+	},
+	{
+		"name": "api",
+		"target": "/api/msg/sync",
+		"plugin": {
+			"identifier": "mm_msg_sync",
+			"file": "./sync.py",
+			"fun": "main"
+		}
+	},
+	{
+		"name": "api",
+		"target": "/api/msg/init",
+		"plugin": {
+			"identifier": "mm_msg_init",
+			"file": "./init.py",
+			"fun": "main"
+		}
+	},
+	{
+		"name": "api",
+		"target": "/api/msg/getcontact",
+		"plugin": {
+			"identifier": "mm_msg_getcontact",
+			"file": "./getcontact.py",
+			"fun": "main"
+		}
+	},
+	{
+		"name": "api",
+		"target": "/api/msg/sendmsg",
+		"plugin": {
+			"identifier": "mm_msg_sendmsg",
+			"file": "./sendmsg.py",
+			"fun": "main"
+		}
+	},
+	{
+		"name": "api",
+		"target": "/api/msg/newloginpage",
+		"plugin": {
+			"identifier": "mm_msg_newloginpage",
+			"file": "./newloginpage.py",
+			"fun": "main"
+		}
+	},
+	{
+		"name": "api",
+		"target": "/api/msg/qrcode",
+		"plugin": {
+			"identifier": "mm_msg_qrcode",
+			"file": "./qrcode.py",
+			"fun": "main"
+		}
+	},
+	{
+		"name": "api",
+		"target": "/api/msg/login",
+		"plugin": {
+			"identifier": "mm_msg_login",
+			"file": "./login.py",
+			"fun": "main"
+		}
+	}
+]

@@ -1,0 +1,31 @@
+{
+  "method": "method",
+  "table": "osl_number_feedback",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "field": "{0}",
+  "fieldDefault": "`fid`,`phone`,`note`,`name`,`state`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "fid": "`fid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "phone": "`phone` like '%{0}%'",
+    "note": "`note` like '%{0}%'",
+    "name": "`name` like '%{0}%'"
+  },
+  "update": {
+    "phone": "`phone` = '{0}'",
+    "note": "`note` = '{0}'",
+    "name": "`name` = '{0}'"
+  },
+  
+  "can": "add get",
+  "convert": "convert",
+  "queryDefault": {},
+  "map": {}
+}

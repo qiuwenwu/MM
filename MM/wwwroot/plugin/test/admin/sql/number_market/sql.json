@@ -1,0 +1,39 @@
+{
+  "method": "method",
+  "table": "osl_number_market",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`updateTime` DESC",
+  "field": "{0}",
+  "fieldDefault": "`mid`,`number`,`bid`,`tid`,`sid`,`uid`,`cityID`,`maiJia`,`huaFei`,`note`,`createTime`,`updateTime`,`name`,`phone`,`qq`,`show`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "mid": "`mid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "number": "`number` like '%{0}%'",
+    "note": "`note` like '%{0}%'",
+    "createTime_min": "`createTime` >= '{0}'",
+    "createTime_max": "`createTime` <= '{0}'",
+    "updateTime_min": "`updateTime` >= '{0}'",
+    "updateTime_max": "`updateTime` <= '{0}'",
+    "name": "`name` like '%{0}%'",
+    "phone": "`phone` like '%{0}%'",
+    "qq": "`qq` like '%{0}%'"
+  },
+  "update": {
+    "number": "`number` = '{0}'",
+    "note": "`note` = '{0}'",
+    "createTime": "`createTime` = '{0}'",
+    "updateTime": "`updateTime` = '{0}'",
+    "name": "`name` = '{0}'",
+    "phone": "`phone` = '{0}'",
+    "qq": "`qq` = '{0}'"
+  },
+  "can": "add del set get export import",
+  "convert": "convert"
+}

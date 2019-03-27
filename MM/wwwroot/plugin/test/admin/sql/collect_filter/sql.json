@@ -1,0 +1,26 @@
+{
+  "method": "method",
+  "table": "mm_collect_filter",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "field": "{0}",
+  "fieldDefault": "`fid`,`word`,`newWord`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "fid": "`fid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "word": "`word` like '%{0}%'",
+    "newWord": "`newWord` like '%{0}%'"
+  },
+  "update": {
+    "word": "`word` = '{0}'",
+    "newWord": "`newWord` = '{0}'"
+  },
+  "can": "add del set get export import",
+  "convert": "convert"
+}

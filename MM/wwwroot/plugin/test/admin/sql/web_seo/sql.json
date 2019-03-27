@@ -1,0 +1,39 @@
+{
+  "method": "method",
+  "table": "mm_web_seo",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "field": "{0}",
+  "fieldDefault": "`sid`,`name`,`group`,`title`,`description`,`keywords`,`path`,`content`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "sid": "`sid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "name": "`name` like '%{0}%'",
+    "group": "`group` like '%{0}%'",
+    "title": "`title` like '%{0}%'",
+    "description": "`description` like '%{0}%'",
+    "keywords": "`keywords` like '%{0}%'",
+    "path": "`path` like '%{0}%'",
+    "content": "`content` like '%{0}%'"
+  },
+  "update": {
+    "name": "`name` = '{0}'",
+    "group": "`group` = '{0}'",
+    "title": "`title` = '{0}'",
+    "description": "`description` = '{0}'",
+    "keywords": "`keywords` = '{0}'",
+    "path": "`path` = '{0}'",
+    "content": "`content` = '{0}'"
+  },
+  
+  "can": "add del set get export import",
+  "convert": "convert",
+  "queryDefault": {},
+  "map": {}
+}

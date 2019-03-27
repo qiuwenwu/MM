@@ -1,0 +1,9 @@
+{
+    "name": "api",
+    "target": "/api/test",
+    "plugin": {
+        "identifier": "api_doing_main_test",
+        "file": "/script/py/demo/event.py",
+        "fun": "main"
+    }
+}

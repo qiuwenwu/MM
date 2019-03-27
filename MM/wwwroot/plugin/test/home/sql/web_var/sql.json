@@ -1,0 +1,37 @@
+{
+  "method": "method",
+  "table": "mm_web_var",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`display` ASC",
+  "field": "{0}",
+  "fieldDefault": "`vid`,`aid`,`name`,`display`,`desc`,`variable`,`type`,`value`,`extra`,`group`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "vid": "`vid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "name": "`name` like '%{0}%'",
+    "desc": "`desc` like '%{0}%'",
+    "variable": "`variable` like '%{0}%'",
+    "type": "`type` like '%{0}%'",
+    "value": "`value` like '%{0}%'",
+    "extra": "`extra` like '%{0}%'",
+    "group": "`group` like '%{0}%'"
+  },
+  "update": {
+    "name": "`name` = '{0}'",
+    "desc": "`desc` = '{0}'",
+    "variable": "`variable` = '{0}'",
+    "type": "`type` = '{0}'",
+    "value": "`value` = '{0}'",
+    "extra": "`extra` = '{0}'",
+    "group": "`group` = '{0}'"
+  },
+  "can": "get",
+  "convert": "convert"
+}

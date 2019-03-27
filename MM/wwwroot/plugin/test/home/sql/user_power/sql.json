@@ -1,0 +1,34 @@
+{
+  "method": "method",
+  "table": "mm_user_power",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "field": "{0}",
+  "fieldDefault": "`pid`,`title`,`name`,`gm`,`mc`,`vip`,`group`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "pid": "`pid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "title": "`title` like '%{0}%'",
+    "name": "`name` like '%{0}%'",
+    "gm": "`gm` like '%{0}%'",
+    "mc": "`mc` like '%{0}%'",
+    "vip": "`vip` like '%{0}%'",
+    "group": "`group` like '%{0}%'"
+  },
+  "update": {
+    "title": "`title` = '{0}'",
+    "name": "`name` = '{0}'",
+    "gm": "`gm` = '{0}'",
+    "mc": "`mc` = '{0}'",
+    "vip": "`vip` = '{0}'",
+    "group": "`group` = '{0}'"
+  },
+  "can": "get",
+  "convert": "convert"
+}

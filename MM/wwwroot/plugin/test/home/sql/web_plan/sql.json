@@ -1,0 +1,42 @@
+{
+  "method": "method",
+  "table": "mm_web_plan",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "field": "{0}",
+  "fieldDefault": "`pid`,`name`,`desc`,`items`,`state`,`reward`,`way`,`cost`,`party`,`createTime`,`endTime`,`updateTime`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "pid": "`pid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "name": "`name` like '%{0}%'",
+    "desc": "`desc` like '%{0}%'",
+    "items": "`items` like '%{0}%'",
+    "party": "`party` like '%{0}%'",
+    "createTime_min": "`createTime` >= '{0}'",
+    "createTime_max": "`createTime` <= '{0}'",
+    "endTime_min": "`endTime` >= '{0}'",
+    "endTime_max": "`endTime` <= '{0}'",
+    "updateTime_min": "`updateTime` >= '{0}'",
+    "updateTime_max": "`updateTime` <= '{0}'"
+  },
+  "update": {
+    "name": "`name` = '{0}'",
+    "desc": "`desc` = '{0}'",
+    "items": "`items` = '{0}'",
+    "party": "`party` = '{0}'",
+    "createTime": "`createTime` = '{0}'",
+    "endTime": "`endTime` = '{0}'",
+    "updateTime": "`updateTime` = '{0}'"
+  },
+  "sortDefault": "`pid` DESC",
+  "can": "get",
+  "convert": "convert",
+  "queryDefault": {},
+  "map": {}
+}

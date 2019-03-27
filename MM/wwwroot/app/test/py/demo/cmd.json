@@ -1,0 +1,14 @@
+﻿{
+    "name": "mm",
+    "identity": {
+        "username": "",
+        "uid": 0,
+        "gm": 0,
+        "vip": 0,
+        "mc": 0,
+        "group": "普通会员",
+        "power": "*"
+    },
+    "file": "./cmd.py",
+    "fun": "cmd"
+}

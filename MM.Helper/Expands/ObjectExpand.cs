@@ -64,7 +64,7 @@ namespace System
 
                 if (str.Contains("__dict__"))
                 {
-                    var jObject = new JObject();
+                    JObject jObject;
                     if (str.Contains("data"))
                     {
                         jObject = JObject.FromObject(obj);

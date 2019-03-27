@@ -1,0 +1,12 @@
+{
+  "title": "测试lua脚本接口",
+  "description ": "这是测试Lua的接口",
+  "type": "api",
+  "path": "/api/testlua",
+  "cache": 0,
+  "plugin": {
+      "language": "lua",
+      "file": "test",
+      "fun": "Index"
+  }
+}

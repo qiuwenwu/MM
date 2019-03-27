@@ -17,16 +17,16 @@ namespace System
         /// <summary>
         /// 运行路径
         /// </summary>
-        public string RunPath { get { return runPath; } set { runPath = value; _Path = new PathModel(runPath); } }
+        public string RunPath { get { return runPath; } set { runPath = value; path = new PathModel(runPath); } }
 
         /// <summary>
         /// 路径模型
         /// </summary>
-        public static PathModel _Path = new PathModel(runPath);
+        public static PathModel path = new PathModel(runPath);
         /// <summary>
         /// 路径模型
         /// </summary>
-        public PathModel Path { get { return _Path; } }
+        public PathModel Path { get { return path; } }
 
         /// <summary>
         /// 模板主题风格
@@ -76,9 +76,10 @@ namespace System
         /// <returns>返回请求参数</returns>
         public object DelReq(string tag)
         {
-            return req.TryRemove(tag, out object reqM);
+            return req.TryRemove(tag, out _);
         }
         #endregion
+
 
         #region 响应
         /// <summary>
@@ -119,7 +120,7 @@ namespace System
         /// <returns>返回响应结果</returns>
         public object DelRes(string tag)
         {
-            return res.TryRemove(tag, out object resM);
+            return res.TryRemove(tag, out _);
         }
         #endregion
     }

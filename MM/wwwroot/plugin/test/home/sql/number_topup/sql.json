@@ -1,0 +1,38 @@
+{
+  "method": "method",
+  "table": "gzh_number_topup",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`tid` DESC",
+  "field": "{0}",
+  "fieldDefault": "`tid`,`createTime`,`number`,`credit`,`name`,`rebate1`,`rebate2`,`rebate3`,`price`,`payState`,`state`,`uid`,`note`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "tid": "`tid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "createTime_min": "`createTime` >= '{0}'",
+    "createTime_max": "`createTime` <= '{0}'",
+    "number": "`number` like '%{0}%'",
+    "name": "`name` like '%{0}%'",
+    "note": "`note` like '%{0}%'"
+  },
+  "queryDefault": {},
+  "update": {
+    "createTime": "`createTime` = '{0}'",
+    "number": "`number` = '{0}'",
+    "name": "`name` = '{0}'",
+    "note": "`note` = '{0}'"
+  },
+  "can": "add get",
+  "convert": "convert",
+  "map": {},
+  "delRepeat": {
+    "groupBy": "number",
+    "orderBy": "`nid` ASC"
+  }
+}

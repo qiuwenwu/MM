@@ -1,0 +1,32 @@
+{
+  "method": "method",
+  "table": "mm_web_friendlink",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`display` ASC",
+  "field": "{0}",
+  "fieldDefault": "`fid`,`name`,`icon`,`url`,`display`,`available`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "fid": "`fid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "name": "`name` like '%{0}%'",
+    "icon": "`icon` like '%{0}%'",
+    "url": "`url` like '%{0}%'"
+  },
+  "queryDefault": {
+	"available": "`available` = 1"
+  },
+  "update": {
+    "name": "`name` = '{0}'",
+    "icon": "`icon` = '{0}'",
+    "url": "`url` = '{0}'"
+  },
+  "can": "get",
+  "convert": "convert"
+}

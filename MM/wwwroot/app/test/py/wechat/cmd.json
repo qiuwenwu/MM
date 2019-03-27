@@ -1,0 +1,16 @@
+﻿[
+	{
+		"name": "wechat",
+		"identity": {
+			"username": "",
+			"uid": 0,
+			"gm": 0,
+			"vip": 0,
+			"mc": 0,
+			"group": "普通会员",
+			"power": "*"
+		},
+		"file": "./plugin.py",
+		"fun": "cmd"
+	}
+]

@@ -1,0 +1,13 @@
+﻿{
+  "info": {
+    "version": "1.0"
+  },
+  "plugin": {
+    "dir": "./",
+    "file": "./plugin.py",
+    "identifier": "wechat_test",
+    "sort": 100,
+    "end": true
+  },
+  "scope": "wechat"
+}

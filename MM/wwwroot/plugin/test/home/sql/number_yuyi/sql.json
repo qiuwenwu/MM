@@ -1,0 +1,27 @@
+{
+  "method": "method",
+  "table": "osl_number_yuyi",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`display` ASC",
+  "field": "{0}",
+  "fieldDefault": "`yid`,`name`,`rules`,`display`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "yid": "`yid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "name": "`name` like '%{0}%'",
+    "rules": "`rules` like '%{0}%'"
+  },
+  "update": {
+    "name": "`name` = '{0}'",
+    "rules": "`rules` = '{0}'"
+  },
+  "can": "get",
+  "convert": "convert"
+}

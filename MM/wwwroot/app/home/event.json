@@ -1,0 +1,28 @@
+[{
+	"name": "api",
+	"target": "/",
+	"plugin": {
+		"identifier": "mm_web_home_root",
+		"file": "./event.js",
+		"fun": "web"
+	}
+},
+{
+	"name": "api",
+	"target": "^/home.*",
+	"plugin": {
+		"identifier": "mm_web_home",
+		"file": "./event.js",
+		"fun": "web"
+	}
+},
+{
+	"name": "api",
+	"target": "/api/home.*",
+	"plugin": {
+		"identifier": "mm_api_home",
+		"file": "./event.js",
+		"fun": "api"
+	}
+}
+]

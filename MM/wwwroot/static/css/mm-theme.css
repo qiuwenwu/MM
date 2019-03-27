@@ -1,0 +1,66 @@
+@charset "UTF-8";
+/*
+	主题风格（样式表）
+		1.颜色
+			字体颜色 color
+			背景颜色 background-color
+			背景图 background-image
+			
+		2.边框
+			边框粗细 border
+			圆角 border-radius
+			阴影 box-shadow
+
+*/
+
+/*
+	元素命名
+		字体 text 
+			例如：红色字体 .text-red
+			
+		背景 bg
+			例如：红色背景 .bg-red
+			
+		按钮 btn
+			例如：红色按钮 .btn-red
+			
+		提示框 alert
+			例如：红色提示框 .alert-red
+			
+		输入框 input
+			例如：红色输入框 .input-red
+			
+		表格 table
+			例如：红色输入框 .table-red
+*/
+
+
+/* 固有样式 */
+p,span { color:#666; }
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {color:#inherit;}
+
+.bg-white { background-color: #fff; }
+.bg-black { background-color: #333; }
+.bg-gray { background-color: #FDFDFD; }
+
+
+/* 边框 */
+.ba {border:1px solid #dbdbdb !important;}
+.bb {border-bottom:1px solid #dbdbdb !important;}
+.bl {border-left:1px solid #dbdbdb !important;}
+.blr {border-left:1px solid #dbdbdb !important;border-right:1px solid #dbdbdb !important;}
+.bn {border:none !important;}
+.br {border-right:1px solid #dbdbdb !important;}
+.bt {border-top:1px solid #dbdbdb !important;}
+.btb {border-top:1px solid #dbdbdb !important;border-bottom:1px solid #dbdbdb !important;}
+
+
+/* 主题风格 */
+body{ background-color: #efeff4; }
+article,footer,header,section { -webkit-box-shadow: 2px 2px 5px #e5e5e5; box-shadow: 2px 2px 5px #e5e5e5; }
+
+.layout>header { background-color: #333; color: #fff; }
+.layout>aside { background-color: #333; color: #fff; }
+.layout>article { background-color: #fff; }
+.layout>footer { background-color: #FDFDFD; border-top: 1px solid #f5f5f5; }
+.layout>header p, .layout>header span,.layout>aside p, .layout>aside span{ color: #999; }

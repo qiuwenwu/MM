@@ -1,0 +1,12 @@
+{
+"name": "web_article_post",
+"type": "api",
+"path": "/api/web/article/post",
+"cache": 15,
+"sqlPath": "./sql",
+"paramPath": "./param",
+"otherParam": true,
+"checkToken": false,
+"checkParam": false,
+"Scope": false
+}

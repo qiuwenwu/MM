@@ -1,0 +1,25 @@
+{
+  "method": "method",
+  "table": "osl_number_pricerange",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "sortDefault": "`display` ASC",
+  "field": "{0}",
+  "fieldDefault": "`pid`,`name`,`min`,`max`,`display`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "pid": "`pid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "name": "`name` like '%{0}%'"
+  },
+  "update": {
+    "name": "`name` = '{0}'"
+  },
+  "can": "add del set get export import",
+  "convert": "convert"
+}

@@ -1,0 +1,41 @@
+{
+  "method": "method",
+  "table": "mm_user_info",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "field": "{0}",
+  "fieldDefault": "`uid`,`sex`,`age`,`city`,`birthday`,`province`,`job`,`company`,`address`,`companyAddress`,`jobScope`,`businessScope`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "uid": "`uid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "city": "`city` like '%{0}%'",
+    "birthday": "`birthday` like '%{0}%'",
+    "province": "`province` like '%{0}%'",
+    "job": "`job` like '%{0}%'",
+    "company": "`company` like '%{0}%'",
+    "address": "`address` like '%{0}%'",
+    "companyAddress": "`companyAddress` like '%{0}%'",
+    "jobScope": "`jobScope` like '%{0}%'",
+    "businessScope": "`businessScope` like '%{0}%'",
+	"user": "`uid` in (select x.uid From mm_user as x WHERE x.username like '%{0}%' || x.name like '%{0}%' || x.nickName like '%{0}%')"
+  },
+  "update": {
+    "city": "`city` = '{0}'",
+    "birthday": "`birthday` = '{0}'",
+    "province": "`province` = '{0}'",
+    "job": "`job` = '{0}'",
+    "company": "`company` = '{0}'",
+    "address": "`address` = '{0}'",
+    "companyAddress": "`companyAddress` = '{0}'",
+    "jobScope": "`jobScope` = '{0}'",
+    "businessScope": "`businessScope` = '{0}'"
+  },
+  "can": "get",
+  "convert": "convert"
+}

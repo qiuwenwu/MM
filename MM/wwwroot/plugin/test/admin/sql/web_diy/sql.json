@@ -1,0 +1,26 @@
+{
+  "method": "method",
+  "table": "mm_web_diy",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "field": "{0}",
+  "fieldDefault": "`id`,`name`,`template`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "id": "`id` = {0}"
+  },
+  "item": {},
+  "query": {
+    "name": "`name` like '%{0}%'",
+    "template": "`template` like '%{0}%'"
+  },
+  "update": {
+    "name": "`name` = '{0}'",
+    "template": "`template` = '{0}'"
+  },
+  "can": "add del set get export import",
+  "convert": "convert"
+}

@@ -1,0 +1,48 @@
+{
+  "method": "method",
+  "table": "mm_api_client",
+  "page": "page",
+  "pageSize": "pagesize",
+  "sort": "{0}",
+  "field": "{0}",
+  "fieldDefault": "`aid`,`icon`,`name`,`uid`,`appID`,`appSecret`,`token`,`url`,`encodingAESKey`,`creatTime`,`updateTime`,`bindIP`,`timesCount`,`timesAllow`,`timesToday`,`scope`,`scopeNot`,`expiresIn`,`available`,`encrypt`",
+  "count": "{0}",
+  "groupBy": "{0}",
+  "separator": "|",
+  "where": {
+    "aid": "`aid` = {0}"
+  },
+  "item": {},
+  "query": {
+    "icon": "`icon` like '%{0}%'",
+    "name": "`name` like '%{0}%'",
+    "appID": "`appID` like '%{0}%'",
+    "appSecret": "`appSecret` like '%{0}%'",
+    "token": "`token` like '%{0}%'",
+    "url": "`url` like '%{0}%'",
+    "encodingAESKey": "`encodingAESKey` like '%{0}%'",
+    "creatTime_min": "`creatTime` >= '{0}'",
+    "creatTime_max": "`creatTime` <= '{0}'",
+    "updateTime_min": "`updateTime` >= '{0}'",
+    "updateTime_max": "`updateTime` <= '{0}'",
+    "bindIP": "`bindIP` like '%{0}%'",
+    "scope": "`scope` like '%{0}%'",
+    "scopeNot": "`scopeNot` like '%{0}%'"
+  },
+  "update": {
+    "icon": "`icon` = '{0}'",
+    "name": "`name` = '{0}'",
+    "appID": "`appID` = '{0}'",
+    "appSecret": "`appSecret` = '{0}'",
+    "token": "`token` = '{0}'",
+    "url": "`url` = '{0}'",
+    "encodingAESKey": "`encodingAESKey` = '{0}'",
+    "creatTime": "`creatTime` = '{0}'",
+    "updateTime": "`updateTime` = '{0}'",
+    "bindIP": "`bindIP` = '{0}'",
+    "scope": "`scope` = '{0}'",
+    "scopeNot": "`scopeNot` = '{0}'"
+  },
+  "can": "get",
+  "convert": "convert"
+}

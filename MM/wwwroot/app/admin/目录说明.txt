@@ -1,0 +1,8 @@
+admin 是管理员后台，采用了MVVM模式开发的SPA应用
+	event.js 是服务端上的入口文件
+	event.json 用于配置服务端入口的文件
+	main.js 是前端入口文件
+	router.js 是前端路由配置文件
+	store.js 是前端缓存配置文件
+	
+	pages 目录是放置前端页面的目录

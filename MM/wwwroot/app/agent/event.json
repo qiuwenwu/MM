@@ -1,0 +1,19 @@
+[{
+	"name": "api",
+	"target": "^/agent.*",
+	"plugin": {
+		"identifier": "mm_web_agent",
+		"file": "./event.js",
+		"fun": "web"
+	}
+},
+{
+	"name": "api",
+	"target": "/api/agent.*",
+	"plugin": {
+		"identifier": "mm_api_agent",
+		"file": "./event.js",
+		"fun": "api"
+	}
+}
+]
