@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace MM.Task
 {
@@ -7,6 +8,11 @@ namespace MM.Task
     /// </summary>
     public class Drive : Common.Drive
     {
+        public Drive()
+        {
+            Extension = "task.json";
+        }
+
         /// <summary>
         /// 任务字典
         /// </summary>
@@ -16,24 +22,26 @@ namespace MM.Task
         /// 删除
         /// </summary>
         /// <returns>删除成功返回true，失败返回false</returns>
-        public bool Del(string key) {
+        public bool Del(string key)
+        {
             return Dict.Remove(key);
         }
 
         /// <summary>
         /// 设置
         /// </summary>
-        /// <param name="cg">配置</param>
-        public void Set(Config cg) {
-            if (cg.Info != null)
+        /// <param name="v">配置</param>
+        public void Set(Helper v)
+        {
+            if (v.Info != null)
             {
-                cg.Change();
-                var v = (Helper)cg;
-                var k = cg.Info.Name;
+                v.Change();
+                var k = v.Info.Name;
                 if (Dict.ContainsKey(k))
                 {
                     Dict[k].End();
                     Dict[k] = v;
+                    Dict[k].Init();
                 }
                 else
                 {
@@ -47,13 +55,18 @@ namespace MM.Task
         /// 更新
         /// </summary>
         /// <param name="path">搜索路径</param>
-        public void Update(string path) {
-            if (path != null) {
-                Dir = path;
+        public void Update(string path = null)
+        {
+            if (!string.IsNullOrEmpty(path))
+            {
+                Dir = path.ToFullName();
             }
-            var list = EachLoad<Config>();
-            foreach (var o in list) {
-                Set(o);
+            var dict = EachLoad<Helper>();
+            foreach (var o in dict)
+            {
+                var p = o.Key.ToDir();
+                o.Value.Change(p);
+                Set(o.Value);
             }
         }
 
@@ -61,7 +74,8 @@ namespace MM.Task
         /// 新建配置
         /// </summary>
         /// <returns>返回配置模型</returns>
-        public Config New() {
+        public Config New()
+        {
             return new Config();
         }
     }

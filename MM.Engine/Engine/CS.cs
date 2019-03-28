@@ -253,12 +253,9 @@ public class Script : MM.Engine.Common {
                 dynamic scope = CSScript.Evaluator.LoadCode(dll + ScriptCode + code + "\n}");
                 if (scope != null)
                 {
-                    scope.Cache = new Cache();
-                    var Engine = new Indexer
-                    {
-                        Dir = _Dir
-                    };
-                    scope.Engine = Engine;
+                    var dir = file.ToDir();
+                    scope.SDK.Dir = dir;
+                    scope.Engine.Dir = dir;
                     dynamic dyn = scope;
                     if (param1 == null)
                     {
@@ -320,12 +317,8 @@ public class Script : MM.Engine.Common {
                 dynamic scope = CSScript.Evaluator.LoadCode(dll + "public class Script : MM.Engine.Common\n{\n" + code + "\n}");
                 if (scope != null)
                 {
-                    scope.Cache = new Cache();
-                    var Engine = new Indexer
-                    {
-                        Dir = _Dir
-                    };
-                    scope.Engine = Engine;
+                    scope.SDK.Dir = _Dir;
+                    scope.Engine.Dir = _Dir;
                     dynamic dyn = scope;
                     if (param1 == null)
                     {
@@ -388,12 +381,9 @@ public class Script : MM.Engine.Common {
                 dynamic scope = CSScript.Evaluator.CompileCode(dll + ScriptCode + code + "\n}").CreateObject("*");
                 if (scope != null)
                 {
-                    scope.Cache = new Cache();
-                    var Engine = new Indexer
-                    {
-                        Dir = _Dir
-                    };
-                    scope.Engine = Engine;
+                    var dir = file.ToDir();
+                    scope.SDK.Dir = dir;
+                    scope.Engine.Dir = dir;
                     return scope;
                 }
             }

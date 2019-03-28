@@ -234,12 +234,10 @@ namespace MM.Engine
             try
             {
                 var scope = Eng.CreateScope();
+                var dir = file.ToDir();
+                scope.SetVariable("SDK", new Helper.Indexer() { Dir = dir });
+                scope.SetVariable("Engine", new Indexer() { Dir = dir });
                 scope.SetVariable("Cache", new Cache());
-                var Engine = new Indexer
-                {
-                    Dir = Path.GetDirectoryName(file) + "\\"
-                };
-                scope.SetVariable("Engine", Engine);
                 Eng.CreateScriptSourceFromFile(file, Encoding.UTF8).Execute(scope);
                 dynamic dyn = scope;
                 if (param1 == null)
@@ -285,12 +283,10 @@ namespace MM.Engine
             try
             {
                 var scope = Eng.CreateScope();
+                var dir = _Dir;
+                scope.SetVariable("SDK", new Helper.Indexer() { Dir = dir });
+                scope.SetVariable("Engine", new Indexer() { Dir = dir });
                 scope.SetVariable("Cache", new Cache());
-                var Engine = new Indexer
-                {
-                    Dir = _Dir
-                };
-                scope.SetVariable("Engine", Engine);
                 Eng.CreateScriptSourceFromString(code).Execute(scope);
                 dynamic dyn = scope;
                 if (param1 == null)
@@ -338,12 +334,10 @@ namespace MM.Engine
             try
             {
                 var scope = Eng.CreateScope();
+                var dir = file.ToDir();
+                scope.SetVariable("SDK", new Helper.Indexer() { Dir = dir });
+                scope.SetVariable("Engine", new Indexer() { Dir = dir });
                 scope.SetVariable("Cache", new Cache());
-                var Engine = new Indexer
-                {
-                    Dir = Path.GetDirectoryName(file) + "\\"
-                };
-                scope.SetVariable("Engine", Engine);
                 Eng.CreateScriptSourceFromFile(file, Encoding.UTF8).Compile().Execute(scope);
                 return scope;
             }

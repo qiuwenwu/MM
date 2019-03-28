@@ -23,14 +23,23 @@ namespace MM.Common
         /// <summary>
         /// 改变配置
         /// </summary>
-        public void Change()
+        public void Change(string dir = "")
         {
             Info.App = Info.App.ToLower();
             Info.Type = Info.Type.ToLower();
             Info.Name = Info.Name.ToLower();
-            if (Info.Dir == null && Script != null)
+            if (Script != null)
             {
-                Info.Dir = Script.File.ToDir();
+                Script.File = Script.File.ToFullName(dir);
+                if (Info != null)
+                {
+                    if (Info.Dir == null)
+                    {
+                        Info.Dir = Script.File.ToDir();
+
+                    }
+                    Info.Dir = Info.Dir.ToFullName(dir);
+                }
             }
         }
     }

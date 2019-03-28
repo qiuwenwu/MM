@@ -45,7 +45,7 @@ namespace MM.Common
         /// <returns>删除成功返回true，失败返回false</returns>
         public bool DelReq(string tag)
         {
-            return Req.TryRemove(tag, out object m);
+            return Req.TryRemove(tag, out _);
         }
         #endregion
 
@@ -85,7 +85,7 @@ namespace MM.Common
         /// <returns>删除成功返回true，失败返回false</returns>
         public bool DelRes(string tag)
         {
-            return Res.TryRemove(tag, out object m);
+            return Res.TryRemove(tag, out _);
         }
         #endregion
 
@@ -133,7 +133,7 @@ namespace MM.Common
         /// <summary>
         /// 拓展名
         /// </summary>
-        public string Extension { get; set; } = "";
+        public string Extension { get; set; } = ".json";
 
         /// <summary>
         /// 加载
@@ -151,7 +151,7 @@ namespace MM.Common
         /// 遍历读取文件
         /// </summary>
         /// <returns>返回全名加内容模型列表</returns>
-        public List<T> EachLoad<T>()
+        public Dictionary<string, T> EachLoad<T>()
         {
             return EachLoad<T>(new DirectoryInfo(Dir));
         }
@@ -161,27 +161,28 @@ namespace MM.Common
         /// </summary>
         /// <param name="root">根路径</param>
         /// <returns>返回全名加内容模型列表</returns>
-        private List<T> EachLoad<T>(DirectoryInfo root)
+        private Dictionary<string, T> EachLoad<T>(DirectoryInfo root)
         {
-            var list = new List<T>();
+            var list = new Dictionary<string, T>();
 
             // 追加文件
-            var files = root.GetFiles(Extension);
+            var files = root.GetFiles("*" + Extension);
             foreach (var o in files)
             {
                 var name = o.FullName;
                 var content = File.ReadAllText(name);
-                list.Add(content.Loads<T>());
+                list.Add(o.FullName, content.Loads<T>());
             }
+
 
             // 递归遍历文件
             var dir = root.GetDirectories();
-            foreach (var o in dir)
+            foreach (var item in dir)
             {
-                var lt = EachLoad<T>(o);
-                foreach (var m in lt)
+                var lt = EachLoad<T>(item);
+                foreach (var o in lt)
                 {
-                    list.Add(m);
+                    list.Add(o.Key, o.Value);
                 }
             }
             return list;

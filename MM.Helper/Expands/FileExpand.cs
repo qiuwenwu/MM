@@ -16,7 +16,18 @@ namespace System
         public static string ToFullName(this string fileName, string dir = "")
         {
             var file = fileName.Replace("/", "\\");
-            if (file.StartsWith(@".\"))
+            if (file.IndexOf("\\") == -1) {
+
+                if (string.IsNullOrEmpty(dir))
+                {
+                    file = Cache.runPath + file;
+                }
+                else
+                {
+                    file = dir + file;
+                }
+            }
+            else if (file.StartsWith(@".\"))
             {
                 file = dir + file.Substring(2);
             }
@@ -40,7 +51,11 @@ namespace System
         /// </summary>
         /// <returns>返回文件路径</returns>
         public static string ToDir(this string fileName) {
-            return Path.GetFullPath(fileName);
+            var idx = fileName.LastIndexOf("\\");
+            if (idx != -1) {
+                fileName = fileName.Substring(0, idx + 1);
+            }
+            return fileName;
         }
     }
 }

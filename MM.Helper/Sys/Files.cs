@@ -32,7 +32,7 @@ namespace MM.Helper.Sys
         /// <param name="fileName">文件名</param>
         /// <param name="encoding">编码方式</param>
         /// <returns>返回文件内容</returns>
-        public string Load(string fileName, string encoding = "utf8") {
+        public string Load(string fileName, string encoding = "utf-8") {
             var file = fileName.ToFullName(Dir);
             if (File.Exists(file)) {
                 return File.ReadAllText(file, Encoding.GetEncoding(encoding));
@@ -49,7 +49,7 @@ namespace MM.Helper.Sys
         /// <param name="fileName">文件名</param>
         /// <param name="encoding">编码方式</param>
         /// <param name="content">文件内容</param>
-        public void Save(string fileName, string content, string encoding = "utf8")
+        public void Save(string fileName, string content, string encoding = "utf-8")
         {
             File.WriteAllText(fileName.ToFullName(Dir), content, Encoding.GetEncoding(encoding));
         }
@@ -257,7 +257,8 @@ namespace MM.Helper.Sys
         public List<FilesModel> EachLoad(string path, string extension)
         {
             var fullPath = path.ToFullName(Dir);
-            return EachLoad(new DirectoryInfo(path));
+            Extension = extension;
+            return EachLoad(new DirectoryInfo(fullPath));
         }
 
         /// <summary>
@@ -384,7 +385,7 @@ namespace MM.Helper.Sys
         /// <returns>返回文件路径</returns>
         public string ToDir(string fileName)
         {
-            return Path.GetFullPath(fileName);
+            return fileName.ToDir();
         }
     }
 

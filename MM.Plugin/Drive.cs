@@ -44,7 +44,7 @@ namespace MM.Plugin
         /// <returns>删除成功返回true，失败返回false</returns>
         public bool Del(string app)
         {
-            return Dict.TryRemove(app, out Helper m);
+            return Dict.TryRemove(app, out _);
         }
         #endregion
 
@@ -141,8 +141,8 @@ namespace MM.Plugin
         public void EachLoad(string dir)
         {
             Dir = dir;
-            var list = EachLoad<Config>();
-            foreach (var cg in list)
+            var dict = EachLoad<Config>();
+            foreach (var cg in dict.Values)
             {
                 Set(cg);
             }

@@ -233,12 +233,10 @@ namespace MM.Engine
             {
                 Lua Eng = new Lua();
                 Eng.LoadCLRPackage();
+                var dir = file.ToDir();
+                Eng["SDK"] = new Helper.Indexer() { Dir = dir };
                 Eng["Cache"] = new Cache();
-                var Engine = new Indexer
-                {
-                    Dir = Path.GetDirectoryName(file) + "\\"
-                };
-                Eng["Engine"] = Engine;
+                Eng["Engine"] = new Indexer() { Dir = dir };
                 Eng.DoFile(file);
                 var funObj = Eng.GetFunction("Main");
                 if (param1 == null)
@@ -285,12 +283,10 @@ namespace MM.Engine
             {
                 Lua Eng = new Lua();
                 Eng.LoadCLRPackage();
+                var dir = _Dir;
+                Eng["SDK"] = new Helper.Indexer() { Dir = dir };
                 Eng["Cache"] = new Cache();
-                var Engine = new Indexer
-                {
-                    Dir = _Dir
-                };
-                Eng["Engine"] = Engine;
+                Eng["Engine"] = new Indexer() { Dir = dir };
                 Eng.DoString(code, "Script");
                 var funObj = Eng.GetFunction("Main");
                 if (param1 == null)
@@ -339,12 +335,10 @@ namespace MM.Engine
             {
                 Lua Eng = new Lua();
                 Eng.LoadCLRPackage();
+                var dir = file.ToDir();
+                Eng["SDK"] = new Helper.Indexer() { Dir = dir };
                 Eng["Cache"] = new Cache();
-                var Engine = new Indexer
-                {
-                    Dir = Path.GetDirectoryName(file) + "\\"
-                };
-                Eng["Engine"] = Engine;
+                Eng["Engine"] = new Indexer() { Dir = dir };
                 var code = File.ReadAllText(file, Encoding.UTF8);
                 Eng.DoFile(file);
                 return Eng.Pop();
