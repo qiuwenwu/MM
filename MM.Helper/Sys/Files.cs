@@ -104,15 +104,8 @@ namespace MM.Helper.Sys
                 {
                     if (!string.IsNullOrEmpty(content))
                     {
-                        if (File.Exists(fileName))
-                        {
-                            Ex = "文件已存在！";
-                        }
-                        else
-                        {
-                            File.WriteAllText(fileName, content);
-                            bl = true;
-                        }
+                        File.AppendAllText(fileName, content);
+                        bl = true;
                     }
                     else
                     {
@@ -315,7 +308,7 @@ namespace MM.Helper.Sys
         {
             var list = new List<T>();
 
-            // 追加文件
+            // 追加获取文件
             var files = root.GetFiles(Extension);
             foreach (var o in files)
             {

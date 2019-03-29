@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace System
+﻿namespace System
 {
     /// <summary>
     /// 文件拓展
