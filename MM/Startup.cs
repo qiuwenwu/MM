@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.DependencyInjection;
+using System.Diagnostics;
 using System.Linq;
 
 namespace MM
@@ -18,6 +19,8 @@ namespace MM
         /// <param name="services">服务集合</param>
         public void ConfigureServices(IServiceCollection services)
         {
+            // 跨域
+            services.AddCors(options => options.AddPolicy("AllowSameDomain", builder => builder.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin().AllowCredentials()));
             // 压缩
             services.AddResponseCompression(options =>
             {
@@ -29,12 +32,12 @@ namespace MM
 
             // 缓存
             services.AddResponseCaching();
-            if (Config.httpsPort > 0)
+            if (Cache.Config.HttpsPort > 0)
             {
                 services.AddHttpsRedirection(options =>
                 {
                     options.RedirectStatusCode = StatusCodes.Status307TemporaryRedirect;
-                    options.HttpsPort = Config.httpsPort;
+                    options.HttpsPort = Cache.Config.HttpsPort;
                 });
             }
         }
@@ -50,18 +53,16 @@ namespace MM
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseHsts();
+            }
 
             // 跨域请求
-            app.UseCors(builder => builder
-                .AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader()
-                .AllowCredentials());
+            app.UseCors("AllowSameDomain");
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            app.UseStaticFiles();
+            
         }
     }
 }

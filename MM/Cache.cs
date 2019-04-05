@@ -5,8 +5,18 @@ namespace MM
     /// <summary>
     /// 缓存集合
     /// </summary>
-    public class Cache : Data.Cache
-    {       
+    public class Cache : System.Cache
+    {
+        /// <summary>
+        /// 配置模型
+        /// </summary>
+        public static ConfigModel Config   { get; set; } = new ConfigModel();
+
+        /// <summary>
+        /// 重定向——伪静态
+        /// </summary>
+        public static RewriteModel Rewrite { get; set; } = new RewriteModel();
+
         /// <summary>
         /// 初始化
         /// </summary>

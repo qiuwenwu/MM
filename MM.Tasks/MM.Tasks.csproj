@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MM.Common\MM.Common.csproj" />
+    <ProjectReference Include="..\MM.Engine\MM.Engine.csproj" />
     <ProjectReference Include="..\MM.Helper\MM.Helper.csproj" />
   </ItemGroup>
 

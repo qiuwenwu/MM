@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using System.Threading.Tasks;
 
 namespace MM
 {
@@ -15,6 +17,26 @@ namespace MM
 
     public class ApiMiddleware
     {
-        
+        /// <summary>
+        /// 判断是否处理拓展，如果是Api
+        /// </summary>
+        /// <param name="ct">http上下文</param>
+        /// <returns></returns>
+        public async Task Invoke(HttpContext ct)
+        {
+            // Console.WriteLine("先Api");
+            var stated = ct.Response.HasStarted;
+            //  如果已响应，不继续下面的操作。
+            if (!stated)
+            {
+                await Drive.Run(ct);
+            }
+            else
+            {
+                //  执行之前装载的中间件
+                await _next.Invoke(ct);
+                //Console.WriteLine("后Api");
+            }
+        }
     }
 }
