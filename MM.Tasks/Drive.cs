@@ -10,7 +10,7 @@ namespace MM.Task
     {
         public Drive()
         {
-            Extension = "task.json";
+            Search = "task.json";
         }
 
         /// <summary>

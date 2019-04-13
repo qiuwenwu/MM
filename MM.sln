@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MM.Plugin", "MM.Plugin\MM.P
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MM.API", "MM.API\MM.API.csproj", "{78FA3D75-0B4D-4692-95CC-39091A15F2F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MM.Tasks", "MM.Tasks\MM.Tasks.csproj", "{76C78C4A-1138-45DC-A24E-89E1B7B37BC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MM.Tasks", "MM.Tasks\MM.Tasks.csproj", "{76C78C4A-1138-45DC-A24E-89E1B7B37BC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

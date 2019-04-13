@@ -133,7 +133,7 @@ namespace MM.Common
         /// <summary>
         /// 拓展名
         /// </summary>
-        public string Extension { get; set; } = ".json";
+        public string Search { get; set; } = "*.json";
 
         /// <summary>
         /// 加载
@@ -166,7 +166,7 @@ namespace MM.Common
             var list = new Dictionary<string, T>();
 
             // 追加文件
-            var files = root.GetFiles("*" + Extension);
+            var files = root.GetFiles(Search);
             foreach (var o in files)
             {
                 var name = o.FullName;

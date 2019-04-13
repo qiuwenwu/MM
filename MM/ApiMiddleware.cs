@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
+using MM.Event;
 using System.Threading.Tasks;
 
 namespace MM
@@ -17,6 +19,12 @@ namespace MM
 
     public class ApiMiddleware
     {
+        private readonly RequestDelegate _next;
+        public ApiMiddleware(RequestDelegate next, ILoggerFactory loggerFactory)
+        {
+            _next = next;
+        }
+
         /// <summary>
         /// 判断是否处理拓展，如果是Api
         /// </summary>
@@ -29,7 +37,7 @@ namespace MM
             //  如果已响应，不继续下面的操作。
             if (!stated)
             {
-                await Drive.Run(ct);
+                await Soa.Run(ct);
             }
             else
             {

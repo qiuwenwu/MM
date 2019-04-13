@@ -8,14 +8,14 @@
         /// <summary>
         /// 检索文件拓展名
         /// </summary>
-        public string Extension { get; set; }
+        public string Search { get; set; }
 
         /// <summary>
         /// 构造函数
         /// </summary>
         public Drive()
         {
-            Extension = "crawler.json";
+            Search = "*crawler.json";
         }
     }
 }
