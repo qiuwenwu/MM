@@ -1,4 +1,6 @@
-﻿namespace MM.Plugin
+﻿using Newtonsoft.Json;
+
+namespace MM.Plugin
 {
     /// <summary>
     /// 插件配置
@@ -8,16 +10,25 @@
         /// <summary>
         /// 开关
         /// </summary>
-        public bool OnOff { get; set; } = true;
+        [JsonProperty("onOff")]
+        public bool OnOff   { get; set; } = true;
 
         /// <summary>
-        /// 中断执行
+        /// 结束执行
         /// </summary>
-        public bool End { get; set; }
+        [JsonProperty("finish")]
+        public bool Finish  { get; set; } = true;
 
         /// <summary>
         /// 执行顺序
         /// </summary>
-        public int Order { get; set; }
+        [JsonProperty("order")]
+        public int Order    { get; set; } = 100;
+
+        /// <summary>
+        /// 状态
+        /// </summary>
+        [JsonProperty("state")]
+        public string State { get; set; } = "End";
     }
 }

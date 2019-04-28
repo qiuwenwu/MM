@@ -1,386 +1,160 @@
-﻿using System.Collections.Concurrent;
-using System.IO;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using MM.Helper.Sys;
 
 namespace MM.Plugin
 {
     /// <summary>
-    /// 插件帮助类
+    /// 任务帮助类
     /// </summary>
-    public class Helper
+    public class Helper : Config
     {
-        /// <summary>
-        /// 构造函数
-        /// </summary>
-        public Helper()
-        {
-
-        }
+        private Dir DirHelper = new Dir();
 
         /// <summary>
-        /// 构造函数
+        /// 错误提示
         /// </summary>
-        /// <param name="cg">配置模型</param>
-        public Helper(Config cg)
-        {
-            Set(cg);
-        }
-
-        #region 插件配置
-        /// <summary>
-        /// 事件帮助字典，通过事件名称驱动字典
-        /// </summary>
-        public ConcurrentDictionary<string, Config> ConfigDict { get; set; } = new ConcurrentDictionary<string, Config>();
+        public string Msg   { get; set; }
 
         /// <summary>
-        /// 获取插件配置
+        /// 执行插件
         /// </summary>
-        /// <param name="name">事件名称</param>
-        /// <returns>返回请求参数</returns>
-        public Config Get(string name)
-        {
-            ConfigDict.TryGetValue(name, out Config m);
-            return m;
-        }
-
-        /// <summary>
-        /// 设置插件配置
-        /// </summary>
-        /// <param name="m">请求参数</param>
-        /// <returns>设置成功返回true，是失败返回false</returns>
-        public bool Set(Config m)
-        {
-            m.Change();
-            return ConfigDict.AddOrUpdate(m.Info.Name, m, (key, value) => m) != null;
-        }
-
-        /// <summary>
-        /// 删除插件配置
-        /// </summary>
-        /// <param name="name">插件名称</param>
-        /// <returns>删除成功返回true，失败返回false</returns>
-        public bool Del(string name)
-        {
-            return ConfigDict.TryRemove(name, out _);
-        }
-        #endregion
-
-
-        #region 应用处理函数
-        /// <summary>
-        /// 执行指令
-        /// </summary>
-        /// <param name="fun">目标对象</param>
-        /// <param name="content">传递的内容</param>
-        /// <param name="name">插件名称，可为空，执行所有插件</param>
+        /// <param name="message">消息</param>
+        /// <param name="ret">结果</param>
         /// <returns>返回执行结果</returns>
-        public object Run(string fun, object content, string name = null)
-        {
-            object ret = null;
-            if (!string.IsNullOrEmpty(name) && ConfigDict.ContainsKey(name))
-            {
-                var plug = ConfigDict[name].Script;
-                var result = plug.Run(fun, content, ret);
-                if (result != null)
-                {
-                    ret = result;
-                }
-            }
-            else
-            {
-                foreach (var o in ConfigDict.Values)
-                {
-                    var plug = o.Script;
-                    var result = plug.Run(fun, content, ret);
-                    if (result != null)
-                    {
-                        ret = result;
-                        if (o.End)
-                        {
-                            break;
-                        }
-                    }
-                }
-            }
-            return ret;
+        public object Run(object message, object ret) {
+            return Script.Run("Run", message, ret);
         }
 
         /// <summary>
-        /// 执行指令
+        /// 1.安装插件
         /// </summary>
-        /// <param name="fun">目标对象</param>
-        /// <param name="content">传递的内容</param>
-        /// <param name="name">插件名称，可为空，执行所有插件</param>
+        /// <param name="param">参数</param>
+        /// <returns>返回安装结果</returns>
+        /// <param name="param">参数</param>
         /// <returns>返回执行结果</returns>
-        public Task<object> RunTask(string fun, object content, string name)
+        public object Install(string param = "")
         {
-            return Task.Run(() => Run(fun, content, name));
+            if (State == "Update")
+            {
+                Msg = "插件更新中，请稍后再试！";
+                return null;
+            }
+            else
+            {
+                return Script.Run("Install", param, "", "");
+            }
         }
 
         /// <summary>
-        /// 执行指令
+        /// 2.初始化
         /// </summary>
-        /// <param name="fun">目标对象</param>
-        /// <param name="content">传递的内容</param>
-        /// <param name="name">插件名称，可为空，执行所有插件</param>
+        /// <param name="param">参数</param>
         /// <returns>返回执行结果</returns>
-        public async Task<object> RunAsync(string fun, object content, string name)
-        {
-            return await RunTask(fun, content, name);
+        public object Init(string param = "") {
+            return Script.Run("Init", param, "", "");
         }
 
         /// <summary>
-        /// 安装插件
+        /// 3.启动
         /// </summary>
-        /// <param name="name">插件名称符</param>
         /// <param name="param">参数</param>
-        /// <returns>返回安装结果</returns>
-        public string Install(string name, string param = "")
+        /// <returns>返回执行结果</returns>
+        public object Start(string param = "")
         {
-            string ret;
-            if (ConfigDict.ContainsKey(name))
+            if (State == "Update") {
+                Msg = "插件更新中，请稍后再试！";
+            }
+            else if (State != "Start")
             {
-                var plug = ConfigDict[name].Script;
-                var obj = plug.Run("Install", param, "", "");
-                if (obj != null)
-                {
-                    ret = obj.ToString();
-                }
-                else
-                {
-                    ret = "安装成功！";
-                }
+                State = "Start";
+                return Script.Run("Start", param, "", "");
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// 4.停止
+        /// </summary>
+        /// <param name="param">参数</param>
+        /// <returns>返回执行结果</returns>
+        public object Stop(string param = "")
+        {
+            if (State == "Start")
+            {
+                State = "Stop";
+                return Script.Run("Stop", param, "", "");
             }
             else
             {
-                ret = "安装失败！原因：插件未加载或不存在";
+                Msg = "插件未启动！";
+                return null;
             }
-            return ret;
         }
 
         /// <summary>
-        /// 初始化
+        /// 5.结束
         /// </summary>
-        /// <param name="name">插件名称符</param>
         /// <param name="param">参数</param>
-        /// <returns>返回安装结果</returns>
-        public string Init(string name, string param = "")
+        /// <returns>返回执行结果</returns>
+        public object End(string param = "")
         {
-            string ret;
-            if (ConfigDict.ContainsKey(name))
+            State = "End";
+            return Script.Run("End", param, "", "");
+        }
+
+        /// <summary>
+        /// 5.更新
+        /// </summary>
+        /// <param name="param">参数</param>
+        /// <returns>返回执行结果</returns>
+        public object Update(string param = "")
+        {
+            if (State == "End")
             {
-                var obj = ConfigDict[name].Script.Run("Init", param, "", "");
-                if (obj != null)
-                {
-                    ret = obj.ToString();
-                }
-                else
-                {
-                    ret = "初始化成功！";
-                }
+                State = "Update";
+                return Script.Run("Update", param, "", "");
             }
             else
             {
-                ret = "初始化失败！原因：插件未加载或不存在";
+                Msg = "需先结束运行，才能更新插件！";
+                return null;
             }
-            return ret;
         }
 
         /// <summary>
-        /// 开始插件
+        /// 6.卸载插件
         /// </summary>
-        /// <param name="name">插件名称符</param>
         /// <param name="param">参数</param>
-        /// <returns>返回安装结果</returns>
-        public string Start(string name, string param = "")
+        /// <returns>返回执行结果</returns>
+        public object Uninstall(string param = "")
         {
-            string ret;
-            if (ConfigDict.ContainsKey(name))
+            if (State == "End")
             {
-                var cg = ConfigDict[name];
-                if (cg.OnOff)
-                {
-                    return "启动失败！原因：插件已启动";
-                }
-                else
-                {
-                    var obj = cg.Script.Run("Start", param, "", "");
-                    if (obj != null)
-                    {
-                        ret = obj.ToString();
-                    }
-                    else
-                    {
-                        ret = "启动成功！";
-                    }
-                }
+                return Script.Run("Uninstall", param, "", "");
             }
             else
             {
-                ret = "启动失败！原因：插件未加载或不存在";
+                Msg = "需先结束运行，才能卸载插件！";
+                return null;
             }
-            return ret;
         }
 
         /// <summary>
-        /// 结束插件
+        /// 7.移除插件
         /// </summary>
-        /// <param name="name">插件名称符</param>
         /// <param name="param">参数</param>
-        /// <returns>返回安装结果</returns>
-        public string End(string name, string param = "")
-        {
-            string ret;
-            if (ConfigDict.ContainsKey(name))
+        /// <returns>返回执行结果</returns>
+        public object Remove(string param = "") {
+            if (State == "End")
             {
-                var cg = ConfigDict[name];
-                if (!cg.OnOff)
-                {
-                    return "结束失败！原因：插件已结束";
-                }
-                else
-                {
-                    var obj = cg.Script.Run("End", param, "", "");
-                    if (obj != null)
-                    {
-                        ret = obj.ToString();
-                    }
-                    else
-                    {
-                        ret = "结束成功！";
-                    }
-                }
+                var ret = Script.Run("Remove", param, "", "");
+                DirHelper.Del(Info.Dir);
+                return ret;
             }
             else
             {
-                ret = "结束失败！原因：插件未加载或不存在";
-            }
-            return ret;
-        }
-
-        /// <summary>
-        /// 卸载插件
-        /// </summary>
-        /// <param name="name">插件名称符</param>
-        /// <param name="param">参数</param>
-        /// <returns>返回安装结果</returns>
-        public string Uninstall(string name, string param = "")
-        {
-            string ret;
-            if (ConfigDict.ContainsKey(name))
-            {
-                var cg = ConfigDict[name];
-                if (cg.OnOff)
-                {
-                    return "卸载失败！原因：插件处于启动状态";
-                }
-                else
-                {
-                    var obj = cg.Script.Run("Uninstall", param, "", "");
-                    if (obj != null)
-                    {
-                        ret = obj.ToString();
-                    }
-                    else
-                    {
-                        ret = "卸载成功！";
-                    }
-                }
-            }
-            else
-            {
-                ret = "卸载失败！原因：插件未加载或不存在";
-            }
-            return ret;
-        }
-
-        /// <summary>
-        /// 更新插件
-        /// </summary>
-        /// <param name="name">插件名称符</param>
-        /// <param name="param">参数</param>
-        /// <param name="sleep">休眠时长</param>
-        /// <returns>返回安装结果</returns>
-        public string Update(string name, string param = "", int sleep = 4)
-        {
-            string ret;
-            if (ConfigDict.ContainsKey(name))
-            {
-                var cg = ConfigDict[name];
-                if (cg.OnOff)
-                {
-                    return "更新失败！原因：插件处于启动状态";
-                }
-                else
-                {
-                    Thread.Sleep(4 * 1000);
-                    var obj = cg.Script.Run("Update", param, "", "");
-                    if (obj != null)
-                    {
-                        ret = obj.ToString();
-                    }
-                    else
-                    {
-                        ret = "更新成功！";
-                    }
-                }
-            }
-            else
-            {
-                ret = "更新失败！原因：插件未加载或不存在";
-            }
-            return ret;
-        }
-
-        /// <summary>
-        /// 移除插件
-        /// </summary>
-        /// <param name="name">插件名称符</param>
-        /// <param name="param">参数</param>
-        /// <returns>返回安装结果</returns>
-        public string Remove(string name, string param = "")
-        {
-            string ret;
-            if (ConfigDict.ContainsKey(name))
-            {
-                var cg = ConfigDict[name];
-                if (cg.OnOff)
-                {
-                    return "删除失败！原因：插件处于启动状态";
-                }
-                else
-                {
-                    var obj = cg.Script.Run("Remove", param, "", "");
-                    if (obj != null)
-                    {
-                        ret = obj.ToString();
-                    }
-                    else
-                    {
-                        ret = "删除成功！";
-                    }
-                    File.Delete(cg.Info.Dir);
-                }
-            }
-            else
-            {
-                ret = "删除失败！原因：插件未加载或不存在";
-            }
-            return ret;
-        }
-
-        /// <summary>
-        /// 清理应用
-        /// </summary>
-        /// <returns>返回文件路径</returns>
-        public void Clear()
-        {
-            foreach (var o in ConfigDict.Values)
-            {
-                Remove(o.Info.Name);
+                Msg = "需先结束运行，才能删除插件！";
+                return null;
             }
         }
-        #endregion
     }
 }

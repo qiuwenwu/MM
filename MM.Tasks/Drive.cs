@@ -22,7 +22,24 @@ namespace MM.Tasks
         public Dictionary<string, Helper> Dict { get; set; } = new Dictionary<string, Helper>();
 
 
-        #region 准备工作
+        #region 管理
+        /// <summary>
+        /// 获取
+        /// </summary>
+        /// <param name="name">任务名称</param>
+        /// <returns>返回帮助器</returns>
+        public Helper Get(string name)
+        {
+            if (Dict.ContainsKey(name))
+            {
+                return Dict[name];
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         /// <summary>
         /// 删除
         /// </summary>
@@ -88,7 +105,7 @@ namespace MM.Tasks
         #endregion
 
 
-        #region 操作
+        #region 执行
         /// <summary>
         /// 执行任务（会初始化对象，首次启动时使用）
         /// </summary>

@@ -323,7 +323,7 @@ namespace MM.Helper.Data
                 //dateStyle.BorderTop = BorderStyle.Thin;
 
                 IDataFormat format = wk.CreateDataFormat();
-                dateStyle.DataFormat = format.GetFormat("yyyy-MM-dd hh:mm:ss");
+                dateStyle.DataFormat = format.GetFormat("yyyy-MM-dd HH:mm:ss");
 
                 //取得列宽
                 int[] arrColWidth = new int[dataTable.Columns.Count];
@@ -506,7 +506,7 @@ namespace MM.Helper.Data
 
                 ICellStyle dateStyle = wk.CreateCellStyle();
                 IDataFormat format = wk.CreateDataFormat();
-                dateStyle.DataFormat = format.GetFormat("yyyy-MM-dd hh:mm:ss");
+                dateStyle.DataFormat = format.GetFormat("yyyy-MM-dd HH:mm:ss");
 
                 //取得列宽
                 int[] arrColWidth = new int[dataTable.Columns.Count];

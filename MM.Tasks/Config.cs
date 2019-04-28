@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 
 namespace MM.Tasks
@@ -22,15 +21,16 @@ namespace MM.Tasks
         public int Times { get; set; } = -1;
 
         /// <summary>
-        /// 时间段
-        /// </summary>
-        [JsonProperty("timeList")]
-        public List<DateTime> TimeList { get; set; }
-
-        /// <summary>
         /// 时间格式
         /// </summary>
         [JsonProperty("timeFormat")]
-        public string TimeFormat { get; set; } = "yyyy-MM-dd hh:mm:ss";
+        public string TimeFormat { get; set; } = "yyyy-MM-dd HH:mm:ss";
+
+        /// <summary>
+        /// 时间段
+        /// </summary>
+        [JsonProperty("timeList")]
+        public List<string> TimeList { get; set; }
+
     }
 }

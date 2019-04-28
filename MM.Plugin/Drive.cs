@@ -1,67 +1,38 @@
-﻿using System.Collections.Concurrent;
+﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace MM.Plugin
 {
     /// <summary>
-    /// 插件驱动
+    /// 任务驱动
     /// </summary>
     public class Drive : Common.Drive
     {
-        #region 插件帮助类
         /// <summary>
-        /// 插件帮助字典，通过插件类型驱动字典
+        /// 构造函数
         /// </summary>
-        public ConcurrentDictionary<string, Helper> Dict { get; set; } = new ConcurrentDictionary<string, Helper>();
-
-        /// <summary>
-        /// 获取插件帮助类
-        /// </summary>
-        /// <param name="app">应用名称</param>
-        /// <returns>返回插件帮助类</returns>
-        public Helper Get(string app)
+        public Drive()
         {
-            Dict.TryGetValue(app, out Helper m);
-            return m;
+            Search = "*plug.json";
         }
 
         /// <summary>
-        /// 设置插件帮助类
+        /// 任务字典
         /// </summary>
-        /// <param name="app">应用名称</param>
-        /// <param name="m">插件帮助类</param>
-        /// <returns>设置成功返回true，是失败返回false</returns>
-        public bool Set(string app, Helper m)
-        {
-            return Dict.AddOrUpdate(app, m, (key, value) => m) != null;
-        }
+        public Dictionary<string, Helper> Dict { get; set; } = new Dictionary<string, Helper>();
 
+
+        #region 管理
         /// <summary>
-        /// 删除插件帮助类
+        /// 获取
         /// </summary>
-        /// <param name="app">应用名称</param>
-        /// <returns>删除成功返回true，失败返回false</returns>
-        public bool Del(string app)
+        /// <param name="name">任务名称</param>
+        /// <returns>返回帮助器</returns>
+        public Helper Get(string name)
         {
-            return Dict.TryRemove(app, out _);
-        }
-        #endregion
-
-
-        #region 插件配置
-        /// <summary>
-        /// 获取插件
-        /// </summary>
-        /// <param name="app">应用名称</param>
-        /// <param name="name">插件名称</param>
-        /// <returns>返回执行前插件</returns>
-        public Config Get(string app, string name)
-        {
-            var e = Get(app);
-            if (e != null)
+            if (Dict.ContainsKey(name))
             {
-                return e.Get(name);
+                return Dict[name];
             }
             else
             {
@@ -70,119 +41,238 @@ namespace MM.Plugin
         }
 
         /// <summary>
+        /// 删除
+        /// </summary>
+        /// <param name="name">任务名称</param>
+        /// <returns>删除成功返回true，失败返回false</returns>
+        public bool Del(string name)
+        {
+            End(name);
+            return Dict.Remove(name);
+        }
+
+        /// <summary>
         /// 设置
         /// </summary>
-        /// <param name="cg">字典配置</param>
-        public void Set(Config cg)
+        /// <param name="v">配置</param>
+        public void Set(Helper v)
         {
-            if (string.IsNullOrEmpty(cg.Info.App))
+            if (v.Info != null)
             {
-                cg.Info.App = "api";
-            }
-            cg.Change();
-            var app = cg.Info.App;
-            if (!Dict.ContainsKey(app))
-            {
-                Dict.TryAdd(app, new Helper(cg));
-            }
-            if (Dict.TryGetValue(app, out var m))
-            {
-                m.Set(cg);
+                v.Change();
+                var k = v.Info.Name;
+                if (Dict.ContainsKey(k))
+                {
+                    Dict[k].End();
+                    Dict[k] = v;
+                    Dict[k].Init();
+                }
+                else
+                {
+                    v.Init();
+                    Dict.Add(k, v);
+                }
             }
         }
 
         /// <summary>
-        /// 删除插件
+        /// 更新
         /// </summary>
-        /// <param name="app">应用名称</param>
-        /// <param name="name">插件名称</param>
-        /// <returns>删除成功返回true，失败返回false</returns>
-        public bool Del(string app, string name)
+        /// <param name="path">搜索路径</param>
+        public void Update(string path = null)
         {
-            var bl = false;
-            var e = Get(app);
-            if (e != null)
+            if (!string.IsNullOrEmpty(path))
             {
-                bl = e.Del(name);
+                Dir = path.ToFullName();
             }
-            return bl;
-        }
-        #endregion
-
-
-        #region 加载
-        /// <summary>
-        /// 加载插件
-        /// </summary>
-        /// <param name="file">文件名</param>
-        public void Load(string file)
-        {
-            var cg = Load<Config>(file);
-            Set(cg);
-        }
-
-        /// <summary>
-        /// 批量加载插件
-        /// </summary>
-        /// <param name="list">文件名列表</param>
-        public void EachLoad(List<string> list)
-        {
-            foreach (var o in list)
+            var dict = EachLoad<Helper>();
+            foreach (var o in dict)
             {
-                var cg = Load<Config>(o);
-                Set(cg);
+                var p = o.Key.ToDir();
+                o.Value.Change(p);
+                Set(o.Value);
             }
         }
 
         /// <summary>
-        /// 批量加载插件
+        /// 新建配置
         /// </summary>
-        /// <param name="dir">搜索目录</param>
-        public void EachLoad(string dir)
+        /// <returns>返回配置模型</returns>
+        public Config New()
         {
-            Dir = dir;
-            var dict = EachLoad<Config>();
-            foreach (var cg in dict.Values)
-            {
-                Set(cg);
-            }
+            return new Config();
         }
         #endregion
 
 
         #region 执行
         /// <summary>
-        /// 执行插件
+        /// 执行任务（会初始化对象，首次启动时使用）
         /// </summary>
-        /// <param name="app">应用名称</param>
-        /// <param name="fun">标签</param>
-        /// <param name="content">目标</param>
-        /// <param name="name">名称</param>
-        /// <returns>返回执行结果</returns>
-        public async Task<object> RunAsync(string app, string fun, string content, string name = "")
+        /// <param name="message">消息</param>
+        /// <param name="ret">上次执行结果</param>
+        public object Run(object message, object ret)
         {
-            object ret = null;
-            if (Dict.ContainsKey(app))
+            foreach (var o in Dict.Values)
             {
-                ret = await Dict[app].RunAsync(fun, content, name);
+                var result = o.Run(message, ret);
+                if (result != null) {
+                    ret = result;
+                    if (o.Finish)
+                    {
+                        break;
+                    }
+                }
             }
             return ret;
         }
 
         /// <summary>
-        /// 执行插件
+        /// 1.初始化
         /// </summary>
-        /// <param name="app">应用名称</param>
-        /// <param name="fun">标签</param>
-        /// <param name="content">目标</param>
-        /// <param name="name">名称</param>
-        /// <returns>返回执行结果</returns>
-        public object Run(string app, string fun, string content, string name = "")
+        /// <param name="name">任务名称</param>
+        public object Init(string name = null, string param = "")
         {
             object ret = null;
-            if (Dict.ContainsKey(app))
+            if (string.IsNullOrEmpty(name))
             {
-                ret = Dict[app].Run(fun, content, name);
+                foreach (var o in Dict.Values)
+                {
+                    ret = o.Init(param);
+                }
+            }
+            else if (Dict.ContainsKey(name))
+            {
+                ret = Dict[name].Init(param);
+            }
+            return ret;
+        }
+
+        /// <summary>
+        /// 2.启动
+        /// </summary>
+        /// <param name="name">任务名称</param>
+        public object Start(string name = null, string param = "")
+        {
+            object ret = null;
+            if (string.IsNullOrEmpty(name))
+            {
+                foreach (var o in Dict.Values)
+                {
+                    ret = o.Start(param);
+                }
+            }
+            else if (Dict.ContainsKey(name))
+            {
+                ret = Dict[name].Start(param);
+            }
+            return ret;
+        }
+
+        /// <summary>
+        /// 3.暂停
+        /// </summary>
+        /// <param name="name">任务名称</param>
+        public object Stop(string name = null, string param = "")
+        {
+            object ret = null;
+            if (string.IsNullOrEmpty(name))
+            {
+                foreach (var o in Dict.Values)
+                {
+                    ret = o.Stop(param);
+                }
+            }
+            else if (Dict.ContainsKey(name))
+            {
+                ret = Dict[name].Stop(param);
+            }
+            return ret;
+        }
+
+        /// <summary>
+        /// 4.结束
+        /// </summary>
+        /// <param name="name">任务名称</param>
+        public object End(string name = null, string param = "")
+        {
+            object ret = null;
+            if (string.IsNullOrEmpty(name))
+            {
+                foreach (var o in Dict.Values)
+                {
+                    ret = o.End(param);
+                }
+            }
+            else if (Dict.ContainsKey(name))
+            {
+                ret = Dict[name].End(param);
+            }
+            return ret;
+        }
+
+        /// <summary>
+        /// 5.更新
+        /// </summary>
+        /// <param name="param">参数</param>
+        /// <returns>返回执行结果</returns>
+        public object Update(string name = null, string param = "")
+        {
+            object ret = null;
+            if (string.IsNullOrEmpty(name))
+            {
+                foreach (var o in Dict.Values)
+                {
+                    ret = o.Update(param);
+                }
+            }
+            else if (Dict.ContainsKey(name))
+            {
+                ret = Dict[name].Update(param);
+            }
+            return ret;
+        }
+
+        /// <summary>
+        /// 6.卸载插件
+        /// </summary>
+        /// <param name="param">参数</param>
+        /// <returns>返回执行结果</returns>
+        public object Uninstall(string name = null, string param = "")
+        {
+            object ret = null;
+            if (string.IsNullOrEmpty(name))
+            {
+                foreach (var o in Dict.Values)
+                {
+                    ret = o.Uninstall(param);
+                }
+            }
+            else if (Dict.ContainsKey(name))
+            {
+                ret = Dict[name].Uninstall(param);
+            }
+            return ret;
+        }
+
+        /// <summary>
+        /// 7.移除插件
+        /// </summary>
+        /// <param name="param">参数</param>
+        /// <returns>返回执行结果</returns>
+        public object Remove(string name = null, string param = "")
+        {
+            object ret = null;
+            if (string.IsNullOrEmpty(name))
+            {
+                foreach (var o in Dict.Values)
+                {
+                    ret = o.Remove(param);
+                }
+            }
+            else if (Dict.ContainsKey(name))
+            {
+                ret = Dict[name].Remove(param);
             }
             return ret;
         }

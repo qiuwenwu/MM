@@ -1,4 +1,5 @@
-﻿using System.Timers;
+﻿using System;
+using System.Timers;
 
 namespace MM.Tasks
 {
@@ -34,16 +35,46 @@ namespace MM.Tasks
         public void Init() {
             Times_cache = Times;
             Timer = new Timer(Sleep);
-            Timer.Elapsed += new ElapsedEventHandler(Run);
+            if (TimeList == null || TimeList.Count == 0)
+            {
+                Timer.Elapsed += new ElapsedEventHandler(Run_interval);
+            }
+            else
+            {
+                Timer.Elapsed += new ElapsedEventHandler(Run_time);
+            }
             Timer.AutoReset = true;    // false是执行一次，true是一直执行
         }
 
+
         /// <summary>
-        /// 执行
+        /// 时间段执行
         /// </summary>
         /// <param name="sender">发送参数</param>
         /// <param name="e">事件参数</param>
-        private void Run(object sender, ElapsedEventArgs e)
+        private void Run_time(object sender, ElapsedEventArgs e)
+        {
+            if (Times_cache == 0)
+            {
+                End();
+                return;
+            }
+            var timeStr = DateTime.Now.ToString(TimeFormat);
+            foreach (var t in TimeList) {
+                if (timeStr == t)
+                {
+                    Script.Run("", "", "", "");
+                    Times_cache--;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 时间间隔执行
+        /// </summary>
+        /// <param name="sender">发送参数</param>
+        /// <param name="e">事件参数</param>
+        private void Run_interval(object sender, ElapsedEventArgs e)
         {
             if (Times_cache == 0)
             {

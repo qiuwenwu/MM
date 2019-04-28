@@ -110,7 +110,7 @@ namespace MM.Helper.Base
         /// <param name="time">时间类型</param>
         /// <param name="format">格式</param>
         /// <returns>返回时间格式字符串</returns>
-        public string ToStr(DateTime time, string format = "yyyy-MM-dd hh:mm:ss")
+        public string ToStr(DateTime time, string format = "yyyy-MM-dd HH:mm:ss")
         {
             return time.ToString(format);
         }
