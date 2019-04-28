@@ -16,7 +16,6 @@ namespace System
         public static string GetChineseSpellCode(string unicodeStr)
         {
             int i = 0;
-            ushort key = 0;
             string strResult = string.Empty;            //创建两个不同的encoding对象     
             Encoding unicode = Encoding.Unicode;
             //创建GBK码对象     
@@ -30,110 +29,110 @@ namespace System
                 //如果为数字\字母\其他ASCII符号
                 if (gbkBytes[i] <= 127)
                 {
-                    strResult = strResult + (char)gbkBytes[i];
+                    strResult += (char)gbkBytes[i];
                     i++;
                 }
                 else
                 {
-                    key = (ushort)(gbkBytes[i] * 256 + gbkBytes[i + 1]);
+                    ushort key = (ushort)(gbkBytes[i] * 256 + gbkBytes[i + 1]);
 
                     if (key >= '\uB0A1' && key <= '\uB0C4')
                     {
-                        strResult = strResult + "A";
+                        strResult += "A";
                     }
                     else if (key >= '\uB0C5' && key <= '\uB2C0')
                     {
-                        strResult = strResult + "B";
+                        strResult += "B";
                     }
                     else if (key >= '\uB2C1' && key <= '\uB4ED')
                     {
-                        strResult = strResult + "C";
+                        strResult += "C";
                     }
                     else if (key >= '\uB4EE' && key <= '\uB6E9')
                     {
-                        strResult = strResult + "D";
+                        strResult += "D";
                     }
                     else if (key >= '\uB6EA' && key <= '\uB7A1')
                     {
-                        strResult = strResult + "E";
+                        strResult += "E";
                     }
                     else if (key >= '\uB7A2' && key <= '\uB8C0')
                     {
-                        strResult = strResult + "F";
+                        strResult += "F";
                     }
                     else if (key >= '\uB8C1' && key <= '\uB9FD')
                     {
-                        strResult = strResult + "G";
+                        strResult += "G";
                     }
                     else if (key >= '\uB9FE' && key <= '\uBBF6')
                     {
-                        strResult = strResult + "H";
+                        strResult += "H";
                     }
                     else if (key >= '\uBBF7' && key <= '\uBFA5')
                     {
-                        strResult = strResult + "J";
+                        strResult += "J";
                     }
                     else if (key >= '\uBFA6' && key <= '\uC0AB')
                     {
-                        strResult = strResult + "K";
+                        strResult += "K";
                     }
                     else if (key >= '\uC0AC' && key <= '\uC2E7')
                     {
-                        strResult = strResult + "L";
+                        strResult += "L";
                     }
                     else if (key >= '\uC2E8' && key <= '\uC4C2')
                     {
-                        strResult = strResult + "M";
+                        strResult += "M";
                     }
                     else if (key >= '\uC4C3' && key <= '\uC5B5')
                     {
-                        strResult = strResult + "N";
+                        strResult += "N";
                     }
                     else if (key >= '\uC5B6' && key <= '\uC5BD')
                     {
-                        strResult = strResult + "O";
+                        strResult += "O";
                     }
                     else if (key >= '\uC5BE' && key <= '\uC6D9')
                     {
-                        strResult = strResult + "P";
+                        strResult += "P";
                     }
                     else if (key >= '\uC6DA' && key <= '\uC8BA')
                     {
-                        strResult = strResult + "Q";
+                        strResult += "Q";
                     }
                     else if (key >= '\uC8BB' && key <= '\uC8F5')
                     {
-                        strResult = strResult + "R";
+                        strResult += "R";
                     }
                     else if (key >= '\uC8F6' && key <= '\uCBF9')
                     {
-                        strResult = strResult + "S";
+                        strResult += "S";
                     }
                     else if (key >= '\uCBFA' && key <= '\uCDD9')
                     {
-                        strResult = strResult + "T";
+                        strResult += "T";
                     }
                     else if (key >= '\uCDDA' && key <= '\uCEF3')
                     {
-                        strResult = strResult + "W";
+                        strResult += "W";
                     }
                     else if (key >= '\uCEF4' && key <= '\uD188')
                     {
-                        strResult = strResult + "X";
+                        strResult += "X";
                     }
                     else if (key >= '\uD1B9' && key <= '\uD4D0')
                     {
-                        strResult = strResult + "Y";
+                        strResult += "Y";
                     }
                     else if (key >= '\uD4D1' && key <= '\uD7F9')
                     {
-                        strResult = strResult + "Z";
+                        strResult += "Z";
                     }
                     else
                     {
-                        strResult = strResult + "?";
+                        strResult += "?";
                     }
-                    i = i + 2;
+                    i += 2;
                 }
             }
             return strResult;
@@ -168,11 +167,11 @@ namespace System
           "铽铿锃锂锆锇锉锊锍锎锏锒锓锔锕锖锘锛锝锞锟锢锪锫锩锬锱锲锴锶锷锸锼锾锿镂锵镄镅镆镉镌镎镏镒镓镔镖镗镘镙镛镞镟镝镡镢镤镥镦镧镨镩镪镫镬镯镱镲镳锺矧矬雉秕秭秣秫稆嵇稃稂稞稔稹稷穑黏馥穰皈皎皓皙皤瓞瓠甬鸠鸢鸨鸩鸪鸫鸬鸲鸱鸶鸸鸷鸹鸺鸾鹁鹂鹄鹆鹇鹈鹉鹋鹌鹎鹑鹕鹗鹚鹛鹜鹞鹣鹦鹧鹨鹩鹪鹫鹬鹱鹭鹳疒疔疖疠疝疬疣疳疴疸痄疱疰痃痂痖痍痣痨痦痤痫痧瘃痱痼痿瘐瘀瘅瘌瘗瘊瘥瘘瘕瘙瘛瘼瘢瘠癀瘭瘰瘿瘵癃瘾瘳癍癞癔癜癖癫癯翊竦穸穹窀窆窈窕窦窠窬窨窭窳衤衩衲衽衿袂裆袷袼裉裢裎裣裥裱褚裼裨裾裰褡褙褓褛褊褴褫褶襁襦疋胥皲皴矜耒" +
           "耔耖耜耠耢耥耦耧耩耨耱耋耵聃聆聍聒聩聱覃顸颀颃颉颌颍颏颔颚颛颞颟颡颢颥颦虍虔虬虮虿虺虼虻蚨蚍蚋蚬蚝蚧蚣蚪蚓蚩蚶蛄蚵蛎蚰蚺蚱蚯蛉蛏蚴蛩蛱蛲蛭蛳蛐蜓蛞蛴蛟蛘蛑蜃蜇蛸蜈蜊蜍蜉蜣蜻蜞蜥蜮蜚蜾蝈蜴蜱蜩蜷蜿螂蜢蝽蝾蝻蝠蝰蝌蝮螋蝓蝣蝼蝤蝙蝥螓螯螨蟒蟆螈螅螭螗螃螫蟥螬螵螳蟋蟓螽蟑蟀蟊蟛蟪蟠蟮蠖蠓蟾蠊蠛蠡蠹蠼缶罂罄罅舐竺竽笈笃笄笕笊笫笏筇笸笪笙笮笱笠笥笤笳笾笞筘筚筅筵筌筝筠筮筻筢筲筱箐箦箧箸箬箝箨箅箪箜箢箫箴篑篁篌篝篚篥篦篪簌篾篼簏簖簋簟簪簦簸籁籀臾舁舂舄臬衄舡舢舣舭舯舨舫舸舻舳舴舾艄艉艋艏艚艟艨衾袅袈裘裟襞羝羟" +
           "羧羯羰羲籼敉粑粝粜粞粢粲粼粽糁糇糌糍糈糅糗糨艮暨羿翎翕翥翡翦翩翮翳糸絷綦綮繇纛麸麴赳趄趔趑趱赧赭豇豉酊酐酎酏酤酢酡酰酩酯酽酾酲酴酹醌醅醐醍醑醢醣醪醭醮醯醵醴醺豕鹾趸跫踅蹙蹩趵趿趼趺跄跖跗跚跞跎跏跛跆跬跷跸跣跹跻跤踉跽踔踝踟踬踮踣踯踺蹀踹踵踽踱蹉蹁蹂蹑蹒蹊蹰蹶蹼蹯蹴躅躏躔躐躜躞豸貂貊貅貘貔斛觖觞觚觜觥觫觯訾謦靓雩雳雯霆霁霈霏霎霪霭霰霾龀龃龅龆龇龈龉龊龌黾鼋鼍隹隼隽雎雒瞿雠銎銮鋈錾鍪鏊鎏鐾鑫鱿鲂鲅鲆鲇鲈稣鲋鲎鲐鲑鲒鲔鲕鲚鲛鲞鲟鲠鲡鲢鲣鲥鲦鲧鲨鲩鲫鲭鲮鲰鲱鲲鲳鲴鲵鲶鲷鲺鲻鲼鲽鳄鳅鳆鳇鳊鳋鳌鳍鳎鳏鳐鳓鳔" + "鳕鳗鳘鳙鳜鳝鳟鳢靼鞅鞑鞒鞔鞯鞫鞣鞲鞴骱骰骷鹘骶骺骼髁髀髅髂髋髌髑魅魃魇魉魈魍魑飨餍餮饕饔髟髡髦髯髫髻髭髹鬈鬏鬓鬟鬣麽麾縻麂麇麈麋麒鏖麝麟黛黜黝黠黟黢黩黧黥黪黯鼢鼬鼯鼹鼷鼽鼾齄";
-            byte[] array = new byte[2];
+           
             string return_py = "";
             for (int i = 0; i < str.Length; i++)
             {
-                array = Encoding.Default.GetBytes(str[i].ToString());
+                byte[] array = Encoding.Default.GetBytes(str[i].ToString());
                 if (array[0] < 176)  //.非汉字  
                 {
                     return_py += str[i];
@@ -244,19 +243,18 @@ namespace System
                 return string.Empty;
             }
             Regex reg = new Regex("^[\u4e00-\u9fa5]$");//验证是否输入汉字
-            byte[] arr = new byte[2];
+            
             string pystr = "";
-            int asc = 0, M1 = 0, M2 = 0;
             char[] mChar = str.ToCharArray();//获取汉字对应的字符数组
             for (int j = 0; j < mChar.Length; j++)
             {
                 //如果输入的是汉字
                 if (reg.IsMatch(mChar[j].ToString()))
                 {
-                    arr = Encoding.Default.GetBytes(mChar[j].ToString());
-                    M1 = (arr[0]);
-                    M2 = (arr[1]);
-                    asc = M1 * 256 + M2 - 65536;
+                    byte[] arr = Encoding.Default.GetBytes(mChar[j].ToString());
+                    int M1 = (arr[0]);
+                    int M2 = (arr[1]);
+                    int asc = M1 * 256 + M2 - 65536;
                     if (asc > 0 && asc < 160)
                     {
                         pystr += mChar[j];
@@ -348,7 +346,7 @@ namespace System
             };
 
         //定义拼音区编码数组
-        private static int[] _Value = new int[]
+        private static readonly int[] _Value = new int[]
              {
          -20319,-20317,-20304,-20295,-20292,-20283,-20265,-20257,-20242,-20230,-20051,-20036,
          -20032,-20026,-20002,-19990,-19986,-19982,-19976,-19805,-19784,-19775,-19774,-19763,

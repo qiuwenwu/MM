@@ -233,8 +233,7 @@ namespace MM.Helper.Data
         {
             //Note:必须得用Bytes来实现，StringBuilder只能取到第一个Section
             byte[] Buffer = new byte[65535];
-            int bufLen = 0;
-            bufLen = GetPrivateProfileString(null, null, null, Buffer, Buffer.GetUpperBound(0), FileName);
+            int bufLen = GetPrivateProfileString(null, null, null, Buffer, Buffer.GetUpperBound(0), FileName);
             return GetStringsFromBuffer(Buffer, bufLen);
         }
 

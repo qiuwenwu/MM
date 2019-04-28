@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -12,6 +12,7 @@
     <ProjectReference Include="..\MM.Helper\MM.Helper.csproj" />
     <ProjectReference Include="..\MM.Plugin\MM.Plugin.csproj" />
     <ProjectReference Include="..\MM.SQL\MM.SQL.csproj" />
+    <ProjectReference Include="..\MM.Tasks\MM.Tasks.csproj" />
   </ItemGroup>
 
 </Project>

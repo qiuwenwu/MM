@@ -20,10 +20,16 @@ namespace MM.Common
         public string Type  { get; set; }
 
         /// <summary>
-        /// 名称
+        /// 名称(唯一标识，由英文+数字和下划线组成)
         /// </summary>
         [JsonProperty("name")]
-        public string Name  { get; set; }
+        public string Name { get; set; } = "";
+
+        /// <summary>
+        /// 应用标题名称
+        /// </summary>
+        [JsonProperty("title")]
+        public string Title { get; set; }
 
         /// <summary>
         /// 描述

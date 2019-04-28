@@ -108,7 +108,7 @@ namespace MM.Helper.Base
         /// <returns>返回号码代号</returns>
         public string ToPokerCode(int num)
         {
-            string ret = null;
+            string ret;
             switch (num)
             {
                 case 1:

@@ -78,7 +78,7 @@ namespace MM.Helper.Net
         /// <summary>
         /// 字节数组
         /// </summary>
-        private Byte[] buffer = new Byte[BLOCK_SIZE];
+        private readonly byte[] buffer = new Byte[BLOCK_SIZE];
 
         /// <summary>
         /// 传输对象
@@ -291,7 +291,6 @@ namespace MM.Helper.Net
                 Connect();
             }
             string str = file.Substring(0, file.LastIndexOf("\\"));
-            string strTypeName = file.Substring(file.LastIndexOf("."));
             guid = str + "\\" + guid;
             Socket socketData = CreateSocket();
             SendCmd("STOR " + Path.GetFileName(guid));
@@ -301,7 +300,7 @@ namespace MM.Helper.Net
             }
             FileStream input = new FileStream(guid, FileMode.Open);
             input.Flush();
-            int iBytes = 0;
+            int iBytes;
             while ((iBytes = input.Read(buffer, 0, buffer.Length)) > 0)
             {
                 socketData.Send(buffer, iBytes, 0);
@@ -333,7 +332,7 @@ namespace MM.Helper.Net
                 Connect();
             }
             SendCmd("SIZE " + Path.GetFileName(file));
-            long lSize = 0;
+            long lSize;
             if (iReplyCode == 213)
             {
                 lSize = Int64.Parse(strReply.Substring(4));
@@ -358,7 +357,6 @@ namespace MM.Helper.Net
             }
             Socket socketData = CreateSocket();
             SendCmd("LIST " + file);
-            string strResult = "";
             if (!(iReplyCode == 150 || iReplyCode == 125 || iReplyCode == 226 || iReplyCode == 250))
             {
                 throw new IOException(strReply.Substring(4));
@@ -377,7 +375,7 @@ namespace MM.Helper.Net
                 }
             }
             byte[] bt = ms.GetBuffer();
-            strResult = Encoding.ASCII.GetString(bt);
+            string strResult = Encoding.ASCII.GetString(bt);
             ms.Close();
             return strResult;
         }
@@ -496,7 +494,6 @@ namespace MM.Helper.Net
             catch
             {
                 socketData.Close();
-                socketData = null;
                 socket.Close();
                 Connected = false;
                 socket = null;
@@ -587,7 +584,7 @@ namespace MM.Helper.Net
             }
 
             FileStream input = new FileStream(localFile, FileMode.Open);
-            int iBytes = 0;
+            int iBytes;
             while ((iBytes = input.Read(buffer, 0, buffer.Length)) > 0)
             {
                 socketData.Send(buffer, iBytes, 0);
@@ -619,7 +616,6 @@ namespace MM.Helper.Net
                 Connect();
             }
             string str = localFile.Substring(0, localFile.LastIndexOf("\\"));
-            string strTypeName = localFile.Substring(localFile.LastIndexOf("."));
             guid = str + "\\" + guid;
             File.Copy(localFile, guid);
             File.SetAttributes(guid, FileAttributes.Normal);
@@ -630,7 +626,7 @@ namespace MM.Helper.Net
                 throw new IOException(strReply.Substring(4));
             }
             FileStream input = new FileStream(guid, FileMode.Open, FileAccess.Read, FileShare.Read);
-            int iBytes = 0;
+            int iBytes;
             while ((iBytes = input.Read(buffer, 0, buffer.Length)) > 0)
             {
                 socketData.Send(buffer, iBytes, 0);

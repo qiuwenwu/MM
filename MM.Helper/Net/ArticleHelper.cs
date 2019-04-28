@@ -269,11 +269,8 @@ namespace MM.Helper.Net
         /// <param name="contentS">返回文本正文包含标签</param>
         private static void GetContent(string bodyText, out string content, out string contentS)
         {
-            string[] orgLines = null;   // 保存原始内容，按行存储
-            string[] lines = null;      // 保存干净的文本内容，不包含标签
-
-            orgLines = bodyText.Split('\n');
-            lines = new string[orgLines.Length];
+            string[] orgLines = bodyText.Split('\n');
+            string[] lines = new string[orgLines.Length];
             // 去除每行的空白字符,剔除标签
             for (int i = 0; i < orgLines.Length; i++)
             {

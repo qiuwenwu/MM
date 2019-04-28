@@ -76,7 +76,7 @@ namespace MM.Helper.Sys
         {
             if (Path.GetExtension(zipFile) != ".zip")
             {
-                zipFile = zipFile + ".zip";
+                zipFile += ".zip";
             }
             using (var zipOutput = new ZipOutputStream(File.Create(zipFile)))
             {

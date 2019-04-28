@@ -1,4 +1,4 @@
-﻿using MM.Task;
+﻿using MM.Tasks;
 using System;
 
 namespace TestCore
@@ -12,11 +12,17 @@ namespace TestCore
         /// 运行脚本
         /// </summary>
         public static void Run() {
+            // 1.构建索引器
             var indexer = new Indexer();
-            //Indexer.Demo();
+            // 2.实例化驱动
             var drive = indexer.Drive();
+
+            // 3.更新配置和脚本
             drive.Update();
             Console.WriteLine(drive.Dict.ToJson());
+
+            // 4.执行驱动
+            drive.Start();
         }
     }
 }

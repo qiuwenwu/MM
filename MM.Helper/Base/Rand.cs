@@ -11,7 +11,7 @@ namespace MM.Helper.Base
     {
         #region 
         //随机数对象
-        private Random _Random = new Random(DateTime.Now.Millisecond);
+        private readonly Random _Random = new Random(DateTime.Now.Millisecond);
 
         /// <summary>
         /// 错误提示
@@ -298,10 +298,25 @@ namespace MM.Helper.Base
         /// <param name="min">最小数</param>
         /// <param name="max">最大数</param>
         /// <returns>返回洗牌后的列表</returns>
-        public List<int> Upset(int min, int max = 54)
+        public List<int> Upset(int min = 1, int max = 54)
         {
             var list = new List<int> ();
-            for(var i = 0; i < max; i++) {
+            if (max > 54)
+            {
+                max = 54;
+            }
+            else if (max < 1)
+            {
+                max = 1;
+            }
+            if (min < 1) {
+                min = 1;
+            }
+            else if (min > max) {
+                min = max;
+            }
+
+            for(var i = min; i <= max; i++) {
                 list.Add(i);
             }
             return Arr(list);

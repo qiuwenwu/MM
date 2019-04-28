@@ -9,7 +9,6 @@ namespace MM.Helper.Data
     /// </summary>
     public class Json
     {
-        private static readonly JsonSerializerSettings setting = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore };
 
         /// <summary>
         /// 新建Jarry对象

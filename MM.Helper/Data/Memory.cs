@@ -257,7 +257,7 @@ namespace MM.Helper.Data
         /// <returns>有则返回true，没有则返false</returns>
         public bool Has(string key)
         {
-            return _Memory.TryGetValue(key, out var value);
+            return _Memory.TryGetValue(key, out _);
         }
 
         /// <summary>

@@ -12,7 +12,7 @@ namespace MM.Helper.Data
     /// </summary>
     public class Param
     {
-        private static Https http = new Https();
+        private static readonly Https http = new Https();
         
         /// <summary>
         /// 验证参数

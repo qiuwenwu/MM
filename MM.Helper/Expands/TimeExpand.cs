@@ -45,7 +45,7 @@
         /// <returns>返回增减后的时间</returns>
         public static DateTime Add(this DateTime time, int n, string type = "second")
         {
-            var time_new = new DateTime();
+            DateTime time_new;
             switch (type)
             {
                 case "year":
@@ -90,7 +90,7 @@
         public static long Interval(this DateTime dt1, DateTime dt2, string timeType = "second")
         {
             var time = dt1 - dt2;
-            long n = 0;
+            long n;
             switch (timeType)
             {
                 case "day":
@@ -107,6 +107,18 @@
                     break;
             }
             return n;
+        }
+
+
+        /// <summary>
+        /// 时间转字符串
+        /// </summary>
+        /// <param name="time">时间类型</param>
+        /// <param name="format">格式</param>
+        /// <returns>返回时间格式字符串</returns>
+        public static string ToStr(this DateTime time, string format = "yyyy-MM-dd hh:mm:ss")
+        {
+            return time.ToString(format);
         }
     }
 }

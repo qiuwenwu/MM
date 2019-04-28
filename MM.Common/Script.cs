@@ -1,5 +1,7 @@
 ﻿using MM.Engine;
+using MM.Helper.Sys;
 using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace MM.Common
 {
@@ -40,7 +42,7 @@ namespace MM.Common
         /// <returns>返回标签</returns>
         public object Run(string fun, object param1 = null, object param2 = null, object param3 = null)
         {
-            if (fun == null)
+            if (string.IsNullOrEmpty(fun))
             {
                 fun = Fun;
             }
@@ -48,7 +50,7 @@ namespace MM.Common
             object ret;
             if (Mod != null)
             {
-                ret = Mod.Run(fun, param1, param2, param3);
+                ret = Mod.Main(fun, param1, param2, param3);
             }
             else
             {

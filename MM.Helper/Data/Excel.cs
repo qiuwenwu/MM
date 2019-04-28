@@ -75,7 +75,6 @@ namespace MM.Helper.Data
                     {
                         wk.Close();
                     }
-                    wk = null;
                 }
             }
             else
@@ -110,7 +109,6 @@ namespace MM.Helper.Data
                     {
                         wk.Close();
                     }
-                    wk = null;
                 }
             }
             return dataTable;
@@ -149,7 +147,6 @@ namespace MM.Helper.Data
                     {
                         wk.Close();
                     }
-                    wk = null;
                 }
             }
             else
@@ -185,7 +182,6 @@ namespace MM.Helper.Data
                     {
                         wk.Close();
                     }
-                    wk = null;
                 }
             }
             return dataTable;
@@ -204,7 +200,6 @@ namespace MM.Helper.Data
                 return null;
             }
             DataTable dt = new DataTable();
-            IEnumerator rows = sheet.GetRowEnumerator();
             IRow headerRow = sheet.GetRow(0);
             int count = headerRow.LastCellNum; //页头数
 
@@ -467,8 +462,8 @@ namespace MM.Helper.Data
                 {
                     wk.Close();
                 }
-                wk = null;
             }
+
             return bl;
         }
 
@@ -651,7 +646,6 @@ namespace MM.Helper.Data
                 {
                     wk.Close();
                 }
-                wk = null;
             }
             return bl;
         }

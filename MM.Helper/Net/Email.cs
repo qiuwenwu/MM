@@ -99,7 +99,7 @@ namespace MM.Helper.Net
                     SubjectEncoding = System.Text.Encoding.UTF8,                     //邮件标题编码
                     Body = content,                                                  //设置邮件内容
                     BodyEncoding = System.Text.Encoding.UTF8,                        //邮件标题编码
-                    IsBodyHtml = false                                               //是否是HTML邮件
+                    IsBodyHtml = isBodyHtml                                          //是否是HTML邮件
                 };
                 msg.To.Add(email);                                                   //设置收件人,可添加多个,添加方法与下面的一样
                 if (CopyEmail != null)

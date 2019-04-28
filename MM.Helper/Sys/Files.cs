@@ -104,7 +104,7 @@ namespace MM.Helper.Sys
                 {
                     if (!string.IsNullOrEmpty(content))
                     {
-                        File.AppendAllText(fileName, content);
+                        File.AppendAllText(fileName.ToFullName(Dir), content);
                         bl = true;
                     }
                     else
@@ -145,7 +145,7 @@ namespace MM.Helper.Sys
             var bl = false;
             if (File.Exists(fileName))
             {
-                File.WriteAllText(fileName, content);
+                File.WriteAllText(fileName.ToFullName(Dir), content);
                 bl = true;
             }
             else
@@ -179,7 +179,7 @@ namespace MM.Helper.Sys
         /// <returns>有则返回true，没有则返回false</returns>
         public bool Has(string file)
         {
-            return File.Exists(file);
+            return File.Exists(file.ToFullName(Dir));
         }
 
         /// <summary>

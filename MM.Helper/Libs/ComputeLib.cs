@@ -59,8 +59,9 @@ namespace MM.Helper.Libs
             {
                 return string.Empty;
             }
-            string result = "";
+
             DataTable dt = new DataTable();
+            string result;
             try
             {
                 equation = Algebra(equation, vars);
@@ -157,10 +158,9 @@ namespace MM.Helper.Libs
         private List<string> Split(string str)
         {
             List<string> strList = new List<string>();
-            string word = "";
             while (str.Length > 0)
             {
-                word = str.Substring(0, 1);
+                string word = str.Substring(0, 1);
                 strList.Add(word);
                 str = GetRight(str, word, true);
             }

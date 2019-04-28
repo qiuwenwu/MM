@@ -1,7 +1,6 @@
-﻿using System;
-using System.Timers;
+﻿using System.Timers;
 
-namespace MM.Task
+namespace MM.Tasks
 {
     /// <summary>
     /// 任务帮助类
@@ -19,13 +18,24 @@ namespace MM.Task
         public int Times_cache { get; set; }
 
         /// <summary>
+        /// 执行任务
+        /// </summary>
+        public void Run() {
+            if (Timer == null)
+            {
+                Init();
+            }
+            Start();
+        }
+
+        /// <summary>
         /// 初始化
         /// </summary>
         public void Init() {
             Times_cache = Times;
             Timer = new Timer(Sleep);
             Timer.Elapsed += new ElapsedEventHandler(Run);
-            Timer.AutoReset = true;    //false是执行一次，true是一直执行
+            Timer.AutoReset = true;    // false是执行一次，true是一直执行
         }
 
         /// <summary>
@@ -40,7 +50,7 @@ namespace MM.Task
                 End();
                 return;
             }
-            Script.Run("", "", "");
+            Script.Run("", "", "", "");
             Times_cache--;
         }
 

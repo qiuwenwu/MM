@@ -36,7 +36,7 @@ namespace MM.Helper.Net
             var html = Post(path, pm);
             if (string.IsNullOrEmpty(html))
             {
-                return default(T);
+                return default;
             }
             else
             {
@@ -52,7 +52,7 @@ namespace MM.Helper.Net
         /// <returns>返回请求结果</returns>
         public T GetApi<T>(string path, object param = null)
         {
-            var html = "";
+            string html;
             if (param == null)
             {
                 html = Get(path);
@@ -90,7 +90,7 @@ namespace MM.Helper.Net
             }
             if (string.IsNullOrEmpty(html))
             {
-                return default(T);
+                return default;
             }
             else
             {

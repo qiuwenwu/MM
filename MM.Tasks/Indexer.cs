@@ -3,7 +3,7 @@ using System.IO;
 using System;
 using System.Text;
 
-namespace MM.Task
+namespace MM.Tasks
 {
     /// <summary>
     /// 任务索引目录

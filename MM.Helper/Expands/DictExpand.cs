@@ -118,7 +118,7 @@
             }
             else
             {
-                return default(T);
+                return default;
             }
         }
     }

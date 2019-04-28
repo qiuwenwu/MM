@@ -406,9 +406,10 @@ namespace MM.Helper.Net
             {
                 num = match.Count;
             }
-            foreach (Match m in match)
+            for (var i = 0; i < num; i++)
             {
-                list.Add(m.Value);
+                Match o = match[i];
+                list.Add(o.Value);
             }
             return list;
         }

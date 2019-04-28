@@ -8,7 +8,7 @@ namespace MM.Helper.Sys
     /// </summary>
     public class Speed
     {
-        static Stopwatch sw = new Stopwatch();
+        static readonly Stopwatch sw = new Stopwatch();
 
         /// <summary>
         /// 重新启动

@@ -58,9 +58,9 @@ namespace MM.Helper.Net
         /// </summary>
         /// <param name="inval"></param>
         /// <returns></returns>
-        private UInt32 HostToNetworkOrder(UInt32 inval)
+        public uint HostToNetworkOrder(uint inval)
         {
-            UInt32 outval = 0;
+            uint outval = 0;
             for (int i = 0; i < 4; i++)
                 outval = (outval << 8) + ((inval >> (i * 8)) & 255);
             return outval;
@@ -71,9 +71,9 @@ namespace MM.Helper.Net
         /// </summary>
         /// <param name="inval"></param>
         /// <returns></returns>
-        private Int32 HostToNetworkOrder(Int32 inval)
+        private int HostToNetworkOrder(int inval)
         {
-            Int32 outval = 0;
+            int outval = 0;
             for (int i = 0; i < 4; i++)
                 outval = (outval << 8) + ((inval >> (i * 8)) & 255);
             return outval;
@@ -145,41 +145,13 @@ namespace MM.Helper.Net
             }
             string[] arr = codeSerial.Split(',');
             string code = "";
-            int randValue = -1;
             Random rand = new Random(unchecked((int)DateTime.Now.Ticks));
             for (int i = 0; i < codeLen; i++)
             {
-                randValue = rand.Next(0, arr.Length - 1);
+                int randValue = rand.Next(0, arr.Length - 1);
                 code += arr[randValue];
             }
             return code;
-        }
-
-        private string AES_encrypt(string Input, byte[] Iv, byte[] Key)
-        {
-            var aes = new RijndaelManaged()
-            {
-                KeySize = 256,//秘钥的大小，以位为单位
-                BlockSize = 128,   //支持的块大小
-                Padding = PaddingMode.PKCS7,//填充模式
-                Mode = CipherMode.CBC,
-                Key = Key,
-                IV = Iv
-            };
-            var encrypt = aes.CreateEncryptor(aes.Key, aes.IV);
-            byte[] xBuff = null;
-
-            using (var ms = new MemoryStream())
-            {
-                using (var cs = new CryptoStream(ms, encrypt, CryptoStreamMode.Write))
-                {
-                    byte[] xXml = Encoding.UTF8.GetBytes(Input);
-                    cs.Write(xXml, 0, xXml.Length);
-                }
-                xBuff = ms.ToArray();
-            }
-            String Output = Convert.ToBase64String(xBuff);
-            return Output;
         }
 
         private string AES_encrypt(byte[] Input, byte[] Iv, byte[] Key)

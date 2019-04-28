@@ -143,7 +143,7 @@ namespace System
             StringBuilder outmessage;
             int messageLen = byteMessage.Count;
             int page = messageLen / 3;
-            int use = 0;
+            int use;
             if ((use = messageLen % 3) > 0)
             {
                 for (int i = 0; i < 3 - use; i++)

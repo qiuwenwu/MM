@@ -22,8 +22,8 @@ namespace MM.Helper.Data
         /// <returns>返回数据类型</returns>
         public Type GetType(string type)
         {
-            Type tp = null;
             type = type.ToLower();
+            Type tp;
             switch (type)
             {
                 case "number":

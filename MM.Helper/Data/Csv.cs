@@ -124,17 +124,18 @@ namespace MM.Helper.Data
         {
             DataTable dt = new DataTable();
             StreamReader reader = new StreamReader(fileName.ToFullName(Dir), Encoding.UTF8, false);
-            int i = 0, m = 0;
+            int m = 0;
             reader.Peek();
             while (reader.Peek() > 0)
             {
-                m = m + 1;
+                m += 1;
                 string str = reader.ReadLine();
                 if (m >= n + 1)
                 {
                     string[] split = str.Split(',');
 
                     DataRow dr = dt.NewRow();
+                    int i;
                     for (i = 0; i < split.Length; i++)
                     {
                         dr[i] = split[i];
@@ -156,20 +157,16 @@ namespace MM.Helper.Data
             if (string.IsNullOrEmpty(fileName)) return null;
 
             string line = string.Empty;
-            string[] split = null;
             bool isReplace;
             int subBegion;
             int subEnd;
-            string itemString = string.Empty;
-            string oldItemString = string.Empty;
             DataTable table = new DataTable(typeName);
-            DataRow row = null;
             using (StreamReader sr = new StreamReader(fileName.ToFullName(Dir), Encoding.Default))
             {
                 //创建与数据源对应的数据列 
                 line = sr.ReadLine();
-                split = line.Split(',');
-                foreach (String colname in split)
+                string[] split = line.Split(',');
+                foreach (string colname in split)
                 {
                     table.Columns.Add(colname, Type.GetType("System.String"));
                 }
@@ -187,7 +184,7 @@ namespace MM.Helper.Data
                     {
                         isReplace = false;
                     }
-                    itemString = string.Empty;
+                    string itemString = string.Empty;
                     while (isReplace)
                     {
                         subBegion = line.IndexOf('\"');
@@ -200,7 +197,7 @@ namespace MM.Helper.Data
                         if (subEnd - subBegion > 0)
                         {
                             itemString = line.Substring(subBegion, subEnd - subBegion + 1);
-                            oldItemString = itemString;
+                            string oldItemString = itemString;
                             itemString = itemString.Replace(',', '|').Replace("\"", string.Empty);
                             line = line.Replace(oldItemString, itemString);
                         }
@@ -211,9 +208,9 @@ namespace MM.Helper.Data
                         }
                     }
                     j = 0;
-                    row = table.NewRow();
+                    DataRow row = table.NewRow();
                     split = line.Split(',');
-                    foreach (String colname in split)
+                    foreach (string colname in split)
                     {
                         row[j] = colname.Replace('|', ',');
                         j++;

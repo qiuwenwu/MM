@@ -7,8 +7,12 @@ namespace TestCore
     {
         static void Main(string[] args)
         {
-            // Task_Test.Run();
-            Script_Test.Run();
+            // 脚本引擎测试 通过
+           // Script_Test.Run();
+
+            // 任务测试
+            Task_Test.Run();
+
             Console.ReadLine(); // 等待用户按一个回车
         }
     }

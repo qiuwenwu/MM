@@ -342,9 +342,9 @@ namespace System
             {
                 num = match.Count;
             }
-            foreach (Match m in match)
-            {
-                list.Add(m.Value);
+            for (var i = 0; i < num; i++) {
+                Match o = match[i];
+                list.Add(o.Value);
             }
             return list;
         }

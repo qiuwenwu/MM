@@ -18,12 +18,21 @@ namespace MM.Helper.Base
         }
 
         /// <summary>
+        /// 获取当前时间
+        /// </summary>
+        /// <returns>返回当前时间</returns>
+        public string Str()
+        {
+            return DateTime.Now.ToStr();
+        }
+
+        /// <summary>
         /// 取当前时间的UNIX时间戳
         /// </summary>
         /// <returns>UNIX时间戳</returns>
         public long Stamp()
         {
-            var time = new DateTime();
+            var time = DateTime.Now;
             return time.ToStamp();
         }
 
@@ -75,7 +84,7 @@ namespace MM.Helper.Base
         /// <returns>返回时间</returns>
         public DateTime ToTimeS(string str)
         {
-            DateTime dt = DateTime.Now;
+            DateTime dt;
             if (str.IndexOf("-") != -1)
             {
                 return Convert.ToDateTime(str);
