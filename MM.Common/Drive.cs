@@ -126,6 +126,11 @@ namespace MM.Common
 
         #region 加载配置
         /// <summary>
+        /// 应用名称
+        /// </summary>
+        public string App { get; set; } = "mm";
+
+        /// <summary>
         /// 检索的目录
         /// </summary>
         public string Dir { get; set; } = Cache.runPath;
@@ -174,7 +179,6 @@ namespace MM.Common
                 list.Add(o.FullName, content.Loads<T>());
             }
 
-
             // 递归遍历文件
             var dir = root.GetDirectories();
             foreach (var item in dir)
@@ -188,7 +192,5 @@ namespace MM.Common
             return list;
         }
         #endregion
-
-
     }
 }

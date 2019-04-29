@@ -7,13 +7,27 @@ namespace MM.Plugin
     /// </summary>
     public class Helper : Config
     {
-        private Dir DirHelper = new Dir();
+        private static readonly Dir DirHelper = new Dir();
 
+        #region 属性
         /// <summary>
         /// 错误提示
         /// </summary>
         public string Msg   { get; set; }
 
+        /// <summary>
+        /// 状态
+        /// </summary>
+        public string State { get; set; } = "End";
+
+        /// <summary>
+        /// 执行顺序
+        /// </summary>
+        public int OrderBy { get; set; } = 100;
+        #endregion
+
+
+        #region 方法
         /// <summary>
         /// 执行插件
         /// </summary>
@@ -21,7 +35,13 @@ namespace MM.Plugin
         /// <param name="ret">结果</param>
         /// <returns>返回执行结果</returns>
         public object Run(object message, object ret) {
-            return Script.Run("Run", message, ret);
+            if (State == "Start")
+            {
+                return Script.Run("Run", message, ret, "");
+            }
+            else {
+                return null;
+            }
         }
 
         /// <summary>
@@ -102,7 +122,7 @@ namespace MM.Plugin
         }
 
         /// <summary>
-        /// 5.更新
+        /// 5.1更新
         /// </summary>
         /// <param name="param">参数</param>
         /// <returns>返回执行结果</returns>
@@ -121,14 +141,26 @@ namespace MM.Plugin
         }
 
         /// <summary>
-        /// 6.卸载插件
+        /// 5.2更新完成时
         /// </summary>
         /// <param name="param">参数</param>
         /// <returns>返回执行结果</returns>
+        public object Updated(string param = "")
+        {
+            State = "Updated";
+            return Script.Run("Updated", param, "", "");
+        }
+
+        /// <summary>
+            /// 6.卸载插件
+            /// </summary>
+            /// <param name="param">参数</param>
+            /// <returns>返回执行结果</returns>
         public object Uninstall(string param = "")
         {
             if (State == "End")
             {
+                State = "Uninstall";
                 return Script.Run("Uninstall", param, "", "");
             }
             else
@@ -144,17 +176,20 @@ namespace MM.Plugin
         /// <param name="param">参数</param>
         /// <returns>返回执行结果</returns>
         public object Remove(string param = "") {
-            if (State == "End")
+            Msg = null;
+            if (State == "End" || State == "Uninstall")
             {
                 var ret = Script.Run("Remove", param, "", "");
-                DirHelper.Del(Info.Dir);
+                DirHelper.Del(Info.Dir, true);
                 return ret;
             }
             else
             {
-                Msg = "需先结束运行，才能删除插件！";
+                Msg = "需先结束或卸载插件，才能删除插件！";
                 return null;
             }
         }
+        #endregion
+
     }
 }

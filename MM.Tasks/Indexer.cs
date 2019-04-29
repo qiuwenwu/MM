@@ -50,8 +50,7 @@ namespace MM.Tasks
         /// </summary>
         public void Demo(string path = "demo_task.json")
         {
-            var m = new Config() { Script = new Common.Script() { File = "./demo_task.py", Fun = "Task_Main" }, Times = 10, Info = new Common.Info() { App = "mm", Desc = "这是一个测试的网站", Dir = "./", Name = "任务示例", Group = "春节活动组", Type = "活动类" } };
-
+            var m = new Config() { Script = new Common.Script() { File = "./demo_task.py", Fun = "Task_Main" }, Times = 10, Info = new Common.Info() { App = "mm", Desc = "这是一个测试的任务", Dir = "./", Name = "demo", Title= "任务示例", Group = "春节活动组", Type = "活动类" } };
             File.WriteAllText(path.ToFullName(), m.ToJson(true), Encoding.UTF8);
         }
     }

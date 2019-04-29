@@ -21,10 +21,22 @@ namespace MM.Common
         public Script Script { get; set; }
 
         /// <summary>
+        /// 文件
+        /// </summary>
+        [JsonProperty("file")]
+        public string File   { get; set; }
+
+        /// <summary>
         /// 改变配置
         /// </summary>
-        public void Change(string dir = "")
+        public void Change(string file = "")
         {
+            var dir = "";
+            if (!string.IsNullOrEmpty(file))
+            {
+                File = file;
+                dir = file.ToDir();
+            }
             Info.App = Info.App.ToLower();
             Info.Type = Info.Type.ToLower();
             Info.Name = Info.Name.ToLower();

@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 
 namespace TestCore
 {
@@ -8,10 +7,13 @@ namespace TestCore
         static void Main(string[] args)
         {
             // 脚本引擎测试 通过
-           // Script_Test.Run();
+            // Script_Test.Run();
 
             // 任务测试
-            Task_Test.Run();
+            // Task_Test.Run();
+
+            // 插件测试
+            // Plugin_test.Run();
 
             Console.ReadLine(); // 等待用户按一个回车
         }

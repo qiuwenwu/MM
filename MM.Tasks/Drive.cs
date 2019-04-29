@@ -59,7 +59,6 @@ namespace MM.Tasks
         {
             if (v.Info != null)
             {
-                v.Change();
                 var k = v.Info.Name;
                 if (Dict.ContainsKey(k))
                 {
@@ -79,7 +78,7 @@ namespace MM.Tasks
         /// 更新
         /// </summary>
         /// <param name="path">搜索路径</param>
-        public void Update(string path = null)
+        public void UpdateConfig(string path = null)
         {
             if (!string.IsNullOrEmpty(path))
             {
@@ -88,19 +87,9 @@ namespace MM.Tasks
             var dict = EachLoad<Helper>();
             foreach (var o in dict)
             {
-                var p = o.Key.ToDir();
-                o.Value.Change(p);
+                o.Value.Change(o.Key);
                 Set(o.Value);
             }
-        }
-
-        /// <summary>
-        /// 新建配置
-        /// </summary>
-        /// <returns>返回配置模型</returns>
-        public Config New()
-        {
-            return new Config();
         }
         #endregion
 

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace MM.Plugin
 {
@@ -21,12 +23,16 @@ namespace MM.Plugin
         /// </summary>
         public Dictionary<string, Helper> Dict { get; set; } = new Dictionary<string, Helper>();
 
+        /// <summary>
+        /// 错误提示
+        /// </summary>
+        public string Msg { get; set; }
 
         #region 管理
         /// <summary>
         /// 获取
         /// </summary>
-        /// <param name="name">任务名称</param>
+        /// <param name="name">插件名称</param>
         /// <returns>返回帮助器</returns>
         public Helper Get(string name)
         {
@@ -43,7 +49,7 @@ namespace MM.Plugin
         /// <summary>
         /// 删除
         /// </summary>
-        /// <param name="name">任务名称</param>
+        /// <param name="name">插件名称</param>
         /// <returns>删除成功返回true，失败返回false</returns>
         public bool Del(string name)
         {
@@ -59,17 +65,13 @@ namespace MM.Plugin
         {
             if (v.Info != null)
             {
-                v.Change();
                 var k = v.Info.Name;
                 if (Dict.ContainsKey(k))
                 {
-                    Dict[k].End();
                     Dict[k] = v;
-                    Dict[k].Init();
                 }
                 else
                 {
-                    v.Init();
                     Dict.Add(k, v);
                 }
             }
@@ -79,7 +81,7 @@ namespace MM.Plugin
         /// 更新
         /// </summary>
         /// <param name="path">搜索路径</param>
-        public void Update(string path = null)
+        public void UpdateConfig(string path = null)
         {
             if (!string.IsNullOrEmpty(path))
             {
@@ -88,26 +90,85 @@ namespace MM.Plugin
             var dict = EachLoad<Helper>();
             foreach (var o in dict)
             {
-                var p = o.Key.ToDir();
-                o.Value.Change(p);
+                o.Value.Change(o.Key);
                 Set(o.Value);
             }
         }
 
         /// <summary>
-        /// 新建配置
+        /// 初始化
         /// </summary>
-        /// <returns>返回配置模型</returns>
-        public Config New()
+        /// <param name="path">检索路径</param>
+        public void Initialize(string path = null) {
+            UpdateConfig(path);
+            Load();
+            OrderBy();
+        }
+
+        /// <summary>
+        /// 读取配置
+        /// </summary>
+        public void Load() {
+            var file = "./cache/".ToFullName() + App + "_plug_cache.json";
+            if (File.Exists(file))
+            {
+                var content = File.ReadAllText(file);
+                var dict = content.ToObj<Dictionary<string, Config_cache>>();
+
+                foreach (var item in Dict)
+                {
+                    var k = item.Key;
+                    if (dict.ContainsKey(k))
+                    {
+                        var cg = dict[k];
+                        item.Value.State = cg.State;
+                        item.Value.OrderBy = cg.OrderBy;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// 保存配置
+        /// </summary>
+        public void Save()
         {
-            return new Config();
+            var dict = new Dictionary<string, Config_cache>();
+            foreach (var item in Dict)
+            {
+                var o = item.Value;
+                var obj = new Config_cache() { State = o.State, OrderBy = o.OrderBy };
+                dict.Add(item.Key, obj);
+            }
+            var dir = "./cache/".ToFullName();
+           
+            if (!Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
+            var file = dir + App + "_plug_cache.json";
+
+            File.WriteAllText(file.ToFullName(), dict.ToJson(true));
+        }
+
+        /// <summary>
+        /// 排序
+        /// </summary>
+        public void OrderBy() {
+            var dic = Dict.OrderBy(s1 => s1.Value.OrderBy).ToList();
+            Dict.Clear();
+            for (var i = 0; i < dic.Count; i++)
+            {
+                var kv = dic[i];
+                Dict.Add(kv.Key, kv.Value);
+            }
         }
         #endregion
 
 
         #region 执行
         /// <summary>
-        /// 执行任务（会初始化对象，首次启动时使用）
+        /// 执行插件
         /// </summary>
         /// <param name="message">消息</param>
         /// <param name="ret">上次执行结果</param>
@@ -128,9 +189,32 @@ namespace MM.Plugin
         }
 
         /// <summary>
+        /// 0.安装
+        /// </summary>
+        /// <param name="name">插件名称</param>
+        public object Install(string name = null, string param = "")
+        {
+            object ret = null;
+            if (string.IsNullOrEmpty(name))
+            {
+                foreach (var o in Dict.Values)
+                {
+                    ret = o.Install(param);
+                }
+            }
+            else if (Dict.ContainsKey(name))
+            {
+                var obj = Dict[name];
+                ret = obj.Install(param);
+                Msg = obj.Msg;
+            }
+            return ret;
+        }
+
+        /// <summary>
         /// 1.初始化
         /// </summary>
-        /// <param name="name">任务名称</param>
+        /// <param name="name">插件名称</param>
         public object Init(string name = null, string param = "")
         {
             object ret = null;
@@ -143,7 +227,9 @@ namespace MM.Plugin
             }
             else if (Dict.ContainsKey(name))
             {
-                ret = Dict[name].Init(param);
+                var obj = Dict[name];
+                ret = obj.Init(param);
+                Msg = obj.Msg;
             }
             return ret;
         }
@@ -151,7 +237,7 @@ namespace MM.Plugin
         /// <summary>
         /// 2.启动
         /// </summary>
-        /// <param name="name">任务名称</param>
+        /// <param name="name">插件名称</param>
         public object Start(string name = null, string param = "")
         {
             object ret = null;
@@ -164,7 +250,9 @@ namespace MM.Plugin
             }
             else if (Dict.ContainsKey(name))
             {
-                ret = Dict[name].Start(param);
+                var obj = Dict[name];
+                ret = obj.Start(param);
+                Msg = obj.Msg;
             }
             return ret;
         }
@@ -172,7 +260,7 @@ namespace MM.Plugin
         /// <summary>
         /// 3.暂停
         /// </summary>
-        /// <param name="name">任务名称</param>
+        /// <param name="name">插件名称</param>
         public object Stop(string name = null, string param = "")
         {
             object ret = null;
@@ -185,7 +273,9 @@ namespace MM.Plugin
             }
             else if (Dict.ContainsKey(name))
             {
-                ret = Dict[name].Stop(param);
+                var obj = Dict[name];
+                ret = obj.Stop(param);
+                Msg = obj.Msg;
             }
             return ret;
         }
@@ -193,7 +283,7 @@ namespace MM.Plugin
         /// <summary>
         /// 4.结束
         /// </summary>
-        /// <param name="name">任务名称</param>
+        /// <param name="name">插件名称</param>
         public object End(string name = null, string param = "")
         {
             object ret = null;
@@ -206,13 +296,16 @@ namespace MM.Plugin
             }
             else if (Dict.ContainsKey(name))
             {
-                ret = Dict[name].End(param);
+
+                var obj = Dict[name];
+                ret = obj.End(param);
+                Msg = obj.Msg;
             }
             return ret;
         }
 
         /// <summary>
-        /// 5.更新
+        /// 5.1更新
         /// </summary>
         /// <param name="param">参数</param>
         /// <returns>返回执行结果</returns>
@@ -228,7 +321,30 @@ namespace MM.Plugin
             }
             else if (Dict.ContainsKey(name))
             {
-                ret = Dict[name].Update(param);
+                var obj = Dict[name];
+                ret = obj.Update(param);
+                Msg = obj.Msg;
+            }
+            return ret;
+        }
+
+        /// <summary>
+        /// 5.2更新完成时
+        /// </summary>
+        /// <param name="param">参数</param>
+        /// <returns>返回执行结果</returns>
+        public object Updated(string name, string param = "")
+        {
+            object ret = null;
+            if (Dict.ContainsKey(name))
+            {
+                var o = Dict[name];
+                UpdateConfig(o.Info.Dir);
+                if (Dict.ContainsKey(name)) {
+                    var obj = Dict[name];
+                    ret = obj.Updated(param);
+                    Msg = obj.Msg;
+                }
             }
             return ret;
         }
@@ -250,7 +366,9 @@ namespace MM.Plugin
             }
             else if (Dict.ContainsKey(name))
             {
-                ret = Dict[name].Uninstall(param);
+                var obj = Dict[name];
+                ret = obj.Uninstall(param);
+                Msg = obj.Msg;
             }
             return ret;
         }
@@ -265,14 +383,30 @@ namespace MM.Plugin
             object ret = null;
             if (string.IsNullOrEmpty(name))
             {
-                foreach (var o in Dict.Values)
+                var list = new List<string>();
+                foreach (var item in Dict)
                 {
+                    var o = item.Value;
                     ret = o.Remove(param);
+                    Msg = o.Msg;
+                    if (string.IsNullOrEmpty(Msg))
+                    {
+                        list.Add(item.Key);
+                    }
+                }
+                foreach (var k in list)
+                {
+                    Dict.Remove(k);
                 }
             }
             else if (Dict.ContainsKey(name))
             {
-                ret = Dict[name].Remove(param);
+                var obj = Dict[name];
+                ret = obj.Remove(param);
+                Msg = obj.Msg;
+                if (string.IsNullOrEmpty(Msg)) {
+                    Dict.Remove(name);
+                }
             }
             return ret;
         }

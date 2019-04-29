@@ -11,7 +11,7 @@ namespace MM.Tasks
         /// <summary>
         /// 计时器
         /// </summary>
-        private Timer Timer { get; set; }
+        private Timer Timer    { get; set; }
 
         /// <summary>
         /// 执行次数
@@ -45,7 +45,6 @@ namespace MM.Tasks
             }
             Timer.AutoReset = true;    // false是执行一次，true是一直执行
         }
-
 
         /// <summary>
         /// 时间段执行

@@ -18,7 +18,7 @@ namespace TestCore
             var drive = indexer.Drive();
 
             // 3.更新配置和脚本
-            drive.Update();
+            drive.UpdateConfig();
             Console.WriteLine(drive.Dict.ToJson());
 
             // 4.执行驱动
