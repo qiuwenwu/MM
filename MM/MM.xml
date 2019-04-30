@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MM</name>
+    </assembly>
+    <members>
+        <member name="T:MM.UseApiExtensions">
+            <summary> 
+            API扩展
+            </summary>
+        </member>
+        <member name="M:MM.ApiMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            判断是否处理拓展，如果是Api
+            </summary>
+            <param name="ct">http上下文</param>
+            <returns></returns>
+        </member>
+        <member name="T:MM.Cache">
+            <summary>
+            缓存集合
+            </summary>
+        </member>
+        <member name="P:MM.Cache.Config">
+            <summary>
+            配置模型
+            </summary>
+        </member>
+        <member name="P:MM.Cache.Rewrite">
+            <summary>
+            重定向——伪静态
+            </summary>
+        </member>
+        <member name="M:MM.Cache.Update">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="T:MM.ConfigModel">
+            <summary>
+            站点配置模型
+            </summary>
+        </member>
+        <member name="P:MM.ConfigModel.IsDebug">
+            <summary>
+            是否开启调试模式
+            </summary>
+        </member>
+        <member name="P:MM.ConfigModel.Name">
+            <summary>
+            站点名称
+            </summary>
+        </member>
+        <member name="P:MM.ConfigModel.Urls">
+            <summary>
+             监听域名地址
+            </summary>
+        </member>
+        <member name="P:MM.ConfigModel.HttpsPort">
+            <summary>
+            https端口号，使用HTTPS情况
+            </summary>
+        </member>
+        <member name="T:MM.RewriteModel">
+            <summary>
+            重定向模型
+            </summary>
+        </member>
+        <member name="P:MM.RewriteModel.OnOff">
+            <summary>
+            开启或关闭，true为开启
+            </summary>
+        </member>
+        <member name="P:MM.RewriteModel.Rules">
+            <summary>
+            自定义规则
+            </summary>
+        </member>
+        <member name="P:MM.RewriteModel.Extension">
+            <summary>
+            拓展名
+            </summary>
+        </member>
+        <member name="M:MM.RewriteModel.Update">
+            <summary>
+            更新伪静态配置
+            </summary>
+        </member>
+        <member name="T:MM.Startup">
+            <summary>
+            启动
+            </summary>
+        </member>
+        <member name="M:MM.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            配置服务
+            </summary>
+            <param name="services">服务集合</param>
+        </member>
+        <member name="M:MM.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            系统配置
+            </summary>
+            <param name="app">应用构造器</param>
+            <param name="env">托管环境</param>
+        </member>
+    </members>
+</doc>

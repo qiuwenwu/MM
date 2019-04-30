@@ -1,6 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 
 namespace MM
 {
@@ -8,7 +7,7 @@ namespace MM
     {
         internal static Task Run(HttpContext ct)
         {
-            throw new NotImplementedException();
+            return ct.Response.WriteAsync("hello world!");
         }
     }
 }

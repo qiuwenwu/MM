@@ -20,7 +20,7 @@ namespace MM
         /// <summary>
         ///  监听域名地址
         /// </summary>
-        public string[] Urls        { get; set; } = new string[] { };
+        public string[] Urls        { get; set; } = new string[] { "http://*:5000", "https://*:44300" };
         
         /// <summary>
         /// https端口号，使用HTTPS情况

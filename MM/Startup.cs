@@ -62,7 +62,8 @@ namespace MM
             app.UseCors("AllowSameDomain");
 
             app.UseStaticFiles();
-            
+
+            app.UseApi();
         }
     }
 }
