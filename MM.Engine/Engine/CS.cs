@@ -37,6 +37,9 @@ namespace MM.Engine
             set { dict = value; }
         }
 
+        /// <summary>
+        /// 脚本代码
+        /// </summary>
         public string ScriptCode { get; } = @"
 public class Script : MM.Engine.Common {
 ";

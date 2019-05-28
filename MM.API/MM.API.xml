@@ -1,0 +1,383 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MM.API</name>
+    </assembly>
+    <members>
+        <member name="T:MM.API.ApiRetModel">
+            <summary>
+            返回结果模型
+            </summary>
+        </member>
+        <member name="P:MM.API.ApiRetModel.Error">
+            <summary>
+            错误代码
+            </summary>
+        </member>
+        <member name="P:MM.API.ApiRetModel.Result">
+            <summary>
+            返回的数据
+            </summary>
+        </member>
+        <member name="M:MM.API.ApiRetModel.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:MM.API.ApiRetModel.#ctor(System.Int32,System.String)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:MM.API.ErrorModel">
+            <summary>
+            错误模型
+            </summary>
+        </member>
+        <member name="P:MM.API.ErrorModel.Code">
+            <summary>
+            错误提示
+            </summary>
+        </member>
+        <member name="P:MM.API.ErrorModel.Message">
+            <summary>
+            错误提示
+            </summary>
+        </member>
+        <member name="T:MM.API.CookieModel">
+            <summary>
+            cookie模型
+            </summary>
+        </member>
+        <member name="P:MM.API.CookieModel.Value">
+            <summary>
+            cookie值
+            </summary>
+        </member>
+        <member name="P:MM.API.CookieModel.Options">
+            <summary>
+            cookie参数
+            </summary>
+        </member>
+        <member name="T:MM.API.CookieOptionsModel">
+            <summary>
+            cookie参数模型
+            </summary>
+        </member>
+        <member name="P:MM.API.CookieOptionsModel.Domain">
+            <summary>
+            作用域
+            </summary>
+        </member>
+        <member name="P:MM.API.CookieOptionsModel.Path">
+            <summary>
+            指定路径
+            </summary>
+        </member>
+        <member name="P:MM.API.CookieOptionsModel.Expires">
+            <summary>
+            有效期时长
+            </summary>
+        </member>
+        <member name="P:MM.API.CookieOptionsModel.Secure">
+            <summary>
+            是否安全模型
+            </summary>
+        </member>
+        <member name="P:MM.API.CookieOptionsModel.SameSite">
+            <summary>
+            同一地点，0任意、1宽松、2严谨
+            </summary>
+        </member>
+        <member name="P:MM.API.CookieOptionsModel.HttpOnly">
+            <summary>
+            是否只读
+            </summary>
+        </member>
+        <member name="P:MM.API.CookieOptionsModel.MaxAge">
+            <summary>
+            最大有效期
+            </summary>
+        </member>
+        <member name="P:MM.API.CookieOptionsModel.IsEssential">
+            <summary>
+            是否强制cookie，默认为false
+            </summary>
+        </member>
+        <member name="T:MM.API.FormFileModel">
+            <summary>
+            表单文件模型
+            </summary>
+        </member>
+        <member name="P:MM.API.FormFileModel.Length">
+            <summary>
+            长度
+            </summary>
+        </member>
+        <member name="P:MM.API.FormFileModel.Headers">
+            <summary>
+            协议头
+            </summary>
+        </member>
+        <member name="P:MM.API.FormFileModel.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:MM.API.FormFileModel.ContentDisposition">
+            <summary>
+            正文
+            </summary>
+        </member>
+        <member name="P:MM.API.FormFileModel.ContentType">
+            <summary>
+            内容类型
+            </summary>
+        </member>
+        <member name="P:MM.API.FormFileModel.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="P:MM.API.FormFileModel.Stream">
+            <summary>
+            数据流
+            </summary>
+        </member>
+        <member name="T:MM.API.ReqModel">
+            <summary>
+            请求模型
+            </summary>
+        </member>
+        <member name="P:MM.API.ReqModel.ContentType">
+            <summary>
+            内容类型
+            </summary>
+        </member>
+        <member name="P:MM.API.ReqModel.ContentLength">
+            <summary>
+            内容长度
+            </summary>
+        </member>
+        <member name="P:MM.API.ReqModel.PathBase">
+            <summary>
+            基础路径
+            </summary>
+        </member>
+        <member name="P:MM.API.ReqModel.IsHttps">
+            <summary>
+            是否https
+            </summary>
+        </member>
+        <member name="P:MM.API.ReqModel.Scheme">
+            <summary>
+            作用域
+            </summary>
+        </member>
+        <member name="P:MM.API.ReqModel.Method">
+            <summary>
+            请求方式post或get
+            </summary>
+        </member>
+        <member name="P:MM.API.ReqModel.Path">
+            <summary>
+            请求的路径
+            </summary>
+        </member>
+        <member name="P:MM.API.ReqModel.Host">
+            <summary>
+            主机地址
+            </summary>
+        </member>
+        <member name="P:MM.API.ReqModel.IP">
+            <summary>
+            请求来源IP
+            </summary>
+        </member>
+        <member name="P:MM.API.ReqModel.Body">
+            <summary>
+            请求来的内容
+            </summary>
+        </member>
+        <member name="P:MM.API.ReqModel.QueryString">
+            <summary>
+            请求参数（字符串）
+            </summary>
+        </member>
+        <member name="P:MM.API.ReqModel.Query">
+            <summary>
+            请求参数
+            </summary>
+        </member>
+        <member name="P:MM.API.ReqModel.Form">
+            <summary>
+            表单参数
+            </summary>
+        </member>
+        <member name="P:MM.API.ReqModel.Header">
+            <summary>
+            协议头
+            </summary>
+        </member>
+        <member name="P:MM.API.ReqModel.Cookies">
+            <summary>
+            Cookies
+            </summary>
+        </member>
+        <member name="P:MM.API.ReqModel.Files">
+            <summary>
+            请求的文件
+            </summary>
+        </member>
+        <member name="P:MM.API.ReqModel.Port">
+            <summary>
+            请求的端口
+            </summary>
+        </member>
+        <member name="P:MM.API.ReqModel.Param">
+            <summary>
+            请求的参数（整合）
+            </summary>
+        </member>
+        <member name="P:MM.API.ReqModel.Auth">
+            <summary>
+            身份验证
+            </summary>
+        </member>
+        <member name="P:MM.API.ReqModel.Power">
+            <summary>
+            是否具有权限
+            </summary>
+        </member>
+        <member name="P:MM.API.ReqModel.Rules">
+            <summary>
+            规则
+            </summary>
+        </member>
+        <member name="P:MM.API.ReqModel.Msg">
+            <summary>
+            错误提示
+            </summary>
+        </member>
+        <member name="P:MM.API.ReqModel.HasFormContentType">
+            <summary>
+            有类型内容为表单的
+            </summary>
+        </member>
+        <member name="P:MM.API.ReqModel.Xml">
+            <summary>
+            xml帮助类
+            </summary>
+        </member>
+        <member name="M:MM.API.ReqModel.GetParam">
+            <summary>
+            获取所有参数
+            </summary>
+            <returns>返回参数字典</returns>
+        </member>
+        <member name="M:MM.API.ReqModel.GetParamStr">
+            <summary>
+            获取所有参数（字符串）
+            </summary>
+            <returns>返回参数字典</returns>
+        </member>
+        <member name="T:MM.API.ResModel">
+            <summary>
+            响应模型
+            </summary>
+        </member>
+        <member name="P:MM.API.ResModel.Headers">
+            <summary>
+            协议头
+            </summary>
+        </member>
+        <member name="P:MM.API.ResModel.Cookies">
+            <summary>
+            Cookies
+            </summary>
+        </member>
+        <member name="P:MM.API.ResModel.Status">
+            <summary>
+            响应状态
+            </summary>
+        </member>
+        <member name="P:MM.API.ResModel.Body">
+            <summary>
+            主体内容
+            </summary>
+        </member>
+        <member name="P:MM.API.ResModel.Redirect">
+            <summary>
+            回调地址
+            </summary>
+        </member>
+        <member name="P:MM.API.ResModel.Ret">
+            <summary>
+            响应结果
+            </summary>
+        </member>
+        <member name="P:MM.API.ResModel.ValDt">
+            <summary>
+            全局变量
+            </summary>
+        </member>
+        <member name="P:MM.API.ResModel.ContentType">
+            <summary>
+            内容类型
+            </summary>
+        </member>
+        <member name="M:MM.API.ResModel.SetCookie(System.String,System.String,System.Int32)">
+            <summary>
+            设置cookie
+            </summary>
+            <param name="key">键名</param>
+            <param name="value">键值</param>
+            <param name="expires">有效期，默认为0不限期</param>
+        </member>
+        <member name="M:MM.API.ResModel.DelCookie(System.String)">
+            <summary>
+            删除Cookie
+            </summary>
+            <param name="key">键名</param>
+        </member>
+        <member name="M:MM.API.ResModel.SetRet(System.Object,System.String,System.Int32)">
+            <summary>
+            设置结果
+            </summary>
+            <param name="data">数据</param>
+            <param name="msg">消息类型</param>
+            <param name="error">错误码</param>
+            <returns>返回设置后的字符串</returns>
+        </member>
+        <member name="M:MM.API.ResModel.GetVal(System.String,System.Object)">
+            <summary>
+            获取变量
+            </summary>
+            <param name="name">变量名</param>
+            <param name="val">变量值</param>
+            <returns>返回变量值</returns>
+        </member>
+        <member name="M:MM.API.ResModel.SetVal(System.String,System.Object)">
+            <summary>
+            修改变量
+            </summary>
+            <param name="name">变量名</param>
+            <param name="val">变量值</param>
+            <returns>修改成功返回true，失败返回false</returns>
+        </member>
+        <member name="M:MM.API.ResModel.DelVal(System.String)">
+            <summary>
+            删除变量
+            </summary>
+            <param name="name">变量名</param>
+            <returns>删除成功返回true，失败返回false</returns>
+        </member>
+        <member name="M:MM.API.ResModel.HasVal(System.String)">
+            <summary>
+            判断变量是否存在
+            </summary>
+            <param name="name">变量名</param>
+            <returns>存在返回true，不存在返回false</returns>
+        </member>
+    </members>
+</doc>

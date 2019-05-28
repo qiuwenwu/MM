@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MM.Event</name>
+    </assembly>
+    <members>
+        <member name="T:MM.Event.Config">
+            <summary>
+            公共配置
+            </summary>
+        </member>
+        <member name="T:MM.Event.Drive">
+            <summary>
+            公共驱动
+            </summary>
+        </member>
+        <member name="T:MM.Event.Helper">
+            <summary>
+            事件帮助类
+            </summary>
+        </member>
+    </members>
+</doc>

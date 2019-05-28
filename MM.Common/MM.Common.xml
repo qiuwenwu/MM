@@ -1,0 +1,231 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MM.Common</name>
+    </assembly>
+    <members>
+        <member name="T:MM.Common.Config">
+            <summary>
+            公共配置
+            </summary>
+        </member>
+        <member name="F:MM.Common.Config.Info">
+            <summary>
+            信息
+            </summary>
+        </member>
+        <member name="P:MM.Common.Config.Script">
+            <summary>
+            脚本
+            </summary>
+        </member>
+        <member name="P:MM.Common.Config.File">
+            <summary>
+            文件
+            </summary>
+        </member>
+        <member name="M:MM.Common.Config.Change(System.String)">
+            <summary>
+            改变配置
+            </summary>
+        </member>
+        <member name="T:MM.Common.Drive">
+            <summary>
+            公共驱动
+            </summary>
+        </member>
+        <member name="P:MM.Common.Drive.Req">
+            <summary>
+            请求参数
+            </summary>
+        </member>
+        <member name="M:MM.Common.Drive.GetReq(System.String)">
+            <summary>
+            获取请求参数
+            </summary>
+            <param name="tag">标签</param>
+            <returns>返回请求参数</returns>
+        </member>
+        <member name="M:MM.Common.Drive.SetReq(System.String,System.Object)">
+            <summary>
+            设置请求参数
+            </summary>
+            <param name="tag">标签</param>
+            <param name="m">请求参数</param>
+            <returns>设置成功返回true，是失败返回false</returns>
+        </member>
+        <member name="M:MM.Common.Drive.DelReq(System.String)">
+            <summary>
+            删除请求参数
+            </summary>
+            <param name="tag">标签</param>
+            <returns>删除成功返回true，失败返回false</returns>
+        </member>
+        <member name="P:MM.Common.Drive.Res">
+            <summary>
+            响应结果
+            </summary>
+        </member>
+        <member name="M:MM.Common.Drive.GetRes(System.String)">
+            <summary>
+            获取响应结果
+            </summary>
+            <param name="tag">标签</param>
+            <returns>返回响应结果</returns>
+        </member>
+        <member name="M:MM.Common.Drive.SetRes(System.String,System.Object)">
+            <summary>
+            设置响应结果
+            </summary>
+            <param name="tag">标签</param>
+            <param name="m">响应结果</param>
+            <returns>设置成功返回true，是失败返回false</returns>
+        </member>
+        <member name="M:MM.Common.Drive.DelRes(System.String)">
+            <summary>
+            删除响应结果
+            </summary>
+            <param name="tag">标签</param>
+            <returns>删除成功返回true，失败返回false</returns>
+        </member>
+        <member name="M:MM.Common.Drive.NewTag(System.String)">
+            <summary>
+            新建标签
+            </summary>
+            <param name="head">标签头</param>
+            <returns>返回标签</returns>
+        </member>
+        <member name="P:MM.Common.Drive.Ex">
+            <summary>
+            错误提示
+            </summary>
+        </member>
+        <member name="M:MM.Common.Drive.Clear(System.String)">
+            <summary>
+            清除缓存
+            </summary>
+            <param name="tag">标签</param>
+        </member>
+        <member name="P:MM.Common.Drive.App">
+            <summary>
+            应用名称
+            </summary>
+        </member>
+        <member name="P:MM.Common.Drive.Dir">
+            <summary>
+            检索的目录
+            </summary>
+        </member>
+        <member name="P:MM.Common.Drive.Search">
+            <summary>
+            拓展名
+            </summary>
+        </member>
+        <member name="M:MM.Common.Drive.Load``1(System.String)">
+            <summary>
+            加载
+            </summary>
+            <typeparam name="T">泛型</typeparam>
+            <param name="file">文件名</param>
+            <returns>返回加载对象</returns>
+        </member>
+        <member name="M:MM.Common.Drive.EachLoad``1">
+            <summary>
+            遍历读取文件
+            </summary>
+            <returns>返回全名加内容模型列表</returns>
+        </member>
+        <member name="M:MM.Common.Drive.EachLoad``1(System.IO.DirectoryInfo)">
+            <summary>
+            遍历读取文件
+            </summary>
+            <param name="root">根路径</param>
+            <returns>返回全名加内容模型列表</returns>
+        </member>
+        <member name="T:MM.Common.Info">
+            <summary>
+            信息模型
+            </summary>
+        </member>
+        <member name="P:MM.Common.Info.App">
+            <summary>
+            应用名称
+            </summary>
+        </member>
+        <member name="P:MM.Common.Info.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:MM.Common.Info.Name">
+            <summary>
+            名称(唯一标识，由英文+数字和下划线组成)
+            </summary>
+        </member>
+        <member name="P:MM.Common.Info.Title">
+            <summary>
+            应用标题名称
+            </summary>
+        </member>
+        <member name="P:MM.Common.Info.Desc">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:MM.Common.Info.Group">
+            <summary>
+            分组
+            </summary>
+        </member>
+        <member name="P:MM.Common.Info.Help">
+            <summary>
+            使用说明
+            </summary>
+        </member>
+        <member name="P:MM.Common.Info.Dir">
+            <summary>
+            目录
+            </summary>
+        </member>
+        <member name="T:MM.Common.Script">
+            <summary>
+            脚本模型
+            </summary>
+        </member>
+        <member name="P:MM.Common.Script.File">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="P:MM.Common.Script.Fun">
+            <summary>
+            函数名
+            </summary>
+        </member>
+        <member name="F:MM.Common.Script.Mod">
+            <summary>
+            模块
+            </summary>
+        </member>
+        <member name="F:MM.Common.Script.Eng">
+            <summary>
+            脚本引擎
+            </summary>
+        </member>
+        <member name="M:MM.Common.Script.Run(System.String,System.Object,System.Object,System.Object)">
+            <summary>
+            运行API
+            </summary>
+            <param name="fun">函数</param>
+            <param name="param1">参数1</param>
+            <param name="param2">参数2</param>
+            <param name="param3">参数3</param>
+            <returns>返回标签</returns>
+        </member>
+        <member name="M:MM.Common.Script.Unload">
+            <summary>
+            卸载脚本
+            </summary>
+        </member>
+    </members>
+</doc>

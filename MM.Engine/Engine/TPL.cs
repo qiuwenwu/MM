@@ -149,9 +149,22 @@ namespace MM.Engine
         /// </summary>
         public DynamicViewBag ViewBag { get; set; } = new DynamicViewBag();
 
+        /// <summary>
+        /// 布局
+        /// </summary>
         public static Regex LayoutEx { get; } = new Regex("Layout\\s*=\\s*@?\"(\\S*)\";");
+
+        /// <summary>
+        /// 缓存提供程序
+        /// </summary>
         public static MmCachingProvider Cache { get; set; } = new MmCachingProvider();
+        /// <summary>
+        /// 文件监听程序
+        /// </summary>
         public static FileSystemWatcher Watcher { get; set; } = new FileSystemWatcher();
+        /// <summary>
+        /// 模板管理器
+        /// </summary>
         public static MmTemplateManager Mg { get; set; }
 
         /// <summary>

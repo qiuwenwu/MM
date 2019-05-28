@@ -9,6 +9,10 @@
     <DocumentationFile>bin\Debug\netstandard2.0\MM.Helper.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>F:\MM\MM.Helper\MM.Helper.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Dapper" Version="1.50.5" />
     <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="2.2.0" />

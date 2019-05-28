@@ -1,9 +1,9 @@
 ﻿namespace MM.Event
 {
     /// <summary>
-    /// 事件帮助类
+    /// 时态帮助器
     /// </summary>
-    public class Helper : Config
+    public class TenseHelper
     {
 
     }

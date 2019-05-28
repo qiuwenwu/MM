@@ -41,6 +41,9 @@ namespace MM.API
     }
 
 
+    /// <summary>
+    /// 错误模型
+    /// </summary>
     public class ErrorModel
     {
         /// <summary>

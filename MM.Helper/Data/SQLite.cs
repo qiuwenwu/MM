@@ -41,7 +41,7 @@ namespace MM.Helper.Data
                     for (var i = 0; i < arr.Length; i++)
                     {
                         var o = arr[i].ToLower();
-                        if (o.Contains("database"))
+                        if (o.Contains("Data Source"))
                         {
                             name = o.Split('=')[1];
                             break;

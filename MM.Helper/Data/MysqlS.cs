@@ -56,6 +56,9 @@ namespace MM.Helper.Data
         /// </summary>
         public int AddDB(string db = null)
         {
+            if (string.IsNullOrEmpty(db)) {
+                db = Database ?? "mm";
+            }
             return Execute(string.Format("CREATE DATABASE IF NOT EXISTS {0} DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_general_ci;", db));
         }
 

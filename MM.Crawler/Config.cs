@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-
-namespace MM.Crawler
+﻿namespace MM.Crawler
 {
     /// <summary>
     /// 抓包配置
@@ -8,57 +6,49 @@ namespace MM.Crawler
     public class Config
     {
         /// <summary>
-        /// 信息
+        /// 抓取地址格式 例如:“http://www.elins.cn/home/article?id={id}”、“http://www.elins.cn/home/list?page={page}&size=10”、“http://www.elins.cn/home/news/{dateTime}/{id}.html”
         /// </summary>
-        [JsonProperty("info")]
-        public Info Info = new Info();
+        public string Url       { get; set; }
+
+        /// <summary>
+        /// 步值
+        /// </summary>
+        public NumberModel Step { get; set; } = new NumberModel();
+
+        /// <summary>
+        /// 上限
+        /// </summary>
+        public NumberModel Max  { get; set; } = new NumberModel() {  Date = 31, Id = 1000, Page = 100, Time = 60 };
+
+        /// <summary>
+        /// 类型。 list列表页、view页、form表单、file文件提交页
+        /// </summary>
+        public string Type      { get; set; } = "view";
     }
 
     /// <summary>
-    /// 信息模型
+    /// 数值模型
     /// </summary>
-    public class Info
+    public class NumberModel
     {
         /// <summary>
-        /// 应用名称
+        /// Id增减步值
         /// </summary>
-        [JsonProperty("app")]
-        public string App { get; set; }
+        public int Id   { get; set; } = 1;
 
         /// <summary>
-        /// 类型
+        /// 日期增减步值
         /// </summary>
-        [JsonProperty("type")]
-        public string Type { get; set; }
+        public int Date { get; set; } = 1;
 
         /// <summary>
-        /// 名称
+        /// 时间增减步值
         /// </summary>
-        [JsonProperty("name")]
-        public string Name { get; set; }
+        public int Time { get; set; } = 1;
 
         /// <summary>
-        /// 描述
+        /// 页码增减步值
         /// </summary>
-        [JsonProperty("desc")]
-        public string Desc { get; set; }
-
-        /// <summary>
-        /// 分组
-        /// </summary>
-        [JsonProperty("group")]
-        public string Group { get; set; }
-
-        /// <summary>
-        /// 使用说明
-        /// </summary>
-        [JsonProperty("help")]
-        public string Help { get; set; }
-
-        /// <summary>
-        /// 目录
-        /// </summary>
-        [JsonProperty("dir")]
-        public string Dir { get; set; }
+        public int Page { get; set; } = 1;
     }
 }

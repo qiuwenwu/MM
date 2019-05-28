@@ -9,6 +9,10 @@
     <DocumentationFile>F:\MM\MM.Crawler\MM.Crawler.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>F:\MM\MM.Crawler\MM.Crawler.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\MM.Helper\MM.Helper.csproj" />
   </ItemGroup>

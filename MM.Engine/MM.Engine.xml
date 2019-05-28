@@ -1,0 +1,955 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MM.Engine</name>
+    </assembly>
+    <members>
+        <member name="T:MM.Engine.CS">
+            <summary>
+            脚本引擎接口
+            </summary>
+        </member>
+        <member name="P:MM.Engine.CS.Ex">
+            <summary>
+            错误提示
+            </summary>
+        </member>
+        <member name="F:MM.Engine.CS.dict">
+            <summary>
+            脚本函数字典
+            </summary>
+        </member>
+        <member name="P:MM.Engine.CS.Dict">
+            <summary>
+            脚本函数字典
+            </summary>
+        </member>
+        <member name="P:MM.Engine.CS.ScriptCode">
+            <summary>
+            脚本代码
+            </summary>
+        </member>
+        <member name="M:MM.Engine.CS.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="dir">脚本目录</param>
+        </member>
+        <member name="M:MM.Engine.CS.GetEx">
+            <summary>
+            获取错误信息
+            </summary>
+            <returns>返回错误信息</returns>
+        </member>
+        <member name="M:MM.Engine.CS.EachLoad(System.Collections.Generic.List{System.String})">
+            <summary>
+            遍历加载
+            </summary>
+            <param name="fileList">应用列表</param>
+            <returns>加载成功返回true，失败返回false</returns>
+        </member>
+        <member name="M:MM.Engine.CS.Load(System.String)">
+            <summary>
+            载入脚本
+            </summary>
+            <param name="file">文件名</param>
+            <returns>载入成功返回true，失败返回false</returns>
+        </member>
+        <member name="M:MM.Engine.CS.Unload(System.String)">
+            <summary>
+            卸载脚本
+            </summary>
+            <param name="appName">应用名称</param>
+            <returns>卸载成功返回true，失败返回false</returns>
+        </member>
+        <member name="M:MM.Engine.CS.Unload(System.String,System.Int32)">
+            <summary>
+            卸载脚本
+            </summary>
+            <param name="appName">应用名称</param>
+            <param name="waitTime">等待时长，单位：毫秒</param>
+            <returns>卸载成功返回true，失败返回false</returns>
+        </member>
+        <member name="M:MM.Engine.CS.Run(System.String,System.Object,System.Object,System.Object,System.Object)">
+            <summary>
+            执行脚本
+            </summary>
+            <param name="appName">应用名</param>
+            <param name="fun">函数名</param>
+            <param name="param1">参数1</param>
+            <param name="param2">参数2</param>
+            <param name="param3">参数3</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Engine.CS.RunAsync(System.String,System.Object,System.Object,System.Object,System.Object)">
+            <summary>
+            执行脚本
+            </summary>
+            <param name="appName">应用名</param>
+            <param name="fun">函数名</param>
+            <param name="param1">参数1</param>
+            <param name="param2">参数2</param>
+            <param name="param3">参数3</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Engine.CS.RunFile(System.String,System.Object,System.Object,System.Object,System.Object)">
+            <summary>
+            执行脚本文件
+            </summary>
+            <param name="file">文件名</param>
+            <param name="fun">函数名</param>
+            <param name="param1">参数1</param>
+            <param name="param2">参数2</param>
+            <param name="param3">参数3</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Engine.CS.RunCode(System.String,System.Object,System.Object,System.Object,System.Object)">
+            <summary>
+            执行脚本代码
+            </summary>
+            <param name="code">代码</param>
+            <param name="fun">函数名</param>
+            <param name="param1">参数1</param>
+            <param name="param2">参数2</param>
+            <param name="param3">参数3</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Engine.CS.GetClass(System.String)">
+            <summary>
+            获取函数
+            </summary>
+            <param name="file">文件名</param>
+            <returns>返回函数</returns>
+        </member>
+        <member name="M:MM.Engine.CS.Get(System.String)">
+            <summary>
+            获取类
+            </summary>
+            <param name="appName">应用名</param>
+            <returns>返回实例化类</returns>
+        </member>
+        <member name="T:MM.Engine.IEngine">
+            <summary>
+            脚本引擎接口
+            </summary>
+        </member>
+        <member name="M:MM.Engine.IEngine.GetEx">
+            <summary>
+            获取错误信息
+            </summary>
+            <returns>返回错误信息</returns>
+        </member>
+        <member name="M:MM.Engine.IEngine.EachLoad(System.Collections.Generic.List{System.String})">
+            <summary>
+            遍历加载
+            </summary>
+            <param name="fileList">应用列表</param>
+            <returns>加载成功返回true，失败返回false</returns>
+        </member>
+        <member name="M:MM.Engine.IEngine.Load(System.String)">
+            <summary>
+            载入脚本
+            </summary>
+            <param name="file">文件名</param>
+            <returns>载入成功返回true，失败返回false</returns>
+        </member>
+        <member name="M:MM.Engine.IEngine.Unload(System.String)">
+            <summary>
+            卸载脚本
+            </summary>
+            <param name="appName">应用名称</param>
+            <returns>卸载成功返回true，失败返回false</returns>
+        </member>
+        <member name="M:MM.Engine.IEngine.Unload(System.String,System.Int32)">
+            <summary>
+            卸载脚本
+            </summary>
+            <param name="appName">应用名称</param>
+            <param name="waitTime">等待时长，单位：毫秒</param>
+            <returns>卸载成功返回true，失败返回false</returns>
+        </member>
+        <member name="M:MM.Engine.IEngine.Run(System.String,System.Object,System.Object,System.Object,System.Object)">
+            <summary>
+            执行脚本
+            </summary>
+            <param name="appName">应用名</param>
+            <param name="fun">函数名</param>
+            <param name="param1">参数1</param>
+            <param name="param2">参数2</param>
+            <param name="param3">参数3</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Engine.IEngine.RunAsync(System.String,System.Object,System.Object,System.Object,System.Object)">
+            <summary>
+            执行脚本
+            </summary>
+            <param name="appName">应用名</param>
+            <param name="fun">函数名</param>
+            <param name="param1">参数1</param>
+            <param name="param2">参数2</param>
+            <param name="param3">参数3</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Engine.IEngine.RunFile(System.String,System.Object,System.Object,System.Object,System.Object)">
+            <summary>
+            执行脚本文件
+            </summary>
+            <param name="file">文件名</param>
+            <param name="fun">函数名</param>
+            <param name="param1">参数1</param>
+            <param name="param2">参数2</param>
+            <param name="param3">参数3</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Engine.IEngine.RunCode(System.String,System.Object,System.Object,System.Object,System.Object)">
+            <summary>
+            执行脚本代码
+            </summary>
+            <param name="code">代码</param>
+            <param name="fun">函数名</param>
+            <param name="param1">参数1</param>
+            <param name="param2">参数2</param>
+            <param name="param3">参数3</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Engine.IEngine.GetClass(System.String)">
+            <summary>
+            获取函数
+            </summary>
+            <param name="file">文件名</param>
+            <returns>返回函数</returns>
+        </member>
+        <member name="M:MM.Engine.IEngine.Get(System.String)">
+            <summary>
+            获取类
+            </summary>
+            <param name="appName">应用名</param>
+            <returns>返回实例化类</returns>
+        </member>
+        <member name="T:MM.Engine.LUA">
+            <summary>
+            脚本引擎接口
+            </summary>
+        </member>
+        <member name="P:MM.Engine.LUA.Ex">
+            <summary>
+            错误提示
+            </summary>
+        </member>
+        <member name="F:MM.Engine.LUA.dict">
+            <summary>
+            脚本函数字典
+            </summary>
+        </member>
+        <member name="P:MM.Engine.LUA.Dict">
+            <summary>
+            脚本函数字典
+            </summary>
+        </member>
+        <member name="M:MM.Engine.LUA.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="dir">脚本目录</param>
+        </member>
+        <member name="M:MM.Engine.LUA.GetEx">
+            <summary>
+            获取错误信息
+            </summary>
+            <returns>返回错误信息</returns>
+        </member>
+        <member name="M:MM.Engine.LUA.EachLoad(System.Collections.Generic.List{System.String})">
+            <summary>
+            遍历加载
+            </summary>
+            <param name="fileList">应用列表</param>
+            <returns>加载成功返回true，失败返回false</returns>
+        </member>
+        <member name="M:MM.Engine.LUA.Load(System.String)">
+            <summary>
+            载入脚本
+            </summary>
+            <param name="file">文件名</param>
+            <returns>载入成功返回true，失败返回false</returns>
+        </member>
+        <member name="M:MM.Engine.LUA.Unload(System.String)">
+            <summary>
+            卸载脚本
+            </summary>
+            <param name="appName">应用名称</param>
+            <returns>卸载成功返回true，失败返回false</returns>
+        </member>
+        <member name="M:MM.Engine.LUA.Unload(System.String,System.Int32)">
+            <summary>
+            卸载脚本
+            </summary>
+            <param name="appName">应用名称</param>
+            <param name="waitTime">等待时长，单位：毫秒</param>
+            <returns>卸载成功返回true，失败返回false</returns>
+        </member>
+        <member name="M:MM.Engine.LUA.Run(System.String,System.Object,System.Object,System.Object,System.Object)">
+            <summary>
+            执行脚本
+            </summary>
+            <param name="appName">应用名</param>
+            <param name="fun">函数名</param>
+            <param name="param1">参数1</param>
+            <param name="param2">参数2</param>
+            <param name="param3">参数3</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Engine.LUA.RunAsync(System.String,System.Object,System.Object,System.Object,System.Object)">
+            <summary>
+            执行脚本
+            </summary>
+            <param name="appName">应用名</param>
+            <param name="fun">函数名</param>
+            <param name="param1">参数1</param>
+            <param name="param2">参数2</param>
+            <param name="param3">参数3</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Engine.LUA.RunFile(System.String,System.Object,System.Object,System.Object,System.Object)">
+            <summary>
+            执行脚本文件
+            </summary>
+            <param name="file">文件名</param>
+            <param name="fun">函数名</param>
+            <param name="param1">参数1</param>
+            <param name="param2">参数2</param>
+            <param name="param3">参数3</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Engine.LUA.RunCode(System.String,System.Object,System.Object,System.Object,System.Object)">
+            <summary>
+            执行脚本代码
+            </summary>
+            <param name="code">代码</param>
+            <param name="fun">函数名</param>
+            <param name="param1">参数1</param>
+            <param name="param2">参数2</param>
+            <param name="param3">参数3</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Engine.LUA.GetClass(System.String)">
+            <summary>
+            获取函数
+            </summary>
+            <param name="file">文件名</param>
+            <returns>返回函数</returns>
+        </member>
+        <member name="M:MM.Engine.LUA.Get(System.String)">
+            <summary>
+            获取类
+            </summary>
+            <param name="appName">应用名</param>
+            <returns>返回实例化类</returns>
+        </member>
+        <member name="T:MM.Engine.PY">
+            <summary>
+            脚本引擎接口
+            </summary>
+        </member>
+        <member name="P:MM.Engine.PY.Ex">
+            <summary>
+            错误提示
+            </summary>
+        </member>
+        <member name="F:MM.Engine.PY.dict">
+            <summary>
+            脚本函数字典
+            </summary>
+        </member>
+        <member name="P:MM.Engine.PY.Dict">
+            <summary>
+            脚本函数字典
+            </summary>
+        </member>
+        <member name="M:MM.Engine.PY.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="dir">脚本目录</param>
+        </member>
+        <member name="M:MM.Engine.PY.GetEx">
+            <summary>
+            获取错误信息
+            </summary>
+            <returns>返回错误信息</returns>
+        </member>
+        <member name="M:MM.Engine.PY.EachLoad(System.Collections.Generic.List{System.String})">
+            <summary>
+            遍历加载
+            </summary>
+            <param name="fileList">应用列表</param>
+            <returns>加载成功返回true，失败返回false</returns>
+        </member>
+        <member name="M:MM.Engine.PY.Load(System.String)">
+            <summary>
+            载入脚本
+            </summary>
+            <param name="file">文件名</param>
+            <returns>载入成功返回true，失败返回false</returns>
+        </member>
+        <member name="M:MM.Engine.PY.Unload(System.String)">
+            <summary>
+            卸载脚本
+            </summary>
+            <param name="appName">应用名称</param>
+            <returns>卸载成功返回true，失败返回false</returns>
+        </member>
+        <member name="M:MM.Engine.PY.Unload(System.String,System.Int32)">
+            <summary>
+            卸载脚本
+            </summary>
+            <param name="appName">应用名称</param>
+            <param name="waitTime">等待时长，单位：毫秒</param>
+            <returns>卸载成功返回true，失败返回false</returns>
+        </member>
+        <member name="M:MM.Engine.PY.Run(System.String,System.Object,System.Object,System.Object,System.Object)">
+            <summary>
+            执行脚本
+            </summary>
+            <param name="appName">应用名</param>
+            <param name="fun">函数名</param>
+            <param name="param1">参数1</param>
+            <param name="param2">参数2</param>
+            <param name="param3">参数3</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Engine.PY.RunAsync(System.String,System.Object,System.Object,System.Object,System.Object)">
+            <summary>
+            执行脚本
+            </summary>
+            <param name="appName">应用名</param>
+            <param name="fun">函数名</param>
+            <param name="param1">参数1</param>
+            <param name="param2">参数2</param>
+            <param name="param3">参数3</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Engine.PY.RunFile(System.String,System.Object,System.Object,System.Object,System.Object)">
+            <summary>
+            执行脚本文件
+            </summary>
+            <param name="file">文件名</param>
+            <param name="fun">函数名</param>
+            <param name="param1">参数1</param>
+            <param name="param2">参数2</param>
+            <param name="param3">参数3</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Engine.PY.RunCode(System.String,System.Object,System.Object,System.Object,System.Object)">
+            <summary>
+            执行脚本代码
+            </summary>
+            <param name="code">代码</param>
+            <param name="fun">函数名</param>
+            <param name="param1">参数1</param>
+            <param name="param2">参数2</param>
+            <param name="param3">参数3</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Engine.PY.GetClass(System.String)">
+            <summary>
+            获取函数
+            </summary>
+            <param name="file">文件名</param>
+            <returns>返回函数</returns>
+        </member>
+        <member name="M:MM.Engine.PY.Get(System.String)">
+            <summary>
+            获取类
+            </summary>
+            <param name="appName">应用名</param>
+            <returns>返回实例化类</returns>
+        </member>
+        <member name="M:MM.Engine.PY.NewEngine">
+            <summary>
+            新建脚本引擎
+            </summary>
+            <returns>返回脚本引擎类</returns>
+        </member>
+        <member name="T:MM.Engine.TPL">
+            <summary>
+            Razor模板引擎帮助类
+            </summary>
+        </member>
+        <member name="P:MM.Engine.TPL.Theme">
+            <summary>
+            模板主题风格
+            </summary>
+        </member>
+        <member name="P:MM.Engine.TPL.Dir">
+            <summary>
+            模板路径
+            </summary>
+        </member>
+        <member name="P:MM.Engine.TPL.Ex">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="M:MM.Engine.TPL.Init">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:MM.Engine.TPL.ClearCache">
+            <summary>
+            清除缓存
+            </summary>
+        </member>
+        <member name="F:MM.Engine.TPL.viewBag">
+            <summary>
+            视图背包
+            </summary>
+        </member>
+        <member name="M:MM.Engine.TPL.NewViewBag_default">
+            <summary>
+            新建视图背包
+            </summary>
+        </member>
+        <member name="M:MM.Engine.TPL.Add_default(System.String,System.String)">
+            <summary>
+            视图背包添加成员
+            </summary>
+            <param name="key">键</param>
+            <param name="value">值</param>
+        </member>
+        <member name="M:MM.Engine.TPL.Add_default(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            视图背包添加字典
+            </summary>
+            <param name="dt">字典类型</param>
+        </member>
+        <member name="M:MM.Engine.TPL.GetKeys_default">
+            <summary>
+            获取所有成员名称
+            </summary>
+        </member>
+        <member name="P:MM.Engine.TPL.ViewBag">
+            <summary>
+            视图背包
+            </summary>
+        </member>
+        <member name="P:MM.Engine.TPL.LayoutEx">
+            <summary>
+            布局
+            </summary>
+        </member>
+        <member name="P:MM.Engine.TPL.Cache">
+            <summary>
+            缓存提供程序
+            </summary>
+        </member>
+        <member name="P:MM.Engine.TPL.Watcher">
+            <summary>
+            文件监听程序
+            </summary>
+        </member>
+        <member name="P:MM.Engine.TPL.Mg">
+            <summary>
+            模板管理器
+            </summary>
+        </member>
+        <member name="M:MM.Engine.TPL.NewViewBag">
+            <summary>
+            新建视图背包
+            </summary>
+        </member>
+        <member name="M:MM.Engine.TPL.NewDt">
+            <summary>
+            新建字典
+            </summary>
+            <returns>返回新字典</returns>
+        </member>
+        <member name="M:MM.Engine.TPL.Add(System.String,System.String)">
+            <summary>
+            视图背包添加成员
+            </summary>
+            <param name="key">键</param>
+            <param name="value">值</param>
+        </member>
+        <member name="M:MM.Engine.TPL.Add(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            视图背包添加字典
+            </summary>
+            <param name="dt">字典类型</param>
+        </member>
+        <member name="M:MM.Engine.TPL.GetKeys">
+            <summary>
+            获取所有成员名称
+            </summary>
+        </member>
+        <member name="M:MM.Engine.TPL.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="dir">模板路径</param>
+        </member>
+        <member name="M:MM.Engine.TPL.Compile(System.String,System.String)">
+            <summary>
+            预编译模板
+            </summary>
+            <param name="key">键</param>
+            <param name="template">模板内容</param>
+        </member>
+        <member name="M:MM.Engine.TPL.Format(System.String,System.String,System.Object,System.Type)">
+            <summary>
+            渲染数据
+            </summary>
+            <param name="key">缓存键</param>
+            <param name="template">模板</param>
+            <param name="model">数据模型</param>
+            <param name="tp">模板类型</param>
+            <returns>返回渲染后的字符串</returns>
+        </member>
+        <member name="M:MM.Engine.TPL.FormatS(System.String,RazorEngine.Templating.LoadedTemplateSource,System.Object)">
+            <summary>
+            渲染数据
+            </summary>
+            <param name="key">缓存键</param>
+            <param name="template">模板</param>
+            <param name="model">数据模型</param>
+        </member>
+        <member name="M:MM.Engine.TPL.LoadTpl(System.String,System.String)">
+            <summary>
+            加载模板资源
+            </summary>
+            <param name="template">模板</param>
+            <param name="templateFile">模板文件</param>
+            <returns>返回模板资源模型</returns>
+        </member>
+        <member name="M:MM.Engine.TPL.Load(System.String)">
+            <summary>
+            模板渲染
+            </summary>
+            <param name="file">模板文件</param>
+            <returns>返回渲染后文本</returns>
+        </member>
+        <member name="M:MM.Engine.TPL.View(System.String,System.Object)">
+            <summary>
+            模板渲染
+            </summary>
+            <param name="file">文件全名</param>
+            <param name="model">模型</param>
+            <returns>返回渲染后文本</returns>
+        </member>
+        <member name="M:MM.Engine.TPL.Dispose">
+            <summary>
+            释放模板帮助类
+            </summary>
+        </member>
+        <member name="T:MM.Engine.Indexer">
+            <summary>
+            脚本引擎索引目录
+            </summary>
+        </member>
+        <member name="P:MM.Engine.Indexer.Dir">
+            <summary>
+            当前目录
+            </summary>
+        </member>
+        <member name="P:MM.Engine.Indexer.Ex">
+            <summary>
+            错误提示
+            </summary>
+        </member>
+        <member name="M:MM.Engine.Indexer.PY">
+            <summary>
+            新建python脚本引擎帮助类
+            </summary>
+            <returns>返回帮助类</returns>
+        </member>
+        <member name="M:MM.Engine.Indexer.CS">
+            <summary>
+            新建Csharp脚本引擎帮助类
+            </summary>
+            <returns>返回帮助类</returns>
+        </member>
+        <member name="M:MM.Engine.Indexer.Lua">
+            <summary>
+            新建lua脚本引擎帮助类
+            </summary>
+            <returns>返回帮助类</returns>
+        </member>
+        <member name="M:MM.Engine.Indexer.TPL">
+            <summary>
+            新建Razor脚本引擎帮助类
+            </summary>
+            <returns>返回帮助类</returns>
+        </member>
+        <member name="M:MM.Engine.Indexer.Run(System.String,System.Object,System.Object,System.Object,System.Object)">
+            <summary>
+            执行脚本
+            </summary>
+            <param name="appName">应用名</param>
+            <param name="fun">函数名</param>
+            <param name="param1">参数1</param>
+            <param name="param2">参数2</param>
+            <param name="param3">参数3</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Engine.Indexer.RunFile(System.String,System.Object,System.Object,System.Object,System.Object)">
+            <summary>
+            执行脚本
+            </summary>
+            <param name="appName">应用名</param>
+            <param name="fun">函数名</param>
+            <param name="param1">参数1</param>
+            <param name="param2">参数2</param>
+            <param name="param3">参数3</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Engine.Indexer.Unload(System.String,System.Int32)">
+            <summary>
+            卸载脚本
+            </summary>
+            <param name="appName">应用名</param>
+            <param name="waitTime">等待时长，单位：毫秒</param>
+            <returns>卸载脚本</returns>
+        </member>
+        <member name="M:MM.Engine.Indexer.Get(System.String)">
+            <summary>
+            引擎获取
+            </summary>
+            <param name="appName">应用名</param>
+            <returns>返回引擎</returns>
+        </member>
+        <member name="M:MM.Engine.Indexer.Info">
+            <summary>
+            查看版本信息
+            </summary>
+            <returns>返回版本信息模型</returns>
+        </member>
+        <member name="T:MM.Engine.Common">
+            <summary>
+            公共类
+            </summary>
+        </member>
+        <member name="F:MM.Engine.Common.Cache">
+            <summary>
+            缓存
+            </summary>
+        </member>
+        <member name="F:MM.Engine.Common.Engine">
+            <summary>
+            脚本引擎
+            </summary>
+        </member>
+        <member name="T:MM.Engine.Libs.DynamicDictionary">
+            <summary>
+            字典拓展dynamic
+            </summary>
+        </member>
+        <member name="F:MM.Engine.Libs.DynamicDictionary.dictionary">
+            <summary>
+            内部字典
+            </summary>
+        </member>
+        <member name="P:MM.Engine.Libs.DynamicDictionary.Count">
+            <summary>
+            这个属性返回字典成员数量
+            </summary>
+        </member>
+        <member name="M:MM.Engine.Libs.DynamicDictionary.TryGetMember(System.Dynamic.GetMemberBinder,System.Object@)">
+            <summary>
+            如果你试图让一个类中没有定义,属性值,调用此方法。
+            </summary>
+            <param name="binder">绑定器</param>
+            <param name="result">输出结果</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:MM.Engine.Libs.DynamicDictionary.TrySetMember(System.Dynamic.SetMemberBinder,System.Object)">
+            如果你想设置一个值的属性中没有定义类,调用此方法。
+        </member>
+        <member name="T:MM.Engine.MmCachingProvider">
+            <summary>
+            默认缓存提供者(见ICachingProvider可见)。
+            这个实现做一个非常简单的内存缓存。
+            它可以处理时使用相同的模板有多个模型类型。
+            </summary>
+        </member>
+        <member name="M:MM.Engine.MmCachingProvider.#ctor">
+            <summary>
+            实例化
+            </summary>
+        </member>
+        <member name="P:MM.Engine.MmCachingProvider.TypeLoader">
+            <summary>
+            类加载器
+            </summary>
+        </member>
+        <member name="M:MM.Engine.MmCachingProvider.CacheTemplate(RazorEngine.Templating.ICompiledTemplate,RazorEngine.Templating.ITemplateKey)">
+            <summary>
+            缓存模板
+            </summary>
+            <param name="template">模板</param>
+            <param name="key">模板键</param>
+        </member>
+        <member name="M:MM.Engine.MmCachingProvider.TryRetrieveTemplate(RazorEngine.Templating.ITemplateKey,System.Type,RazorEngine.Templating.ICompiledTemplate@)">
+            <summary>
+            尝试检索模板
+            </summary>
+            <param name="key">键名</param>
+            <param name="modelType">模型名称</param>
+            <param name="template">模板</param>
+            <returns>检索到返回true，否则返回false</returns>
+        </member>
+        <member name="M:MM.Engine.MmCachingProvider.InvalidateCache(RazorEngine.Templating.ITemplateKey)">
+            <summary>
+            缓存失效
+            </summary>
+            <param name="key">键</param>
+            <returns>设置成功返回true, 失败返回false</returns>
+        </member>
+        <member name="M:MM.Engine.MmCachingProvider.InvalidateCache(System.String)">
+            <summary>
+            缓存失效
+            </summary>
+            <param name="key">键名</param>
+            <returns>设置成功返回true, 失败返回false</returns>
+        </member>
+        <member name="M:MM.Engine.MmCachingProvider.GetModelTypeKey(System.Type)">
+            <summary>
+            得到关键modelType中使用一个字典。
+            </summary>
+        </member>
+        <member name="M:MM.Engine.MmCachingProvider.CacheTemplateHelper(RazorEngine.Templating.ICompiledTemplate,RazorEngine.Templating.ITemplateKey,System.Type)">
+            <summary>
+            缓存模板助手
+            </summary>
+            <param name="template">模板</param>
+            <param name="templateKey">模板键</param>
+            <param name="modelTypeKey">模板类型键</param>
+        </member>
+        <member name="M:MM.Engine.MmCachingProvider.Dispose">
+            <summary>
+            释放缓存
+            </summary>
+        </member>
+        <member name="T:MM.Engine.MmTemplateBase`1">
+            <summary>
+            基本模板类型
+            </summary>
+            <typeparam name="T">泛型</typeparam>
+        </member>
+        <member name="P:MM.Engine.MmTemplateBase`1.Theme">
+            <summary>
+            模板主题风格
+            </summary>
+        </member>
+        <member name="P:MM.Engine.MmTemplateBase`1.Dir">
+            <summary>
+            当前文件路径
+            </summary>
+        </member>
+        <member name="M:MM.Engine.MmTemplateBase`1.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:MM.Engine.MmTemplateBase`1.View(System.String)">
+            <summary>
+            引用视图
+            </summary>
+            <param name="name">名称</param>
+            <returns>返回视图</returns>
+        </member>
+        <member name="M:MM.Engine.MmTemplateBase`1.View(System.String,System.Object,System.Type)">
+            <summary>
+            引用视图
+            </summary>
+            <param name="name">名称</param>
+            <param name="model">模板</param>
+            <param name="tp">模板类型</param>
+            <returns>返回视图</returns>
+        </member>
+        <member name="T:MM.Engine.MmTemplateManager">
+            <summary>
+            模板管理器
+            </summary>
+        </member>
+        <member name="M:MM.Engine.MmTemplateManager.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:MM.Engine.MmTemplateManager.#ctor(System.Func{System.String,System.String})">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:MM.Engine.MmTemplateManager.AddDynamic(RazorEngine.Templating.ITemplateKey,RazorEngine.Templating.ITemplateSource)">
+            <summary>
+            添加缓存
+            </summary>
+            <param name="key">键</param>
+            <param name="source">源</param>
+        </member>
+        <member name="M:MM.Engine.MmTemplateManager.GetKey(System.String,RazorEngine.Templating.ResolveType,RazorEngine.Templating.ITemplateKey)">
+            <summary>
+            获取键
+            </summary>
+            <param name="name">名称</param>
+            <param name="resolveType">解决类型</param>
+            <param name="key">键</param>
+            <returns>返回键</returns>
+        </member>
+        <member name="M:MM.Engine.MmTemplateManager.RemoveDynamic(RazorEngine.Templating.ITemplateKey)">
+            <summary>
+            移除键
+            </summary>
+            <param name="key">主键</param>
+        </member>
+        <member name="M:MM.Engine.MmTemplateManager.Resolve(RazorEngine.Templating.ITemplateKey)">
+            <summary>
+            解决源
+            </summary>
+            <param name="key">键</param>
+            <returns>返回资源模板</returns>
+        </member>
+        <member name="M:MM.Engine.MmTemplateManager.Dispose">
+            <summary>
+            释放
+            </summary>
+        </member>
+        <member name="T:MM.Engine.PathModel">
+            <summary>
+            路径模型
+            </summary>
+        </member>
+        <member name="M:MM.Engine.PathModel.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="runPath">程序运行路径</param>
+        </member>
+        <member name="P:MM.Engine.PathModel.Root">
+            <summary>
+            程序根目录
+            </summary>
+        </member>
+        <member name="P:MM.Engine.PathModel.Web">
+            <summary>
+            站点目录
+            </summary>
+        </member>
+        <member name="P:MM.Engine.PathModel.Script">
+            <summary>
+            脚本目录
+            </summary>
+        </member>
+        <member name="P:MM.Engine.PathModel.Static">
+            <summary>
+            静态文件目录
+            </summary>
+        </member>
+        <member name="P:MM.Engine.PathModel.Template">
+            <summary>
+            模板文件目录
+            </summary>
+        </member>
+    </members>
+</doc>

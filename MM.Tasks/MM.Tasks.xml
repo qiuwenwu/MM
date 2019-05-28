@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MM.Tasks</name>
+    </assembly>
+    <members>
+        <member name="T:MM.Tasks.Config">
+            <summary>
+            任务配置
+            </summary>
+        </member>
+        <member name="P:MM.Tasks.Config.Sleep">
+            <summary>
+            休眠时长(单位：毫秒)
+            </summary>
+        </member>
+        <member name="P:MM.Tasks.Config.Times">
+            <summary>
+            次数, -1为循环执行
+            </summary>
+        </member>
+        <member name="P:MM.Tasks.Config.TimeFormat">
+            <summary>
+            时间格式
+            </summary>
+        </member>
+        <member name="P:MM.Tasks.Config.TimeList">
+            <summary>
+            时间段
+            </summary>
+        </member>
+        <member name="T:MM.Tasks.Drive">
+            <summary>
+            任务驱动
+            </summary>
+        </member>
+        <member name="M:MM.Tasks.Drive.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:MM.Tasks.Drive.Dict">
+            <summary>
+            任务字典
+            </summary>
+        </member>
+        <member name="M:MM.Tasks.Drive.Get(System.String)">
+            <summary>
+            获取
+            </summary>
+            <param name="name">任务名称</param>
+            <returns>返回帮助器</returns>
+        </member>
+        <member name="M:MM.Tasks.Drive.Del(System.String)">
+            <summary>
+            删除
+            </summary>
+            <param name="name">任务名称</param>
+            <returns>删除成功返回true，失败返回false</returns>
+        </member>
+        <member name="M:MM.Tasks.Drive.Set(MM.Tasks.Helper)">
+            <summary>
+            设置
+            </summary>
+            <param name="v">配置</param>
+        </member>
+        <member name="M:MM.Tasks.Drive.UpdateConfig(System.String)">
+            <summary>
+            更新
+            </summary>
+            <param name="path">搜索路径</param>
+        </member>
+        <member name="M:MM.Tasks.Drive.Run(System.String)">
+            <summary>
+            执行任务（会初始化对象，首次启动时使用）
+            </summary>
+            <param name="name">任务名称</param>
+        </member>
+        <member name="M:MM.Tasks.Drive.Start(System.String)">
+            <summary>
+            开始任务
+            </summary>
+            <param name="name">任务名称</param>
+        </member>
+        <member name="M:MM.Tasks.Drive.Stop(System.String)">
+            <summary>
+            暂停任务
+            </summary>
+            <param name="name">任务名称</param>
+        </member>
+        <member name="M:MM.Tasks.Drive.End(System.String)">
+            <summary>
+            结束任务
+            </summary>
+            <param name="name">任务名称</param>
+        </member>
+        <member name="M:MM.Tasks.Drive.Init(System.String)">
+            <summary>
+            初始化任务
+            </summary>
+            <param name="name">任务名称</param>
+        </member>
+        <member name="M:MM.Tasks.Drive.Reset(System.String)">
+            <summary>
+            重置任务
+            </summary>
+            <param name="name">任务名称</param>
+        </member>
+        <member name="T:MM.Tasks.Helper">
+            <summary>
+            任务帮助类
+            </summary>
+        </member>
+        <member name="P:MM.Tasks.Helper.Timer">
+            <summary>
+            计时器
+            </summary>
+        </member>
+        <member name="P:MM.Tasks.Helper.Times_cache">
+            <summary>
+            执行次数
+            </summary>
+        </member>
+        <member name="M:MM.Tasks.Helper.Run">
+            <summary>
+            执行任务
+            </summary>
+        </member>
+        <member name="M:MM.Tasks.Helper.Init">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:MM.Tasks.Helper.Run_time(System.Object,System.Timers.ElapsedEventArgs)">
+            <summary>
+            时间段执行
+            </summary>
+            <param name="sender">发送参数</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:MM.Tasks.Helper.Run_interval(System.Object,System.Timers.ElapsedEventArgs)">
+            <summary>
+            时间间隔执行
+            </summary>
+            <param name="sender">发送参数</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:MM.Tasks.Helper.Reset">
+            <summary>
+            重置
+            </summary>
+        </member>
+        <member name="M:MM.Tasks.Helper.Start">
+            <summary>
+            开始
+            </summary>
+        </member>
+        <member name="M:MM.Tasks.Helper.Stop">
+            <summary>
+            停止
+            </summary>
+        </member>
+        <member name="M:MM.Tasks.Helper.End">
+            <summary>
+            结束
+            </summary>
+        </member>
+        <member name="T:MM.Tasks.Indexer">
+            <summary>
+            任务索引目录
+            </summary>
+        </member>
+        <member name="M:MM.Tasks.Indexer.Info">
+            <summary>
+            查看版本信息
+            </summary>
+            <returns>返回版本信息模型</returns>
+        </member>
+        <member name="M:MM.Tasks.Indexer.Drive">
+            <summary>
+            实例化驱动
+            </summary>
+            <returns>返回驱动函数类</returns>
+        </member>
+        <member name="M:MM.Tasks.Indexer.Helper">
+            <summary>
+            实例化帮助类
+            </summary>
+            <returns>返回帮助类</returns>
+        </member>
+        <member name="M:MM.Tasks.Indexer.Config">
+            <summary>
+            配置
+            </summary>
+            <returns>返回配置模型</returns>
+        </member>
+        <member name="M:MM.Tasks.Indexer.Demo(System.String)">
+            <summary>
+            创建示例
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -11,7 +11,7 @@ namespace MM.Engine.Libs
         /// <summary>
         /// 内部字典
         /// </summary>
-        Dictionary<string, object> dictionary = new Dictionary<string, object>();
+        readonly Dictionary<string, object> dictionary = new Dictionary<string, object>();
 
         /// <summary>
         /// 这个属性返回字典成员数量

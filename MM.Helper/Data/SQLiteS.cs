@@ -59,7 +59,7 @@ namespace MM.Helper.Data
         {
             if (string.IsNullOrEmpty(db))
             {
-                db = connStr_default;
+                db = Database ?? "mm";
             }
             SQLiteConnection.CreateFile(db.ToFullName(Dir));
             return 1;

@@ -105,6 +105,9 @@ namespace MM.API
         /// </summary>
         public bool HasFormContentType { get; set; } = false;
 
+        /// <summary>
+        /// xml帮助类
+        /// </summary>
         public Xml Xml { get; set; } = new Xml();
 
         /// <summary>

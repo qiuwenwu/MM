@@ -1,0 +1,292 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MM.Plugin</name>
+    </assembly>
+    <members>
+        <member name="T:MM.Plugin.Config">
+            <summary>
+            插件配置
+            </summary>
+        </member>
+        <member name="P:MM.Plugin.Config.Finish">
+            <summary>
+            结束执行
+            </summary>
+        </member>
+        <member name="T:MM.Plugin.Config_cache">
+            <summary>
+            配置缓存
+            </summary>
+        </member>
+        <member name="P:MM.Plugin.Config_cache.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:MM.Plugin.Config_cache.OrderBy">
+            <summary>
+            执行顺序
+            </summary>
+        </member>
+        <member name="T:MM.Plugin.Drive">
+            <summary>
+            任务驱动
+            </summary>
+        </member>
+        <member name="M:MM.Plugin.Drive.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:MM.Plugin.Drive.Dict">
+            <summary>
+            任务字典
+            </summary>
+        </member>
+        <member name="P:MM.Plugin.Drive.Msg">
+            <summary>
+            错误提示
+            </summary>
+        </member>
+        <member name="M:MM.Plugin.Drive.Get(System.String)">
+            <summary>
+            获取
+            </summary>
+            <param name="name">插件名称</param>
+            <returns>返回帮助器</returns>
+        </member>
+        <member name="M:MM.Plugin.Drive.Del(System.String)">
+            <summary>
+            删除
+            </summary>
+            <param name="name">插件名称</param>
+            <returns>删除成功返回true，失败返回false</returns>
+        </member>
+        <member name="M:MM.Plugin.Drive.Set(MM.Plugin.Helper)">
+            <summary>
+            设置
+            </summary>
+            <param name="v">配置</param>
+        </member>
+        <member name="M:MM.Plugin.Drive.UpdateConfig(System.String)">
+            <summary>
+            更新
+            </summary>
+            <param name="path">搜索路径</param>
+        </member>
+        <member name="M:MM.Plugin.Drive.Initialize(System.String)">
+            <summary>
+            初始化
+            </summary>
+            <param name="path">检索路径</param>
+        </member>
+        <member name="M:MM.Plugin.Drive.Load">
+            <summary>
+            读取配置
+            </summary>
+        </member>
+        <member name="M:MM.Plugin.Drive.Save">
+            <summary>
+            保存配置
+            </summary>
+        </member>
+        <member name="M:MM.Plugin.Drive.OrderBy">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="M:MM.Plugin.Drive.Run(System.Object,System.Object)">
+            <summary>
+            执行插件
+            </summary>
+            <param name="message">消息</param>
+            <param name="ret">上次执行结果</param>
+        </member>
+        <member name="M:MM.Plugin.Drive.Install(System.String,System.String)">
+            <summary>
+            0.安装
+            </summary>
+            <param name="name">插件名称</param>
+        </member>
+        <member name="M:MM.Plugin.Drive.Init(System.String,System.String)">
+            <summary>
+            1.初始化
+            </summary>
+            <param name="name">插件名称</param>
+        </member>
+        <member name="M:MM.Plugin.Drive.Start(System.String,System.String)">
+            <summary>
+            2.启动
+            </summary>
+            <param name="name">插件名称</param>
+        </member>
+        <member name="M:MM.Plugin.Drive.Stop(System.String,System.String)">
+            <summary>
+            3.暂停
+            </summary>
+            <param name="name">插件名称</param>
+        </member>
+        <member name="M:MM.Plugin.Drive.End(System.String,System.String)">
+            <summary>
+            4.结束
+            </summary>
+            <param name="name">插件名称</param>
+        </member>
+        <member name="M:MM.Plugin.Drive.Update(System.String,System.String)">
+            <summary>
+            5.1更新
+            </summary>
+            <param name="param">参数</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Plugin.Drive.Updated(System.String,System.String)">
+            <summary>
+            5.2更新完成时
+            </summary>
+            <param name="param">参数</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Plugin.Drive.Uninstall(System.String,System.String)">
+            <summary>
+            6.卸载插件
+            </summary>
+            <param name="param">参数</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Plugin.Drive.Remove(System.String,System.String)">
+            <summary>
+            7.移除插件
+            </summary>
+            <param name="param">参数</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="T:MM.Plugin.Helper">
+            <summary>
+            任务帮助类
+            </summary>
+        </member>
+        <member name="P:MM.Plugin.Helper.Msg">
+            <summary>
+            错误提示
+            </summary>
+        </member>
+        <member name="P:MM.Plugin.Helper.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:MM.Plugin.Helper.OrderBy">
+            <summary>
+            执行顺序
+            </summary>
+        </member>
+        <member name="M:MM.Plugin.Helper.Run(System.Object,System.Object)">
+            <summary>
+            执行插件
+            </summary>
+            <param name="message">消息</param>
+            <param name="ret">结果</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Plugin.Helper.Install(System.String)">
+            <summary>
+            1.安装插件
+            </summary>
+            <param name="param">参数</param>
+            <returns>返回安装结果</returns>
+            <param name="param">参数</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Plugin.Helper.Init(System.String)">
+            <summary>
+            2.初始化
+            </summary>
+            <param name="param">参数</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Plugin.Helper.Start(System.String)">
+            <summary>
+            3.启动
+            </summary>
+            <param name="param">参数</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Plugin.Helper.Stop(System.String)">
+            <summary>
+            4.停止
+            </summary>
+            <param name="param">参数</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Plugin.Helper.End(System.String)">
+            <summary>
+            5.结束
+            </summary>
+            <param name="param">参数</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Plugin.Helper.Update(System.String)">
+            <summary>
+            5.1更新
+            </summary>
+            <param name="param">参数</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Plugin.Helper.Updated(System.String)">
+            <summary>
+            5.2更新完成时
+            </summary>
+            <param name="param">参数</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Plugin.Helper.Uninstall(System.String)">
+            <summary>
+            6.卸载插件
+            </summary>
+            <param name="param">参数</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:MM.Plugin.Helper.Remove(System.String)">
+            <summary>
+            7.移除插件
+            </summary>
+            <param name="param">参数</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="T:MM.Plugin.Indexer">
+            <summary>
+            插件索引目录
+            </summary>
+        </member>
+        <member name="M:MM.Plugin.Indexer.Info">
+            <summary>
+            查看版本信息
+            </summary>
+            <returns>返回版本信息模型</returns>
+        </member>
+        <member name="M:MM.Plugin.Indexer.Drive">
+            <summary>
+            实例化驱动
+            </summary>
+            <returns>返回驱动函数类</returns>
+        </member>
+        <member name="M:MM.Plugin.Indexer.Helper">
+            <summary>
+            实例化帮助类
+            </summary>
+            <returns>返回帮助类</returns>
+        </member>
+        <member name="M:MM.Plugin.Indexer.Config">
+            <summary>
+            配置
+            </summary>
+            <returns>返回配置模型</returns>
+        </member>
+        <member name="M:MM.Plugin.Indexer.Demo(System.String)">
+            <summary>
+            创建示例
+            </summary>
+        </member>
+    </members>
+</doc>
