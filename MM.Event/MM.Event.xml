@@ -19,5 +19,10 @@
             事件帮助类
             </summary>
         </member>
+        <member name="T:MM.Event.TenseHelper">
+            <summary>
+            时态帮助器
+            </summary>
+        </member>
     </members>
 </doc>

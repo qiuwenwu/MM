@@ -148,7 +148,7 @@ namespace MM.Engine
         /// <returns>返回执行结果</returns>
         public object Run(string appName, object fun, object param1 = null, object param2 = null, object param3 = null)
         {
-            var key = appName.Replace(Cache.runPath, "");
+            var key = appName.ToFullName(_Dir).Replace(Cache.runPath, "");
             if (!dict.ContainsKey(key))
             {
                 var bl = Load(appName);
