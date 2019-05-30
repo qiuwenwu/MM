@@ -1,5 +1,4 @@
-﻿using CSScriptLib;
-using CSScriptLib.Extensions;
+﻿using CSScriptLibrary;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -126,7 +125,7 @@ public class Script : MM.Engine.Common {
         {
             if (!string.IsNullOrEmpty(appName))
             {
-                return dict.TryRemove(appName.Replace(Cache.runPath, ""), out _);
+                return dict.TryRemove(appName.ToFullName(_Dir).Replace(Cache.runPath, ""), out _);
             }
             return false;
         }

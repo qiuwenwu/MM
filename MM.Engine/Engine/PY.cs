@@ -1,8 +1,10 @@
 ﻿using IronPython.Hosting;
 using Microsoft.Scripting.Hosting;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Text;
@@ -119,7 +121,7 @@ namespace MM.Engine
         {
             if (!string.IsNullOrEmpty(appName))
             {
-                return dict.TryRemove(appName.Replace(Cache.runPath, ""), out _);
+                return dict.TryRemove(appName.ToFullName(_Dir).Replace(Cache.runPath, ""), out _);
             }
             return false;
         }
